@@ -50,7 +50,9 @@ def collect_recent_entries(csv_path, today, window_days=WINDOW_DAYS):
         except ValueError:
             continue
         age = (today - d).days
-        if 0 <= age < window_days:
+        if age < 0:
+            continue  # ignore bogus future dates
+        if window_days is None or age < window_days:
             recent.append((d, row))
 
     def subtype_of(row):
@@ -136,6 +138,9 @@ body{
   color:var(--text-light);
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
 }
+.back-nav{max-width:960px;margin:0 auto 0.5rem;font-size:0.85rem;}
+.back-nav a{color:var(--accent);text-decoration:none;}
+.back-nav a:hover{text-decoration:underline;}
 header{max-width:960px;margin:0 auto 1rem;text-align:center;}
 h1{margin:0.2rem 0;font-size:1.6rem;}
 .subtitle{margin:0;font-size:0.85rem;color:#94a3b8;}
@@ -269,13 +274,18 @@ FLASHCARDS_JS = """
 """
 
 
-def build_flashcards_html(csv_path, today):
-    recent = collect_recent_entries(csv_path, today)
+def build_flashcards_html(
+    csv_path,
+    today,
+    window_days=WINDOW_DAYS,
+    page_title="Wortschatz-Karteikarten – C1",
+    scope_label=None,
+    nav_html="",
+):
+    recent = collect_recent_entries(csv_path, today, window_days=window_days)
     if not recent:
-        raise RuntimeError(
-            "No vocabulary entries with a date_last_used in the last "
-            f"{WINDOW_DAYS} days -- nothing to build flashcards from."
-        )
+        scope = "the last {window_days} days" if window_days else "the archive"
+        raise RuntimeError(f"No vocabulary entries found for {scope} -- nothing to build.")
 
     cards_html = "\n".join(
         render_card(i, d, row, today) for i, (d, row) in enumerate(recent)
@@ -286,6 +296,10 @@ def build_flashcards_html(csv_path, today):
     else:
         date_range = newest_date.strftime("%d.%m.%Y")
     count = len(recent)
+    if scope_label is None:
+        scope_label = (
+            f"Vokabeln der letzten {window_days} Tage" if window_days else "Alle bisher verwendeten Vokabeln"
+        )
 
     filter_chips_html = "\n".join(
         f'    <label class="filter-chip"><input type="checkbox" class="type-filter" '
@@ -301,16 +315,16 @@ def build_flashcards_html(csv_path, today):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Wortschatz-Karteikarten – C1</title>
+<title>{html.escape(page_title)}</title>
 <style>
 {FLASHCARDS_CSS}
 </style>
 </head>
 <body>
-
+{nav_html}
 <header>
   <h1>Wortschatz-Karteikarten</h1>
-  <p class="subtitle">Vokabeln der letzten {WINDOW_DAYS} Tage · {date_range} · {count} Karten insgesamt</p>
+  <p class="subtitle">{html.escape(scope_label)} · {date_range} · {count} Karten insgesamt</p>
 </header>
 
 <div class="controls">

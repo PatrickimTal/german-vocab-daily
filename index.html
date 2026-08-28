@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deutscher Wortschatz – Täglich</title>
+<style>
+
+:root{
+  --bg:#0f172a;
+  --panel:#1e293b;
+  --accent:#38bdf8;
+  --text-light:#e2e8f0;
+  --muted:#94a3b8;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  padding:1.2rem 0.9rem 3rem;
+  background:var(--bg);
+  color:var(--text-light);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+}
+header{max-width:760px;margin:0 auto 1.5rem;text-align:center;}
+h1{margin:0.2rem 0;font-size:1.7rem;}
+.subtitle{margin:0;font-size:0.85rem;color:var(--muted);}
+
+.quick-links{
+  max-width:760px;margin:0 auto 2rem;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:0.8rem;
+}
+.tile{
+  display:flex;flex-direction:column;gap:0.2rem;
+  background:var(--panel);border:1px solid #334155;border-radius:14px;
+  padding:1rem;text-decoration:none;color:var(--text-light);
+  transition:border-color 0.15s;
+}
+.tile:hover{border-color:var(--accent);}
+.tile-emoji{font-size:1.4rem;}
+.tile-title{font-weight:600;font-size:1rem;}
+.tile-sub{font-size:0.78rem;color:var(--muted);}
+
+.archive-section{max-width:760px;margin:0 auto 2rem;}
+.archive-section h2{font-size:1.1rem;border-bottom:1px solid #334155;padding-bottom:0.4rem;}
+.archive-list{list-style:none;margin:0;padding:0;}
+.archive-list li{
+  display:flex;gap:0.8rem;align-items:baseline;
+  padding:0.55rem 0;border-bottom:1px solid #1e293b;
+}
+.archive-date{
+  flex:0 0 auto;font-variant-numeric:tabular-nums;
+  color:var(--muted);font-size:0.82rem;min-width:5.5rem;
+}
+.archive-list a{color:var(--text-light);text-decoration:none;font-size:0.92rem;}
+.archive-list a:hover{color:var(--accent);text-decoration:underline;}
+.empty-note{color:var(--muted);font-size:0.85rem;font-style:italic;}
+
+footer{max-width:760px;margin:2rem auto 0;text-align:center;font-size:0.75rem;color:var(--muted);}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Deutscher Wortschatz – Täglich</h1>
+  <p class="subtitle">Stand: 28.08.2026 &middot; 1 Lesetexte im Archiv</p>
+</header>
+
+<section class="quick-links">
+  <a class="tile" href="reading.html">
+    <span class="tile-emoji">📖</span>
+    <span class="tile-title">Heutiger Lesetext</span>
+    <span class="tile-sub">Neuester C1-Artikel</span>
+  </a>
+  <a class="tile" href="flashcards.html">
+    <span class="tile-emoji">🗂️</span>
+    <span class="tile-title">Karteikarten</span>
+    <span class="tile-sub">Letzte 7 Tage</span>
+  </a>
+  <a class="tile" href="archive/flashcards.html">
+    <span class="tile-emoji">📚</span>
+    <span class="tile-title">Karteikarten-Archiv</span>
+    <span class="tile-sub">Alle bisherigen Vokabeln</span>
+  </a>
+</section>
+
+<section class="archive-section">
+  <h2>Lesetext-Archiv</h2>
+  <ul class="archive-list">
+    <li><span class="archive-date">28.08.2026</span><a href="archive/readings/2026-08-28.html">Wer hört hier eigentlich noch zu? – Leseartikel C1</a></li>
+  </ul>
+</section>
+
+<footer>Automatisch generiert &middot; German Vocab Daily</footer>
+
+</body>
+</html>

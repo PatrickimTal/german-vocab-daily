@@ -1,205 +1,225 @@
 {
-  "date": "2026-08-27",
+  "date": "2026-08-28",
   "entries": [
     {
       "type": "verb_prep",
-      "german": "anfangen mit (+Dat)",
-      "english": "to start with / to begin with",
-      "example_de": "Wann haben Sie mit dem Deutschlernen angefangen?",
+      "german": "Beschäftigung finden in (+Dat)",
+      "english": "to find occupation / fulfilment in",
+      "example_de": "Gesundheitspfleger finden u. a. Beschäftigung in Facharztpraxen und Krankenhäusern.",
       "example_en": "",
       "date_last_used": "",
       "times_used": "0",
-      "notes": ""
+      "notes": "from uploaded list",
+      "subtype": "Verb + Präp."
     },
     {
       "type": "verb_prep",
-      "german": "sprechen für (+Akk)",
-      "english": "to speak for",
-      "example_de": "Seine langjährige Erfahrung spricht für ihn als geeigneten Kandidaten für die Stelle.",
+      "german": "diskutieren mit (+Dat)",
+      "english": "to discuss with (a person)",
+      "example_de": "Die Mitarbeiter diskutieren mit der Personalleiterin.",
       "example_en": "",
       "date_last_used": "",
       "times_used": "0",
-      "notes": ""
+      "notes": "",
+      "subtype": "Verb + Präp."
     },
     {
       "type": "verb_prep",
-      "german": "sich verlieben in (+Akk)",
-      "english": "to fall in love with",
-      "example_de": "Sie verliebte sich auf den ersten Blick in ihn.",
+      "german": "sich üben in (+Dat)",
+      "english": "to practice",
+      "example_de": "Er übt sich täglich in Geduld, seit er mit dem Meditieren angefangen hat.",
       "example_en": "",
       "date_last_used": "",
       "times_used": "0",
-      "notes": ""
+      "notes": "",
+      "subtype": "Verb + Präp."
     },
     {
       "type": "verb_prep",
-      "german": "zweifeln an (+Dat)",
-      "english": "to doubt / to have doubts about",
-      "example_de": "Manchmal zweifelt Dimitra Papadopoulou an ihrer Entscheidung zur Auswanderung.",
+      "german": "leiden an / unter (+Dat)",
+      "english": "to suffer from",
+      "example_de": "Der Patient leidet an Bluthochdruck und leidet jetzt unter der Hitze.",
       "example_en": "",
       "date_last_used": "",
       "times_used": "0",
-      "notes": ""
+      "notes": "",
+      "subtype": "Verb + Präp."
     },
     {
       "type": "verb_prep",
-      "german": "Hilfe leisten (+Dat)",
-      "english": "to provide assistance to / to help someone",
-      "example_de": "Sie leistete der Familie Hilfe bei der Wohnungssuche.",
+      "german": "schimpfen über (+Akk)",
+      "english": "to rant about / to scold about",
+      "example_de": "Er schimpfte lautstark über die ständigen Verspätungen der Bahn.",
       "example_en": "",
       "date_last_used": "",
       "times_used": "0",
-      "notes": "from uploaded list"
+      "notes": "",
+      "subtype": "Verb + Präp."
     },
     {
       "type": "noun_prep",
-      "german": "die Werbung für (+Akk)",
-      "english": "advertising for",
-      "example_de": "Ist in Ihrem Heimatland die Werbung für Zigaretten erlaubt?",
+      "german": "die Spezialisierung auf (+Akk)",
+      "english": "the specialisation in",
+      "example_de": "Die Spezialisierung auf Autoreifen ist bei diesem Unternehmen der Schlüssel zum Erfolg.",
       "example_en": "",
       "date_last_used": "",
       "times_used": "0",
-      "notes": ""
+      "notes": "",
+      "subtype": "Nomen + Präp."
     },
     {
       "type": "noun_prep",
-      "german": "die Suche nach (+Dat)",
-      "english": "search for",
-      "example_de": "Die Suche nach einer Wohnung war für Hedda Aziz und ihre Familie schwer.",
+      "german": "die Schuld an (+Dat)",
+      "english": "the guilt / blame for",
+      "example_de": "Die Schuld an dem Unfall trägt der Fahrer des gelben BMW.",
       "example_en": "",
       "date_last_used": "",
       "times_used": "0",
-      "notes": ""
+      "notes": "",
+      "subtype": "Nomen + Präp."
     },
     {
       "type": "noun_prep",
-      "german": "die Gleichgültigkeit gegenüber (+Dat)",
-      "english": "the indifference towards",
-      "example_de": "Die Gleichgültigkeit ihres Mannes gegenüber ihrem Hobby ärgert sie.",
+      "german": "das Erstaunen über (+Akk)",
+      "english": "the astonishment / amazement at",
+      "example_de": "Das Erstaunen über das deutsche Essen war bei Nhan Nguyen anfangs groß.",
       "example_en": "",
       "date_last_used": "",
       "times_used": "0",
-      "notes": ""
+      "notes": "",
+      "subtype": "Nomen + Präp."
     },
     {
       "type": "other",
-      "german": "befragen (+Akk)",
-      "english": "to question / to interview",
-      "example_de": "Die Polizei befragte mehrere Zeugen zu dem Vorfall.",
-      "example_en": "",
-      "date_last_used": "",
-      "times_used": "0",
-      "notes": "governs case, no preposition (from uploaded list)"
-    },
-    {
-      "type": "other",
-      "german": "die Flüssigkeit",
-      "english": "the liquid",
+      "german": "sich erbarmen",
+      "english": "to have mercy / show mercy",
       "example_de": "",
       "example_en": "",
       "date_last_used": "",
       "times_used": "0",
-      "notes": "corrected spelling (missing umlaut)"
+      "notes": "reflexive verb; noun is das Erbarmen (mercy)",
+      "subtype": "Wortschatz"
     },
     {
       "type": "other",
-      "german": "eine Aufgabe übernehmen",
-      "english": "to take on a task / responsibility",
-      "example_de": "Krankenpfleger übernehmen Aufgaben in der Grundpflege.",
-      "example_en": "",
-      "date_last_used": "",
-      "times_used": "0",
-      "notes": "idiomatic verb phrase, from uploaded list"
-    },
-    {
-      "type": "other",
-      "german": "der/die Freiwillige (pl. die Freiwilligen)",
-      "english": "the volunteer(s)",
+      "german": "zuhören",
+      "english": "to listen",
       "example_de": "",
       "example_en": "",
       "date_last_used": "",
       "times_used": "0",
-      "notes": ""
+      "notes": "",
+      "subtype": "Wortschatz"
     },
     {
       "type": "other",
-      "german": "einen Traum verwirklichen",
-      "english": "to realise / fulfil a dream",
-      "example_de": "Nhan Nguyen möchte seinen Traum vom Medizinstudium verwirklichen.",
-      "example_en": "",
-      "date_last_used": "",
-      "times_used": "0",
-      "notes": "idiomatic verb phrase, from uploaded list"
-    },
-    {
-      "type": "other",
-      "german": "Ich bin bereit geboren.",
-      "english": "I was born ready.",
+      "german": "die Schwägerin",
+      "english": "the sister-in-law",
       "example_de": "",
       "example_en": "",
       "date_last_used": "",
       "times_used": "0",
-      "notes": ""
+      "notes": "",
+      "subtype": "Wortschatz"
     },
     {
       "type": "other",
-      "german": "wutend auf (+Akk)/über (+Akk)",
-      "english": "furious at / angry about",
-      "example_de": "Der Gast war wegen der langen Wartezeit wütend auf den Kellner./ Fayyad Hadji ist wütend über seine Kündigung.",
+      "german": "zur Diskussion stehen",
+      "english": "to be up for discussion / to be under debate",
+      "example_de": "Der neue Vorschlag steht auf der nächsten Sitzung zur Diskussion.",
       "example_en": "",
       "date_last_used": "",
       "times_used": "0",
-      "notes": "adjective + preposition (fixed collocation, from uploaded list)"
+      "notes": "idiomatic verb phrase, from uploaded list",
+      "subtype": "Redemittel"
     },
     {
       "type": "other",
-      "german": "baumeln",
-      "english": "to dangle",
+      "german": "Das ist lächerlich!",
+      "english": "That's ridiculous!",
       "example_de": "",
       "example_en": "",
       "date_last_used": "",
       "times_used": "0",
-      "notes": ""
+      "notes": "",
+      "subtype": "Redemittel"
     },
     {
       "type": "other",
-      "german": "die Mispel",
-      "english": "the medlar (fruit)",
+      "german": "überreichen (+Dat/+Akk)",
+      "english": "to hand over / to present",
+      "example_de": "Der Bürgermeister überreichte ihr feierlich die Auszeichnung.",
+      "example_en": "",
+      "date_last_used": "",
+      "times_used": "0",
+      "notes": "governs case, no preposition (from uploaded list)",
+      "subtype": "Verb + Kasus"
+    },
+    {
+      "type": "other",
+      "german": "verärgert über (+Akk)",
+      "english": "annoyed about / irritated by",
+      "example_de": "Eine Mitarbeiterin ist über die unordentliche Führung der Patienten-akten verärgert.",
+      "example_en": "",
+      "date_last_used": "",
+      "times_used": "0",
+      "notes": "adjective + preposition (fixed collocation, from uploaded list)",
+      "subtype": "Adjektiv + Präp."
+    },
+    {
+      "type": "other",
+      "german": "schicken (+Dat/+Akk)",
+      "english": "to send",
+      "example_de": "Sie schickte ihrer Mutter ein Paket mit Spezialitäten aus dem Ausland.",
+      "example_en": "",
+      "date_last_used": "",
+      "times_used": "0",
+      "notes": "governs case, no preposition (from uploaded list)",
+      "subtype": "Verb + Kasus"
+    },
+    {
+      "type": "other",
+      "german": "seden (+Dat/+Akk)",
+      "english": "to send / to transmit",
+      "example_de": "Die Redaktion sendete dem Autor eine Einladung zur Lesung.",
+      "example_en": "",
+      "date_last_used": "",
+      "times_used": "0",
+      "notes": "governs case, no preposition (from uploaded list)",
+      "subtype": "Verb + Kasus"
+    },
+    {
+      "type": "other",
+      "german": "eine Garantie geben",
+      "english": "to give a guarantee",
+      "example_de": "Wir geben Ihnen drei Jahre Garantie auf unsere Produkte.",
+      "example_en": "",
+      "date_last_used": "",
+      "times_used": "0",
+      "notes": "idiomatic verb phrase, from uploaded list",
+      "subtype": "Redemittel"
+    },
+    {
+      "type": "other",
+      "german": "in Erfüllung gehen",
+      "english": "to be fulfilled / to come true",
+      "example_de": "Ich hoffe, mein Wunsch geht in Erfüllung.",
+      "example_en": "",
+      "date_last_used": "",
+      "times_used": "0",
+      "notes": "idiomatic verb phrase, from uploaded list",
+      "subtype": "Redemittel"
+    },
+    {
+      "type": "other",
+      "german": "beängstigend",
+      "english": "frightening",
       "example_de": "",
       "example_en": "",
       "date_last_used": "",
       "times_used": "0",
-      "notes": ""
-    },
-    {
-      "type": "other",
-      "german": "seit Langem",
-      "english": "for a long time",
-      "example_de": "",
-      "example_en": "",
-      "date_last_used": "",
-      "times_used": "0",
-      "notes": ""
-    },
-    {
-      "type": "other",
-      "german": "eine Antwort geben",
-      "english": "give an answer",
-      "example_de": "Gib mir bitte eine Antwort, wenn ich dich etwas frage.",
-      "example_en": "",
-      "date_last_used": "",
-      "times_used": "0",
-      "notes": "idiomatic verb phrase, from uploaded list"
-    },
-    {
-      "type": "other",
-      "german": "um Erlaubnis fragen",
-      "english": "to ask for permission",
-      "example_de": "Die Kinder müssen die Eltern wegen der Klassenfahrt um Erlaubnis fragen.",
-      "example_en": "",
-      "date_last_used": "",
-      "times_used": "0",
-      "notes": "idiomatic verb phrase, from uploaded list"
+      "notes": "",
+      "subtype": "Wortschatz"
     }
   ]
 }
