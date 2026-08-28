@@ -200,13 +200,9 @@ a:hover { color: var(--blue-hover); }
   display: flex; flex-direction: column; gap: 13px;
   width: 100%; padding: 22px; text-align: left;
   background: var(--card-bg); border: 0; border-radius: var(--r-lg);
-  box-shadow: var(--shadow-card); cursor: pointer;
+  box-shadow: var(--shadow-card);
   font-family: inherit;
-  transition: background 150ms ease;
 }
-.flashcard:hover { background: var(--card-bg-hover); }
-.flashcard__top { display: flex; align-items: center; justify-content: space-between; }
-.flashcard__age { font-family: var(--font-mono); font-size: 10px; color: var(--ink-faint); }
 .flashcard__term {
   font-family: var(--font-serif);
   font-size: 30px;
@@ -225,9 +221,6 @@ a:hover { color: var(--blue-hover); }
   padding: 2px 5px; margin-right: 7px;
   border-radius: var(--r-sm); background: var(--rule); color: var(--ink-body);
 }
-.flashcard[aria-expanded="false"] .flashcard__back { display: none; }
-.flashcard[aria-expanded="true"] .flashcard__hint { display: none; }
-.flashcard__hint { font-size: 14px; color: var(--ink-faint); }
 
 /* ---------- entries ---------- */
 
@@ -318,7 +311,6 @@ a:hover { color: var(--blue-hover); }
   .hero__card { gap: 14px; }
   .flashcard { padding: 30px 32px; gap: 18px; min-height: 280px; }
   .flashcard__term { font-size: 40px; }
-  .flashcard__hint { margin-top: auto; }
   .entries { gap: 16px; padding: 30px var(--pad-x) 34px; }
   .entry { padding: 20px 22px; }
   .entry__title { font-size: 16px; }
@@ -368,25 +360,21 @@ a:hover { color: var(--blue-hover); }
 
   <section class="hero__card" aria-labelledby="card-of-day">
     <h2 class="eyebrow" id="card-of-day">Karte des Tages</h2>
-    <button class="flashcard" type="button" aria-expanded="true" aria-controls="flashcard-back">
-      <span class="flashcard__top">
-        <span class="chip chip--wortschatz">Wortschatz</span>
-        <span class="flashcard__age">heute</span>
+    <div class="flashcard">
+      <span class="chip chip--adjektiv-praep">Adjektiv + Präp.</span>
+      <span class="flashcard__term">verärgert über</span>
+      <span class="flashcard__back">
+        <span class="flashcard__gloss">annoyed about / irritated by</span>
+        <span class="flashcard__example"><span class="tag-de">DE</span>Eine Mitarbeiterin ist über die unordentliche Führung der Patienten-akten verärgert.</span>
       </span>
-      <span class="flashcard__term"><span class="article">die</span> Schwägerin</span>
-      <span class="flashcard__back" id="flashcard-back">
-        <span class="flashcard__gloss">the sister-in-law</span>
-        
-      </span>
-      <span class="flashcard__hint">Klicken zum Umdrehen</span>
-    </button>
+    </div>
   </section>
 </main>
 
 <nav class="entries" aria-label="Bereiche">
   <a class="entry" href="reading.html">
     <span class="entry__title">Heutiger Lesetext</span>
-    <span class="entry__meta">Neuester C1-Artikel · rund 386 Wörter</span>
+    <span class="entry__meta">Neuester C1-Artikel · rund 388 Wörter</span>
   </a>
   <a class="entry" href="flashcards.html">
     <span class="entry__title">Karteikarten</span>
@@ -416,12 +404,6 @@ document.querySelectorAll('.nav-toggle').forEach(function (toggle) {
     toggle.setAttribute('aria-expanded', String(!open));
     toggle.setAttribute('aria-label', open ? 'Menü öffnen' : 'Menü schließen');
     if (panel) panel.hidden = open;
-  });
-});
-
-document.querySelectorAll('.flashcard').forEach(function (card) {
-  card.addEventListener('click', function () {
-    card.setAttribute('aria-expanded', card.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
   });
 });
 

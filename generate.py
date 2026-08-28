@@ -85,6 +85,9 @@ def build_system_prompt(entries):
         "body copy and UI text in 'Sora', system-ui, sans-serif; small "
         "caption/meta text (e.g. a word-count line) in 'IBM Plex Mono', "
         "ui-monospace, monospace; links/accent color #0077c7 (hover #0061b0).\n"
+        "- Style <strong> as bold weight (e.g. font-weight:600) in the "
+        "heading ink color only -- no underline, no background highlight, "
+        "no gradient, no other decoration on bolded text.\n"
         "- Output ONLY the raw HTML document — no markdown code fences, no "
         "commentary before or after it."
     )

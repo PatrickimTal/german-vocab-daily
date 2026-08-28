@@ -94,13 +94,9 @@ PAGE_CSS = (
   display: flex; flex-direction: column; gap: 13px;
   width: 100%; padding: 22px; text-align: left;
   background: var(--card-bg); border: 0; border-radius: var(--r-lg);
-  box-shadow: var(--shadow-card); cursor: pointer;
+  box-shadow: var(--shadow-card);
   font-family: inherit;
-  transition: background 150ms ease;
 }
-.flashcard:hover { background: var(--card-bg-hover); }
-.flashcard__top { display: flex; align-items: center; justify-content: space-between; }
-.flashcard__age { font-family: var(--font-mono); font-size: 10px; color: var(--ink-faint); }
 .flashcard__term {
   font-family: var(--font-serif);
   font-size: 30px;
@@ -119,9 +115,6 @@ PAGE_CSS = (
   padding: 2px 5px; margin-right: 7px;
   border-radius: var(--r-sm); background: var(--rule); color: var(--ink-body);
 }
-.flashcard[aria-expanded="false"] .flashcard__back { display: none; }
-.flashcard[aria-expanded="true"] .flashcard__hint { display: none; }
-.flashcard__hint { font-size: 14px; color: var(--ink-faint); }
 
 /* ---------- entries ---------- */
 
@@ -212,7 +205,6 @@ PAGE_CSS = (
   .hero__card { gap: 14px; }
   .flashcard { padding: 30px 32px; gap: 18px; min-height: 280px; }
   .flashcard__term { font-size: 40px; }
-  .flashcard__hint { margin-top: auto; }
   .entries { gap: 16px; padding: 30px var(--pad-x) 34px; }
   .entry { padding: 20px 22px; }
   .entry__title { font-size: 16px; }
@@ -222,16 +214,7 @@ PAGE_CSS = (
 """
 )
 
-PAGE_JS = (
-    NAV_TOGGLE_JS
-    + """
-document.querySelectorAll('.flashcard').forEach(function (card) {
-  card.addEventListener('click', function () {
-    card.setAttribute('aria-expanded', card.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
-  });
-});
-"""
-)
+PAGE_JS = NAV_TOGGLE_JS
 
 
 def _extract_title(html_text):
@@ -269,21 +252,33 @@ def strip_trailing_annotations(text):
     return text
 
 
+# Most obscure/challenging first: idioms and fixed-case/preposition
+# constructions are harder to guess than a plain vocabulary word.
+CARD_OF_DAY_PRIORITY = [
+    "Redewendung",
+    "Adjektiv + Präp.",
+    "Verb + Kasus",
+    "Redemittel",
+    "Nomen + Präp.",
+    "Verb + Präp.",
+    "Wortschatz",
+]
+
+
 def pick_card_of_day(entries):
-    """Prefer a Wortschatz or Nomen + Präp. entry with a visible article
-    (der/die/das) so the landing card can show the orange article colour."""
+    """Pick the most obscure/challenging entry from today's selection,
+    preferring idioms and fixed grammatical constructions over plain
+    vocabulary. Ties broken by longer German text (a rough proxy for
+    the entry being less common)."""
 
-    def candidates(subtype):
-        return [
-            e
-            for e in entries
-            if e.get("subtype") == subtype and ARTICLE_RE.match(strip_trailing_annotations(e["german"]))
-        ]
+    by_subtype = {}
+    for e in entries:
+        by_subtype.setdefault(e.get("subtype", "Wortschatz"), []).append(e)
 
-    for subtype in ("Wortschatz", "Nomen + Präp."):
-        pool = candidates(subtype)
+    for subtype in CARD_OF_DAY_PRIORITY:
+        pool = by_subtype.get(subtype)
         if pool:
-            return pool[0]
+            return max(pool, key=lambda e: len(e["german"]))
     return entries[0]
 
 
@@ -305,18 +300,14 @@ def render_card_of_day(entry):
             f'{html.escape(entry["example_de"])}</span>'
         )
 
-    return f"""    <button class="flashcard" type="button" aria-expanded="true" aria-controls="flashcard-back">
-      <span class="flashcard__top">
-        <span class="chip chip--{slug}">{html.escape(subtype)}</span>
-        <span class="flashcard__age">heute</span>
-      </span>
+    return f"""    <div class="flashcard">
+      <span class="chip chip--{slug}">{html.escape(subtype)}</span>
       <span class="flashcard__term">{term_html}</span>
-      <span class="flashcard__back" id="flashcard-back">
+      <span class="flashcard__back">
         <span class="flashcard__gloss">{html.escape(entry["english"])}</span>
         {example_html}
       </span>
-      <span class="flashcard__hint">Klicken zum Umdrehen</span>
-    </button>"""
+    </div>"""
 
 
 def build_index_html(today, card_of_day_entry, reading_word_count, rolling_card_count, reading_archive):
