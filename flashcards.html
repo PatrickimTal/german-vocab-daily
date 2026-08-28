@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wortschatz-Karteikarten – C1</title>
+<style>
+
+:root{
+  --bg:#0f172a;
+  --card-front:#1e293b;
+  --card-back:#f8fafc;
+  --accent:#38bdf8;
+  --accent-dark:#0369a1;
+  --text-light:#e2e8f0;
+  --text-dark:#1e293b;
+  --green:#4ade80;
+  --amber:#fbbf24;
+  --teal:#2dd4bf;
+  --pink:#f472b6;
+  --violet:#a78bfa;
+  --orange:#fb923c;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  padding:1rem 0.8rem 3rem;
+  background:var(--bg);
+  color:var(--text-light);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+}
+header{max-width:960px;margin:0 auto 1rem;text-align:center;}
+h1{margin:0.2rem 0;font-size:1.6rem;}
+.subtitle{margin:0;font-size:0.85rem;color:#94a3b8;}
+
+.controls{
+  position:sticky;top:0;z-index:10;
+  max-width:960px;margin:0 auto 1.2rem;
+  background:rgba(15,23,42,0.92);
+  backdrop-filter:blur(6px);
+  border:1px solid #1e293b;
+  border-radius:12px;
+  padding:0.7rem 0.9rem;
+  display:flex;flex-wrap:wrap;gap:0.6rem 1rem;align-items:center;
+}
+.ctrl-label{font-size:0.78rem;color:#94a3b8;margin-right:0.3rem;}
+.sort-group,.filter-group{display:flex;align-items:center;flex-wrap:wrap;gap:0.4rem;}
+.sort-btn{
+  background:#1e293b;color:var(--text-light);border:1px solid #334155;
+  border-radius:999px;padding:0.3rem 0.8rem;font-size:0.8rem;cursor:pointer;
+}
+.sort-btn.active{background:var(--accent);color:#0f172a;border-color:var(--accent);font-weight:600;}
+.filter-chip{
+  display:inline-flex;align-items:center;gap:0.3rem;
+  background:#1e293b;border:1px solid #334155;border-radius:999px;
+  padding:0.25rem 0.7rem;font-size:0.78rem;cursor:pointer;
+}
+.filter-chip input{accent-color:var(--accent);}
+.count-line{margin-left:auto;font-size:0.78rem;color:#94a3b8;}
+
+main{
+  max-width:960px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:0.9rem;
+}
+
+.card{display:block;cursor:pointer;perspective:1200px;}
+.card input{display:none;}
+.card .inner{
+  position:relative;width:100%;min-height:170px;
+  transition:transform 0.5s;transform-style:preserve-3d;
+}
+.card input:checked ~ .inner{transform:rotateY(180deg);}
+.face{
+  position:absolute;inset:0;
+  border-radius:14px;padding:0.9rem;
+  backface-visibility:hidden;
+  display:flex;flex-direction:column;
+  box-shadow:0 2px 10px rgba(0,0,0,0.25);
+}
+.front{background:var(--card-front);color:var(--text-light);}
+.back{
+  background:var(--card-back);color:var(--text-dark);
+  transform:rotateY(180deg);justify-content:center;
+}
+
+.badge{
+  align-self:flex-start;
+  font-size:0.68rem;font-weight:600;
+  padding:0.15rem 0.55rem;border-radius:999px;margin-bottom:0.5rem;
+}
+.b-verbprep{background:rgba(56,189,248,.15);color:var(--accent);}
+.b-verbkasus{background:rgba(45,212,191,.15);color:var(--teal);}
+.b-redemittel{background:rgba(244,114,182,.15);color:var(--pink);}
+.b-nounprep{background:rgba(251,191,36,.15);color:var(--amber);}
+.b-adjprep{background:rgba(167,139,250,.15);color:var(--violet);}
+.b-redewendung{background:rgba(251,146,60,.15);color:var(--orange);}
+.b-wortschatz{background:rgba(74,222,128,.15);color:var(--green);}
+
+.term{font-size:1.05rem;font-weight:600;flex:1;}
+.date-tag{font-size:0.68rem;color:#64748b;margin-top:0.4rem;}
+.hint{font-size:0.68rem;color:#64748b;margin-top:0.2rem;}
+
+.en-meaning{font-weight:600;font-size:1rem;margin-bottom:0.5rem;text-align:center;}
+.ex p{margin:0.25rem 0;font-size:0.8rem;line-height:1.3;}
+.ex .label{font-weight:700;font-size:0.65rem;color:var(--accent-dark);margin-right:0.35rem;}
+
+footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;color:#64748b;}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Wortschatz-Karteikarten</h1>
+  <p class="subtitle">Vokabeln der letzten 7 Tage · 27.08.2026 · 20 Karten insgesamt</p>
+</header>
+
+<div class="controls">
+  <div class="sort-group">
+    <span class="ctrl-label">Sortieren:</span>
+    <button id="sortDateBtn" class="sort-btn active" data-sort="date" type="button">Chronologisch</button>
+    <button id="sortTypeBtn" class="sort-btn" data-sort="type" type="button">Nach Kategorie</button>
+  </div>
+  <div class="filter-group">
+    <span class="ctrl-label">Filter:</span>
+    <label class="filter-chip"><input type="checkbox" class="type-filter" value="Verb + Präp." checked> Verb + Präp.</label>
+    <label class="filter-chip"><input type="checkbox" class="type-filter" value="Verb + Kasus" checked> Verb + Kasus</label>
+    <label class="filter-chip"><input type="checkbox" class="type-filter" value="Redemittel" checked> Redemittel</label>
+    <label class="filter-chip"><input type="checkbox" class="type-filter" value="Nomen + Präp." checked> Nomen + Präp.</label>
+    <label class="filter-chip"><input type="checkbox" class="type-filter" value="Adjektiv + Präp." checked> Adjektiv + Präp.</label>
+    <label class="filter-chip"><input type="checkbox" class="type-filter" value="Redewendung" checked> Redewendung</label>
+    <label class="filter-chip"><input type="checkbox" class="type-filter" value="Wortschatz" checked> Wortschatz</label>
+  </div>
+  <div class="count-line"><span id="visibleCount">20</span> / 20 Karten sichtbar</div>
+</div>
+
+<main id="cardGrid">
+  <label class="card" data-id="0" data-type="Verb + Präp." data-date="2026-08-27">
+    <input type="checkbox">
+    <div class="inner">
+      <div class="face front">
+        <span class="badge b-verbprep">Verb + Präp.</span>
+        <span class="term">anfangen mit (+Dat)</span>
+        <span class="date-tag">heute</span>
+        <span class="hint">tap to reveal</span>
+      </div>
+      <div class="face back">
+        <div class="en-meaning">to start with / to begin with</div>
+        <div class="ex"><p class="de"><span class="label">DE</span>Wann haben Sie mit dem Deutschlernen angefangen?</p></div>
+      </div>
+    </div>
+  </label>
+  <label class="card" data-id="1" data-type="Verb + Präp." data-date="2026-08-27">
+    <input type="checkbox">
+    <div class="inner">
+      <div class="face front">
+        <span class="badge b-verbprep">Verb + Präp.</span>
+        <span class="term">Hilfe leisten (+Dat)</span>
+        <span class="date-tag">heute</span>
+        <span class="hint">tap to reveal</span>
+      </div>
+      <div class="face back">
+        <div class="en-meaning">to provide assistance to / to help someone</div>
+        <div class="ex"><p class="de"><span class="label">DE</span>Sie leistete der Familie Hilfe bei der Wohnungssuche.</p></div>
+      </div>
+    </div>
+  </label>
+  <label class="card" data-id="2" data-type="Verb + Präp." data-date="2026-08-27">
+    <input type="checkbox">
+    <div class="inner">
+      <div class="face front">
+        <span class="badge b-verbprep">Verb + Präp.</span>
+        <span class="term">sich verlieben in (+Akk)</span>
+        <span class="date-tag">heute</span>
+        <span class="hint">tap to reveal</span>
+      </div>
+      <div class="face back">
+        <div class="en-meaning">to fall in love with</div>
+        <div class="ex"><p class="de"><span class="label">DE</span>Sie verliebte sich auf den ersten Blick in ihn.</p></div>
+      </div>
+    </div>
+  </label>
+  <label class="card" data-id="3" data-type="Verb + Präp." data-date="2026-08-27">
+    <input type="checkbox">
+    <div class="inner">
+      <div class="face front">
+        <span class="badge b-verbprep">Verb + Präp.</span>
+        <span class="term">sprechen für (+Akk)</span>
+        <span class="date-tag">heute</span>
+        <span class="hint">tap to reveal</span>
+      </div>
+      <div class="face back">
+        <div class="en-meaning">to speak for</div>
+        <div class="ex"><p class="de"><span class="label">DE</span>Seine langjährige Erfahrung spricht für ihn als geeigneten Kandidaten für die Stelle.</p></div>
+      </div>
+    </div>
+  </label>
+  <label class="card" data-id="4" data-type="Verb + Präp." data-date="2026-08-27">
+    <input type="checkbox">
+    <div class="inner">
+      <div class="face front">
+        <span class="badge b-verbprep">Verb + Präp.</span>
+        <span class="term">zweifeln an (+Dat)</span>
+        <span class="date-tag">heute</span>
+        <span class="hint">tap to reveal</span>
+      </div>
+      <div class="face back">
+        <div class="en-meaning">to doubt / to have doubts about</div>
+        <div class="ex"><p class="de"><span class="label">DE</span>Manchmal zweifelt Dimitra Papadopoulou an ihrer Entscheidung zur Auswanderung.</p></div>
+      </div>
+    </div>
+  </label>
+  <label class="card" data-id="5" data-type="Verb + Kasus" data-date="2026-08-27">
+    <input type="checkbox">
+    <div class="inner">
+      <div class="face front">
+        <span class="badge b-verbkasus">Verb + Kasus</span>
+        <span class="term">befragen (+Akk)</span>
+        <span class="date-tag">heute</span>
+        <span class="hint">tap to reveal</span>
+      </div>
+      <div class="face back">
+        <div class="en-meaning">to question / to interview</div>
+        <div class="ex"><p class="de"><span class="label">DE</span>Die Polizei befragte mehrere Zeugen zu dem Vorfall.</p></div>
+      </div>
+    </div>
+  </label>
+  <label class="card" data-id="6" data-type="Redemittel" data-date="2026-08-27">
+    <input type="checkbox">
+    <div class="inner">
+      <div class="face front">
+        <span class="badge b-redemittel">Redemittel</span>
+        <span class="term">eine Antwort geben</span>
+        <span class="date-tag">heute</span>
+        <span class="hint">tap to reveal</span>
+      </div>
+      <div class="face back">
+        <div class="en-meaning">give an answer</div>
+        <div class="ex"><p class="de"><span class="label">DE</span>Gib mir bitte eine Antwort, wenn ich dich etwas frage.</p></div>
+      </div>
+    </div>
+  </label>
+  <label class="card" data-id="7" data-type="Redemittel" data-date="2026-08-27">
+    <input type="checkbox">
+    <div class="inner">
+      <div class="face front">
+        <span class="badge b-redemittel">Redemittel</span>
+        <span class="term">eine Aufgabe übernehmen</span>
+        <span class="date-tag">heute</span>
+        <span class="hint">tap to reveal</span>
+      </div>
+      <div class="face back">
+        <div class="en-meaning">to take on a task / responsibility</div>
+        <div class="ex"><p class="de"><span class="label">DE</span>Krankenpfleger übernehmen Aufgaben in der Grundpflege.</p></div>
+      </div>
+    </div>
+  </label>
+  <label class="card" data-id="8" data-type="Redemittel" data-date="2026-08-27">
+    <input type="checkbox">
+    <div class="inner">
+      <div class="face front">
+        <span class="badge b-redemittel">Redemittel</span>
+        <span class="term">einen Traum verwirklichen</span>
+        <span class="date-tag">heute</span>
+        <span class="hint">tap to reveal</span>
+      </div>
+      <div class="face back">
+        <div class="en-meaning">to realise / fulfil a dream</div>
+        <div class="ex"><p class="de"><span class="label">DE</span>Nhan Nguyen möchte seinen Traum vom Medizinstudium verwirklichen.</p></div>
+      </div>
+    </div>
+  </label>
+  <label class="card" data-id="9" data-type="Redemittel" data-date="2026-08-27">
+    <input type="checkbox">
+    <div class="inner">
+      <div class="face front">
+        <span class="badge b-redemittel">Redemittel</span>
+        <span class="term">um Erlaubnis fragen</span>
+        <span class="date-tag">heute</span>
+        <span class="hint">tap to reveal</span>
+      </div>
+      <div class="face back">
+        <div class="en-meaning">to ask for permission</div>
+        <div class="ex"><p class="de"><span class="label">DE</span>Die Kinder müssen die Eltern wegen der Klassenfahrt um Erlaubnis fragen.</p></div>
+      </div>
+    </div>
+  </label>
+  <label class="card" data-id="10" data-type="Nomen + Präp." data-date="2026-08-27">
+    <input type="checkbox">
+    <div class="inner">
+      <div class="face front">
+        <span class="badge b-nounprep">Nomen + Präp.</span>
+        <span class="term">die Gleichgültigkeit gegenüber (+Dat)</span>
+        <span class="date-tag">heute</span>
+        <span class="hint">tap to reveal</span>
+      </div>
+      <div class="face back">
+        <div class="en-meaning">the indifference towards</div>
+        <div class="ex"><p class="de"><span class="label">DE</span>Die Gleichgültigkeit ihres Mannes gegenüber ihrem Hobby ärgert sie.</p></div>
+      </div>
+    </div>
+  </label>
+  <label class="card" data-id="11" data-type="Nomen + Präp." data-date="2026-08-27">
+    <input type="checkbox">
+    <div class="inner">
+      <div class="face front">
+        <span class="badge b-nounprep">Nomen + Präp.</span>
+        <span class="term">die Suche nach (+Dat)</span>
+        <span class="date-tag">heute</span>
+        <span class="hint">tap to reveal</span>
+      </div>
+      <div class="face back">
+        <div class="en-meaning">search for</div>
+        <div class="ex"><p class="de"><span class="label">DE</span>Die Suche nach einer Wohnung war für Hedda Aziz und ihre Familie schwer.</p></div>
+      </div>
+    </div>
+  </label>
+  <label class="card" data-id="12" data-type="Nomen + Präp." data-date="2026-08-27">
+    <input type="checkbox">
+    <div class="inner">
+      <div class="face front">
+        <span class="badge b-nounprep">Nomen + Präp.</span>
+        <span class="term">die Werbung für (+Akk)</span>
+        <span class="date-tag">heute</span>
+        <span class="hint">tap to reveal</span>
+      </div>
+      <div class="face back">
+        <div class="en-meaning">advertising for</div>
+        <div class="ex"><p class="de"><span class="label">DE</span>Ist in Ihrem Heimatland die Werbung für Zigaretten erlaubt?</p></div>
+      </div>
+    </div>
+  </label>
+  <label class="card" data-id="13" data-type="Adjektiv + Präp." data-date="2026-08-27">
+    <input type="checkbox">
+    <div class="inner">
+      <div class="face front">
+        <span class="badge b-adjprep">Adjektiv + Präp.</span>
+        <span class="term">wutend auf (+Akk)/über (+Akk)</span>
+        <span class="date-tag">heute</span>
+        <span class="hint">tap to reveal</span>
+      </div>
+      <div class="face back">
+        <div class="en-meaning">furious at / angry about</div>
+        <div class="ex"><p class="de"><span class="label">DE</span>Der Gast war wegen der langen Wartezeit wütend auf den Kellner./ Fayyad Hadji ist wütend über seine Kündigung.</p></div>
+      </div>
+    </div>
+  </label>
+  <label class="card" data-id="14" data-type="Redewendung" data-date="2026-08-27">
+    <input type="checkbox">
+    <div class="inner">
+      <div class="face front">
+        <span class="badge b-redewendung">Redewendung</span>
+        <span class="term">Ich bin bereit geboren.</span>
+        <span class="date-tag">heute</span>
+        <span class="hint">tap to reveal</span>
+      </div>
+      <div class="face back">
+        <div class="en-meaning">I was born ready.</div>
+        
+      </div>
+    </div>
+  </label>
+  <label class="card" data-id="15" data-type="Wortschatz" data-date="2026-08-27">
+    <input type="checkbox">
+    <div class="inner">
+      <div class="face front">
+        <span class="badge b-wortschatz">Wortschatz</span>
+        <span class="term">baumeln</span>
+        <span class="date-tag">heute</span>
+        <span class="hint">tap to reveal</span>
+      </div>
+      <div class="face back">
+        <div class="en-meaning">to dangle</div>
+        
+      </div>
+    </div>
+  </label>
+  <label class="card" data-id="16" data-type="Wortschatz" data-date="2026-08-27">
+    <input type="checkbox">
+    <div class="inner">
+      <div class="face front">
+        <span class="badge b-wortschatz">Wortschatz</span>
+        <span class="term">der/die Freiwillige (pl. die Freiwilligen)</span>
+        <span class="date-tag">heute</span>
+        <span class="hint">tap to reveal</span>
+      </div>
+      <div class="face back">
+        <div class="en-meaning">the volunteer(s)</div>
+        
+      </div>
+    </div>
+  </label>
+  <label class="card" data-id="17" data-type="Wortschatz" data-date="2026-08-27">
+    <input type="checkbox">
+    <div class="inner">
+      <div class="face front">
+        <span class="badge b-wortschatz">Wortschatz</span>
+        <span class="term">die Flüssigkeit</span>
+        <span class="date-tag">heute</span>
+        <span class="hint">tap to reveal</span>
+      </div>
+      <div class="face back">
+        <div class="en-meaning">the liquid</div>
+        
+      </div>
+    </div>
+  </label>
+  <label class="card" data-id="18" data-type="Wortschatz" data-date="2026-08-27">
+    <input type="checkbox">
+    <div class="inner">
+      <div class="face front">
+        <span class="badge b-wortschatz">Wortschatz</span>
+        <span class="term">die Mispel</span>
+        <span class="date-tag">heute</span>
+        <span class="hint">tap to reveal</span>
+      </div>
+      <div class="face back">
+        <div class="en-meaning">the medlar (fruit)</div>
+        
+      </div>
+    </div>
+  </label>
+  <label class="card" data-id="19" data-type="Wortschatz" data-date="2026-08-27">
+    <input type="checkbox">
+    <div class="inner">
+      <div class="face front">
+        <span class="badge b-wortschatz">Wortschatz</span>
+        <span class="term">seit Langem</span>
+        <span class="date-tag">heute</span>
+        <span class="hint">tap to reveal</span>
+      </div>
+      <div class="face back">
+        <div class="en-meaning">for a long time</div>
+        
+      </div>
+    </div>
+  </label>
+</main>
+
+<footer>Klicken oder tippen zum Umdrehen &middot; viel Erfolg beim Lernen!</footer>
+
+<script>
+
+(function(){
+  var grid = document.getElementById('cardGrid');
+  var cards = Array.prototype.slice.call(grid.querySelectorAll('.card'));
+  var sortDateBtn = document.getElementById('sortDateBtn');
+  var sortTypeBtn = document.getElementById('sortTypeBtn');
+  var typeOrder = ["Verb + Präp.", "Verb + Kasus", "Redemittel", "Nomen + Präp.", "Adjektiv + Präp.", "Redewendung", "Wortschatz"];
+  var visibleCountEl = document.getElementById('visibleCount');
+
+  function sortCards(mode){
+    var sorted = cards.slice().sort(function(a, b){
+      if(mode === 'type'){
+        var ta = typeOrder.indexOf(a.dataset.type);
+        var tb = typeOrder.indexOf(b.dataset.type);
+        if(ta !== tb) return ta - tb;
+      }
+      if(a.dataset.date !== b.dataset.date){
+        return a.dataset.date < b.dataset.date ? 1 : -1;
+      }
+      return a.querySelector('.term').textContent.localeCompare(
+        b.querySelector('.term').textContent, 'de'
+      );
+    });
+    sorted.forEach(function(card){ grid.appendChild(card); });
+    sortDateBtn.classList.toggle('active', mode === 'date');
+    sortTypeBtn.classList.toggle('active', mode === 'type');
+  }
+
+  function applyFilter(){
+    var checked = {};
+    document.querySelectorAll('.type-filter:checked').forEach(function(cb){
+      checked[cb.value] = true;
+    });
+    var visible = 0;
+    cards.forEach(function(card){
+      var show = !!checked[card.dataset.type];
+      card.style.display = show ? '' : 'none';
+      if(show) visible++;
+    });
+    visibleCountEl.textContent = visible;
+  }
+
+  sortDateBtn.addEventListener('click', function(){ sortCards('date'); });
+  sortTypeBtn.addEventListener('click', function(){ sortCards('type'); });
+  document.querySelectorAll('.type-filter').forEach(function(cb){
+    cb.addEventListener('change', applyFilter);
+  });
+
+  sortCards('date');
+  applyFilter();
+})();
+
+</script>
+</body>
+</html>

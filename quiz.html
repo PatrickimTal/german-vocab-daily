@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wortschatz-Quiz C1 – Selbsttest</title>
+<style>
+  :root{
+    --bg:#f4f6f8;
+    --card:#ffffff;
+    --ink:#1d2733;
+    --muted:#5c6b7a;
+    --accent:#2f6f9f;
+    --ok:#1f7a4d;
+    --okbg:#e6f5ec;
+    --bad:#b02a37;
+    --badbg:#fdecee;
+    --border:#d9e0e6;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    padding:0 0 60px;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:17px;
+    line-height:1.55;
+  }
+  header{
+    background:var(--accent);
+    color:#fff;
+    padding:22px 18px 18px;
+  }
+  header h1{margin:0 0 6px;font-size:1.35rem;}
+  header p{margin:0;font-size:.95rem;opacity:.92;}
+  main{max-width:720px;margin:0 auto;padding:18px 14px;}
+  section h2{
+    font-size:1.05rem;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    color:var(--muted);
+    border-bottom:2px solid var(--border);
+    padding-bottom:6px;
+    margin:28px 0 14px;
+  }
+  .q{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-left:5px solid var(--border);
+    border-radius:10px;
+    padding:14px 14px 12px;
+    margin-bottom:14px;
+    box-shadow:0 1px 2px rgba(0,0,0,.04);
+  }
+  .q.correct{border-left-color:var(--ok);background:var(--okbg);}
+  .q.wrong{border-left-color:var(--bad);background:var(--badbg);}
+  .qnum{
+    display:inline-block;
+    font-size:.78rem;
+    font-weight:700;
+    color:#fff;
+    background:var(--accent);
+    border-radius:20px;
+    padding:1px 10px;
+    margin-bottom:8px;
+  }
+  .prompt{font-weight:600;margin:0 0 10px;}
+  .prompt .term{color:var(--accent);}
+  .sentence{margin:0 0 10px;}
+  label.opt{
+    display:block;
+    padding:7px 9px;
+    margin-bottom:5px;
+    border:1px solid var(--border);
+    border-radius:8px;
+    background:#fbfcfd;
+    cursor:pointer;
+    font-size:.97rem;
+  }
+  label.opt:hover{background:#eef4f9;}
+  label.opt input{margin-right:9px;}
+  input[type="text"]{
+    font-size:1rem;
+    font-family:inherit;
+    padding:5px 8px;
+    border:1px solid #9fb0bf;
+    border-radius:6px;
+    min-width:130px;
+    max-width:100%;
+    background:#fff;
+    color:var(--ink);
+  }
+  input[type="text"]:focus{outline:2px solid var(--accent);outline-offset:1px;}
+  .hint{font-size:.85rem;color:var(--muted);font-style:italic;margin-top:6px;}
+  .fb{
+    display:none;
+    margin-top:10px;
+    padding:8px 10px;
+    border-radius:7px;
+    font-size:.92rem;
+  }
+  .q.checked .fb{display:block;}
+  .fb.ok{background:#d8f0e2;color:var(--ok);}
+  .fb.no{background:#fbdcdf;color:var(--bad);}
+  .fb strong{font-weight:700;}
+  .controls{
+    position:sticky;
+    bottom:0;
+    background:var(--bg);
+    padding:14px 0 10px;
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    border-top:1px solid var(--border);
+  }
+  button{
+    font-family:inherit;
+    font-size:1rem;
+    font-weight:600;
+    padding:11px 18px;
+    border-radius:8px;
+    border:none;
+    cursor:pointer;
+    flex:1 1 auto;
+  }
+  #checkBtn{background:var(--accent);color:#fff;}
+  #resetBtn{background:#e3e9ee;color:var(--ink);}
+  button:active{transform:translateY(1px);}
+  #result{
+    display:none;
+    background:var(--card);
+    border:2px solid var(--accent);
+    border-radius:10px;
+    padding:16px;
+    margin-top:16px;
+    text-align:center;
+  }
+  #result h3{margin:0 0 6px;font-size:1.2rem;}
+  #score{font-size:2rem;font-weight:800;color:var(--accent);}
+  #comment{margin:6px 0 0;color:var(--muted);}
+  footer{max-width:720px;margin:0 auto;padding:10px 14px;color:var(--muted);font-size:.82rem;}
+</style>
+</head>
+<body>
+<header>
+  <h1>Wortschatz-Quiz&nbsp;— Verben &amp; Nomen mit Präposition (C1)</h1>
+  <p>Teil A: Bedeutungen · Teil B: Lückensätze. Umlaute dürfen auch als <em>ae, oe, ue</em> geschrieben werden.</p>
+</header>
+
+<main>
+  <section id="partA">
+    <h2>Teil A · Was bedeutet der Ausdruck?</h2>
+    <div id="mcBox"></div>
+  </section>
+
+  <section id="partB">
+    <h2>Teil B · Lücken füllen</h2>
+    <div id="gapBox"></div>
+  </section>
+
+  <div class="controls">
+    <button id="checkBtn" type="button">Antworten prüfen</button>
+    <button id="resetBtn" type="button">Neu starten</button>
+  </div>
+
+  <div id="result" role="status" aria-live="polite">
+    <h3>Ergebnis</h3>
+    <div id="score">0 / 0</div>
+    <p id="comment"></p>
+  </div>
+</main>
+
+<footer>Selbstlernmaterial · alle Sätze und Ausdrücke aus der heutigen Wortschatzliste.</footer>
+
+<script>
+/* ------------------------------------------------------------------ */
+/*  Daten                                                              */
+/* ------------------------------------------------------------------ */
+
+const mcQuestions = [
+  {
+    term: "zweifeln an (+Dat)",
+    options: [
+      "to fall in love with",
+      "to doubt / to have doubts about",
+      "to provide assistance to somebody",
+      "to question / to interview somebody"
+    ],
+    answer: 1
+  },
+  {
+    term: "die Flüssigkeit",
+    options: [
+      "the medlar (fruit)",
+      "the volunteer",
+      "the liquid",
+      "the advertising"
+    ],
+    answer: 2
+  },
+  {
+    term: "der/die Freiwillige (pl. die Freiwilligen)",
+    options: [
+      "the volunteer(s)",
+      "the liquid",
+      "the search",
+      "the indifference"
+    ],
+    answer: 0
+  },
+  {
+    term: "baumeln",
+    options: [
+      "to doubt",
+      "to begin with",
+      "to dangle",
+      "to interview"
+    ],
+    answer: 2
+  },
+  {
+    term: "die Mispel",
+    options: [
+      "the liquid",
+      "the medlar (fruit)",
+      "the volunteer",
+      "the advertisement"
+    ],
+    answer: 1
+  },
+  {
+    term: "seit Langem",
+    options: [
+      "at first sight",
+      "from the very start",
+      "for a long time",
+      "with permission"
+    ],
+    answer: 2
+  },
+  {
+    term: "Ich bin bereit geboren.",
+    options: [
+      "I am ready to be born.",
+      "I was born ready.",
+      "I was ready to give birth.",
+      "I am nearly ready."
+    ],
+    answer: 1
+  },
+  {
+    term: "die Gleichgültigkeit gegenüber (+Dat)",
+    options: [
+      "the search for something",
+      "the advertising for something",
+      "the doubt about something",
+      "the indifference towards something"
+    ],
+    answer: 3
+  },
+  {
+    term: "befragen (+Akk)",
+    options: [
+      "to question / to interview",
+      "to provide assistance to",
+      "to dangle",
+      "to take on a task"
+    ],
+    answer: 0
+  },
+  {
+    term: "Hilfe leisten (+Dat)",
+    options: [
+      "to ask for permission",
+      "to give an answer",
+      "to provide assistance to somebody",
+      "to fulfil a dream"
+    ],
+    answer: 2
+  },
+  {
+    term: "sprechen für (+Akk)",
+    options: [
+      "to begin with something",
+      "to speak for / to be a point in favour of",
+      "to fall in love with somebody",
+      "to doubt something"
+    ],
+    answer: 1
+  },
+  {
+    term: "einen Traum verwirklichen",
+    options: [
+      "to take on a task",
+      "to give an answer",
+      "to ask for permission",
+      "to realise / fulfil a dream"
+    ],
+    answer: 3
+  }
+];
+
+const gapQuestions = [
+  {
+    parts: ["Wann haben Sie ", " dem Deutschlernen angefangen?"],
+    answers: ["mit"],
+    hint: "anfangen ___ (+Dat) – to start with",
+    solution: "mit"
+  },
+  {
+    parts: ["Seine langjährige Erfahrung ", " ihn als geeigneten Kandidaten für die Stelle."],
+    answers: ["spricht für", "spricht fuer"],
+    hint: "zwei Wörter: Verb + Präposition (to speak for)",
+    solution: "spricht für"
+  },
+  {
+    parts: ["Sie verliebte sich auf den ersten Blick ", " ihn."],
+    answers: ["in"],
+    hint: "sich verlieben ___ (+Akk) – to fall in love with",
+    solution: "in"
+  },
+  {
+    parts: ["Manchmal zweifelt Dimitra Papadopoulou ", " ihrer Entscheidung zur Auswanderung."],
+    answers: ["an"],
+    hint: "zweifeln ___ (+Dat) – to doubt something",
+    solution: "an"
+  },
+  {
+    parts: ["Sie leistete der Familie ", " bei der Wohnungssuche."],
+    answers: ["hilfe"],
+    hint: "___ leisten (+Dat) – to provide assistance",
+    solution: "Hilfe"
+  },
+  {
+    parts: ["Ist in Ihrem Heimatland die ", " für Zigaretten erlaubt?"],
+    answers: ["werbung"],
+    hint: "die ___ für (+Akk) – advertising for",
+    solution: "Werbung"
+  },
+  {
+    parts: ["Die ", " nach einer Wohnung war für Hedda Aziz und ihre Familie schwer."],
+    answers: ["suche"],
+    hint: "die ___ nach (+Dat) – search for",
+    solution: "Suche"
+  },
+  {
+    parts: ["Die ", " ihres Mannes gegenüber ihrem Hobby ärgert sie."],
+    answers: ["gleichgültigkeit", "gleichgueltigkeit"],
+    hint: "die ___ gegenüber (+Dat) – the indifference towards",
+    solution: "Gleichgültigkeit"
+  },
+  {
+    parts: ["Die Polizei ", " mehrere Zeugen zu dem Vorfall."],
+    answers: ["befragte", "befragt", "hat befragt"],
+    hint: "Präteritum von „befragen“ (to question / interview)",
+    solution: "befragte"
+  },
+  {
+    parts: ["Krankenpfleger ", " Aufgaben in der Grundpflege."],
+    answers: ["übernehmen", "uebernehmen"],
+    hint: "eine Aufgabe ___ – to take on a task",
+    solution: "übernehmen"
+  },
+  {
+    parts: ["Nhan Nguyen möchte seinen Traum vom Medizinstudium ", "."],
+    answers: ["verwirklichen"],
+    hint: "einen Traum ___ – to fulfil a dream",
+    solution: "verwirklichen"
+  },
+  {
+    parts: ["Der Gast war wegen der langen Wartezeit ", " auf den Kellner."],
+    answers: ["wütend", "wuetend", "wutend"],
+    hint: "___ auf (+Akk) / über (+Akk) – furious at / angry about",
+    solution: "wütend"
+  },
+  {
+    parts: ["Gib mir bitte eine ", ", wenn ich dich etwas frage."],
+    answers: ["antwort"],
+    hint: "eine ___ geben – to give an answer",
+    solution: "Antwort"
+  },
+  {
+    parts: ["Die Kinder müssen die Eltern wegen der Klassenfahrt um ", " fragen."],
+    answers: ["erlaubnis"],
+    hint: "um ___ fragen – to ask for permission",
+    solution: "Erlaubnis"
+  },
+  {
+    parts: ["Am Steg saß er im Sommer und ließ die Beine ins Wasser ", "."],
+    answers: ["baumeln"],
+    hint: "to dangle (Infinitiv)",
+    solution: "baumeln"
+  },
+  {
+    parts: ["Die ", " ist eine alte Obstsorte; man kann sie erst nach dem ersten Frost essen."],
+    answers: ["mispel"],
+    hint: "the medlar (fruit)",
+    solution: "Mispel"
+  },
+  {
+    parts: ["Bei großer Hitze muss man viel ", " zu sich nehmen."],
+    answers: ["flüssigkeit", "fluessigkeit"],
+    hint: "the liquid / fluid",
+    solution: "Flüssigkeit"
+  },
+  {
+    parts: ["Viele ", " leisten den Geflüchteten Hilfe bei Behördengängen."],
+    answers: ["freiwillige", "freiwilligen"],
+    hint: "the volunteers (Plural)",
+    solution: "Freiwillige"
+  },
+  {
+    parts: ["Wir kennen uns schon seit ", " – bestimmt seit zwanzig Jahren."],
+    answers: ["langem"],
+    hint: "seit ___ – for a long time",
+    solution: "Langem"
+  },
+  {
+    parts: ["„Bist du fertig für das Vorstellungsgespräch?“ – „Ich bin bereit ", ".“"],
+    answers: ["geboren"],
+    hint: "Ich bin bereit ___. – I was born ready.",
+    solution: "geboren"
+  }
+];
+
+/* ------------------------------------------------------------------ */
+/*  Aufbau                                                             */
+/* ------------------------------------------------------------------ */
+
+const mcBox = document.getElementById("mcBox");
+const gapBox = document.getElementById("gapBox");
+let counter = 0;
+
+mcQuestions.forEach((q, i) => {
+  counter++;
+  const div = document.createElement("div");
+  div.className = "q";
+  div.dataset.type = "mc";
+  div.dataset.index = i;
+
+  const num = document.createElement("span");
+  num.className = "qnum";
+  num.textContent = "Frage " + counter;
+  div.appendChild(num);
+
+  const p = document.createElement("p");
+  p.className = "prompt";
+  p.innerHTML = 'Was bedeutet <span class="term">„' + q.term + '“</span>?';
+  div.appendChild(p);
+
+  q.options.forEach((opt, j) => {
+    const lab = document.createElement("label");
+    lab.className = "opt";
+    const inp = document.createElement("input");
+    inp.type = "radio";
+    inp.name = "mc" + i;
+    inp.value = j;
+    lab.appendChild(inp);
+    lab.appendChild(document.createTextNode(opt));
+    div.appendChild(lab);
+  });
+
+  const fb = document.createElement("div");
+  fb.className = "fb";
+  div.appendChild(fb);
+
+  mcBox.appendChild(div);
+});
+
+gapQuestions.forEach((q, i) => {
+  counter++;
+  const div = document.createElement("div");
+  div.className = "q";
+  div.dataset.type = "gap";
+  div.dataset.index = i;
+
+  const num = document.createElement("span");
+  num.className = "qnum";
+  num.textContent = "Frage " + counter;
+  div.appendChild(num);
+
+  const p = document.createElement("p");
+  p.className = "sentence";
+  p.appendChild(document.createTextNode(q.parts[0]));
+  const inp = document.createElement("input");
+  inp.type = "text";
+  inp.autocapitalize = "off";
+  inp.autocomplete = "off";
+  inp.spellcheck = false;
+  inp.setAttribute("aria-label", "Lücke Frage " + counter);
+  p.appendChild(inp);
+  p.appendChild(document.createTextNode(q.parts[1]));
+  div.appendChild(p);
+
+  const h = document.createElement("div");
+  h.className = "hint";
+  h.textContent = "Tipp: " + q.hint;
+  div.appendChild(h);
+
+  const fb = document.createElement("div");
+  fb.className = "fb";
+  div.appendChild(fb);
+
+  gapBox.appendChild(div);
+});
+
+/* ------------------------------------------------------------------ */
+/*  Auswertung                                                         */
+/* ------------------------------------------------------------------ */
+
+function fold(s){
+  return s.toLowerCase()
+          .replace(/[.,!?;:„“"'»«]/g, "")
+          .replace(/ß/g, "ss")
+          .replace(/ä/g, "a").replace(/ö/g, "o").replace(/ü/g, "u")
+          .replace(/\s+/g, " ")
+          .trim();
+}
+function foldDigraph(s){
+  return fold(s).replace(/ae/g, "a").replace(/oe/g, "o").replace(/ue/g, "u");
+}
+function matches(given, accepted){
+  const g1 = fold(given), g2 = foldDigraph(given);
+  return accepted.some(a => {
+    const a1 = fold(a), a2 = foldDigraph(a);
+    return g1 === a1 || g2 === a2 || g1 === a2 || g2 === a1;
+  });
+}
+
+const total = mcQuestions.length + gapQuestions.length;
+
+document.getElementById("checkBtn").addEventListener("click", () => {
+  let score = 0;
+
+  document.querySelectorAll(".q").forEach(div => {
+    const type = div.dataset.type;
+    const idx = Number(div.dataset.index);
+    const fb = div.querySelector(".fb");
+    div.classList.remove("correct", "wrong");
+    div.classList.add("checked");
+    let ok = false, solution = "";
+
+    if (type === "mc") {
+      const q = mcQuestions[idx];
+      solution = q.options[q.answer];
+      const chosen = div.querySelector('input[type=radio]:checked');
+      ok = chosen && Number(chosen.value) === q.answer;
+      if (ok) {
+        fb.className = "fb ok";
+        fb.innerHTML = "✔ Richtig: <strong>" + solution + "</strong>";
+      } else {
+        fb.className = "fb no";
+        fb.innerHTML = (chosen ? "✘ Leider falsch. " : "✘ Keine Antwort gewählt. ") +
+                       "Richtig ist: <strong>" + solution + "</strong>";
+      }
+    } else {
+      const q = gapQuestions[idx];
+      const inp = div.querySelector('input[type=text]');
+      const val = inp.value;
+      ok = val.trim() !== "" && matches(val, q.answers);
+      if (ok) {
+        fb.className = "fb ok";
+        fb.innerHTML = "✔ Richtig: <strong>" + q.solution + "</strong>";
+      } else {
+        fb.className = "fb no";
+        fb.innerHTML = (val.trim() === "" ? "✘ Lücke leer. " : "✘ Leider falsch. ") +
+                       "Richtig ist: <strong>" + q.solution + "</strong>";
+      }
+    }
+
+    div.classList.add(ok ? "correct" : "wrong");
+    if (ok) score++;
+  });
+
+  const res = document.getElementById("result");
+  document.getElementById("score").textContent = score + " / " + total;
+  const pct = Math.round(score / total * 100);
+  let msg;
+  if (pct === 100)      msg = "Perfekt! Ich bin bereit geboren – und du offenbar auch. (" + pct + " %)";
+  else if (pct >= 85)   msg = "Sehr stark! Nur noch Feinschliff nötig. (" + pct + " %)";
+  else if (pct >= 70)   msg = "Gut gemacht – schau dir die roten Karten noch einmal an. (" + pct + " %)";
+  else if (pct >= 50)   msg = "Solide Basis, aber die Präpositionen brauchen Wiederholung. (" + pct + " %)";
+  else                  msg = "Kein Grund, an dir zu zweifeln – wiederhole die Liste und starte neu. (" + pct + " %)";
+  document.getElementById("comment").textContent = msg;
+  res.style.display = "block";
+  res.scrollIntoView({behavior: "smooth", block: "center"});
+});
+
+document.getElementById("resetBtn").addEventListener("click", () => {
+  document.querySelectorAll(".q").forEach(div => {
+    div.classList.remove("checked", "correct", "wrong");
+    const fb = div.querySelector(".fb");
+    fb.className = "fb";
+    fb.innerHTML = "";
+  });
+  document.querySelectorAll('input[type=radio]').forEach(r => r.checked = false);
+  document.querySelectorAll('input[type=text]').forEach(t => t.value = "");
+  document.getElementById("result").style.display = "none";
+  window.scrollTo({top: 0, behavior: "smooth"});
+});
+</script>
+</body>
+</html>
