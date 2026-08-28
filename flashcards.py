@@ -1,39 +1,32 @@
-"""Deterministic flashcards.html builder.
+"""Deterministic flashcards.html builder -- 'Sprachgarten' visual language.
 
 Builds a rolling flashcards.html directly from vocab_master.csv's
 date_last_used column -- no LLM call, so it's fast, free, and immune to
 truncation. Shows every entry used within the last WINDOW_DAYS days,
 newest first by default, with client-side sort (chronological / by
-subtype) and subtype filter checkboxes. Badges/filters are keyed off the
-'subtype' column (see classify_subtypes.py) rather than the coarse
-'type' column.
+category) and colour-coded category filter chips. Badges/filters are
+keyed off the 'subtype' column (see classify_subtypes.py); the seven
+category colours live in site_theme.py and are shared with index.html
+and about.html.
 """
 import csv
 import html
 import json
 from datetime import datetime
 
+from site_theme import (
+    CHIP_CSS,
+    GOOGLE_FONTS_LINKS,
+    HEADER_CSS,
+    NAV_TOGGLE_JS,
+    SUBTYPE_ORDER,
+    TOKENS_CSS,
+    chip_slug,
+    render_header,
+)
+
 WINDOW_DAYS = 7
 DEFAULT_SUBTYPE = "Wortschatz"
-
-SUBTYPE_ORDER = [
-    "Verb + Präp.",
-    "Verb + Kasus",
-    "Redemittel",
-    "Nomen + Präp.",
-    "Adjektiv + Präp.",
-    "Redewendung",
-    "Wortschatz",
-]
-SUBTYPE_BADGE_CLASS = {
-    "Verb + Präp.": "b-verbprep",
-    "Verb + Kasus": "b-verbkasus",
-    "Redemittel": "b-redemittel",
-    "Nomen + Präp.": "b-nounprep",
-    "Adjektiv + Präp.": "b-adjprep",
-    "Redewendung": "b-redewendung",
-    "Wortschatz": "b-wortschatz",
-}
 
 
 def collect_recent_entries(csv_path, today, window_days=WINDOW_DAYS):
@@ -79,8 +72,7 @@ def days_ago_label(d, today):
 
 def render_card(index, entry_date, row, today):
     subtype = row.get("subtype") if row.get("subtype") in SUBTYPE_ORDER else DEFAULT_SUBTYPE
-    badge_class = SUBTYPE_BADGE_CLASS[subtype]
-    badge_label = subtype
+    slug = chip_slug(subtype)
     german = html.escape(row["german"])
     english = html.escape(row["english"])
     example_de = html.escape(row["example_de"]) if row["example_de"] else ""
@@ -91,9 +83,9 @@ def render_card(index, entry_date, row, today):
     if example_de or example_en:
         parts = ['<div class="ex">']
         if example_de:
-            parts.append(f'<p class="de"><span class="label">DE</span>{example_de}</p>')
+            parts.append(f'<p class="de"><span class="tag-de">DE</span>{example_de}</p>')
         if example_en:
-            parts.append(f'<p class="en"><span class="label">EN</span>{example_en}</p>')
+            parts.append(f'<p class="en"><span class="tag-de">EN</span>{example_en}</p>')
         parts.append("</div>")
         example_html = "".join(parts)
 
@@ -101,10 +93,10 @@ def render_card(index, entry_date, row, today):
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge {badge_class}">{badge_label}</span>
+        <span class="chip chip--{slug}">{html.escape(subtype)}</span>
         <span class="term">{german}</span>
         <span class="date-tag">{date_tag}</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">{english}</div>
@@ -114,64 +106,50 @@ def render_card(index, entry_date, row, today):
   </label>"""
 
 
-FLASHCARDS_CSS = """
-:root{
-  --bg:#0f172a;
-  --card-front:#1e293b;
-  --card-back:#f8fafc;
-  --accent:#38bdf8;
-  --accent-dark:#0369a1;
-  --text-light:#e2e8f0;
-  --text-dark:#1e293b;
-  --green:#4ade80;
-  --amber:#fbbf24;
-  --teal:#2dd4bf;
-  --pink:#f472b6;
-  --violet:#a78bfa;
-  --orange:#fb923c;
+PAGE_CSS = (
+    TOKENS_CSS
+    + HEADER_CSS
+    + CHIP_CSS
+    + """
+.page-header{max-width:960px;margin:0 auto 1rem;text-align:center;padding:0 var(--pad-x);}
+.page-header h1{
+  margin:0.2rem 0;font-family:var(--font-serif);font-weight:400;
+  font-size:2rem;color:var(--ink);
 }
-*{box-sizing:border-box;}
-body{
-  margin:0;
-  padding:1rem 0.8rem 3rem;
-  background:var(--bg);
-  color:var(--text-light);
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-}
-.back-nav{max-width:960px;margin:0 auto 0.5rem;font-size:0.85rem;}
-.back-nav a{color:var(--accent);text-decoration:none;}
-.back-nav a:hover{text-decoration:underline;}
-header{max-width:960px;margin:0 auto 1rem;text-align:center;}
-h1{margin:0.2rem 0;font-size:1.6rem;}
-.subtitle{margin:0;font-size:0.85rem;color:#94a3b8;}
+.page-header .subtitle{margin:0;font-size:0.85rem;color:var(--ink-faint);font-family:var(--font-mono);}
 
 .controls{
   position:sticky;top:0;z-index:10;
   max-width:960px;margin:0 auto 1.2rem;
-  background:rgba(15,23,42,0.92);
+  background:rgba(233,250,233,0.92);
   backdrop-filter:blur(6px);
-  border:1px solid #1e293b;
-  border-radius:12px;
+  border:1px solid var(--rule);
+  border-radius:var(--r-md);
   padding:0.7rem 0.9rem;
   display:flex;flex-wrap:wrap;gap:0.6rem 1rem;align-items:center;
 }
-.ctrl-label{font-size:0.78rem;color:#94a3b8;margin-right:0.3rem;}
+.ctrl-label{font-size:0.78rem;color:var(--ink-faint);margin-right:0.3rem;}
 .sort-group,.filter-group{display:flex;align-items:center;flex-wrap:wrap;gap:0.4rem;}
 .sort-btn{
-  background:#1e293b;color:var(--text-light);border:1px solid #334155;
-  border-radius:999px;padding:0.3rem 0.8rem;font-size:0.8rem;cursor:pointer;
+  background:var(--panel-bg);color:var(--ink-body);border:1px solid var(--border);
+  border-radius:var(--r-pill);padding:0.3rem 0.8rem;font-size:0.8rem;cursor:pointer;
+  font-family:var(--font-sans);
 }
-.sort-btn.active{background:var(--accent);color:#0f172a;border-color:var(--accent);font-weight:600;}
-.filter-chip{
-  display:inline-flex;align-items:center;gap:0.3rem;
-  background:#1e293b;border:1px solid #334155;border-radius:999px;
-  padding:0.25rem 0.7rem;font-size:0.78rem;cursor:pointer;
-}
-.filter-chip input{accent-color:var(--accent);}
-.count-line{margin-left:auto;font-size:0.78rem;color:#94a3b8;}
+.sort-btn.active{background:var(--blue);color:#f7fcff;border-color:var(--blue);font-weight:600;}
+.count-line{margin-left:auto;font-size:0.78rem;color:var(--ink-faint);font-family:var(--font-mono);}
 
-main{
-  max-width:960px;margin:0 auto;
+.filter-chip{
+  position:relative;cursor:pointer;opacity:0.55;
+  transition:opacity 150ms ease, box-shadow 150ms ease;
+}
+.filter-chip input{
+  position:absolute;opacity:0;width:1px;height:1px;
+}
+.filter-chip:has(input:checked){opacity:1;box-shadow:inset 0 0 0 1.5px currentColor;}
+.filter-chip:focus-within{outline:2px solid var(--blue);outline-offset:2px;}
+
+#cardGrid{
+  max-width:960px;margin:0 auto;padding:0 var(--pad-x) 2rem;
   display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
   gap:0.9rem;
 }
@@ -179,48 +157,47 @@ main{
 .card{display:block;cursor:pointer;perspective:1200px;}
 .card input{display:none;}
 .card .inner{
-  position:relative;width:100%;min-height:170px;
+  position:relative;width:100%;min-height:180px;
   transition:transform 0.5s;transform-style:preserve-3d;
 }
 .card input:checked ~ .inner{transform:rotateY(180deg);}
 .face{
   position:absolute;inset:0;
-  border-radius:14px;padding:0.9rem;
+  border-radius:var(--r-lg);padding:1rem;
   backface-visibility:hidden;
   display:flex;flex-direction:column;
-  box-shadow:0 2px 10px rgba(0,0,0,0.25);
+  background:var(--card-bg);
+  box-shadow:var(--shadow-card);
 }
-.front{background:var(--card-front);color:var(--text-light);}
+.front{color:var(--ink);}
 .back{
-  background:var(--card-back);color:var(--text-dark);
+  color:var(--ink-body);
   transform:rotateY(180deg);justify-content:center;
 }
 
-.badge{
-  align-self:flex-start;
-  font-size:0.68rem;font-weight:600;
-  padding:0.15rem 0.55rem;border-radius:999px;margin-bottom:0.5rem;
+.chip{align-self:flex-start;margin-bottom:0.5rem;}
+
+.term{font-family:var(--font-serif);font-size:1.3rem;line-height:1.2;color:var(--ink);flex:1;}
+.date-tag{font-family:var(--font-mono);font-size:0.68rem;color:var(--ink-faint);margin-top:0.4rem;}
+.hint{font-size:0.7rem;color:var(--ink-faint);margin-top:0.2rem;}
+
+.en-meaning{font-weight:600;font-size:1.05rem;margin-bottom:0.5rem;text-align:center;color:var(--ink);}
+.ex p{margin:0.25rem 0;font-size:0.82rem;line-height:1.35;color:var(--ink-muted);}
+.ex .tag-de{
+  font-family:var(--font-mono);font-weight:700;font-size:0.62rem;
+  padding:1px 5px;margin-right:0.4rem;border-radius:var(--r-sm);
+  background:var(--rule);color:var(--ink-body);
 }
-.b-verbprep{background:rgba(56,189,248,.15);color:var(--accent);}
-.b-verbkasus{background:rgba(45,212,191,.15);color:var(--teal);}
-.b-redemittel{background:rgba(244,114,182,.15);color:var(--pink);}
-.b-nounprep{background:rgba(251,191,36,.15);color:var(--amber);}
-.b-adjprep{background:rgba(167,139,250,.15);color:var(--violet);}
-.b-redewendung{background:rgba(251,146,60,.15);color:var(--orange);}
-.b-wortschatz{background:rgba(74,222,128,.15);color:var(--green);}
 
-.term{font-size:1.05rem;font-weight:600;flex:1;}
-.date-tag{font-size:0.68rem;color:#64748b;margin-top:0.4rem;}
-.hint{font-size:0.68rem;color:#64748b;margin-top:0.2rem;}
-
-.en-meaning{font-weight:600;font-size:1rem;margin-bottom:0.5rem;text-align:center;}
-.ex p{margin:0.25rem 0;font-size:0.8rem;line-height:1.3;}
-.ex .label{font-weight:700;font-size:0.65rem;color:var(--accent-dark);margin-right:0.35rem;}
-
-footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;color:#64748b;}
+@media (min-width: 640px){
+  .page-header, .controls, #cardGrid { padding-left: var(--pad-x); padding-right: var(--pad-x); }
+}
 """
+)
 
-FLASHCARDS_JS = """
+PAGE_JS = (
+    NAV_TOGGLE_JS
+    + """
 (function(){
   var grid = document.getElementById('cardGrid');
   var cards = Array.prototype.slice.call(grid.querySelectorAll('.card'));
@@ -272,6 +249,7 @@ FLASHCARDS_JS = """
   applyFilter();
 })();
 """
+)
 
 
 def build_flashcards_html(
@@ -280,11 +258,11 @@ def build_flashcards_html(
     window_days=WINDOW_DAYS,
     page_title="Wortschatz-Karteikarten – C1",
     scope_label=None,
-    nav_html="",
+    root_prefix="",
 ):
     recent = collect_recent_entries(csv_path, today, window_days=window_days)
     if not recent:
-        scope = "the last {window_days} days" if window_days else "the archive"
+        scope = f"the last {window_days} days" if window_days else "the archive"
         raise RuntimeError(f"No vocabulary entries found for {scope} -- nothing to build.")
 
     cards_html = "\n".join(
@@ -302,13 +280,14 @@ def build_flashcards_html(
         )
 
     filter_chips_html = "\n".join(
-        f'    <label class="filter-chip"><input type="checkbox" class="type-filter" '
-        f'value="{html.escape(st)}" checked> {html.escape(st)}</label>'
+        f'    <label class="filter-chip chip chip--{chip_slug(st)}">'
+        f'<input type="checkbox" class="type-filter" value="{html.escape(st)}" checked> {html.escape(st)}</label>'
         for st in SUBTYPE_ORDER
     )
-    flashcards_js = FLASHCARDS_JS.replace(
+    page_js = PAGE_JS.replace(
         "__SUBTYPE_ORDER_JSON__", json.dumps(SUBTYPE_ORDER, ensure_ascii=False)
     )
+    header_html = render_header(root_prefix=root_prefix)
 
     return f"""<!DOCTYPE html>
 <html lang="de">
@@ -316,13 +295,16 @@ def build_flashcards_html(
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(page_title)}</title>
+{GOOGLE_FONTS_LINKS}
 <style>
-{FLASHCARDS_CSS}
+{PAGE_CSS}
 </style>
 </head>
 <body>
-{nav_html}
-<header>
+{header_html}
+
+<main id="main">
+<header class="page-header">
   <h1>Wortschatz-Karteikarten</h1>
   <p class="subtitle">{html.escape(scope_label)} · {date_range} · {count} Karten insgesamt</p>
 </header>
@@ -340,14 +322,15 @@ def build_flashcards_html(
   <div class="count-line"><span id="visibleCount">{count}</span> / {count} Karten sichtbar</div>
 </div>
 
-<main id="cardGrid">
+<div id="cardGrid">
 {cards_html}
+</div>
 </main>
 
-<footer>Klicken oder tippen zum Umdrehen &middot; viel Erfolg beim Lernen!</footer>
+<footer class="site-footer">Klicken oder tippen zum Umdrehen · viel Erfolg beim Lernen!</footer>
 
 <script>
-{flashcards_js}
+{page_js}
 </script>
 </body>
 </html>

@@ -1,174 +1,194 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wer hört hier eigentlich noch zu? – Leseartikel C1</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesetext C1 – Wer heilt, dem hört niemand zu</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#1a1a1a;
-    --muted:#5b5b5b;
-    --rule:#c9c2b6;
-    --paper:#fbf9f5;
-    --accent:#7a2018;
+    --bg:#e9fae9;
+    --text:#304635;
+    --head:#082310;
+    --accent:#0077c7;
   }
   *{box-sizing:border-box;}
   body{
     margin:0;
-    padding:1.1rem 1rem 3rem;
-    background:var(--paper);
-    color:var(--ink);
-    font-family:Georgia,"Times New Roman",serif;
-    line-height:1.65;
-    font-size:1.05rem;
+    padding:1.5rem 1.1rem 3rem;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Sora', system-ui, sans-serif;
+    font-size:1.02rem;
+    line-height:1.72;
   }
-  main{max-width:40rem;margin:0 auto;}
+  .wrap{max-width:41rem;margin:0 auto;}
   .kicker{
-    font-family:Helvetica,Arial,sans-serif;
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:.76rem;
+    letter-spacing:.13em;
     text-transform:uppercase;
-    letter-spacing:.14em;
-    font-size:.72rem;
-    color:var(--accent);
-    font-weight:700;
-    margin-bottom:.5rem;
+    color:#4a6b52;
+    margin-bottom:.6rem;
   }
   h1{
-    font-size:1.75rem;
-    line-height:1.2;
-    margin:0 0 .5rem;
+    font-family:'Libre Baskerville', Georgia, serif;
+    color:var(--head);
+    font-size:1.72rem;
+    line-height:1.28;
     font-weight:700;
+    margin:0 0 .5rem;
   }
   .standfirst{
-    font-size:1.05rem;
-    color:var(--muted);
     font-style:italic;
-    margin:0 0 .9rem;
+    color:#3d5a44;
+    margin:0 0 1rem;
   }
   .meta{
-    font-family:Helvetica,Arial,sans-serif;
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
     font-size:.78rem;
-    color:var(--muted);
-    border-top:1px solid var(--rule);
-    border-bottom:1px solid var(--rule);
-    padding:.45rem 0;
-    margin-bottom:1.3rem;
+    color:#4a6b52;
+    border-top:1px solid #bcdcc2;
+    border-bottom:1px solid #bcdcc2;
+    padding:.5rem 0;
+    margin:0 0 1.6rem;
   }
-  article p{margin:0 0 1rem;text-align:justify;hyphens:auto;}
+  article p{margin:0 0 1.05rem;}
   article p:first-of-type::first-letter{
-    float:left;
+    font-family:'Libre Baskerville', Georgia, serif;
     font-size:3.1rem;
-    line-height:.85;
-    padding:.15rem .35rem 0 0;
-    font-weight:700;
-    color:var(--accent);
+    line-height:.86;
+    float:left;
+    padding:.25rem .5rem .1rem 0;
+    color:var(--head);
   }
-  strong{font-weight:700;color:var(--accent);}
+  strong{
+    color:var(--head);
+    font-weight:600;
+    background:linear-gradient(transparent 68%, #c8ecc8 68%);
+  }
   h2{
-    font-family:Helvetica,Arial,sans-serif;
-    font-size:.95rem;
-    text-transform:uppercase;
-    letter-spacing:.1em;
-    margin:2.2rem 0 .8rem;
-    padding-top:1rem;
-    border-top:3px double var(--rule);
+    font-family:'Libre Baskerville', Georgia, serif;
+    color:var(--head);
+    font-size:1.16rem;
+    margin:2.4rem 0 .9rem;
+    padding-top:1.2rem;
+    border-top:2px solid #bcdcc2;
   }
-  dl{margin:0;font-size:.97rem;}
-  dt{font-weight:700;margin-top:.85rem;}
-  dd{margin:.15rem 0 0 0;color:var(--muted);font-family:Helvetica,Arial,sans-serif;font-size:.9rem;}
+  dl{margin:0;}
+  dt{
+    font-weight:600;
+    color:var(--head);
+    margin-top:.9rem;
+  }
+  dd{
+    margin:.1rem 0 0;
+    padding-left:.9rem;
+    border-left:2px solid #bcdcc2;
+    color:#3d5a44;
+    font-size:.96rem;
+  }
   footer{
-    margin-top:2.5rem;
-    font-family:Helvetica,Arial,sans-serif;
-    font-size:.74rem;
-    color:var(--muted);
-    text-align:center;
+    margin-top:2.4rem;
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:.75rem;
+    color:#4a6b52;
+  }
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{color:#0061b0;text-decoration:underline;}
+  @media (max-width:420px){
+    h1{font-size:1.45rem;}
+    body{font-size:.99rem;}
   }
 </style>
 </head>
 <body>
-<p style="font-family:-apple-system,sans-serif;font-size:0.85rem;margin:0.6rem 0 0;"><a href="../../index.html" style="color:#0369a1;">← Startseite</a></p>
+<p style="font-family:'Sora',system-ui,sans-serif;font-size:0.85rem;margin:0.6rem 0 0;"><a href="../../index.html" style="color:#006eb8;">← Startseite</a></p>
 
-<main>
-  <div class="kicker">Feuilleton &middot; Gesundheitswesen</div>
-  <h1>Wer hört hier eigentlich noch zu?</h1>
-  <p class="standfirst">Über den rauen Ton in deutschen Kliniken – und über eine Erschöpfung, die längst zum Normalzustand geworden ist.</p>
-  <div class="meta">Kommentar &middot; Lesestufe C1 &middot; Umfang: rund 320 Wörter</div>
+<div class="wrap">
+
+  <div class="kicker">Feuilleton · Gesundheitswesen</div>
+  <h1>Wer heilt, dem hört niemand zu</h1>
+  <p class="standfirst">Über einen Berufsstand, der zwischen Sinnversprechen und Erschöpfung aufgerieben wird – und über die Sprachlosigkeit der Verantwortlichen.</p>
+  <p class="meta">Lesetext C1 · ca. 323 Wörter · Zielwortschatz fett markiert</p>
 
   <article>
-    <p><strong>Das ist lächerlich!</strong> – mit diesem Zwischenruf endete vergangene Woche eine Betriebsversammlung in einem mittelgroßen Krankenhaus im Ruhrgebiet. <strong>Zur Diskussion stand</strong> ein Sparprogramm, das die Geschäftsführung als „alternativlos“ bezeichnet hatte. Die Pflegekräfte <strong>diskutierten</strong> anschließend fast zwei Stunden lang <strong>mit</strong> der Personalleiterin, sichtlich <strong>verärgert über</strong> einen Ton, der ihnen jede Mitsprache absprach. Draußen auf dem Parkplatz <strong>schimpften</strong> einige noch spät am Abend <strong>über</strong> Dienstpläne, die längst zur Zumutung geworden sind.</p>
+    <p>Es ist kurz nach sechs, als in einer Berliner Facharztpraxis das Licht angeht. Gesundheitspflegerinnen und Gesundheitspfleger <strong>finden</strong> heute <strong>Beschäftigung in</strong> Krankenhäusern, Facharztpraxen und ambulanten Diensten; an offenen Stellen mangelt es nicht. Der Beruf gilt als sinnstiftend und zugleich als zermürbend. Ob er jedoch noch hält, was die Imagekampagnen der Ministerien versprechen, <strong>steht</strong> spätestens seit der jüngsten Tarifrunde wieder <strong>zur Diskussion</strong>.</p>
 
-    <p>Der Konflikt ist kein Einzelfall. Rund eine Million Menschen <strong>finden</strong> in Deutschland <strong>Beschäftigung in</strong> Krankenhäusern, Facharztpraxen und Pflegeheimen; viele von ihnen <strong>leiden an</strong> chronischer Erschöpfung und zugleich <strong>unter</strong> einer Bürokratie, die jede freie Minute auffrisst. Wer sich für eine <strong>Spezialisierung auf</strong> Geriatrie oder Intensivpflege entschieden hat, tut dies selten aus Karrierekalkül, sondern aus Überzeugung. Umso größer ist <strong>das Erstaunen über</strong> die Selbstverständlichkeit, mit der Politik und Träger diesen Idealismus einkalkulieren.</p>
+    <p>Marlene K., 46, <strong>diskutiert</strong> seit Monaten <strong>mit</strong> der Personalleiterin ihres Hauses über Dienstpläne, die kaum ein Privatleben zulassen. Sie sei, sagt sie, vor allem <strong>verärgert über</strong> die Selbstverständlichkeit, mit der Überstunden eingeplant würden. Ihre <strong>Schwägerin</strong>, deren <strong>Spezialisierung auf</strong> Schmerztherapie ihr in der Klinik hohes Ansehen verschafft hat, sieht es ähnlich: „Man rät uns, wir sollten uns <strong>in</strong> Gelassenheit <strong>üben</strong>. <strong>Das ist lächerlich!</strong>“</p>
 
-    <p>Wer trägt <strong>die Schuld an</strong> diesem Zustand? Die Antwort fällt unbequem aus, weil sie viele Adressaten hat. Die Kassen <strong>senden</strong> den Häusern Bescheide, die Häuser <strong>schicken</strong> den Ministerien Hilferufe, und am Ende <strong>überreicht</strong> ein Verband der Ministerin eine Petition mit achtzigtausend Unterschriften. <strong>Eine Garantie</strong> dafür, dass sich danach etwas ändert, <strong>gibt</strong> niemand. <strong>Beängstigend</strong> ist dabei weniger der Personalmangel selbst als die Routine, mit der wir uns an ihn gewöhnt haben.</p>
+    <p>Die Zahlen sind in der Tat <strong>beängstigend</strong>: Ein wachsender Teil der Patienten <strong>leidet an</strong> chronischen Erkrankungen, das Personal wiederum <strong>leidet unter</strong> einer Verdichtung der Arbeit, die längst niemand mehr ernsthaft bestreitet. Wer heute eine Station betritt, spürt binnen Minuten, ob dort noch Zeit für ein Gespräch bleibt oder nur für das Abarbeiten von Checklisten. Wer im Aufenthaltsraum sitzt und <strong>über</strong> die ausufernde Bürokratie <strong>schimpft</strong>, meint selten die Kolleginnen, sondern ein System, das Dokumentation höher gewichtet als Zuwendung.</p>
 
-    <p>In den Kliniken selbst verschiebt sich unterdessen der Maßstab dessen, was als normal gilt. Eine Stationsleiterin berichtet, sie sei vor allem über die unordentliche Führung der Patientenakten verärgert – nicht weil ihre Kolleginnen nachlässig arbeiteten, sondern weil ihnen schlicht die Zeit fehle. Dokumentation, sagt sie, sei zur wichtigsten Tätigkeit des Tages geworden; der Mensch im Bett komme zuletzt.</p>
+    <p>Die <strong>Schuld an</strong> dieser Entwicklung allein der Politik zuzuschieben, wäre zu bequem. Dennoch bleibt das <strong>Erstaunen über</strong> die Reflexe der Verantwortlichen groß: Man <strong>schickt</strong> den Häusern Broschüren, man <strong>sendet</strong> ihnen Imagefilme, man <strong>überreicht</strong> verdienten Pflegekräften bei Festakten Urkunden – nur <strong>zuhören</strong> will kaum jemand. Symbolpolitik aber ersetzt keine Strukturreform. Eine belastbare <strong>Garantie geben</strong>, dass die versprochenen Entlastungen tatsächlich kommen, mag ohnehin niemand.</p>
 
-    <p>Meine <strong>Schwägerin</strong>, seit zwanzig Jahren Krankenschwester, formuliert es nüchterner. Sie <strong>übe sich</strong> täglich <strong>in</strong> Geduld, sagt sie, und sie erwarte nicht, dass sich irgendjemand ihrer <strong>erbarme</strong>. Es genüge vollkommen, ihr einmal wirklich <strong>zuzuhören</strong> – zwei Minuten, ohne Zwischenruf, ohne Kostenrechnung. Vielleicht ist das der einzige Wunsch, der in diesem Herbst noch <strong>in Erfüllung gehen</strong> könnte.</p>
+    <p>Vielleicht sollte sich die Politik endlich derer <strong>erbarmen</strong>, die Tag für Tag am Bett stehen und abends zu müde sind, um sich zu beschweren. Der Wunsch, dass Pflege wieder als Beziehung und nicht als Taktung verstanden wird, wird nicht über Nacht <strong>in Erfüllung gehen</strong>. Aber er verdient es, laut ausgesprochen zu werden – und zwar dort, wo über Budgets entschieden wird.</p>
   </article>
 
   <h2>English gloss</h2>
   <dl>
-    <dt>Das ist lächerlich!</dt>
-    <dd>That’s ridiculous!</dd>
-
-    <dt>zur Diskussion stehen</dt>
-    <dd>to be up for discussion / to be under debate</dd>
-
-    <dt>diskutieren mit (+ Dat.)</dt>
-    <dd>to discuss with (a person)</dd>
-
-    <dt>verärgert über (+ Akk.)</dt>
-    <dd>annoyed about / irritated by</dd>
-
-    <dt>schimpfen über (+ Akk.)</dt>
-    <dd>to rant about / to scold about</dd>
-
-    <dt>Beschäftigung finden in (+ Dat.)</dt>
+    <dt>Beschäftigung finden in (+Dat)</dt>
     <dd>to find occupation / employment / fulfilment in</dd>
 
-    <dt>leiden an / unter (+ Dat.)</dt>
-    <dd>to suffer from (an illness / a burdensome circumstance)</dd>
+    <dt>zur Diskussion stehen</dt>
+    <dd>to be up for discussion, to be under debate</dd>
 
-    <dt>die Spezialisierung auf (+ Akk.)</dt>
-    <dd>the specialisation in</dd>
+    <dt>diskutieren mit (+Dat)</dt>
+    <dd>to discuss with (a person)</dd>
 
-    <dt>das Erstaunen über (+ Akk.)</dt>
-    <dd>the astonishment / amazement at</dd>
-
-    <dt>die Schuld an (+ Dat.)</dt>
-    <dd>the guilt / blame for</dd>
-
-    <dt>senden (+ Dat./+ Akk.)</dt>
-    <dd>to send / to transmit</dd>
-
-    <dt>schicken (+ Dat./+ Akk.)</dt>
-    <dd>to send</dd>
-
-    <dt>überreichen (+ Dat./+ Akk.)</dt>
-    <dd>to hand over / to present (formally)</dd>
-
-    <dt>eine Garantie geben</dt>
-    <dd>to give a guarantee</dd>
-
-    <dt>beängstigend</dt>
-    <dd>frightening, alarming</dd>
+    <dt>verärgert über (+Akk)</dt>
+    <dd>annoyed about, irritated by</dd>
 
     <dt>die Schwägerin</dt>
     <dd>the sister-in-law</dd>
 
-    <dt>sich üben in (+ Dat.)</dt>
-    <dd>to practise (something), to train oneself in</dd>
+    <dt>die Spezialisierung auf (+Akk)</dt>
+    <dd>the specialisation in</dd>
 
-    <dt>sich erbarmen (+ Gen.)</dt>
-    <dd>to have mercy / to show mercy (on someone)</dd>
+    <dt>sich üben in (+Dat)</dt>
+    <dd>to practise (a quality, skill)</dd>
 
-    <dt>zuhören (+ Dat.)</dt>
-    <dd>to listen (to someone)</dd>
+    <dt>Das ist lächerlich!</dt>
+    <dd>That's ridiculous!</dd>
+
+    <dt>beängstigend</dt>
+    <dd>frightening, alarming</dd>
+
+    <dt>leiden an / unter (+Dat)</dt>
+    <dd>to suffer from (an illness) / to suffer under (external conditions)</dd>
+
+    <dt>schimpfen über (+Akk)</dt>
+    <dd>to rant about, to complain loudly about</dd>
+
+    <dt>die Schuld an (+Dat)</dt>
+    <dd>the guilt / blame for</dd>
+
+    <dt>das Erstaunen über (+Akk)</dt>
+    <dd>the astonishment / amazement at</dd>
+
+    <dt>schicken (+Dat/+Akk)</dt>
+    <dd>to send (something to someone)</dd>
+
+    <dt>senden (+Dat/+Akk)</dt>
+    <dd>to send, to transmit (something to someone)</dd>
+
+    <dt>überreichen (+Dat/+Akk)</dt>
+    <dd>to hand over, to present (ceremonially)</dd>
+
+    <dt>zuhören</dt>
+    <dd>to listen (attentively)</dd>
+
+    <dt>eine Garantie geben</dt>
+    <dd>to give a guarantee</dd>
+
+    <dt>sich erbarmen (+Gen)</dt>
+    <dd>to have mercy on, to take pity on</dd>
 
     <dt>in Erfüllung gehen</dt>
-    <dd>to be fulfilled / to come true</dd>
+    <dd>to be fulfilled, to come true</dd>
   </dl>
 
-  <footer>Lesetext zum Selbststudium &middot; Niveau C1</footer>
-</main>
+  <footer>Sprachgarten · Lesetraining C1 · Zielwortschatz des Tages</footer>
+</div>
 </body>
 </html>

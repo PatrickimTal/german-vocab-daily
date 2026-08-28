@@ -6,6 +6,7 @@ archive) deterministically, and regenerate the index.html landing page.
 """
 import argparse
 import csv
+import html as html_module
 import json
 import os
 import re
@@ -13,8 +14,14 @@ from datetime import date
 
 import anthropic
 
-from flashcards import build_flashcards_html
-from index_page import READINGS_ARCHIVE_DIR, build_index_html, collect_reading_archive
+from flashcards import build_flashcards_html, collect_recent_entries
+from index_page import (
+    READINGS_ARCHIVE_DIR,
+    build_index_html,
+    collect_reading_archive,
+    pick_card_of_day,
+)
+from site_theme import GOOGLE_FONTS_LINKS
 
 MODEL = "claude-opus-5"
 TODAY_JSON_DEFAULT = "today.json"
@@ -22,6 +29,9 @@ CSV_PATH_DEFAULT = "vocab_master.csv"
 
 HTML_FENCE_RE = re.compile(r"^```(?:html)?\s*|\s*```$", re.MULTILINE)
 BODY_OPEN_RE = re.compile(r"(<body[^>]*>)", re.IGNORECASE)
+DL_RE = re.compile(r"<dl[^>]*>.*?</dl>", re.IGNORECASE | re.DOTALL)
+SCRIPT_STYLE_RE = re.compile(r"<(script|style)[^>]*>.*?</\1>", re.IGNORECASE | re.DOTALL)
+TAG_RE = re.compile(r"<[^>]+>")
 
 
 def strip_fences(text):
@@ -30,11 +40,20 @@ def strip_fences(text):
 
 def inject_back_nav(html_text, back_href, label="← Startseite"):
     nav = (
-        f'\n<p style="font-family:-apple-system,sans-serif;font-size:0.85rem;'
-        f'margin:0.6rem 0 0;"><a href="{back_href}" style="color:#0369a1;">{label}</a></p>\n'
+        f'\n<p style="font-family:\'Sora\',system-ui,sans-serif;font-size:0.85rem;'
+        f'margin:0.6rem 0 0;"><a href="{back_href}" style="color:#006eb8;">{label}</a></p>\n'
     )
     new_text, count = BODY_OPEN_RE.subn(lambda m: m.group(1) + nav, html_text, count=1)
     return new_text if count else html_text
+
+
+def approx_word_count(reading_html_text):
+    """Word count of the article body, excluding the English-gloss <dl>."""
+    text = DL_RE.sub(" ", reading_html_text)
+    text = SCRIPT_STYLE_RE.sub(" ", text)
+    text = TAG_RE.sub(" ", text)
+    text = html_module.unescape(text)
+    return len(re.findall(r"\S+", text))
 
 
 def build_system_prompt(entries):
@@ -54,10 +73,18 @@ def build_system_prompt(entries):
         f"{vocab_block}\n\n"
         "General rules for every deliverable:\n"
         "- Output a single complete, self-contained HTML5 document: inline "
-        "<style> and <script> only, no external resources (no CDNs, fonts, "
-        "or images).\n"
+        "<style> and <script> only, no external resources or CDNs, except the "
+        "site's Google Fonts stylesheet (see below) -- no images.\n"
         "- Use every vocabulary item above at least once.\n"
         "- Clean, readable styling that works on a phone-width screen.\n"
+        "- Match the rest of the site's visual identity ('Sprachgarten'): "
+        "in <head>, include exactly this before your <style> block:\n"
+        f"  {GOOGLE_FONTS_LINKS}\n"
+        "  Then in CSS use: body background #e9fae9; body text #304635; "
+        "headings/headline #082310 in 'Libre Baskerville', Georgia, serif; "
+        "body copy and UI text in 'Sora', system-ui, sans-serif; small "
+        "caption/meta text (e.g. a word-count line) in 'IBM Plex Mono', "
+        "ui-monospace, monospace; links/accent color #0077c7 (hover #0061b0).\n"
         "- Output ONLY the raw HTML document — no markdown code fences, no "
         "commentary before or after it."
     )
@@ -163,9 +190,7 @@ def main():
     update_csv(args.csv, entries, today)
     print(f"Updated times_used/date_last_used for {len(entries)} entries in {args.csv}")
 
-    flashcards_html = build_flashcards_html(
-        args.csv, today, nav_html='<p class="back-nav"><a href="index.html">← Startseite</a></p>'
-    )
+    flashcards_html = build_flashcards_html(args.csv, today)
     with open("flashcards.html", "w", encoding="utf-8") as f:
         f.write(flashcards_html)
     print("Wrote flashcards.html (rolling 7-day deck, built from vocab_master.csv)")
@@ -176,15 +201,18 @@ def main():
         today,
         window_days=None,
         page_title="Wortschatz-Karteikarten – Archiv",
-        nav_html='<p class="back-nav"><a href="../index.html">← Startseite</a></p>',
+        root_prefix="../",
     )
     with open("archive/flashcards.html", "w", encoding="utf-8") as f:
         f.write(flashcards_archive_html)
     print("Wrote archive/flashcards.html (all-time archive)")
 
     reading_archive = collect_reading_archive()
+    rolling_card_count = len(collect_recent_entries(args.csv, today))
+    word_count = approx_word_count(reading_html)
+    card_of_day = pick_card_of_day(entries)
     with open("index.html", "w", encoding="utf-8") as f:
-        f.write(build_index_html(today, reading_archive))
+        f.write(build_index_html(today, card_of_day, word_count, rolling_card_count, reading_archive))
     print(f"Wrote index.html ({len(reading_archive)} reading(s) in archive)")
 
 

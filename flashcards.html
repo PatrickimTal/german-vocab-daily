@@ -4,65 +4,177 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Wortschatz-Karteikarten – C1</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 
-:root{
-  --bg:#0f172a;
-  --card-front:#1e293b;
-  --card-back:#f8fafc;
-  --accent:#38bdf8;
-  --accent-dark:#0369a1;
-  --text-light:#e2e8f0;
-  --text-dark:#1e293b;
-  --green:#4ade80;
-  --amber:#fbbf24;
-  --teal:#2dd4bf;
-  --pink:#f472b6;
-  --violet:#a78bfa;
-  --orange:#fb923c;
+:root {
+  --page-bg: #e9fae9;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-bg-hover: rgba(255, 255, 255, 0.97);
+  --panel-bg: rgba(255, 255, 255, 0.62);
+  --panel-bg-hover: rgba(255, 255, 255, 0.82);
+
+  --ink: #082310;
+  --ink-body: #304635;
+  --ink-muted: #4b614f;
+  --ink-faint: #617865;
+
+  --blue: #0077c7;
+  --blue-hover: #0061b0;
+  --blue-text: #006eb8;
+  --article: #c56c00;
+
+  --border: #8ab091;
+  --rule: #dce9de;
+  --underline: #a8c7ad;
+
+  --chip-verb-praep-bg: #cdecff;      --chip-verb-praep-fg: #004e95;
+  --chip-verb-kasus-bg: #c2f2f8;      --chip-verb-kasus-fg: #005565;
+  --chip-redemittel-bg: #f0e4ff;      --chip-redemittel-fg: #603b93;
+  --chip-nomen-praep-bg: #c4f2cc;     --chip-nomen-praep-fg: #005222;
+  --chip-adjektiv-praep-bg: #ffe1ac;  --chip-adjektiv-praep-fg: #7b4300;
+  --chip-redewendung-bg: #ffd9d7;     --chip-redewendung-fg: #9a2733;
+  --chip-wortschatz-bg: #dce9de;      --chip-wortschatz-fg: #384e3c;
+
+  --font-serif: 'Libre Baskerville', Georgia, serif;
+  --font-sans: 'Sora', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --r-sm: 4px;
+  --r-md: 12px;
+  --r-lg: 14px;
+  --r-pill: 999px;
+  --shadow-card: 0 12px 30px rgba(30, 70, 45, 0.1);
+
+  --pad-x: 22px;
 }
-*{box-sizing:border-box;}
-body{
-  margin:0;
-  padding:1rem 0.8rem 3rem;
-  background:var(--bg);
-  color:var(--text-light);
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--page-bg);
+  color: var(--ink-body);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
 }
-.back-nav{max-width:960px;margin:0 auto 0.5rem;font-size:0.85rem;}
-.back-nav a{color:var(--accent);text-decoration:none;}
-.back-nav a:hover{text-decoration:underline;}
-header{max-width:960px;margin:0 auto 1rem;text-align:center;}
-h1{margin:0.2rem 0;font-size:1.6rem;}
-.subtitle{margin:0;font-size:0.85rem;color:#94a3b8;}
+
+a { color: var(--blue-text); text-decoration: none; }
+a:hover { color: var(--blue-hover); }
+
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: 12px; top: 12px; background: #fff; padding: 10px 14px; border-radius: var(--r-md); z-index: 100; }
+
+:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+
+.site-footer {
+  padding: 34px var(--pad-x);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-faint);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px var(--pad-x);
+}
+.brand { display: flex; flex-direction: column; gap: 1px; color: var(--ink); }
+.brand:hover { color: var(--ink); }
+.brand__name { font-family: var(--font-serif); font-size: 17px; }
+.brand__kicker {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.nav { display: none; }
+.nav-toggle {
+  width: 44px; height: 44px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+  background: none; border: 1px solid var(--border); border-radius: var(--r-md); cursor: pointer;
+}
+.nav-toggle span { width: 18px; height: 1.5px; background: var(--ink-body); }
+.mobile-nav { display: flex; flex-direction: column; padding: 4px var(--pad-x) 12px; gap: 2px; }
+.mobile-nav a {
+  min-height: 48px; display: flex; align-items: center;
+  color: var(--ink-body); font-size: 16px; border-bottom: 1px solid var(--rule);
+}
+@media (min-width: 640px) {
+  .nav-toggle, .mobile-nav { display: none !important; }
+  .nav { display: flex; align-items: center; gap: 24px; font-size: 15px; }
+  .nav a { color: var(--ink-body); }
+  .nav__about { padding: 10px 20px; border: 1px solid var(--border); border-radius: var(--r-pill); }
+  .site-header { padding: 34px var(--pad-x) 0; }
+}
+@media (min-width: 1024px) {
+  .site-header { max-width: 1280px; margin-inline: auto; padding: 24px var(--pad-x); }
+}
+
+.chip {
+  display: inline-flex; align-items: center;
+  padding: 5px 11px;
+  border-radius: var(--r-pill);
+  font-size: 12px; font-weight: 600;
+  white-space: nowrap;
+}
+.chip--verb-praep      { background: var(--chip-verb-praep-bg);      color: var(--chip-verb-praep-fg); }
+.chip--verb-kasus      { background: var(--chip-verb-kasus-bg);      color: var(--chip-verb-kasus-fg); }
+.chip--redemittel      { background: var(--chip-redemittel-bg);      color: var(--chip-redemittel-fg); }
+.chip--nomen-praep     { background: var(--chip-nomen-praep-bg);     color: var(--chip-nomen-praep-fg); }
+.chip--adjektiv-praep  { background: var(--chip-adjektiv-praep-bg);  color: var(--chip-adjektiv-praep-fg); }
+.chip--redewendung     { background: var(--chip-redewendung-bg);     color: var(--chip-redewendung-fg); }
+.chip--wortschatz      { background: var(--chip-wortschatz-bg);      color: var(--chip-wortschatz-fg); }
+
+.page-header{max-width:960px;margin:0 auto 1rem;text-align:center;padding:0 var(--pad-x);}
+.page-header h1{
+  margin:0.2rem 0;font-family:var(--font-serif);font-weight:400;
+  font-size:2rem;color:var(--ink);
+}
+.page-header .subtitle{margin:0;font-size:0.85rem;color:var(--ink-faint);font-family:var(--font-mono);}
 
 .controls{
   position:sticky;top:0;z-index:10;
   max-width:960px;margin:0 auto 1.2rem;
-  background:rgba(15,23,42,0.92);
+  background:rgba(233,250,233,0.92);
   backdrop-filter:blur(6px);
-  border:1px solid #1e293b;
-  border-radius:12px;
+  border:1px solid var(--rule);
+  border-radius:var(--r-md);
   padding:0.7rem 0.9rem;
   display:flex;flex-wrap:wrap;gap:0.6rem 1rem;align-items:center;
 }
-.ctrl-label{font-size:0.78rem;color:#94a3b8;margin-right:0.3rem;}
+.ctrl-label{font-size:0.78rem;color:var(--ink-faint);margin-right:0.3rem;}
 .sort-group,.filter-group{display:flex;align-items:center;flex-wrap:wrap;gap:0.4rem;}
 .sort-btn{
-  background:#1e293b;color:var(--text-light);border:1px solid #334155;
-  border-radius:999px;padding:0.3rem 0.8rem;font-size:0.8rem;cursor:pointer;
+  background:var(--panel-bg);color:var(--ink-body);border:1px solid var(--border);
+  border-radius:var(--r-pill);padding:0.3rem 0.8rem;font-size:0.8rem;cursor:pointer;
+  font-family:var(--font-sans);
 }
-.sort-btn.active{background:var(--accent);color:#0f172a;border-color:var(--accent);font-weight:600;}
-.filter-chip{
-  display:inline-flex;align-items:center;gap:0.3rem;
-  background:#1e293b;border:1px solid #334155;border-radius:999px;
-  padding:0.25rem 0.7rem;font-size:0.78rem;cursor:pointer;
-}
-.filter-chip input{accent-color:var(--accent);}
-.count-line{margin-left:auto;font-size:0.78rem;color:#94a3b8;}
+.sort-btn.active{background:var(--blue);color:#f7fcff;border-color:var(--blue);font-weight:600;}
+.count-line{margin-left:auto;font-size:0.78rem;color:var(--ink-faint);font-family:var(--font-mono);}
 
-main{
-  max-width:960px;margin:0 auto;
+.filter-chip{
+  position:relative;cursor:pointer;opacity:0.55;
+  transition:opacity 150ms ease, box-shadow 150ms ease;
+}
+.filter-chip input{
+  position:absolute;opacity:0;width:1px;height:1px;
+}
+.filter-chip:has(input:checked){opacity:1;box-shadow:inset 0 0 0 1.5px currentColor;}
+.filter-chip:focus-within{outline:2px solid var(--blue);outline-offset:2px;}
+
+#cardGrid{
+  max-width:960px;margin:0 auto;padding:0 var(--pad-x) 2rem;
   display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
   gap:0.9rem;
 }
@@ -70,51 +182,72 @@ main{
 .card{display:block;cursor:pointer;perspective:1200px;}
 .card input{display:none;}
 .card .inner{
-  position:relative;width:100%;min-height:170px;
+  position:relative;width:100%;min-height:180px;
   transition:transform 0.5s;transform-style:preserve-3d;
 }
 .card input:checked ~ .inner{transform:rotateY(180deg);}
 .face{
   position:absolute;inset:0;
-  border-radius:14px;padding:0.9rem;
+  border-radius:var(--r-lg);padding:1rem;
   backface-visibility:hidden;
   display:flex;flex-direction:column;
-  box-shadow:0 2px 10px rgba(0,0,0,0.25);
+  background:var(--card-bg);
+  box-shadow:var(--shadow-card);
 }
-.front{background:var(--card-front);color:var(--text-light);}
+.front{color:var(--ink);}
 .back{
-  background:var(--card-back);color:var(--text-dark);
+  color:var(--ink-body);
   transform:rotateY(180deg);justify-content:center;
 }
 
-.badge{
-  align-self:flex-start;
-  font-size:0.68rem;font-weight:600;
-  padding:0.15rem 0.55rem;border-radius:999px;margin-bottom:0.5rem;
+.chip{align-self:flex-start;margin-bottom:0.5rem;}
+
+.term{font-family:var(--font-serif);font-size:1.3rem;line-height:1.2;color:var(--ink);flex:1;}
+.date-tag{font-family:var(--font-mono);font-size:0.68rem;color:var(--ink-faint);margin-top:0.4rem;}
+.hint{font-size:0.7rem;color:var(--ink-faint);margin-top:0.2rem;}
+
+.en-meaning{font-weight:600;font-size:1.05rem;margin-bottom:0.5rem;text-align:center;color:var(--ink);}
+.ex p{margin:0.25rem 0;font-size:0.82rem;line-height:1.35;color:var(--ink-muted);}
+.ex .tag-de{
+  font-family:var(--font-mono);font-weight:700;font-size:0.62rem;
+  padding:1px 5px;margin-right:0.4rem;border-radius:var(--r-sm);
+  background:var(--rule);color:var(--ink-body);
 }
-.b-verbprep{background:rgba(56,189,248,.15);color:var(--accent);}
-.b-verbkasus{background:rgba(45,212,191,.15);color:var(--teal);}
-.b-redemittel{background:rgba(244,114,182,.15);color:var(--pink);}
-.b-nounprep{background:rgba(251,191,36,.15);color:var(--amber);}
-.b-adjprep{background:rgba(167,139,250,.15);color:var(--violet);}
-.b-redewendung{background:rgba(251,146,60,.15);color:var(--orange);}
-.b-wortschatz{background:rgba(74,222,128,.15);color:var(--green);}
 
-.term{font-size:1.05rem;font-weight:600;flex:1;}
-.date-tag{font-size:0.68rem;color:#64748b;margin-top:0.4rem;}
-.hint{font-size:0.68rem;color:#64748b;margin-top:0.2rem;}
-
-.en-meaning{font-weight:600;font-size:1rem;margin-bottom:0.5rem;text-align:center;}
-.ex p{margin:0.25rem 0;font-size:0.8rem;line-height:1.3;}
-.ex .label{font-weight:700;font-size:0.65rem;color:var(--accent-dark);margin-right:0.35rem;}
-
-footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;color:#64748b;}
+@media (min-width: 640px){
+  .page-header, .controls, #cardGrid { padding-left: var(--pad-x); padding-right: var(--pad-x); }
+}
 
 </style>
 </head>
 <body>
-<p class="back-nav"><a href="index.html">← Startseite</a></p>
-<header>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <span class="brand__name">Deutscher Wortschatz</span>
+    <span class="brand__kicker">täglich · C1</span>
+  </a>
+  <nav class="nav" aria-label="Hauptnavigation">
+    <a href="reading.html">Lesetext</a>
+    <a href="flashcards.html">Karteikarten</a>
+    <a href="archive/flashcards.html">Archiv</a>
+    <a class="nav__about" href="about.html">Über das Projekt</a>
+  </nav>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menü öffnen">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav" hidden aria-label="Hauptnavigation, mobil">
+  <a href="reading.html">Lesetext</a>
+  <a href="flashcards.html">Karteikarten</a>
+  <a href="archive/flashcards.html">Archiv</a>
+  <a href="about.html">Über das Projekt</a>
+</nav>
+
+<main id="main">
+<header class="page-header">
   <h1>Wortschatz-Karteikarten</h1>
   <p class="subtitle">Vokabeln der letzten 7 Tage · 27.08.–28.08.2026 · 40 Karten insgesamt</p>
 </header>
@@ -127,30 +260,30 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
   </div>
   <div class="filter-group">
     <span class="ctrl-label">Filter:</span>
-    <label class="filter-chip"><input type="checkbox" class="type-filter" value="Verb + Präp." checked> Verb + Präp.</label>
-    <label class="filter-chip"><input type="checkbox" class="type-filter" value="Verb + Kasus" checked> Verb + Kasus</label>
-    <label class="filter-chip"><input type="checkbox" class="type-filter" value="Redemittel" checked> Redemittel</label>
-    <label class="filter-chip"><input type="checkbox" class="type-filter" value="Nomen + Präp." checked> Nomen + Präp.</label>
-    <label class="filter-chip"><input type="checkbox" class="type-filter" value="Adjektiv + Präp." checked> Adjektiv + Präp.</label>
-    <label class="filter-chip"><input type="checkbox" class="type-filter" value="Redewendung" checked> Redewendung</label>
-    <label class="filter-chip"><input type="checkbox" class="type-filter" value="Wortschatz" checked> Wortschatz</label>
+    <label class="filter-chip chip chip--verb-praep"><input type="checkbox" class="type-filter" value="Verb + Präp." checked> Verb + Präp.</label>
+    <label class="filter-chip chip chip--verb-kasus"><input type="checkbox" class="type-filter" value="Verb + Kasus" checked> Verb + Kasus</label>
+    <label class="filter-chip chip chip--redemittel"><input type="checkbox" class="type-filter" value="Redemittel" checked> Redemittel</label>
+    <label class="filter-chip chip chip--nomen-praep"><input type="checkbox" class="type-filter" value="Nomen + Präp." checked> Nomen + Präp.</label>
+    <label class="filter-chip chip chip--adjektiv-praep"><input type="checkbox" class="type-filter" value="Adjektiv + Präp." checked> Adjektiv + Präp.</label>
+    <label class="filter-chip chip chip--redewendung"><input type="checkbox" class="type-filter" value="Redewendung" checked> Redewendung</label>
+    <label class="filter-chip chip chip--wortschatz"><input type="checkbox" class="type-filter" value="Wortschatz" checked> Wortschatz</label>
   </div>
   <div class="count-line"><span id="visibleCount">40</span> / 40 Karten sichtbar</div>
 </div>
 
-<main id="cardGrid">
+<div id="cardGrid">
   <label class="card" data-id="0" data-type="Verb + Präp." data-date="2026-08-28">
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge b-verbprep">Verb + Präp.</span>
+        <span class="chip chip--verb-praep">Verb + Präp.</span>
         <span class="term">Beschäftigung finden in (+Dat)</span>
         <span class="date-tag">heute</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">to find occupation / fulfilment in</div>
-        <div class="ex"><p class="de"><span class="label">DE</span>Gesundheitspfleger finden u. a. Beschäftigung in Facharztpraxen und Krankenhäusern.</p></div>
+        <div class="ex"><p class="de"><span class="tag-de">DE</span>Gesundheitspfleger finden u. a. Beschäftigung in Facharztpraxen und Krankenhäusern.</p></div>
       </div>
     </div>
   </label>
@@ -158,14 +291,14 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge b-verbprep">Verb + Präp.</span>
+        <span class="chip chip--verb-praep">Verb + Präp.</span>
         <span class="term">diskutieren mit (+Dat)</span>
         <span class="date-tag">heute</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">to discuss with (a person)</div>
-        <div class="ex"><p class="de"><span class="label">DE</span>Die Mitarbeiter diskutieren mit der Personalleiterin.</p></div>
+        <div class="ex"><p class="de"><span class="tag-de">DE</span>Die Mitarbeiter diskutieren mit der Personalleiterin.</p></div>
       </div>
     </div>
   </label>
@@ -173,14 +306,14 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge b-verbprep">Verb + Präp.</span>
+        <span class="chip chip--verb-praep">Verb + Präp.</span>
         <span class="term">leiden an / unter (+Dat)</span>
         <span class="date-tag">heute</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">to suffer from</div>
-        <div class="ex"><p class="de"><span class="label">DE</span>Der Patient leidet an Bluthochdruck und leidet jetzt unter der Hitze.</p></div>
+        <div class="ex"><p class="de"><span class="tag-de">DE</span>Der Patient leidet an Bluthochdruck und leidet jetzt unter der Hitze.</p></div>
       </div>
     </div>
   </label>
@@ -188,14 +321,14 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge b-verbprep">Verb + Präp.</span>
+        <span class="chip chip--verb-praep">Verb + Präp.</span>
         <span class="term">schimpfen über (+Akk)</span>
         <span class="date-tag">heute</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">to rant about / to scold about</div>
-        <div class="ex"><p class="de"><span class="label">DE</span>Er schimpfte lautstark über die ständigen Verspätungen der Bahn.</p></div>
+        <div class="ex"><p class="de"><span class="tag-de">DE</span>Er schimpfte lautstark über die ständigen Verspätungen der Bahn.</p></div>
       </div>
     </div>
   </label>
@@ -203,14 +336,14 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge b-verbprep">Verb + Präp.</span>
+        <span class="chip chip--verb-praep">Verb + Präp.</span>
         <span class="term">sich üben in (+Dat)</span>
         <span class="date-tag">heute</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">to practice</div>
-        <div class="ex"><p class="de"><span class="label">DE</span>Er übt sich täglich in Geduld, seit er mit dem Meditieren angefangen hat.</p></div>
+        <div class="ex"><p class="de"><span class="tag-de">DE</span>Er übt sich täglich in Geduld, seit er mit dem Meditieren angefangen hat.</p></div>
       </div>
     </div>
   </label>
@@ -218,14 +351,14 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge b-verbkasus">Verb + Kasus</span>
+        <span class="chip chip--verb-kasus">Verb + Kasus</span>
         <span class="term">schicken (+Dat/+Akk)</span>
         <span class="date-tag">heute</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">to send</div>
-        <div class="ex"><p class="de"><span class="label">DE</span>Sie schickte ihrer Mutter ein Paket mit Spezialitäten aus dem Ausland.</p></div>
+        <div class="ex"><p class="de"><span class="tag-de">DE</span>Sie schickte ihrer Mutter ein Paket mit Spezialitäten aus dem Ausland.</p></div>
       </div>
     </div>
   </label>
@@ -233,14 +366,14 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge b-verbkasus">Verb + Kasus</span>
+        <span class="chip chip--verb-kasus">Verb + Kasus</span>
         <span class="term">seden (+Dat/+Akk)</span>
         <span class="date-tag">heute</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">to send / to transmit</div>
-        <div class="ex"><p class="de"><span class="label">DE</span>Die Redaktion sendete dem Autor eine Einladung zur Lesung.</p></div>
+        <div class="ex"><p class="de"><span class="tag-de">DE</span>Die Redaktion sendete dem Autor eine Einladung zur Lesung.</p></div>
       </div>
     </div>
   </label>
@@ -248,14 +381,14 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge b-verbkasus">Verb + Kasus</span>
+        <span class="chip chip--verb-kasus">Verb + Kasus</span>
         <span class="term">überreichen (+Dat/+Akk)</span>
         <span class="date-tag">heute</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">to hand over / to present</div>
-        <div class="ex"><p class="de"><span class="label">DE</span>Der Bürgermeister überreichte ihr feierlich die Auszeichnung.</p></div>
+        <div class="ex"><p class="de"><span class="tag-de">DE</span>Der Bürgermeister überreichte ihr feierlich die Auszeichnung.</p></div>
       </div>
     </div>
   </label>
@@ -263,10 +396,10 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge b-redemittel">Redemittel</span>
+        <span class="chip chip--redemittel">Redemittel</span>
         <span class="term">Das ist lächerlich!</span>
         <span class="date-tag">heute</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">That&#x27;s ridiculous!</div>
@@ -278,14 +411,14 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge b-redemittel">Redemittel</span>
+        <span class="chip chip--redemittel">Redemittel</span>
         <span class="term">eine Garantie geben</span>
         <span class="date-tag">heute</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">to give a guarantee</div>
-        <div class="ex"><p class="de"><span class="label">DE</span>Wir geben Ihnen drei Jahre Garantie auf unsere Produkte.</p></div>
+        <div class="ex"><p class="de"><span class="tag-de">DE</span>Wir geben Ihnen drei Jahre Garantie auf unsere Produkte.</p></div>
       </div>
     </div>
   </label>
@@ -293,14 +426,14 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge b-redemittel">Redemittel</span>
+        <span class="chip chip--redemittel">Redemittel</span>
         <span class="term">in Erfüllung gehen</span>
         <span class="date-tag">heute</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">to be fulfilled / to come true</div>
-        <div class="ex"><p class="de"><span class="label">DE</span>Ich hoffe, mein Wunsch geht in Erfüllung.</p></div>
+        <div class="ex"><p class="de"><span class="tag-de">DE</span>Ich hoffe, mein Wunsch geht in Erfüllung.</p></div>
       </div>
     </div>
   </label>
@@ -308,14 +441,14 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge b-redemittel">Redemittel</span>
+        <span class="chip chip--redemittel">Redemittel</span>
         <span class="term">zur Diskussion stehen</span>
         <span class="date-tag">heute</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">to be up for discussion / to be under debate</div>
-        <div class="ex"><p class="de"><span class="label">DE</span>Der neue Vorschlag steht auf der nächsten Sitzung zur Diskussion.</p></div>
+        <div class="ex"><p class="de"><span class="tag-de">DE</span>Der neue Vorschlag steht auf der nächsten Sitzung zur Diskussion.</p></div>
       </div>
     </div>
   </label>
@@ -323,14 +456,14 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge b-nounprep">Nomen + Präp.</span>
+        <span class="chip chip--nomen-praep">Nomen + Präp.</span>
         <span class="term">das Erstaunen über (+Akk)</span>
         <span class="date-tag">heute</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">the astonishment / amazement at</div>
-        <div class="ex"><p class="de"><span class="label">DE</span>Das Erstaunen über das deutsche Essen war bei Nhan Nguyen anfangs groß.</p></div>
+        <div class="ex"><p class="de"><span class="tag-de">DE</span>Das Erstaunen über das deutsche Essen war bei Nhan Nguyen anfangs groß.</p></div>
       </div>
     </div>
   </label>
@@ -338,14 +471,14 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge b-nounprep">Nomen + Präp.</span>
+        <span class="chip chip--nomen-praep">Nomen + Präp.</span>
         <span class="term">die Schuld an (+Dat)</span>
         <span class="date-tag">heute</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">the guilt / blame for</div>
-        <div class="ex"><p class="de"><span class="label">DE</span>Die Schuld an dem Unfall trägt der Fahrer des gelben BMW.</p></div>
+        <div class="ex"><p class="de"><span class="tag-de">DE</span>Die Schuld an dem Unfall trägt der Fahrer des gelben BMW.</p></div>
       </div>
     </div>
   </label>
@@ -353,14 +486,14 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge b-nounprep">Nomen + Präp.</span>
+        <span class="chip chip--nomen-praep">Nomen + Präp.</span>
         <span class="term">die Spezialisierung auf (+Akk)</span>
         <span class="date-tag">heute</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">the specialisation in</div>
-        <div class="ex"><p class="de"><span class="label">DE</span>Die Spezialisierung auf Autoreifen ist bei diesem Unternehmen der Schlüssel zum Erfolg.</p></div>
+        <div class="ex"><p class="de"><span class="tag-de">DE</span>Die Spezialisierung auf Autoreifen ist bei diesem Unternehmen der Schlüssel zum Erfolg.</p></div>
       </div>
     </div>
   </label>
@@ -368,14 +501,14 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge b-adjprep">Adjektiv + Präp.</span>
+        <span class="chip chip--adjektiv-praep">Adjektiv + Präp.</span>
         <span class="term">verärgert über (+Akk)</span>
         <span class="date-tag">heute</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">annoyed about / irritated by</div>
-        <div class="ex"><p class="de"><span class="label">DE</span>Eine Mitarbeiterin ist über die unordentliche Führung der Patienten-akten verärgert.</p></div>
+        <div class="ex"><p class="de"><span class="tag-de">DE</span>Eine Mitarbeiterin ist über die unordentliche Führung der Patienten-akten verärgert.</p></div>
       </div>
     </div>
   </label>
@@ -383,10 +516,10 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge b-wortschatz">Wortschatz</span>
+        <span class="chip chip--wortschatz">Wortschatz</span>
         <span class="term">beängstigend</span>
         <span class="date-tag">heute</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">frightening</div>
@@ -398,10 +531,10 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge b-wortschatz">Wortschatz</span>
+        <span class="chip chip--wortschatz">Wortschatz</span>
         <span class="term">die Schwägerin</span>
         <span class="date-tag">heute</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">the sister-in-law</div>
@@ -413,10 +546,10 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge b-wortschatz">Wortschatz</span>
+        <span class="chip chip--wortschatz">Wortschatz</span>
         <span class="term">sich erbarmen</span>
         <span class="date-tag">heute</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">to have mercy / show mercy</div>
@@ -428,10 +561,10 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge b-wortschatz">Wortschatz</span>
+        <span class="chip chip--wortschatz">Wortschatz</span>
         <span class="term">zuhören</span>
         <span class="date-tag">heute</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">to listen</div>
@@ -443,14 +576,14 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge b-verbprep">Verb + Präp.</span>
+        <span class="chip chip--verb-praep">Verb + Präp.</span>
         <span class="term">anfangen mit (+Dat)</span>
         <span class="date-tag">gestern</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">to start with / to begin with</div>
-        <div class="ex"><p class="de"><span class="label">DE</span>Wann haben Sie mit dem Deutschlernen angefangen?</p></div>
+        <div class="ex"><p class="de"><span class="tag-de">DE</span>Wann haben Sie mit dem Deutschlernen angefangen?</p></div>
       </div>
     </div>
   </label>
@@ -458,14 +591,14 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge b-verbprep">Verb + Präp.</span>
+        <span class="chip chip--verb-praep">Verb + Präp.</span>
         <span class="term">Hilfe leisten (+Dat)</span>
         <span class="date-tag">gestern</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">to provide assistance to / to help someone</div>
-        <div class="ex"><p class="de"><span class="label">DE</span>Sie leistete der Familie Hilfe bei der Wohnungssuche.</p></div>
+        <div class="ex"><p class="de"><span class="tag-de">DE</span>Sie leistete der Familie Hilfe bei der Wohnungssuche.</p></div>
       </div>
     </div>
   </label>
@@ -473,14 +606,14 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge b-verbprep">Verb + Präp.</span>
+        <span class="chip chip--verb-praep">Verb + Präp.</span>
         <span class="term">sich verlieben in (+Akk)</span>
         <span class="date-tag">gestern</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">to fall in love with</div>
-        <div class="ex"><p class="de"><span class="label">DE</span>Sie verliebte sich auf den ersten Blick in ihn.</p></div>
+        <div class="ex"><p class="de"><span class="tag-de">DE</span>Sie verliebte sich auf den ersten Blick in ihn.</p></div>
       </div>
     </div>
   </label>
@@ -488,14 +621,14 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge b-verbprep">Verb + Präp.</span>
+        <span class="chip chip--verb-praep">Verb + Präp.</span>
         <span class="term">sprechen für (+Akk)</span>
         <span class="date-tag">gestern</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">to speak for</div>
-        <div class="ex"><p class="de"><span class="label">DE</span>Seine langjährige Erfahrung spricht für ihn als geeigneten Kandidaten für die Stelle.</p></div>
+        <div class="ex"><p class="de"><span class="tag-de">DE</span>Seine langjährige Erfahrung spricht für ihn als geeigneten Kandidaten für die Stelle.</p></div>
       </div>
     </div>
   </label>
@@ -503,14 +636,14 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge b-verbprep">Verb + Präp.</span>
+        <span class="chip chip--verb-praep">Verb + Präp.</span>
         <span class="term">zweifeln an (+Dat)</span>
         <span class="date-tag">gestern</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">to doubt / to have doubts about</div>
-        <div class="ex"><p class="de"><span class="label">DE</span>Manchmal zweifelt Dimitra Papadopoulou an ihrer Entscheidung zur Auswanderung.</p></div>
+        <div class="ex"><p class="de"><span class="tag-de">DE</span>Manchmal zweifelt Dimitra Papadopoulou an ihrer Entscheidung zur Auswanderung.</p></div>
       </div>
     </div>
   </label>
@@ -518,14 +651,14 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge b-verbkasus">Verb + Kasus</span>
+        <span class="chip chip--verb-kasus">Verb + Kasus</span>
         <span class="term">befragen (+Akk)</span>
         <span class="date-tag">gestern</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">to question / to interview</div>
-        <div class="ex"><p class="de"><span class="label">DE</span>Die Polizei befragte mehrere Zeugen zu dem Vorfall.</p></div>
+        <div class="ex"><p class="de"><span class="tag-de">DE</span>Die Polizei befragte mehrere Zeugen zu dem Vorfall.</p></div>
       </div>
     </div>
   </label>
@@ -533,14 +666,14 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge b-redemittel">Redemittel</span>
+        <span class="chip chip--redemittel">Redemittel</span>
         <span class="term">eine Antwort geben</span>
         <span class="date-tag">gestern</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">give an answer</div>
-        <div class="ex"><p class="de"><span class="label">DE</span>Gib mir bitte eine Antwort, wenn ich dich etwas frage.</p></div>
+        <div class="ex"><p class="de"><span class="tag-de">DE</span>Gib mir bitte eine Antwort, wenn ich dich etwas frage.</p></div>
       </div>
     </div>
   </label>
@@ -548,14 +681,14 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge b-redemittel">Redemittel</span>
+        <span class="chip chip--redemittel">Redemittel</span>
         <span class="term">eine Aufgabe übernehmen</span>
         <span class="date-tag">gestern</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">to take on a task / responsibility</div>
-        <div class="ex"><p class="de"><span class="label">DE</span>Krankenpfleger übernehmen Aufgaben in der Grundpflege.</p></div>
+        <div class="ex"><p class="de"><span class="tag-de">DE</span>Krankenpfleger übernehmen Aufgaben in der Grundpflege.</p></div>
       </div>
     </div>
   </label>
@@ -563,14 +696,14 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge b-redemittel">Redemittel</span>
+        <span class="chip chip--redemittel">Redemittel</span>
         <span class="term">einen Traum verwirklichen</span>
         <span class="date-tag">gestern</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">to realise / fulfil a dream</div>
-        <div class="ex"><p class="de"><span class="label">DE</span>Nhan Nguyen möchte seinen Traum vom Medizinstudium verwirklichen.</p></div>
+        <div class="ex"><p class="de"><span class="tag-de">DE</span>Nhan Nguyen möchte seinen Traum vom Medizinstudium verwirklichen.</p></div>
       </div>
     </div>
   </label>
@@ -578,14 +711,14 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge b-redemittel">Redemittel</span>
+        <span class="chip chip--redemittel">Redemittel</span>
         <span class="term">um Erlaubnis fragen</span>
         <span class="date-tag">gestern</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">to ask for permission</div>
-        <div class="ex"><p class="de"><span class="label">DE</span>Die Kinder müssen die Eltern wegen der Klassenfahrt um Erlaubnis fragen.</p></div>
+        <div class="ex"><p class="de"><span class="tag-de">DE</span>Die Kinder müssen die Eltern wegen der Klassenfahrt um Erlaubnis fragen.</p></div>
       </div>
     </div>
   </label>
@@ -593,14 +726,14 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge b-nounprep">Nomen + Präp.</span>
+        <span class="chip chip--nomen-praep">Nomen + Präp.</span>
         <span class="term">die Gleichgültigkeit gegenüber (+Dat)</span>
         <span class="date-tag">gestern</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">the indifference towards</div>
-        <div class="ex"><p class="de"><span class="label">DE</span>Die Gleichgültigkeit ihres Mannes gegenüber ihrem Hobby ärgert sie.</p></div>
+        <div class="ex"><p class="de"><span class="tag-de">DE</span>Die Gleichgültigkeit ihres Mannes gegenüber ihrem Hobby ärgert sie.</p></div>
       </div>
     </div>
   </label>
@@ -608,14 +741,14 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge b-nounprep">Nomen + Präp.</span>
+        <span class="chip chip--nomen-praep">Nomen + Präp.</span>
         <span class="term">die Suche nach (+Dat)</span>
         <span class="date-tag">gestern</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">search for</div>
-        <div class="ex"><p class="de"><span class="label">DE</span>Die Suche nach einer Wohnung war für Hedda Aziz und ihre Familie schwer.</p></div>
+        <div class="ex"><p class="de"><span class="tag-de">DE</span>Die Suche nach einer Wohnung war für Hedda Aziz und ihre Familie schwer.</p></div>
       </div>
     </div>
   </label>
@@ -623,14 +756,14 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge b-nounprep">Nomen + Präp.</span>
+        <span class="chip chip--nomen-praep">Nomen + Präp.</span>
         <span class="term">die Werbung für (+Akk)</span>
         <span class="date-tag">gestern</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">advertising for</div>
-        <div class="ex"><p class="de"><span class="label">DE</span>Ist in Ihrem Heimatland die Werbung für Zigaretten erlaubt?</p></div>
+        <div class="ex"><p class="de"><span class="tag-de">DE</span>Ist in Ihrem Heimatland die Werbung für Zigaretten erlaubt?</p></div>
       </div>
     </div>
   </label>
@@ -638,14 +771,14 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge b-adjprep">Adjektiv + Präp.</span>
+        <span class="chip chip--adjektiv-praep">Adjektiv + Präp.</span>
         <span class="term">wutend auf (+Akk)/über (+Akk)</span>
         <span class="date-tag">gestern</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">furious at / angry about</div>
-        <div class="ex"><p class="de"><span class="label">DE</span>Der Gast war wegen der langen Wartezeit wütend auf den Kellner./ Fayyad Hadji ist wütend über seine Kündigung.</p></div>
+        <div class="ex"><p class="de"><span class="tag-de">DE</span>Der Gast war wegen der langen Wartezeit wütend auf den Kellner./ Fayyad Hadji ist wütend über seine Kündigung.</p></div>
       </div>
     </div>
   </label>
@@ -653,10 +786,10 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge b-redewendung">Redewendung</span>
+        <span class="chip chip--redewendung">Redewendung</span>
         <span class="term">Ich bin bereit geboren.</span>
         <span class="date-tag">gestern</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">I was born ready.</div>
@@ -668,10 +801,10 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge b-wortschatz">Wortschatz</span>
+        <span class="chip chip--wortschatz">Wortschatz</span>
         <span class="term">baumeln</span>
         <span class="date-tag">gestern</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">to dangle</div>
@@ -683,10 +816,10 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge b-wortschatz">Wortschatz</span>
+        <span class="chip chip--wortschatz">Wortschatz</span>
         <span class="term">der/die Freiwillige (pl. die Freiwilligen)</span>
         <span class="date-tag">gestern</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">the volunteer(s)</div>
@@ -698,10 +831,10 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge b-wortschatz">Wortschatz</span>
+        <span class="chip chip--wortschatz">Wortschatz</span>
         <span class="term">die Flüssigkeit</span>
         <span class="date-tag">gestern</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">the liquid</div>
@@ -713,10 +846,10 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge b-wortschatz">Wortschatz</span>
+        <span class="chip chip--wortschatz">Wortschatz</span>
         <span class="term">die Mispel</span>
         <span class="date-tag">gestern</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">the medlar (fruit)</div>
@@ -728,10 +861,10 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="badge b-wortschatz">Wortschatz</span>
+        <span class="chip chip--wortschatz">Wortschatz</span>
         <span class="term">seit Langem</span>
         <span class="date-tag">gestern</span>
-        <span class="hint">tap to reveal</span>
+        <span class="hint">Klicken zum Umdrehen</span>
       </div>
       <div class="face back">
         <div class="en-meaning">for a long time</div>
@@ -739,11 +872,22 @@ footer{max-width:960px;margin:1.5rem auto 0;text-align:center;font-size:0.75rem;
       </div>
     </div>
   </label>
+</div>
 </main>
 
-<footer>Klicken oder tippen zum Umdrehen &middot; viel Erfolg beim Lernen!</footer>
+<footer class="site-footer">Klicken oder tippen zum Umdrehen · viel Erfolg beim Lernen!</footer>
 
 <script>
+
+document.querySelectorAll('.nav-toggle').forEach(function (toggle) {
+  var panel = document.getElementById(toggle.getAttribute('aria-controls'));
+  toggle.addEventListener('click', function () {
+    var open = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!open));
+    toggle.setAttribute('aria-label', open ? 'Menü öffnen' : 'Menü schließen');
+    if (panel) panel.hidden = open;
+  });
+});
 
 (function(){
   var grid = document.getElementById('cardGrid');
