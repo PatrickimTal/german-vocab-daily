@@ -1,0 +1,73 @@
+name: Daily vocab update
+
+# GitHub Actions cron is UTC-only, so 00:01 Europe/Berlin is scheduled
+# twice (once for CEST = UTC+2, once for CET = UTC+1); the gate step
+# below only lets the job actually run on the trigger that currently
+# matches 00:01 local time, so exactly one of the two fires per day
+# regardless of DST.
+on:
+  schedule:
+    - cron: '1 22 * * *'
+    - cron: '1 23 * * *'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Run now regardless of local time'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    env:
+      TZ: Europe/Berlin
+    steps:
+      - name: Gate on 00:01 Europe/Berlin
+        id: gate
+        run: |
+          echo "Local time: $(date +%H:%M)"
+          if [ "${{ inputs.force }}" = "true" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          elif [ "$(date +%H)" = "00" ] && [ "$(date +%-M)" -lt 10 ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.gate.outputs.run == 'true'
+
+      - uses: actions/setup-python@v5
+        if: steps.gate.outputs.run == 'true'
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        if: steps.gate.outputs.run == 'true'
+        run: pip install anthropic
+
+      - name: Select today's vocabulary
+        if: steps.gate.outputs.run == 'true'
+        run: python3 select_daily.py
+
+      - name: Generate site
+        if: steps.gate.outputs.run == 'true'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python3 generate.py
+
+      - name: Commit and push
+        if: steps.gate.outputs.run == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Daily vocab update: $(date +%Y-%m-%d)"
+            git push
+          fi
