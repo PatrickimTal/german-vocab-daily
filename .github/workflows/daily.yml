@@ -1,10 +1,14 @@
 name: Daily vocab update
 
-# GitHub Actions cron is UTC-only, so 00:01 Europe/Berlin is scheduled
-# twice (once for CEST = UTC+2, once for CET = UTC+1); the gate step
-# below only lets the job actually run on the trigger that currently
-# matches 00:01 local time, so exactly one of the two fires per day
-# regardless of DST.
+# GitHub Actions cron is UTC-only and NOT reliably on-time -- scheduled
+# triggers here have been observed landing 1-3+ hours late under queue
+# congestion, so a narrow "must be within N minutes of local midnight"
+# gate silently rejects every real firing. Instead: schedule twice
+# (roughly covering CEST and CET) as redundancy against a dropped/very
+# late trigger, and gate on whether today.json's stored date already
+# matches today's Europe/Berlin date -- whichever trigger lands first
+# each day does the work; any later trigger that day (on time or not)
+# sees it's already done and no-ops. Self-healing regardless of delay.
 on:
   schedule:
     - cron: '1 22 * * *'
@@ -12,7 +16,7 @@ on:
   workflow_dispatch:
     inputs:
       force:
-        description: 'Run now regardless of local time'
+        description: 'Run now even if today was already generated'
         type: boolean
         default: false
 
@@ -25,20 +29,22 @@ jobs:
     env:
       TZ: Europe/Berlin
     steps:
-      - name: Gate on 00:01 Europe/Berlin
+      - uses: actions/checkout@v4
+
+      - name: Check if today was already generated
         id: gate
         run: |
-          echo "Local time: $(date +%H:%M)"
+          today="$(date +%Y-%m-%d)"
+          stored="$(python3 -c "import json; print(json.load(open('today.json'))['date'])" 2>/dev/null || echo none)"
+          echo "Berlin date: $today -- today.json date: $stored"
           if [ "${{ inputs.force }}" = "true" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
-          elif [ "$(date +%H)" = "00" ] && [ "$(date +%-M)" -lt 10 ]; then
-            echo "run=true" >> "$GITHUB_OUTPUT"
-          else
+          elif [ "$stored" = "$today" ]; then
+            echo "Already generated today, skipping."
             echo "run=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
           fi
-
-      - uses: actions/checkout@v4
-        if: steps.gate.outputs.run == 'true'
 
       - uses: actions/setup-python@v5
         if: steps.gate.outputs.run == 'true'
