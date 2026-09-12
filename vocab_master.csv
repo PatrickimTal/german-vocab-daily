@@ -86,7 +86,7 @@ verb_prep,liegen an (+Dat),to be due to / because of,"Das lag daran, dass der Un
 verb_prep,Maßnahmen ergreifen für (+Akk),to take measures for,"Wir werden geeignete Maßnahmen ergreifen, damit dieses Problem nicht wieder vorkommt",,2026-09-03,1,from uploaded list,Verb + Präp.
 verb_prep,nachdenken über (+Akk),to think about / to reflect on / to ponder,Toma Popescu denkt über seine Zukunft nach.,,,0,,Verb + Präp.
 verb_prep,neigen zu (+Dat),to tend towards / to be inclined to,"Er neigt dazu, Probleme zu übertreiben, anstatt sie sachlich zu betrachten. / Sie neigt zu Pessimismus, obwohl die Situation eigentlich nicht so schlimm ist.",,,0,,Verb + Präp.
-verb_prep,Neugierde wecken für (+Akk),to arouse curiosity about,Die Kindergärtnerin weckt die Neugierde der Kinder für Tiere.,,,0,from uploaded list,Verb + Präp.
+verb_prep,Neugierde wecken für (+Akk),to arouse curiosity about,Die Kindergärtnerin weckt die Neugierde der Kinder für Tiere.,,2026-09-13,1,from uploaded list,Verb + Präp.
 verb_prep,protestieren gegen (+Akk),to protest against,Tausende von Menschen protestierten gegen die geplanten Sparmaßnahmen.,,,0,,Verb + Präp.
 verb_prep,Rat suchen bei (+Dat),to seek advice from,Früher suchte er oft Rat bei seinem Vater.,,,0,from uploaded list,Verb + Präp.
 verb_prep,rechnen mit (+Dat),to expect,"Wir rechnen damit, dass die Ergebnisse nächste Woche vorliegen werden.",,,0,,Verb + Präp.
@@ -111,12 +111,12 @@ verb_prep,sich begnügen mit (+Dat),to make due with,"Da das Budget knapp war, b
 verb_prep,sich beklagen bei (+Dat),to complain to (a person),Das Kind beklagt sich bei der Mutter.,,,0,,Verb + Präp.
 verb_prep,sich beklagen über (+Akk),to complain about,Die alte Dame beklagt sich über das Essen im Krankenhaus.,,,0,,Verb + Präp.
 verb_prep,sich bemühen um (+Akk),to strive for / to make an effort for / to endeavour to,Toma Popescu hat sich in Rumänien erfolglos um eine Arbeitsstelle bemüht.,,2026-09-05,1,,Verb + Präp.
-verb_prep,sich beschweren bei (+Dat),to complain about,Sie beschwerte sich beim Vorgesetzten über das unhöfliche Verhalten ihres Kollegen.,,,0,,Verb + Präp.
+verb_prep,sich beschweren bei (+Dat),to complain about,Sie beschwerte sich beim Vorgesetzten über das unhöfliche Verhalten ihres Kollegen.,,2026-09-13,1,,Verb + Präp.
 verb_prep,sich beschweren bei (+Dat) über (+Akk),to complain to (someone) about (something),Ich habe mich beim Manager über den Service beschwert.,I complained to the manager about the service.,2026-09-12,1,,Verb + Präp.
 verb_prep,sich beschweren über (+Akk),to complain about,Die Nachbarn beschweren sich über den Dreck im Treppenhaus.,,2026-09-08,1,,Verb + Präp.
 verb_prep,sich beschäftigen mit (+Dat),to occupy oneself with / to deal with / to work on,Wir beschäftigen uns heute mit der Grammatik.,,2026-09-06,1,,Verb + Präp.
 verb_prep,sich bewerben bei (+Dat),to apply to (a company / institution),Bewerben Sie sich doch bei diesem Unternehmen.,,,0,,Verb + Präp.
-verb_prep,sich bewerben um (+Akk),to apply for (a position / award),Die Stelle ist toll! Bewirbst du dich um sie?,,,0,,Verb + Präp.
+verb_prep,sich bewerben um (+Akk),to apply for (a position / award),Die Stelle ist toll! Bewirbst du dich um sie?,,2026-09-13,1,,Verb + Präp.
 verb_prep,sich beziehen auf (+Akk),to refer to / relate to,,,,0,,Verb + Präp.
 verb_prep,sich entschließen zu (+Dat),to decide to / to resolve to,"Nach langem Nachdenken entschloss sie sich zu einem Jobwechsel. / Er hat sich dazu entschlossen, das Studium abzubrechen und eine Ausbildung zu machen.",,2026-09-09,1,,Verb + Präp.
 verb_prep,sich entschuldigen bei (+Dat),to apologise to (a person),Der Richter entschuldigt sich bei Fadi Samet für die Terminverschiebung,,2026-09-05,1,,Verb + Präp.
@@ -170,7 +170,7 @@ verb_prep,Vertrauen genießen bei (+Dat),to enjoy the trust of / to be trusted b
 verb_prep,verzichten auf (+Akk),to do without / to give up / to forgo,"Der Arzt rät ihr, auf Zucker zu verzichten.",,,0,,Verb + Präp.
 verb_prep,Vorbereitungen treffen für (+Akk),to make preparations for,Hedda Aziz und ihr Kollege treffen Vorbereitungen für eine Dienstreise.,,2026-09-03,1,from uploaded list,Verb + Präp.
 verb_prep,warnen vor (+Dat),to warn against,Der Arzt warnte ihn eindringlich vor den Risiken eines ungesunden Lebensstils.,,,0,,Verb + Präp.
-verb_prep,warten auf (+Akk),to wait for,Sonst hätte ich eine halbe Stunde auf den nächsten Zug warten müssen.,Otherwise I would have had to wait half an hour for the next train.,,0,,Verb + Präp.
+verb_prep,warten auf (+Akk),to wait for,Sonst hätte ich eine halbe Stunde auf den nächsten Zug warten müssen.,Otherwise I would have had to wait half an hour for the next train.,2026-09-13,1,,Verb + Präp.
 verb_prep,Zeit haben für (+Akk),have time for,Fadi Samet hat keine Zeit für Hobbys.,,,0,from uploaded list,Verb + Präp.
 verb_prep,zu Ende bringen (+Akk),finish / bring to a close,Wir müssen die Arbeit heute zu Ende bringen.,,,0,"functional verb phrase (Funktionsverbgefüge), from uploaded list",Verb + Präp.
 verb_prep,zu tun haben mit (+Dat),to have to do with,"Vielleicht hat es ein bisschen damit zu tun, dass ich auf einmal Bock bekommen habe, mich anzustrengen.",Maybe it has something to do with the fact that I suddenly felt like making an effort.,,0,,Verb + Präp.
@@ -182,9 +182,9 @@ verb_prep,zur Verantwortung ziehen für (+Akk),to hold accountable for,Der Mitar
 verb_prep,zur Verfügung stehen für (+Akk),to be available for,Malaika Hadrawi steht für Schichtdienste zur Verfügung.,,,0,"functional verb phrase (Funktionsverbgefüge), from uploaded list",Verb + Präp.
 verb_prep,zuzwinkern (+Dat),to wink at (someone),,,,0,"governs dative, no preposition, but grouped here as a fixed valence pattern",Verb + Präp.
 verb_prep,zweifeln an (+Dat),to doubt / to have doubts about,Manchmal zweifelt Dimitra Papadopoulou an ihrer Entscheidung zur Auswanderung.,,2026-08-27,1,,Verb + Präp.
-verb_prep,zählen zu (+Dat),to count among / to be considered as,Der Schwarzwald zählt zu den beliebtesten Reisezielen in Deutschland.,,,0,,Verb + Präp.
+verb_prep,zählen zu (+Dat),to count among / to be considered as,Der Schwarzwald zählt zu den beliebtesten Reisezielen in Deutschland.,,2026-09-13,1,,Verb + Präp.
 noun_prep,außer Puste (sein),to be out of breath,Ben ist schon außer Puste.,Ben is already out of breath.,,0,corrected from 'sein außer Puste',Nomen + Präp.
-noun_prep,das Einverständnis mit (+Dat),the agreement / consent to,Bei der Vertragsunterzeichnung haben Sie Ihr Einverständnis mit den Lieferbedingungen erklärt.,,,0,,Nomen + Präp.
+noun_prep,das Einverständnis mit (+Dat),the agreement / consent to,Bei der Vertragsunterzeichnung haben Sie Ihr Einverständnis mit den Lieferbedingungen erklärt.,,2026-09-13,1,,Nomen + Präp.
 noun_prep,das Entsetzen über (+Akk),the horror / dismay at,Das Entsetzen über die Kündigung von 50 Mitarbeitern betraf die ganze Firma.,,2026-09-09,1,,Nomen + Präp.
 noun_prep,das Erstaunen über (+Akk),the astonishment / amazement at,Das Erstaunen über das deutsche Essen war bei Nhan Nguyen anfangs groß.,,2026-08-28,1,,Nomen + Präp.
 noun_prep,das Glück über (+Akk),the happiness / delight about,Das Glück über die Geburt des Kindes ist unbeschreiblich.,,,0,,Nomen + Präp.
@@ -221,7 +221,7 @@ noun_prep,die Beunruhigung über (+Akk),the concern / unease about,Die Beunruhig
 noun_prep,die Bezeichnung für (+Akk)/als (+Akk),the term / designation for / as,"Die Bezeichnung „Schrippe"" für Brötchen ist Vielen unbekannt/Seine Bezeichnung als Anwalt ist ungültig.",,2026-09-12,1,,Nomen + Präp.
 noun_prep,die Dankbarkeit für (+Akk),gratitude for,Die Patientin drückte ihre Dankbarkeit für die gute Behandlung mit einem Blumenstrauß aus.,,,0,,Nomen + Präp.
 noun_prep,die Eifersucht auf (+Akk),the jealousy of,Die Eifersucht auf die Kollegen seiner Frau kann der Mann nicht verbergen.,,,0,,Nomen + Präp.
-noun_prep,die Eignung zu (+Dat)/für (+Akk),the suitability / aptitude for,Seine Eignung zum Bedienen der Maschinen muss er zuerst nachweisen./ Der Arbeitgeber benötigt einen Nachweis der Eignung für diese Tätigkeit.,,,0,,Nomen + Präp.
+noun_prep,die Eignung zu (+Dat)/für (+Akk),the suitability / aptitude for,Seine Eignung zum Bedienen der Maschinen muss er zuerst nachweisen./ Der Arbeitgeber benötigt einen Nachweis der Eignung für diese Tätigkeit.,,2026-09-13,1,,Nomen + Präp.
 noun_prep,die Empörung über (+Akk),the outrage / indignation at,Die Empörung über die ungerechte Entscheidung des Schuldirektors war bei den Schülern groß.,,,0,,Nomen + Präp.
 noun_prep,die Entfernung von (+Dat),the distance / removal from,Die Entfernung von ihrer Heimat ist für Dimitra Papadopoulou manchmal zu groß.,,,0,,Nomen + Präp.
 noun_prep,die Entscheidung für/gegen/über (+Akk),decision for/against/about,Die Entscheidung für die Arbeit im Hotel hat Malaika Hadrawi nie bereut.,,,0,,Nomen + Präp.
@@ -239,7 +239,7 @@ noun_prep,die Gleichgültigkeit gegenüber (+Dat),the indifference towards,Die G
 noun_prep,die Heirat mit (+Dat),marriage to,Anitas Heirat mit ihrem Mann fand in Buenos Aires statt.,,2026-09-07,1,,Nomen + Präp.
 noun_prep,die Hoffung auf (+Akk),the hope for,Die Familie gibt die Hoffnung auf eine Rückkehr in die Heimat nicht auf.,,,0,,Nomen + Präp.
 noun_prep,die Investition in (+Akk),the investment in,Die Investition in die neuen Maschinen hat sich für die Firma ausgezahlt.,,2026-09-03,1,,Nomen + Präp.
-noun_prep,die Konzentration auf (+Akk),the concentration / focus on,Für Elektroniker ist die Konzentration auf kleinste Details wichtig.,,,0,,Nomen + Präp.
+noun_prep,die Konzentration auf (+Akk),the concentration / focus on,Für Elektroniker ist die Konzentration auf kleinste Details wichtig.,,2026-09-13,1,,Nomen + Präp.
 noun_prep,die Liebe zu (+Dat),the love of / for,Aus Liebe zu Tieren gründete sie ein Tierheim.,,2026-08-31,1,,Nomen + Präp.
 noun_prep,die Müdigkeit von (+Dat),the tiredness / fatigue from,Sie fühlten lange die Müdigkeit von der anstrengenden Reise.,,,0,,Nomen + Präp.
 noun_prep,die Neugier(de) auf (+Akk),the curiosity about,Die Neugierde auf die Erzählungen des Großvaters ist bei den Kindern groß.,,,0,,Nomen + Präp.
@@ -321,7 +321,7 @@ other,beherrschen,to master,,,,0,,Wortschatz
 other,behutsam,"careful, gentle, cautious",,,,0,"corrected gloss from 'kindly' — behutsam means gentle/cautious, not kind",Wortschatz
 other,beistehen (+Dat),to support / to stand by,In schwierigen Zeiten stand sie ihrer besten Freundin treu bei.,,,0,"governs case, no preposition (from uploaded list)",Verb + Kasus
 other,bekannt für (+Akk)/mit (+Dat),known for / familiar with,Die Firma ist für gute Schuhe und Taschen bekannt./ Anita Jiménez ist mit Herrn Breitner bekannt.,,,0,"adjective + preposition (fixed collocation, from uploaded list)",Adjektiv + Präp.
-other,bekommen,to get / receive (neutral),,,,0,,Wortschatz
+other,bekommen,to get / receive (neutral),,,2026-09-13,1,,Wortschatz
 other,bekämpfen,to fight / combat,,,,0,,Wortschatz
 other,beliebt bei (+Dat),popular with,Anita Jiménez ist bei ihren Kollegen beliebt.,,2026-09-09,1,"adjective + preposition (fixed collocation, from uploaded list)",Adjektiv + Präp.
 other,bemerken,to notice,,,,0,,Wortschatz
@@ -332,7 +332,7 @@ other,berühmt für (+Akk),famous for / renowned for,Dimitra Papadopoulous Heima
 other,berühren,to touch,Andere Menschen zu berühren.,To touch other people.,2026-09-11,1,,Wortschatz
 other,Bescheid bekommen,to be informed / to receive word,Haben Sie noch etwas Geduld. Sie bekommen bald Bescheid.,,,0,"idiomatic verb phrase, from uploaded list",Redemittel
 other,beschädigt,damaged,War der Akku beschädigt oder leer?,Was the battery damaged or empty?,,0,,Wortschatz
-other,beschäftigt mit (+Dat),busy with / occupied with,Nhan hat sich beruflich mit medizinischen Geräten beschäftigt.,,,0,"adjective + preposition (fixed collocation, from uploaded list)",Adjektiv + Präp.
+other,beschäftigt mit (+Dat),busy with / occupied with,Nhan hat sich beruflich mit medizinischen Geräten beschäftigt.,,2026-09-13,1,"adjective + preposition (fixed collocation, from uploaded list)",Adjektiv + Präp.
 other,besorgt über (+Akk)/um (+Akk),concerned about / worried about,Caroline Youssri ist besorgt über ihre berufliche Zukunft./ Toma Popescu ist besorgt um seine Mutter.,,,0,"adjective + preposition (fixed collocation, from uploaded list)",Adjektiv + Präp.
 other,bestreuen,to sprinkle,Bestreuen Sie das Gericht vor dem Servieren mit Petersilie.,Sprinkle the dish with parsley before serving.,,0,corrected 'Petersilien' -> 'Petersilie',Wortschatz
 other,besuchen (+Akk),to visit,Er besucht seine Großeltern jeden Sonntag zum Mittagessen.,,,0,"governs case, no preposition (from uploaded list)",Verb + Kasus
@@ -392,8 +392,8 @@ other,der Bolzen / der Riegel,the bolt,,,,0,,Wortschatz
 other,der Bub / die Buben,the boy(s),,,,0,,Wortschatz
 other,der Buchstabe (die Buchstaben),the letter(s) (of the alphabet),,,,0,,Wortschatz
 other,der Durchschnitt,the average,,,,0,,Wortschatz
-other,der Erpresser,the blackmailer,,,,0,,Wortschatz
-other,der Förderverein,the support association,,,,0,corrected from genitive 'Fördervereins',Wortschatz
+other,der Erpresser,the blackmailer,,,2026-09-13,1,,Wortschatz
+other,der Förderverein,the support association,,,2026-09-13,1,corrected from genitive 'Fördervereins',Wortschatz
 other,der Gedanke,the thought,,,,0,,Wortschatz
 other,der Genuss,the enjoyment / pleasure / indulgence,,,2026-09-08,1,,Wortschatz
 other,der Geruch,the smell,,,2026-09-08,1,,Wortschatz
@@ -408,12 +408,12 @@ other,der Kleinbuchstabe,the lowercase letter,,,,0,,Wortschatz
 other,der Mucks,a sound / peep,,,,0,"colloquial, e.g. 'keinen Mucks machen'",Wortschatz
 other,der Pendler,the commuter,,,2026-09-09,1,,Wortschatz
 other,der Rauchmelder,the smoke detector,,,,0,,Wortschatz
-other,der Schnupfen,the sniffle / head cold (noun),,,,0,corrected from 'der Schneien' (not a word — Schneien means 'to snow'),Wortschatz
+other,der Schnupfen,the sniffle / head cold (noun),,,2026-09-13,1,corrected from 'der Schneien' (not a word — Schneien means 'to snow'),Wortschatz
 other,der Schraubenzieher,the screwdriver,,,,0,,Wortschatz
 other,der Schrebergarten,the allotment / community garden,,,,0,,Wortschatz
-other,der Schritt / die Schritte,the step(s),Jetzt nähern wir uns mit großen Schritten dem Jahresende.,Now we're approaching the end of the year in big steps.,,0,,Wortschatz
+other,der Schritt / die Schritte,the step(s),Jetzt nähern wir uns mit großen Schritten dem Jahresende.,Now we're approaching the end of the year in big steps.,2026-09-13,1,,Wortschatz
 other,der Schwager,the brother-in-law,,,2026-09-07,1,,Wortschatz
-other,der Speckgürtel,"the commuter belt (informal; lit. 'bacon belt', i.e. wealthy suburbs)","Viele Wohlhabende ziehen in den Speckgürtel, um mehr Platz und Ruhe zu genießen.",Many wealthy people move to the commuter belt to enjoy more space and peace.,,0,,Wortschatz
+other,der Speckgürtel,"the commuter belt (informal; lit. 'bacon belt', i.e. wealthy suburbs)","Viele Wohlhabende ziehen in den Speckgürtel, um mehr Platz und Ruhe zu genießen.",Many wealthy people move to the commuter belt to enjoy more space and peace.,2026-09-13,1,,Wortschatz
 other,der Spießer,the philistine / narrow-minded conformist,,,,0,"informal, mildly pejorative",Wortschatz
 other,der Stadtrand,the city edge / outskirts,,,,0,,Wortschatz
 other,der Stolz,the pride,,,,0,,Wortschatz
@@ -506,7 +506,7 @@ other,eine Information für sich behalten,to keep information to oneself,"Versch
 other,eine Prüfung ablegen,to sit / take an exam,Am Ende des Lehrgangs müssen Sie eine Prüfung ablegen.,,2026-09-09,1,"idiomatic verb phrase, from uploaded list",Redemittel
 other,eine Rechnung stellen,to issue an invoice / bill,Fadi Samet stellt dem Auftraggeber nach einer Übersetzung eine Rechnung.,,,0,"idiomatic verb phrase, from uploaded list",Redemittel
 other,eine Straftat begehen,to commit a criminal offence,"Wer stiehlt, begeht eine Straftat.",,,0,"idiomatic verb phrase, from uploaded list",Redemittel
-other,eine Verabredung treffen,to make an appointment / to arrange to meet,Sie trafen eine Verabredung für den nächsten Dienstag um 14 Uhr.,,,0,"idiomatic verb phrase, from uploaded list",Redemittel
+other,eine Verabredung treffen,to make an appointment / to arrange to meet,Sie trafen eine Verabredung für den nächsten Dienstag um 14 Uhr.,,2026-09-13,1,"idiomatic verb phrase, from uploaded list",Redemittel
 other,eine Verbindung/einen Zug verpassen,to miss a connection/train,Ich habe die Verbindung verpasst.,I missed the connection.,,0,,Redemittel
 other,einen Beruf ausüben,practice a profession,Fadi Samet übt den Beruf des Übersetzers aus.,,,0,"idiomatic verb phrase, from uploaded list",Redemittel
 other,einen Beruf ergreifen,to take up a profession,Sie wollte nach der Geburt ihres Kindes wieder einen Beruf ergreifen.,,2026-09-07,1,"idiomatic verb phrase, from uploaded list",Redemittel
@@ -633,7 +633,7 @@ other,mitteilen (+Dat/+Akk),to inform / to communicate,Das Unternehmen teilte se
 other,müde von (+Dat),tired of / weary from,Toma Popescu ist heute müde von der Arbeit.,,,0,"adjective + preposition (fixed collocation, from uploaded list)",Adjektiv + Präp.
 other,na klar,of course / sure,,,,0,,Redemittel
 other,nachfragen,to ask again / inquire further,,,2026-09-06,1,,Wortschatz
-other,nachgeben (+Dat),to give in / to yield,Nach langem Streit gab er schließlich nach und akzeptierte den Kompromiss.,,,0,"governs case, no preposition (from uploaded list)",Verb + Kasus
+other,nachgeben (+Dat),to give in / to yield,Nach langem Streit gab er schließlich nach und akzeptierte den Kompromiss.,,2026-09-13,1,"governs case, no preposition (from uploaded list)",Verb + Kasus
 other,Natrium,sodium,,,,0,,Wortschatz
 other,neidisch auf (+Akk),envious of,Ich bin nicht neidisch auf meinen reichen Nachbarn.,,2026-09-06,1,"adjective + preposition (fixed collocation, from uploaded list)",Adjektiv + Präp.
 other,nett zu (+Dat),nice to / kind to,"Es zahlt sich aus, nett zu anderen Menschen zu sein.",,,0,"adjective + preposition (fixed collocation, from uploaded list)",Adjektiv + Präp.
@@ -743,7 +743,7 @@ other,verbieten (+Dat/+Akk),to forbid / to prohibit,"Der Arzt verbot ihm, nach d
 other,verbinden,to connect,,,,0,,Wortschatz
 other,verbringen,to spend (time),Ich verbringe sehr viel Zeit mit meinen Kindern.,I spend a lot of time with my children.,2026-09-09,1,merged duplicates,Wortschatz
 other,verdanken (+Dat/+Akk),to owe / to be indebted to,"Sie verdankt ihm viel, denn er hat ihr den entscheidenden Tipp gegeben.",,2026-09-12,1,"governs case, no preposition (from uploaded list)",Verb + Kasus
-other,Verflucht!,Darn it! / Curses!,,,,0,corrected from 'Verfluchte',Redemittel
+other,Verflucht!,Darn it! / Curses!,,,2026-09-13,1,corrected from 'Verfluchte',Redemittel
 other,verfügbar,available,,,,0,,Wortschatz
 other,vergleichen,to compare,,,,0,corrected from noun form 'vergleich'; related noun: der Vergleich,Wortschatz
 other,verheiratet mit (+Dat),married to,Hedda Aziz ist seit 15 Jahren mit ihrem Mann verheiratet.,,2026-09-07,1,"adjective + preposition (fixed collocation, from uploaded list)",Adjektiv + Präp.
@@ -773,7 +773,7 @@ other,vielseitig,versatile,,,,0,,Wortschatz
 other,vorkommen,to seem / to occur,,,,0,,Wortschatz
 other,wackeln,to wobble,Es wackelt.,It wobbles.,,0,,Wortschatz
 other,wagen,to dare,,,,0,,Wortschatz
-other,Ware umtauschen,to exchange goods / to swap an item,"Können wir die Ware umtauschen, wenn wir nicht zufrieden sind?",,,0,"idiomatic verb phrase, from uploaded list",Redemittel
+other,Ware umtauschen,to exchange goods / to swap an item,"Können wir die Ware umtauschen, wenn wir nicht zufrieden sind?",,2026-09-13,1,"idiomatic verb phrase, from uploaded list",Redemittel
 other,Was für ein Zufall!,What a coincidence!,,,,0,,Redemittel
 other,Was hältst du davon?,What do you think about that?,,,2026-09-04,1,,Redemittel
 other,wasserdicht,waterproof,,,2026-09-06,1,,Wortschatz
@@ -797,7 +797,7 @@ other,zig,a bunch of / umpteen,,,,0,,Wortschatz
 other,zocken,to gamble / bet,,,,0,,Wortschatz
 other,zu einem Ergebnis kommen,to reach a conclusion / result,Wir müssen jetzt zu einem Ergebnis kommen.,,,0,"idiomatic verb phrase, from uploaded list",Redemittel
 other,zu einer Einigung kommen,to reach an agreement / to come to a settlement,Nach stundenlangen Verhandlungen kamen beide Parteien endlich zu einer Einigung.,,,0,"idiomatic verb phrase, from uploaded list",Redemittel
-other,zu Wort kommen,to get a chance to speak / to have one's say,Entschuldigung! Ich komme nicht zu Wort. Ich möchte auch etwas sagen.,,,0,"idiomatic verb phrase, from uploaded list",Redewendung
+other,zu Wort kommen,to get a chance to speak / to have one's say,Entschuldigung! Ich komme nicht zu Wort. Ich möchte auch etwas sagen.,,2026-09-13,1,"idiomatic verb phrase, from uploaded list",Redewendung
 other,zufrieden mit (+Dat),satisfied with / content with,Toma Popescu ist zufrieden mit seiner Arbeitsstelle.,,,0,"adjective + preposition (fixed collocation, from uploaded list)",Adjektiv + Präp.
 other,zufällig,by chance / random(ly),,,2026-09-10,1,merged duplicates,Wortschatz
 other,zuhören,to listen,,,2026-08-28,1,,Wortschatz
