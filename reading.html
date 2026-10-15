@@ -1,179 +1,189 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Woran man gutes Brot erkennt — Sprachgarten</title>
+<title>Sprachgarten — Lesetext: Die Reparatur des Gemeinsinns</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+  :root{
+    --bg:#e9fae9;
+    --ink:#304635;
+    --head:#082310;
+    --accent:#0077c7;
+  }
   *{box-sizing:border-box;}
   body{
     margin:0;
-    padding:1.6rem 1.1rem 3rem;
-    background:#e9fae9;
-    color:#304635;
+    padding:1.5rem 1.1rem 3rem;
+    background:var(--bg);
+    color:var(--ink);
     font-family:'Sora',system-ui,sans-serif;
-    font-size:1.02rem;
+    font-size:1.03rem;
     line-height:1.72;
   }
-  main{max-width:40rem;margin:0 auto;}
+  .wrap{max-width:40rem;margin:0 auto;}
   .kicker{
     font-family:'IBM Plex Mono',ui-monospace,monospace;
     font-size:.74rem;
-    letter-spacing:.14em;
+    letter-spacing:.12em;
     text-transform:uppercase;
-    color:#0077c7;
+    color:#4a6a52;
     margin:0 0 .6rem;
   }
   h1{
     font-family:'Libre Baskerville',Georgia,serif;
-    color:#082310;
+    color:var(--head);
     font-size:1.72rem;
-    line-height:1.28;
+    line-height:1.26;
     margin:0 0 .5rem;
   }
   .standfirst{
-    font-family:'Libre Baskerville',Georgia,serif;
-    font-size:1.03rem;
-    line-height:1.6;
-    color:#304635;
+    font-size:1.02rem;
+    color:#3c5742;
     margin:0 0 1rem;
+    font-style:italic;
   }
   .meta{
     font-family:'IBM Plex Mono',ui-monospace,monospace;
     font-size:.78rem;
-    color:#5d7563;
-    border-top:1px solid #c3debb;
-    border-bottom:1px solid #c3debb;
+    color:#4a6a52;
+    border-top:1px solid #c3e2c7;
+    border-bottom:1px solid #c3e2c7;
     padding:.5rem 0;
     margin:0 0 1.6rem;
   }
-  article p{margin:0 0 1.05rem;}
+  article p{margin:0 0 1.15rem;}
   article p:first-of-type::first-letter{
     font-family:'Libre Baskerville',Georgia,serif;
-    font-size:3rem;
-    line-height:.9;
+    color:var(--head);
+    font-size:3.1rem;
+    line-height:.86;
     float:left;
-    padding:.2rem .5rem .1rem 0;
-    color:#082310;
+    padding:.18rem .5rem .1rem 0;
   }
-  strong{font-weight:600;color:#082310;}
+  strong{font-weight:600;color:var(--head);}
   h2{
     font-family:'Libre Baskerville',Georgia,serif;
-    color:#082310;
+    color:var(--head);
     font-size:1.2rem;
     margin:2.4rem 0 .9rem;
     padding-top:1.2rem;
-    border-top:2px solid #c3debb;
+    border-top:2px solid #c3e2c7;
   }
   dl{margin:0;}
   dt{
     font-weight:600;
-    color:#082310;
+    color:var(--head);
     margin-top:.85rem;
   }
   dd{
     margin:.1rem 0 0;
     padding-left:.9rem;
-    border-left:2px solid #c3debb;
-    color:#304635;
+    border-left:2px solid #c3e2c7;
+    color:#3c5742;
+    font-size:.97rem;
   }
-  a{color:#0077c7;text-decoration:none;}
-  a:hover{color:#0061b0;}
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{color:#0061b0;text-decoration:underline;}
   footer{
-    margin-top:2.4rem;
+    margin-top:2.6rem;
     font-family:'IBM Plex Mono',ui-monospace,monospace;
     font-size:.74rem;
-    color:#5d7563;
+    color:#4a6a52;
   }
 </style>
 </head>
 <body>
 <p style="font-family:'Sora',system-ui,sans-serif;font-size:0.85rem;margin:0.6rem 0 0;"><a href="index.html" style="color:#006eb8;">← Startseite</a></p>
 
-<main>
-  <p class="kicker">Feuilleton · Handwerk</p>
-  <h1>Woran man gutes Brot erkennt</h1>
-  <p class="standfirst">In einer Backstube im Süden der Republik entscheidet sich, ob ein Beruf eine Zukunft hat – und ob zwei Menschen einander trauen.</p>
-  <p class="meta">332 Wörter · Lesezeit ca. 3 Minuten</p>
+<div class="wrap">
+
+  <p class="kicker">Feuilleton · Reportage</p>
+  <h1>Die Reparatur des Gemeinsinns</h1>
+  <p class="standfirst">In einer brandenburgischen Kleinstadt schrauben Fremde gemeinsam an kaputten Toastern. Was dabei entsteht, interessiert kurz vor der Kommunalwahl auch das Rathaus.</p>
+  <p class="meta">Lesetext C1 · 335 Wörter · Lesezeit ca. 3 Minuten</p>
 
   <article>
-    <p>In der Backstube von Helene Brandt beginnt der Tag um halb vier. Man <strong>erkennt</strong> die alte Meisterin <strong>am</strong> Gang, noch bevor sie das Licht einschaltet. Ihr Betrieb, seit 1911 am Marktplatz, ist einer der letzten, die ihre Ware <strong>unabhängig von</strong> industriellen Vormischungen herstellen. Was anderswo als Nostalgie gilt, ist hier Kalkül: Die <strong>Fülle an</strong> Brotsorten – vierundzwanzig allein im Winter – <strong>verbindet</strong> die Kundschaft mit einem Handwerk, das sonst in der Fläche verschwindet.</p>
+    <p>Wenn Hanna Reissig an jedem zweiten Donnerstag ihren <strong>Werkzeugkoffer</strong> auf den langen Tisch des Gemeindesaals stellt, hat sich draußen bereits eine Schlange gebildet. Ein Stuhl, der <strong>wackelt</strong>, ein Föhn, der nur noch kalte Luft bläst, eine Nähmaschine von 1978: Niemand hier glaubt, dass Dinge weggeworfen werden müssen, bevor sich wenigstens einmal jemand <strong>ihrer erbarmt</strong> hat.</p>
 
-    <p>Seit zwei Jahren steht Ahmed Moussa neben ihr am Tisch. In seinem Heimatland hatte er <strong>Erfahrung</strong> in einer Kfz-Werkstatt <strong>gesammelt</strong>; dass er heute den Sauerteig <strong>beherrscht</strong>, <strong>kommt</strong> ihm selbst manchmal unwirklich <strong>vor</strong>. Anfangs, erzählt Brandt, habe sie ihn für zu <strong>schweigsam</strong> gehalten. »Ich habe mich <strong>in</strong> ihm <strong>geirrt</strong>«, sagt sie trocken. »Er redet nicht, er <strong>schafft</strong>.« Dann lacht sie: »So sagt man das bei uns, <strong>gell?</strong>«</p>
+    <p>Das Repair-Café in der ostbrandenburgischen Kleinstadt existiert seit vier Jahren. <strong>Obwohl</strong> die Gemeinde statistisch alles andere als wohlhabend ist – das Durchschnittseinkommen liegt deutlich unter dem bundesweiten <strong>Durchschnitt</strong> –, ist der Ort <strong>reich an</strong> Initiativen: Feuerwehr, Chor, Tauschregal, Nachbarschaftshilfe. <strong>Mehrmals</strong> im Monat füllt sich der Saal. Die <strong>Anwesenheit bei</strong> den Treffen ist für niemanden verpflichtend, und gerade darin, sagt Reissig, liege das Geheimnis.</p>
 
-    <p>Die <strong>Angewiesenheit auf</strong> staatliche Zuschüsse, die den Betrieb in der Pandemie am Leben hielten, erwähnt sie nur ungern; <strong>stur</strong> besteht sie darauf, dass Qualität sich selbst trage. Als im Frühjahr ein Konkurrent anrief und ihr anbot, Filialen zu <strong>tauschen</strong>, lehnte sie ab, ohne lange zu überlegen. Erst Tage später <strong>entschuldigte</strong> sie sich <strong>bei</strong> dem Kollegen für den Ton – die Antwort sei richtig gewesen, die Form nicht.</p>
+    <p><strong>Während</strong> die Kaffeemaschine röchelt, erzählt ein Rentner, er habe wochenlang <strong>mit</strong> seiner Tochter in Hamburg <strong>telefoniert</strong>, ehe er sich traute, den defekten Verstärker herzubringen. „Ich hatte ehrlich gesagt <strong>Schiss</strong>, mich zu blamieren“, sagt er, atmet tief <strong>ein</strong> und schraubt weiter. Es <strong>kommt</strong> nicht auf technische Brillanz <strong>an</strong>, sondern auf die Bereitschaft, sich überhaupt an etwas zu versuchen.</p>
 
-    <p>Brandt hält wenig von Debatten über den Fachkräftemangel. Wer ein Handwerk lernen wolle, brauche keine Kampagne, sondern einen Platz am Tisch und jemanden, der ihm zutraut, Fehler zu machen. Die Kundschaft, sagt sie, spüre den Unterschied ohnehin: an der Kruste, am Duft, an der Geduld, die in einem Teig steckt. Ein Brot lüge nicht.</p>
+    <p>Soziologen nennen solche Orte inzwischen „Vertrauensinfrastruktur“. Wo Menschen einander über defekte Geräte hinweg zuhören, entsteht ein Rest an Gemeinsinn, der sich in keiner Statistik abbilden lässt. Zwei Drittel der Ehrenamtlichen sind hier über sechzig; die Jüngeren erscheinen, wenn ihre Fahrräder streiken.</p>
 
-    <p>Im Juni bestand Moussa die Gesellenprüfung. Die halbe Straße <strong>gratulierte</strong> ihm <strong>zu</strong> dem Ergebnis; die <strong>Freude über</strong> den Erfolg und <strong>auf</strong> die gemeinsame Zukunft des Betriebs war der Meisterin anzusehen. Inzwischen <strong>gibt</strong> sie ihm <strong>Bescheid</strong>, wenn sie später kommt – eine Geste, die mehr wiegt als ein Vertrag. Wer morgens an der Theke steht und zusieht, wie der warme Honig über das Hefegebäck <strong>ausgegossen</strong> wird, ahnt, warum junge Leute es wieder <strong>wagen</strong>, dieses Handwerk zu lernen.</p>
+    <p>Kommunalpolitiker beobachten das mit Interesse, kurz vor der <strong>Wahl</strong> sogar mit einer gewissen Sehnsucht. Denn der <strong>Eindruck</strong>, den viele Bürger <strong>von</strong> der Verwaltung <strong>haben</strong>, ist wenig <strong>ansprechend</strong>: zähe Verfahren, <strong>Unbeliebtheit bei</strong> jüngeren Wählern, eine <strong>Müdigkeit von</strong> endlosen Sitzungen, die man den Gesichtern ansieht. Mancher Abgeordnete <strong>hat Angst vor</strong> dem Tag, an dem sich niemand mehr zur Kandidatur bereitfindet.</p>
+
+    <p>Was im Gemeindesaal geschieht, <strong>entspricht</strong> keinem Förderprogramm und keiner Strategie. Es ist bloß ein Abend, an dem Fremde gemeinsam über einen Toaster gebeugt stehen. Reissig formuliert es nüchterner: Wer einmal erlebt habe, dass ein Gegenstand zu retten sei, halte womöglich auch eine Gemeinde für reparierbar. Vielleicht ist genau das der Werkzeugkoffer, den die Demokratie derzeit am dringendsten braucht.</p>
   </article>
 
   <h2>English gloss</h2>
   <dl>
-    <dt>erkennen an (+Dat)</dt>
-    <dd>to recognise by / to identify by</dd>
+    <dt>der Werkzeugkoffer</dt>
+    <dd>the toolbox</dd>
 
-    <dt>unabhängig von (+Dat)</dt>
-    <dd>independent of</dd>
+    <dt>wackeln</dt>
+    <dd>to wobble</dd>
 
-    <dt>die Fülle an (+Dat)</dt>
-    <dd>the abundance / wealth of</dd>
+    <dt>sich erbarmen (+Gen)</dt>
+    <dd>to have mercy / show mercy (on someone or something)</dd>
 
-    <dt>verbinden</dt>
-    <dd>to connect</dd>
+    <dt>obwohl</dt>
+    <dd>although</dd>
 
-    <dt>Erfahrung sammeln</dt>
-    <dd>to gain experience</dd>
+    <dt>der Durchschnitt</dt>
+    <dd>the average</dd>
 
-    <dt>beherrschen</dt>
-    <dd>to master</dd>
+    <dt>reich an (+Dat)</dt>
+    <dd>rich in / abundant in</dd>
 
-    <dt>vorkommen</dt>
-    <dd>to seem / to occur</dd>
+    <dt>mehrmals</dt>
+    <dd>several times</dd>
 
-    <dt>schweigsam</dt>
-    <dd>silent / taciturn</dd>
+    <dt>die Anwesenheit bei (+Dat)</dt>
+    <dd>the presence at (an event, a meeting)</dd>
 
-    <dt>sich irren in (+Dat)</dt>
-    <dd>to err, to be mistaken about (someone/something)</dd>
+    <dt>während</dt>
+    <dd>while / during</dd>
 
-    <dt>schaffen</dt>
-    <dd>to manage / succeed; (southern German) to work, to be busy with</dd>
+    <dt>telefonieren mit (+Dat)</dt>
+    <dd>to talk on the phone with / to call</dd>
 
-    <dt>…, gell?</dt>
-    <dd>…, right? / isn't it?</dd>
+    <dt>Schiss haben</dt>
+    <dd>to be scared / nervous (colloquial)</dd>
 
-    <dt>die Angewiesenheit auf (+Akk)</dt>
-    <dd>the dependence / reliance on</dd>
+    <dt>einatmen</dt>
+    <dd>to inhale</dd>
 
-    <dt>stur</dt>
-    <dd>stubborn</dd>
+    <dt>ankommen auf (+Akk)</dt>
+    <dd>to depend on / to hinge on</dd>
 
-    <dt>tauschen</dt>
-    <dd>to trade / exchange</dd>
+    <dt>die Wahl</dt>
+    <dd>the election / the choice</dd>
 
-    <dt>sich entschuldigen bei (+Dat)</dt>
-    <dd>to apologise to (a person)</dd>
+    <dt>einen guten/schlechten Eindruck haben von (+Dat)</dt>
+    <dd>to have a good/bad impression of</dd>
 
-    <dt>gratulieren (zu) (+Dat)</dt>
-    <dd>to congratulate (on)</dd>
+    <dt>ansprechend</dt>
+    <dd>appealing</dd>
 
-    <dt>die Freude auf/über (+Akk)</dt>
-    <dd>the joy in (anticipated) / about (past)</dd>
+    <dt>die Unbeliebtheit bei (+Dat)</dt>
+    <dd>the unpopularity with (a group)</dd>
 
-    <dt>Bescheid geben (+Dat)</dt>
-    <dd>to let someone know / to inform someone</dd>
+    <dt>die Müdigkeit von (+Dat)</dt>
+    <dd>the tiredness / fatigue from</dd>
 
-    <dt>ausgegossen</dt>
-    <dd>poured out</dd>
+    <dt>Angst haben vor (+Dat)</dt>
+    <dd>to be afraid of</dd>
 
-    <dt>wagen</dt>
-    <dd>to dare</dd>
+    <dt>entsprechen (+Dat)</dt>
+    <dd>to correspond to</dd>
   </dl>
 
-  <footer>Sprachgarten · Lesetext C1 · Wortschatz des Tages</footer>
-</main>
+  <footer>Sprachgarten · Lesetraining C1 · Zielwortschatz fett markiert (jeweils beim ersten Auftreten)</footer>
+
+</div>
 </body>
 </html>
