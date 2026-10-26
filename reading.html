@@ -1,96 +1,117 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sprachgarten – Lesetext: Zurück ins Büro</title>
+<title>Sprachgarten — Lesetext: Wer klingelt, zahlt</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#e9fae9;
-    --ink:#304635;
-    --head:#082310;
+    --text:#304635;
+    --ink:#082310;
     --accent:#0077c7;
     --accent-hover:#0061b0;
   }
   *{box-sizing:border-box;}
   body{
     margin:0;
-    padding:1.5rem 1.1rem 3rem;
+    padding:0;
     background:var(--bg);
-    color:var(--ink);
-    font-family:'Sora', system-ui, sans-serif;
-    font-size:1.03rem;
-    line-height:1.72;
+    color:var(--text);
+    font-family:'Sora',system-ui,sans-serif;
+    font-size:17px;
+    line-height:1.7;
+    -webkit-text-size-adjust:100%;
   }
-  .wrap{max-width:40rem;margin:0 auto;}
+  .wrap{
+    max-width:42rem;
+    margin:0 auto;
+    padding:2rem 1.2rem 4rem;
+  }
   .kicker{
-    font-family:'IBM Plex Mono', ui-monospace, monospace;
-    font-size:.74rem;
+    font-family:'IBM Plex Mono',ui-monospace,monospace;
+    font-size:.75rem;
     letter-spacing:.14em;
     text-transform:uppercase;
-    color:var(--accent);
-    margin:0 0 .6rem;
+    color:var(--text);
+    margin:0 0 .8rem;
   }
   h1{
-    font-family:'Libre Baskerville', Georgia, serif;
-    color:var(--head);
-    font-size:1.72rem;
-    line-height:1.28;
-    margin:0 0 .5rem;
+    font-family:'Libre Baskerville',Georgia,serif;
+    color:var(--ink);
+    font-weight:700;
+    font-size:1.85rem;
+    line-height:1.25;
+    margin:0 0 .6rem;
   }
   .standfirst{
+    font-family:'Libre Baskerville',Georgia,serif;
     font-size:1.02rem;
+    line-height:1.6;
     color:var(--ink);
-    margin:0 0 .9rem;
-    font-weight:500;
+    margin:0 0 1.2rem;
   }
   .meta{
-    font-family:'IBM Plex Mono', ui-monospace, monospace;
-    font-size:.78rem;
-    color:#5a6f5e;
-    margin:0 0 1.6rem;
-    padding-bottom:1.1rem;
-    border-bottom:1px solid #c3e0c6;
+    font-family:'IBM Plex Mono',ui-monospace,monospace;
+    font-size:.75rem;
+    color:var(--text);
+    border-top:1px solid rgba(8,35,16,.18);
+    border-bottom:1px solid rgba(8,35,16,.18);
+    padding:.5rem 0;
+    margin:0 0 1.8rem;
   }
-  article p{margin:0 0 1.15rem;}
+  article p{
+    margin:0 0 1.15rem;
+  }
   article p:first-of-type::first-letter{
-    font-family:'Libre Baskerville', Georgia, serif;
-    font-size:3.1rem;
-    line-height:.82;
+    font-family:'Libre Baskerville',Georgia,serif;
+    color:var(--ink);
     float:left;
+    font-size:3.1rem;
+    line-height:.9;
     padding:.18rem .5rem .1rem 0;
-    color:var(--head);
   }
-  strong{font-weight:600;color:var(--head);}
+  strong{
+    font-weight:600;
+    color:var(--ink);
+  }
   h2{
-    font-family:'Libre Baskerville', Georgia, serif;
-    color:var(--head);
+    font-family:'Libre Baskerville',Georgia,serif;
+    color:var(--ink);
     font-size:1.2rem;
-    margin:2.4rem 0 1rem;
-    padding-top:1.3rem;
-    border-top:1px solid #c3e0c6;
+    margin:2.6rem 0 1rem;
+    padding-top:1.4rem;
+    border-top:2px solid rgba(8,35,16,.2);
   }
   dl{margin:0;}
   dt{
     font-weight:600;
-    color:var(--head);
-    margin-top:.95rem;
+    color:var(--ink);
+    margin-top:.9rem;
   }
   dd{
     margin:.1rem 0 0;
-    padding-left:.9rem;
-    border-left:2px solid #c3e0c6;
-    color:var(--ink);
+    padding-left:0;
+    font-size:.95rem;
   }
-  a{color:var(--accent);text-decoration:none;}
-  a:hover{color:var(--accent-hover);text-decoration:underline;}
+  dd::before{
+    content:"→ ";
+    color:var(--accent);
+  }
+  a{color:var(--accent);}
+  a:hover{color:var(--accent-hover);}
   footer{
     margin-top:2.6rem;
-    font-family:'IBM Plex Mono', ui-monospace, monospace;
-    font-size:.74rem;
-    color:#5a6f5e;
+    font-family:'IBM Plex Mono',ui-monospace,monospace;
+    font-size:.72rem;
+    color:var(--text);
+    opacity:.8;
+  }
+  @media (max-width:420px){
+    h1{font-size:1.5rem;}
+    body{font-size:16px;}
   }
 </style>
 </head>
@@ -99,88 +120,87 @@
 
 <div class="wrap">
 
-  <p class="kicker">Arbeitswelt · Feuilleton</p>
-  <h1>Das freundliche Plakat an der Glastür</h1>
-  <p class="standfirst">Viele Unternehmen beenden das Homeoffice. Doch Nähe lässt sich nicht per Dienstanweisung herstellen.</p>
-  <p class="meta">Lesetext C1 · ca. 323 Wörter · Zielvokabular fett</p>
+  <p class="kicker">Sprachgarten · Lesetext C1 · Wirtschaft</p>
+  <h1>Wer klingelt, zahlt: Die unsichtbaren Kosten der nächsten Lieferung</h1>
+  <p class="standfirst">Über kaum eine Branche wird so bereitwillig geklagt wie über die Paketzustellung. Doch der Ärger der Kundschaft trifft selten die Richtigen.</p>
+  <p class="meta">335 Wörter · Lesezeit ca. 3 Minuten</p>
 
   <article>
-    <p>An der Glastür der Konzernzentrale hängt seit Montag ein Plakat: „<strong>Wir freuen uns, Sie zu sehen.</strong>“ Darunter, in kleinerer Schrift, steht die Pflicht zu drei Bürotagen pro Woche. Gemeint ist das Ende des Homeoffice, und die Botschaft <strong>macht auf viele Beschäftigte einen eher schlechten Eindruck</strong>. Denn wer jeden Morgen aus einem <strong>Vorort</strong> anreist, weiß, dass die <strong>Verbindung</strong> seit der Streichung zweier Buslinien unzuverlässig geworden ist.</p>
+    <p>Man muss im Büro oder im Treppenhaus nicht lange zuhören, um jemanden zu finden, der <strong>über</strong> die Paketbranche <strong>schimpft</strong>. Kaum ein Ärgernis eignet sich besser für den <strong>Alltag</strong>: die Sendung, die angeblich am Dienstag <strong>zugestellt</strong> wurde und doch nirgends auffindbar ist; die Karte im Briefkasten, die einen zwingt, das Päckchen drei Straßen weiter selbst zu <strong>holen</strong>. Was den Empfängern dabei am meisten <strong>missfällt</strong>, ist weniger die Verspätung als das Gefühl, niemanden erreichen zu können.</p>
 
-    <p>Das Unternehmen <strong>verfügt über</strong> helle Büroflächen, Ruheräume und eine Kantine, die regelmäßig ausgezeichnet wird. Trotzdem wächst die <strong>Unglücklichkeit über</strong> die neue Anwesenheitspflicht. In den Betriebsversammlungen <strong>meldet sich</strong> kaum jemand; die Kritik wird auf den Fluren geäußert, nicht am Mikrofon. Die Personalabteilung <strong>gibt</strong> den Führungskräften zwar regelmäßig <strong>einen Hinweis</strong>, woran sich Widerspruch erkennen lässt – doch wer nicht <strong>zuhört</strong>, hört auch nichts.</p>
+    <p>Der Zorn <strong>beruht auf</strong> einem Versprechen, das die Branche selbst gegeben hat. Jahrelang haben die Unternehmen ihren Kunden Lieferungen binnen 24 Stunden <strong>geboten</strong>, und das zu Preisen, die kaum die Spritkosten deckten. Wer <strong>rechnen</strong> kann, erkennt die Lücke sofort: Bei 180 Stopps am Tag bleiben pro Sendung keine zwei Minuten. Dass Millionen Haushalte sich inzwischen selbstverständlich <strong>auf</strong> diese Geschwindigkeit <strong>verlassen</strong>, zeigt vor allem eines – die stille <strong>Abhängigkeit von</strong> einem Handelsmodell, über dessen Kosten niemand gern spricht.</p>
 
-    <p>Besonders die Eltern kleiner Kinder und jene, die nebenbei die Pflege der <strong>Schwieger</strong>mutter organisieren, fragen, ob die Regelung überhaupt <strong>einen Sinn ergibt</strong>. Zwei Stunden Fahrt, um anschließend in Videokonferenzen zu sitzen – <strong>speziell</strong> in den Entwicklungsabteilungen hält man das für absurd. Und wer im Großraumbüro <strong>niest</strong>, erntet Blicke, als habe er die Grippewelle persönlich eingeladen.</p>
+    <p>Die eigentlichen <strong>Opfer</strong> stehen am Steuer. Die <strong>Berühmtheit</strong> Deutschlands <strong>für</strong> Pünktlichkeit und reibungslose Organisation ist längst mehr Mythos als Wirklichkeit, und die Betriebe können den <strong>Bedarf an</strong> zuverlässigem Personal seit Jahren nicht <strong>decken</strong>. Die <strong>Unbeliebtheit</strong> des Schichtdienstes <strong>bei</strong> jungen Bewerbern ist kein Geheimnis: Wer heute <strong>mit</strong> dem Beruf <strong>anfängt</strong>, muss körperlich belastbar und kurzfristig <strong>verfügbar</strong> sein. Vielen Disponenten <strong>imponiert</strong> weniger ein Zeugnis als die Tatsache, dass jemand bereits in der Gastronomie oder auf dem Bau <strong>Erfahrung gesammelt</strong> hat. Wer abends <strong>mit</strong> seiner Tour <strong>fertig</strong> ist, hat zwölf Stunden hinter sich.</p>
 
-    <p>Die Geschäftsführung ist <strong>überzeugt</strong>, dass Kreativität Begegnung braucht, und tatsächlich ist die <strong>Begeisterung für</strong> gemeinsame Projekte in gemischten Teams messbar höher. Doch Begegnung lässt sich nicht verordnen. Wo sie erzwungen wird, wächst die <strong>Aggressivität gegen</strong> Vorgesetzte, und zugleich die Gereiztheit der Führungskräfte zu ihren Teams. Umfragen geben einen deutlichen Hinweis darauf, dass Zwang die Produktivität nicht erhöht. Die Erschöpfung <strong>schleicht sich</strong> dabei leise <strong>an</strong> die Belegschaft <strong>an</strong> – niemand bemerkt sie, bis die Krankenstände steigen.</p>
+    <p>In Berlin wird seit Jahren über ein Verbot der Subunternehmerketten debattiert; die Branche verweist auf Kosten, die Gewerkschaften auf Gesundheitsstatistiken. Beides ist richtig, und beides ändert vorerst wenig. Denn die Lücke zwischen dem, was Kundschaft erwartet, und dem, was ein Tarifvertrag hergibt, lässt sich nicht durch Appelle schließen, sondern nur durch Preise – und die will niemand zahlen.</p>
 
-    <p>Wer ohnehin <strong>zufrieden mit</strong> seinem Arbeitsplatz ist, kommt auch ohne Plakat. Allen anderen <strong>macht</strong> ein Satz an der Glastür keine <strong>Hoffnung</strong>. Hoffnung machen Vereinbarungen, die die <strong>Bedürfnisse</strong> der Beschäftigten ernst nehmen: verlässliche Takte im Nahverkehr, Gleitzeit, Rückzugsorte für konzentriertes Arbeiten. Und es braucht Vorgesetzte, die nicht nur reden, sondern zuhören, bevor sie entscheiden. Dann erst ergäbe das freundliche Plakat einen Sinn – und machte vielleicht sogar einen guten Eindruck.</p>
+    <p>Man kann <strong>sich kurz fassen</strong>: Solange Bequemlichkeit nichts kosten darf, wird sie von jenen bezahlt, die klingeln. Vielleicht wäre es ein Anfang, beim nächsten verlorenen Paket nicht den Fahrer anzurufen, sondern den eigenen Bestellknopf etwas seltener zu drücken.</p>
   </article>
 
   <h2>English gloss</h2>
   <dl>
-    <dt>Wir freuen uns, Sie zu sehen.</dt>
-    <dd>We look forward to seeing you.</dd>
+    <dt>schimpfen über (+Akk)</dt>
+    <dd>to rant about / to scold about</dd>
 
-    <dt>einen guten/schlechten Eindruck machen auf (+Akk)</dt>
-    <dd>to make a good/bad impression on someone</dd>
+    <dt>der Alltag</dt>
+    <dd>everyday life</dd>
 
-    <dt>der Vorort</dt>
-    <dd>the suburb</dd>
+    <dt>zustellen</dt>
+    <dd>to deliver</dd>
 
-    <dt>die Verbindung</dt>
-    <dd>the connection (here: transport link)</dd>
+    <dt>holen</dt>
+    <dd>to get / to fetch</dd>
 
-    <dt>verfügen über (+Akk)</dt>
-    <dd>to have available / to offer (as a feature)</dd>
+    <dt>missfallen (+Dat)</dt>
+    <dd>to displease / to be displeasing</dd>
 
-    <dt>die Unglücklichkeit über (+Akk)</dt>
-    <dd>unhappiness about</dd>
+    <dt>beruhen auf (+Dat)</dt>
+    <dd>to be grounded in / to be based on / to rest on</dd>
 
-    <dt>sich melden</dt>
-    <dd>to raise one's hand / to speak up</dd>
+    <dt>bieten (+Dat/+Akk)</dt>
+    <dd>to offer / to provide</dd>
 
-    <dt>einen Hinweis geben (+Dat)</dt>
-    <dd>to give someone a tip / hint / piece of advice</dd>
+    <dt>rechnen</dt>
+    <dd>to do math / to calculate</dd>
 
-    <dt>zuhören</dt>
-    <dd>to listen</dd>
+    <dt>sich verlassen auf (+Akk)</dt>
+    <dd>to rely on / to count on</dd>
 
-    <dt>Schwieger- (die Schwiegermutter)</dt>
-    <dd>in-law (prefix) – here: the mother-in-law</dd>
+    <dt>die Abhängigkeit von (+Dat)</dt>
+    <dd>the dependence on</dd>
 
-    <dt>einen Sinn ergeben/machen</dt>
-    <dd>to make sense</dd>
+    <dt>das Opfer</dt>
+    <dd>the sacrifice / the victim</dd>
 
-    <dt>speziell</dt>
-    <dd>especially / particularly</dd>
+    <dt>die Berühmtheit für (+Akk)</dt>
+    <dd>the fame / renown for</dd>
 
-    <dt>niesen</dt>
-    <dd>to sneeze</dd>
+    <dt>den Bedarf decken an (+Dat)</dt>
+    <dd>to meet / to cover the demand for</dd>
 
-    <dt>überzeugt</dt>
-    <dd>convinced</dd>
+    <dt>die Unbeliebtheit bei (+Dat)</dt>
+    <dd>the unpopularity with</dd>
 
-    <dt>die Begeisterung von (+Dat)/für (+Akk)</dt>
-    <dd>the enthusiasm for</dd>
+    <dt>anfangen mit (+Dat)</dt>
+    <dd>to start with / to begin with</dd>
 
-    <dt>die Aggressivität gegen (+Akk) / zu (+Dat)</dt>
-    <dd>the aggressiveness towards</dd>
+    <dt>verfügbar</dt>
+    <dd>available</dd>
 
-    <dt>sich anschleichen an (+Akk)</dt>
-    <dd>to sneak up on</dd>
+    <dt>imponieren (+Dat)</dt>
+    <dd>to impress</dd>
 
-    <dt>zufrieden mit (+Dat)</dt>
-    <dd>satisfied with / content with</dd>
+    <dt>Erfahrung sammeln</dt>
+    <dd>to gain experience</dd>
 
-    <dt>Hoffnung machen (+Dat)</dt>
-    <dd>to give someone hope / to raise someone's hopes</dd>
+    <dt>fertig mit (+Dat)</dt>
+    <dd>finished with / done with</dd>
 
-    <dt>das Bedürfnis / die Bedürfnisse</dt>
-    <dd>the need(s)</dd>
+    <dt>sich kurz fassen</dt>
+    <dd>to keep it short</dd>
   </dl>
 
-  <footer>Sprachgarten · Lesen &amp; Wortschatz · Niveau C1</footer>
-
+  <footer>Sprachgarten · Lesetraining · Niveau C1</footer>
 </div>
 </body>
 </html>
