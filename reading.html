@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lesetext C1 – Vom Schweigen der Kunden | Sprachgarten</title>
+<title>Lesetext: Zwischen Schichtplan und Selbstachtung — Sprachgarten</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#082310;
-    --body:#304635;
     --bg:#e9fae9;
+    --ink:#304635;
+    --head:#082310;
     --accent:#0077c7;
     --accent-hover:#0061b0;
   }
@@ -19,81 +19,84 @@
     margin:0;
     padding:1.5rem 1.1rem 3.5rem;
     background:var(--bg);
-    color:var(--body);
-    font-family:'Sora', system-ui, sans-serif;
+    color:var(--ink);
+    font-family:'Sora',system-ui,sans-serif;
     font-size:1.03rem;
-    line-height:1.7;
+    line-height:1.72;
   }
   main{max-width:40rem;margin:0 auto;}
   .kicker{
-    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-family:'IBM Plex Mono',ui-monospace,monospace;
     font-size:.74rem;
     letter-spacing:.14em;
     text-transform:uppercase;
-    color:var(--body);
+    color:var(--accent);
     margin:0 0 .6rem;
   }
   h1{
-    font-family:'Libre Baskerville', Georgia, serif;
-    color:var(--ink);
-    font-size:1.75rem;
+    font-family:'Libre Baskerville',Georgia,serif;
+    color:var(--head);
+    font-weight:700;
+    font-size:1.72rem;
     line-height:1.28;
     margin:0 0 .5rem;
   }
   .standfirst{
-    font-family:'Libre Baskerville', Georgia, serif;
-    color:var(--ink);
     font-size:1.02rem;
-    line-height:1.55;
+    color:var(--ink);
     margin:0 0 .9rem;
+    font-weight:500;
   }
   .meta{
-    font-family:'IBM Plex Mono', ui-monospace, monospace;
-    font-size:.78rem;
-    color:var(--body);
-    border-top:1px solid rgba(8,35,16,.18);
-    border-bottom:1px solid rgba(8,35,16,.18);
-    padding:.5rem 0;
+    font-family:'IBM Plex Mono',ui-monospace,monospace;
+    font-size:.76rem;
+    color:#5b7161;
     margin:0 0 1.6rem;
+    padding-bottom:1rem;
+    border-bottom:1px solid #c3e2c7;
   }
-  article p{margin:0 0 1.05rem;}
+  article p{margin:0 0 1.1rem;}
   article p:first-of-type::first-letter{
-    font-family:'Libre Baskerville', Georgia, serif;
-    color:var(--ink);
-    font-size:3rem;
-    line-height:.9;
+    font-family:'Libre Baskerville',Georgia,serif;
+    font-size:3.1rem;
+    line-height:.86;
     float:left;
-    padding:.25rem .5rem .1rem 0;
+    padding:.22rem .5rem .1rem 0;
+    color:var(--head);
   }
-  strong{font-weight:600;color:var(--ink);}
+  strong{font-weight:600;color:var(--head);}
   h2{
-    font-family:'Libre Baskerville', Georgia, serif;
-    color:var(--ink);
+    font-family:'Libre Baskerville',Georgia,serif;
+    color:var(--head);
     font-size:1.2rem;
-    margin:2.6rem 0 .9rem;
-    padding-top:1.4rem;
-    border-top:2px solid rgba(8,35,16,.2);
+    margin:2.4rem 0 .3rem;
   }
-  dl{margin:0;}
+  .gloss-note{
+    font-family:'IBM Plex Mono',ui-monospace,monospace;
+    font-size:.76rem;
+    color:#5b7161;
+    margin:0 0 1.2rem;
+  }
+  dl{
+    margin:0;
+    border-top:1px solid #c3e2c7;
+  }
   dt{
     font-weight:600;
-    color:var(--ink);
+    color:var(--head);
     margin-top:.85rem;
   }
   dd{
-    margin:.15rem 0 0;
-    padding-left:.9rem;
-    border-left:2px solid rgba(0,119,199,.35);
-    font-size:.97rem;
+    margin:.1rem 0 .85rem;
+    padding-bottom:.85rem;
+    border-bottom:1px solid #c3e2c7;
+    color:var(--ink);
   }
   a{color:var(--accent);text-decoration:none;}
   a:hover{color:var(--accent-hover);text-decoration:underline;}
-  footer{
-    font-family:'IBM Plex Mono', ui-monospace, monospace;
-    font-size:.74rem;
-    margin-top:2.5rem;
-    padding-top:1rem;
-    border-top:1px solid rgba(8,35,16,.18);
+  @media (max-width:420px){
+    h1{font-size:1.46rem;}
+    body{font-size:1rem;}
   }
 </style>
 </head>
@@ -101,89 +104,86 @@
 <p style="font-family:'Sora',system-ui,sans-serif;font-size:0.85rem;margin:0.6rem 0 0;"><a href="index.html" style="color:#006eb8;">← Startseite</a></p>
 
 <main>
-  <p class="kicker">Sprachgarten &middot; Lesetext C1 &middot; Feuilleton</p>
-  <h1>Vom Schweigen der Kunden</h1>
-  <p class="standfirst">Wer sich betrogen fühlt, schweigt in diesem Land erstaunlich oft. Dabei ist die Beschwerde kein Zeichen schlechter Manieren, sondern ein demokratischer Reflex.</p>
-  <p class="meta">321 Wörter &middot; Lesezeit ca. 3 Minuten</p>
+  <p class="kicker">Feuilleton · Arbeitswelt</p>
+  <h1>Zwischen Schichtplan und Selbstachtung</h1>
+  <p class="standfirst">Die Pflege gilt als systemrelevant. Doch wer bleiben soll, braucht mehr als warme Worte — ein Ortsbesuch auf Station 4.</p>
+  <p class="meta">Lesetext · C1 · 370 Wörter</p>
 
   <article>
-    <p>Es beginnt harmlos: ein Mobilfunkvertrag, vier Seiten Kleingedrucktes, eine Unterschrift. Erst Wochen später, beim Blick auf die Abrechnung, dämmert vielen Verbrauchern, dass man sie <strong>über den Tisch gezogen</strong> hat. Und dann? Dann kommt kein <strong>Mucks</strong>.</p>
+    <p>Der jüngste <strong>Bericht</strong> der Landespflegekammer liest sich wie eine Mahnung: Jede fünfte Fachkraft denkt daran, den Beruf zu verlassen. Wer die Betroffenen fragt, bekommt selten eine einzige Erklärung; die meisten <strong>nennen</strong> gleich mehrere <strong>Gründe für</strong> ihren Entschluss. Ob die Versorgung in den kommenden Jahren überhaupt gesichert bleibt, <strong>hängt</strong> weniger <strong>von</strong> großen Reformversprechen <strong>ab</strong> als von der Frage, ob die <strong>Investition in</strong> Personal, Ausbildung und vernünftige Arbeitszeitmodelle endlich ernst genommen wird.</p>
 
-    <p>Dabei wäre der Weg vorgezeichnet. Wer sich <strong>beim</strong> Anbieter <strong>beschwert</strong>, hat in der Regel gute Karten, denn die Rechtslage <strong>schützt</strong> die Kundschaft hierzulande durchaus <strong>vor</strong> den dreistesten Tricks. Doch die wenigsten <strong>wagen</strong> den Anruf. Man <strong>beobachtet</strong> lieber, was die anderen tun, liest Forenbeiträge, flucht leise – „<strong>Das ist lächerlich!</strong>“ – und zahlt.</p>
+    <p>Malaika Hadrawi, 34, hat vor zwei Jahren ihre <strong>Prüfung abgelegt</strong> und arbeitet seither auf einer geriatrischen Station. Sie <strong>steht für</strong> Nacht- und Wochenendschichten <strong>zur Verfügung</strong>, weil sie, wie sie sagt, <strong>ein enges Verhältnis</strong> zu ihren Patientinnen aufgebaut hat. Ihre <strong>Erfahrungen mit</strong> alten Menschen hätten sie verändert: Man begleite keine Fälle, sondern <strong>Schicksale</strong>. Der <strong>Stolz auf</strong> diese Arbeit ist unüberhörbar — und er ist, anders als das Gehalt, nicht verhandelbar. <strong>Angesehen bei</strong> Ärzten und Angehörigen zu sein, entschädigt sie für manches.</p>
 
-    <p>Wer einmal in einem Callcenter gearbeitet hat, kennt die andere Seite. Die Mitarbeiter, die abends ihre <strong>Überstunden abbauen</strong> wollen und es selten dürfen; die <strong>Konzentration auf</strong> Kennzahlen, die jedes Gespräch in Sekunden misst. Kein Wunder, dass mancher am Telefon <strong>unfreundlich zu</strong> den Anrufern wird. Man sollte sich nicht <strong>in</strong> den Menschen <strong>täuschen</strong>, die dort sitzen: Sie sind nicht das System. Wer ihnen <strong>beim</strong> Arbeiten <strong>zusieht</strong>, bekommt eher Lust zu <strong>verzweifeln</strong> als zu schimpfen.</p>
+    <p>Und doch <strong>macht sie sich</strong> zunehmend <strong>Gedanken über</strong> ihre Zukunft. Der Kaffee aus dem Automaten <strong>schmeckt nach</strong> Pappe, die Pausen fallen aus, der Dienstplan wird dreimal pro Woche geändert. Wer mit <strong>Husten</strong> und <strong>Schnupfen</strong> zu Hause bleibt, <strong>erhält</strong> nicht etwa Verständnis, sondern Anrufe. <strong>Bemerkt</strong> jemand, dass drei Kolleginnen gleichzeitig fehlen, springt eben die vierte ein. <strong>Eifersüchtig auf</strong> Freundinnen, die im Büro Gleitzeit genießen, sei sie nicht — <strong>wütend</strong> mache sie etwas anderes: die Behauptung, Pflege sei ein schlicht gestrickter Beruf. Tatsächlich ist kaum eine Tätigkeit so <strong>vielseitig</strong>: Medizin, Organisation, Psychologie, Bürokratie.</p>
 
-    <p>Trotzdem: Die Beschwerde ist kein Akt der Unhöflichkeit, sondern ein demokratischer Reflex. Sie verlangt nichts weiter als <strong>Entschlossenheit zu</strong> einem klaren Satz und die Bereitschaft, <strong>Fragen zu stellen</strong> – höflich, aber <strong>sorgfältig</strong> formuliert und schriftlich festgehalten. Verbraucherzentralen <strong>loben</strong> seit Jahren jene, die genau das tun; sie berichten, dass eine einzige gut begründete Eingabe ganze Tarifmodelle gekippt hat.</p>
+    <p>Ökonomen rechnen vor, dass sich jeder Euro, der heute in die Ausbildung fließt, langfristig auszahlt; die Krankenkassen verweisen auf steigende Fehlzeiten. Doch die Debatte bleibt seltsam abstrakt, solange sie über die Köpfe derer hinweggeführt wird, die morgens um halb sechs die Station übernehmen.</p>
 
-    <p>Ein Beispiel aus Köln: Eine Rentnerin, die ihre Strommehrkosten nicht hinnehmen wollte, schrieb vier Briefe, jeden einzelnen datiert, nummeriert, mit Belegen versehen. Der Konzern lenkte ein, 340 Euro flossen zurück, und die Klausel verschwand aus dem Vertrag. Niemand hatte sie dazu ermutigt; sie hielt es schlicht für selbstverständlich.</p>
-
-    <p>Deshalb möchte ich Ihnen <strong>einen Vorschlag machen</strong>: Nehmen Sie <strong>Abschied von</strong> der Vorstellung, Ärger sei Privatsache. Greifen Sie zum Stift, beim nächsten Mal, wenn eine Rechnung nicht stimmt. Schlimmstenfalls bleibt es bei einer Standardantwort. Bestenfalls aber steht am Ende eine Gutschrift – und ein Satz echter <strong>Dankbarkeit für</strong> eine Hartnäckigkeit, von der am Ende alle profitieren.</p>
+    <p>Die Politik hat auf den Bericht mit Ankündigungen reagiert — mit Modellprojekten, Imagekampagnen, Prämien. Doch Applaus ersetzt keine Stellen, und Dankbarkeit ersetzt keinen Dienstplan. Wer will, dass Menschen wie Malaika Hadrawi bleiben, muss ihnen Verlässlichkeit bieten, und zwar bevor der nächste Bericht erscheint und erneut niemand überrascht ist.</p>
   </article>
 
   <h2>English gloss</h2>
+  <p class="gloss-note">in order of first appearance</p>
   <dl>
-    <dt>über den Tisch ziehen</dt>
-    <dd>to dupe / con someone</dd>
+    <dt>der Bericht</dt>
+    <dd>the report</dd>
 
-    <dt>der Mucks</dt>
-    <dd>a sound / peep</dd>
+    <dt>Grund nennen für (+Akk)</dt>
+    <dd>to give / state a reason for</dd>
 
-    <dt>sich beschweren bei (+ Dat.)</dt>
-    <dd>to complain (to someone)</dd>
+    <dt>abhängen von (+Dat)</dt>
+    <dd>to depend on</dd>
 
-    <dt>schützen vor (+ Dat.)</dt>
-    <dd>to protect against</dd>
+    <dt>die Investition in (+Akk)</dt>
+    <dd>the investment in</dd>
 
-    <dt>wagen</dt>
-    <dd>to dare</dd>
+    <dt>eine Prüfung ablegen</dt>
+    <dd>to sit / take an exam</dd>
 
-    <dt>beobachten</dt>
-    <dd>to observe</dd>
+    <dt>zur Verfügung stehen für (+Akk)</dt>
+    <dd>to be available for</dd>
 
-    <dt>Das ist lächerlich!</dt>
-    <dd>That's ridiculous!</dd>
+    <dt>ein enges Verhältnis</dt>
+    <dd>a close relationship</dd>
 
-    <dt>Überstunden abbauen</dt>
-    <dd>to reduce / work off overtime</dd>
+    <dt>die Erfahrung in (+Dat) / mit (+Dat)</dt>
+    <dd>experience in / with</dd>
 
-    <dt>die Konzentration auf (+ Akk.)</dt>
-    <dd>the concentration / focus on</dd>
+    <dt>das Schicksal</dt>
+    <dd>the fate</dd>
 
-    <dt>unfreundlich zu (+ Dat.)</dt>
-    <dd>unfriendly to / towards</dd>
+    <dt>der Stolz auf (+Akk)</dt>
+    <dd>pride in</dd>
 
-    <dt>sich täuschen in (+ Dat.)</dt>
-    <dd>to be mistaken about / to be deceived about</dd>
+    <dt>angesehen bei (+Dat)</dt>
+    <dd>respected by / well regarded among</dd>
 
-    <dt>zusehen (bei) (+ Dat.)</dt>
-    <dd>to watch / to observe</dd>
+    <dt>sich Gedanken machen über (+Akk)</dt>
+    <dd>to think about / to worry about</dd>
 
-    <dt>verzweifeln</dt>
-    <dd>to despair</dd>
+    <dt>schmecken nach (+Dat)</dt>
+    <dd>to taste like</dd>
 
-    <dt>die Entschlossenheit zu (+ Dat.)</dt>
-    <dd>the determination / resolve to</dd>
+    <dt>der Husten</dt>
+    <dd>the cough</dd>
 
-    <dt>Fragen stellen</dt>
-    <dd>to ask questions</dd>
+    <dt>der Schnupfen</dt>
+    <dd>the sniffle / head cold</dd>
 
-    <dt>sorgfältig</dt>
-    <dd>carefully</dd>
+    <dt>erhalten</dt>
+    <dd>to get / receive (formal)</dd>
 
-    <dt>loben</dt>
-    <dd>to praise</dd>
+    <dt>bemerken</dt>
+    <dd>to notice</dd>
 
-    <dt>einen Vorschlag machen (+ Dat.)</dt>
-    <dd>to make a suggestion to someone</dd>
+    <dt>eifersüchtig auf (+Akk)</dt>
+    <dd>jealous of</dd>
 
-    <dt>Abschied nehmen von (+ Dat.)</dt>
-    <dd>to say goodbye to / to take one's leave of</dd>
+    <dt>wütend</dt>
+    <dd>angry</dd>
 
-    <dt>die Dankbarkeit für (+ Akk.)</dt>
-    <dd>gratitude for</dd>
+    <dt>vielseitig</dt>
+    <dd>versatile</dd>
   </dl>
-
-  <footer>Sprachgarten &middot; Tagespensum Lesen &middot; Niveau C1</footer>
 </main>
 </body>
 </html>
