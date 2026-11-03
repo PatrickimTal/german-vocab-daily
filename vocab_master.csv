@@ -1,7 +1,7 @@
 type,german,english,example_de,example_en,date_last_used,times_used,notes,subtype
 verb_prep,abhängen von (+Dat),to depend on,"Ob wir den Ausflug machen, hängt vom Wetter ab.",,2026-10-29,3,,Verb + Präp.
 verb_prep,Abschied nehmen von (+Dat),to say goodbye to / to take one's leave of,Toma Popescu musste wegen der hohen Arbeitslosigkeit Abschied von seiner Heimat nehmen.,,2026-10-28,2,from uploaded list,Verb + Präp.
-verb_prep,Abstand halten von (+Dat),to keep one's distance from,"Halten Sie Abstand von den Baumaschinen, damit Sie sich nicht verletzen",,2026-09-30,1,from uploaded list,Verb + Präp.
+verb_prep,Abstand halten von (+Dat),to keep one's distance from,"Halten Sie Abstand von den Baumaschinen, damit Sie sich nicht verletzen",,2026-11-03,2,from uploaded list,Verb + Präp.
 verb_prep,achten auf (+Akk),to pay attention to / to watch out for,Worauf sollte man bei der Berufswahl achten?,,2026-10-24,2,,Verb + Präp.
 verb_prep,anfangen mit (+Dat),to start with / to begin with,Wann haben Sie mit dem Deutschlernen angefangen?,,2026-10-26,2,,Verb + Präp.
 verb_prep,Angst haben vor (+Dat),be afraid of,Wovor haben Sie Angst?,,2026-10-15,2,from uploaded list,Verb + Präp.
@@ -17,7 +17,7 @@ verb_prep,aus dem Weg gehen (+Dat),to avoid / to get out of someone's way,Meinem
 verb_prep,basieren auf (+Dat),to be based on,Der Film basiert auf einem wahren Ereignis aus dem 19. Jahrhundert.,,2026-10-30,3,,Verb + Präp.
 verb_prep,begegnen (+Dat),to run into / encounter,,,2026-10-23,2,"governs dative, no preposition — grouped as valence pattern",Verb + Präp.
 verb_prep,beginnen mit (+Dat),to begin with / to start with,"Toma, wann beginnst du auf der Arbeit mit dem Duzen?",,2026-09-12,1,,Verb + Präp.
-verb_prep,beharren auf (+Dat),to persist in / to (stubbernly) stick to a position,"Er beharrt auf seiner Meinung, obwohl alle Beweise dagegen sprechen. / Trotz heftiger Kritik beharrte sie auf ihrem Standpunkt.",,2026-10-02,1,,Verb + Präp.
+verb_prep,beharren auf (+Dat),to persist in / to (stubbernly) stick to a position,"Er beharrt auf seiner Meinung, obwohl alle Beweise dagegen sprechen. / Trotz heftiger Kritik beharrte sie auf ihrem Standpunkt.",,2026-11-03,2,,Verb + Präp.
 verb_prep,beneiden um (+Akk),to envy,"Viele beneiden ihn um seinen Erfolg, ohne zu wissen, wie hart er dafür gearbeitet hat.",,2026-09-29,1,,Verb + Präp.
 verb_prep,beruhen auf (+Dat),to be gounded in / to be based on / to rest on,"Sie besteht auf ihrem Recht, den Vertrag zu kündigen. / Der Kunde bestand auf einer vollständigen Rückerstattung.",,2026-10-26,2,,Verb + Präp.
 verb_prep,Bescheid geben (+Dat),to let someone know / to inform someone,Wir geben Ihnen im Laute des nächsten Monats über den weiteren Bewerbungsprozess Bescheid.,,2026-10-14,2,from uploaded list,Verb + Präp.
@@ -57,7 +57,7 @@ verb_prep,einen Zusammenhang herstellen zwischen (+Dat) und (Dat.),to establish 
 verb_prep,Einfluss nehmen auf (+Akk),to exert influence on / to have an impact on,"Die Lobbygruppe versuchte, Einfluss auf die Entscheidung des Parlaments zu nehmen.",,2026-10-23,2,from uploaded list,Verb + Präp.
 verb_prep,einwilligen in (+Akk),to consent,"Der Patient willigte in die Operation ein, nachdem er ausführlich beraten worden war.",,2026-10-05,1,,Verb + Präp.
 verb_prep,entsprechen (+Dat),to correspond to,,,2026-10-15,2,"governs dative, no preposition — grouped as valence pattern",Verb + Präp.
-verb_prep,erinnern an (+Akk),to remind (someone) of,Die Blätter erinnern mich an meine Heimat in den USA.,The leaves remind me of my home in the USA.,2026-09-06,1,note reflexive (sich erinnern an) vs non-reflexive (jdn erinnern an) — different subject,Verb + Präp.
+verb_prep,erinnern an (+Akk),to remind (someone) of,Die Blätter erinnern mich an meine Heimat in den USA.,The leaves remind me of my home in the USA.,2026-11-03,2,note reflexive (sich erinnern an) vs non-reflexive (jdn erinnern an) — different subject,Verb + Präp.
 verb_prep,erkennen an (+Dat),to recognise by / to identify by,"Ich erkenne am Geruch, ob das Gemüse frisch ist oder nicht. / Woran erkennen Sie gutes Brot?",,2026-10-14,2,,Verb + Präp.
 verb_prep,erkranken an (+Dat),to fall ill with / to develop a disease,"Sie erkrankte im Alter von 40 Jahren an Brustkrebs. / Immer mehr Menschen erkranken an Diabetes, vor allem in westlichen Ländern.",,2026-09-07,1,,Verb + Präp.
 verb_prep,flüchten vor (+Dat),to flee from,Die Familie flüchtete vor dem Krieg in ein benachbartes Land.,,2026-09-11,1,,Verb + Präp.
@@ -87,12 +87,12 @@ verb_prep,Maßnahmen ergreifen für (+Akk),to take measures for,"Wir werden geei
 verb_prep,nachdenken über (+Akk),to think about / to reflect on / to ponder,Toma Popescu denkt über seine Zukunft nach.,,2026-10-24,2,,Verb + Präp.
 verb_prep,neigen zu (+Dat),to tend towards / to be inclined to,"Er neigt dazu, Probleme zu übertreiben, anstatt sie sachlich zu betrachten. / Sie neigt zu Pessimismus, obwohl die Situation eigentlich nicht so schlimm ist.",,2026-09-29,1,,Verb + Präp.
 verb_prep,Neugierde wecken für (+Akk),to arouse curiosity about,Die Kindergärtnerin weckt die Neugierde der Kinder für Tiere.,,2026-10-27,2,from uploaded list,Verb + Präp.
-verb_prep,protestieren gegen (+Akk),to protest against,Tausende von Menschen protestierten gegen die geplanten Sparmaßnahmen.,,2026-10-24,3,,Verb + Präp.
+verb_prep,protestieren gegen (+Akk),to protest against,Tausende von Menschen protestierten gegen die geplanten Sparmaßnahmen.,,2026-11-03,4,,Verb + Präp.
 verb_prep,Rat suchen bei (+Dat),to seek advice from,Früher suchte er oft Rat bei seinem Vater.,,2026-11-02,2,from uploaded list,Verb + Präp.
 verb_prep,rechnen mit (+Dat),to expect,"Wir rechnen damit, dass die Ergebnisse nächste Woche vorliegen werden.",,2026-10-09,2,,Verb + Präp.
 verb_prep,Respekt haben vor (+Dat),to have respect for,In der Altenpflege sollte man Respekt vor alten Menschen haben.,,2026-09-26,1,from uploaded list,Verb + Präp.
 verb_prep,riechen nach (+Dat),to smell like,Die frisch gebackenen Brötchen riechen nach Zimt und Vanille.,,2026-09-20,1,,Verb + Präp.
-verb_prep,Rücksicht nehmen auf (+Akk),to show consideration for / to be considerate of,"Liebe Nachbarn, nehmen Sie bitte Rücksicht und machen Sie die Musik nachts leiser",,2026-09-14,1,from uploaded list,Verb + Präp.
+verb_prep,Rücksicht nehmen auf (+Akk),to show consideration for / to be considerate of,"Liebe Nachbarn, nehmen Sie bitte Rücksicht und machen Sie die Musik nachts leiser",,2026-11-03,2,from uploaded list,Verb + Präp.
 verb_prep,schimpfen über (+Akk),to rant about / to scold about,Er schimpfte lautstark über die ständigen Verspätungen der Bahn.,,2026-10-26,3,,Verb + Präp.
 verb_prep,Schluss machen mit (+Dat),to end / finish with / to break up with,Wir machen Schluss mit hohen Preisen. 50 % Rabatt auf allesl,,2026-09-17,1,from uploaded list,Verb + Präp.
 verb_prep,schmecken nach (+Dat),to taste like,Die Suppe schmeckt nach Knoblauch und frischen Kräutern.,,2026-10-29,3,,Verb + Präp.
@@ -198,7 +198,7 @@ noun_prep,der Neid auf (+Akk),the envy of,Neid auf seine Nachbarn ist Nhan Nguye
 noun_prep,der Nutzen für (+Akk),the benefit / use for,Bei unseren neuen Produkten muss der Nutzen für die Gesundheit hervorgehoben werden.,,2026-10-11,2,,Nomen + Präp.
 noun_prep,der Protest gegen (+Akk),protest against,Der Protest der Belegschaft gegen die Lohnkürzungen hat nichts genützt.,,2026-10-21,2,,Nomen + Präp.
 noun_prep,der Reichtum an (+Dat),the richness / abundance of,Deutschland ist für seinen Reichtum an Wasser bekannt.,,2026-11-01,2,,Nomen + Präp.
-noun_prep,der Schaden für (+Akk),the damage / harm to,Der Schaden für das Unternehmen beträgt 25.000 €.,,2026-10-11,2,,Nomen + Präp.
+noun_prep,der Schaden für (+Akk),the damage / harm to,Der Schaden für das Unternehmen beträgt 25.000 €.,,2026-11-03,3,,Nomen + Präp.
 noun_prep,der Stolz auf (+Akk),pride in,Petra Münzbergs Stolz auf ihre finanzielle Unabhängigkeit ist groß.,,2026-10-29,2,,Nomen + Präp.
 noun_prep,der Traum von (+Akk),dream of,Caroline Youssi möchte ihren Traum von einer Reise nach Paris verwirklichen.,,2026-10-12,2,,Nomen + Präp.
 noun_prep,der Zusammenhang,context / connection,,,2026-10-30,3,commonly used with 'mit' (Zusammenhang mit),Nomen + Präp.
@@ -210,7 +210,7 @@ noun_prep,die Angewiesenheit auf (+Akk),the dependence / reliance on,Die Angewie
 noun_prep,die Anwesenheit bei (+Dat),the presence at,Für alle Auszubildenden ist die Anwesenheit bei dieser Veranstaltung verpflichtend,,2026-10-15,2,,Nomen + Präp.
 noun_prep,die Armut an (+Dat),the lack / poverty of,Die Armut an Lebensmitteln und Trinkwasser ist in vielen ländern ein ernstes Problem.,,2026-10-30,2,,Nomen + Präp.
 noun_prep,die Begeisterung von (+Dat)/für (+Dat),the enthusiasm for,Die Begeisterung von Toma Popescu für Fußball ist groß.,,2026-10-25,2,,Nomen + Präp.
-noun_prep,die Bekanntheit bei (+Dat)/für (+Akk),the fame / recognition among / for,Manchmal ist Fadi Samet seine Bekanntheit bei den Flüchtlingen für seine guten Übersetzungen zu viel,,2026-10-02,2,,Nomen + Präp.
+noun_prep,die Bekanntheit bei (+Dat)/für (+Akk),the fame / recognition among / for,Manchmal ist Fadi Samet seine Bekanntheit bei den Flüchtlingen für seine guten Übersetzungen zu viel,,2026-11-03,3,,Nomen + Präp.
 noun_prep,die Beliebtheit bei (+Dat),the popularity with,Süßigkeiten sind für ihre Beliebtheit bei Kindern bekannt.,,2026-10-04,2,,Nomen + Präp.
 noun_prep,die Bereitschaft zu (+Dat),the willingness / readiness to,Als Feuerwehrmann müssen Sie über die Bereitschaft zur Schichtarbeit verfügen.,,2026-10-19,2,,Nomen + Präp.
 noun_prep,die Beruhigung über (+Akk),the relief / reassurance about,"Die Beruhigung darüber, endlich in Sicherheit zu leben, lässt sich nicht in Worte fassen.",,2026-10-05,2,,Nomen + Präp.
@@ -269,7 +269,7 @@ noun_prep,die Verpflichtung zu (+Dat)/für (+Akk),the obligation / commitment to
 noun_prep,die Verwunderung über (+Akk),the astonishment / puzzlement at,Die Verwunderung über die Gehaltserhöhung war groß.,,2026-10-21,2,,Nomen + Präp.
 noun_prep,die Vorbereitung auf (+Akk),the preparation for,Hedda Aziz investierte viel Zeit in die Vorbereitung auf die Deutschprüfung.,,2026-10-17,3,,Nomen + Präp.
 noun_prep,die Werbung für (+Akk),advertising for,Ist in Ihrem Heimatland die Werbung für Zigaretten erlaubt?,,2026-10-04,2,,Nomen + Präp.
-noun_prep,die Wichtigkeit für (+Akk),the importance / significance for,Die Wichtigkeit von Fremdsprachenkenntnissen ist für die Hotel- und Gaststättenbranche beträchtich.,,2026-10-02,2,,Nomen + Präp.
+noun_prep,die Wichtigkeit für (+Akk),the importance / significance for,Die Wichtigkeit von Fremdsprachenkenntnissen ist für die Hotel- und Gaststättenbranche beträchtich.,,2026-11-03,3,,Nomen + Präp.
 noun_prep,die Wirkung auf (+Akk),effect on,Die Wirkung dieses Medikaments auf Menschen ist noch nicht erforscht.,,2026-11-02,3,,Nomen + Präp.
 noun_prep,die Wut auf (+Akk)/über (+Akk),anger at/about,Er hat immer noch Wut auf den alten Chef und über dessen Ungerechtigkeit.,,2026-10-13,2,,Nomen + Präp.
 noun_prep,die Zufriedenheit mit (+Dat),satisfaction with,Die Zufriedenheit mit seiner Tätigkeit sieht man Fadi Samet an.,,2026-10-24,2,,Nomen + Präp.
@@ -303,7 +303,7 @@ other,aufhören,to stop / end,,,2026-10-22,2,,Wortschatz
 other,Aufmerksamkeit schaffen,to draw / create attention,,,2026-09-21,1,,Redemittel
 other,ausgegossen,poured out,,,2026-10-14,1,,Wortschatz
 other,auswendig,by heart / from memory,,,2026-10-24,2,merged duplicates,Wortschatz
-other,außer Frage stehen,to be beyond question / out of the question,"Es steht außer Frage, dass Maurer ein anstrengender Beruf ist.",,2026-09-02,1,"idiomatic verb phrase, from uploaded list",Redewendung
+other,außer Frage stehen,to be beyond question / out of the question,"Es steht außer Frage, dass Maurer ein anstrengender Beruf ist.",,2026-11-03,2,"idiomatic verb phrase, from uploaded list",Redewendung
 other,außerdem,besides / moreover,Deine schmutzigen Socken stinken außerdem.,"Besides, your dirty socks stink.",2026-10-07,1,,Wortschatz
 other,außergewöhnlich,extraordinary,Momentan befinden wir uns auf einem außergewöhnlichen Hoch.,At the moment we're at an extraordinary high.,2026-09-29,1,corrected inflected form to base adjective,Wortschatz
 other,bares Geld verschenken,to throw away money (literally: give away cash),"Wer sein Zahngold weiter aufbewahrt, verschenkt bares Geld.",Whoever keeps holding onto their dental gold is throwing away cash.,2026-10-17,2,,Redewendung
@@ -368,7 +368,7 @@ other,das Erlebnis / die Erfahrung,the experience,,,2026-09-28,1,merged duplicat
 other,das Geheimnis,the secret,,,2026-10-20,2,,Wortschatz
 other,das Gesetz,the law,,,2026-10-19,2,,Wortschatz
 other,Das ist doch nicht zu fassen!,That's unbelievable!,,,2026-09-27,1,,Redewendung
-other,Das ist doch Quatsch!,That's nonsense!,,,2026-10-17,2,,Redemittel
+other,Das ist doch Quatsch!,That's nonsense!,,,2026-11-03,3,,Redemittel
 other,Das ist lächerlich!,That's ridiculous!,,,2026-10-28,2,,Redemittel
 other,das Kennzeichen,the label / marker,,,2026-09-27,1,,Wortschatz
 other,Das macht uns Mut.,That gives us courage.,,,2026-08-31,1,,Redemittel
@@ -396,13 +396,13 @@ other,der Erpresser,the blackmailer,,,2026-09-13,1,,Wortschatz
 other,der Förderverein,the support association,,,2026-10-30,2,corrected from genitive 'Fördervereins',Wortschatz
 other,der Gedanke,the thought,,,2026-10-20,2,,Wortschatz
 other,der Genuss,the enjoyment / pleasure / indulgence,,,2026-10-21,2,,Wortschatz
-other,der Geruch,the smell,,,2026-09-08,1,,Wortschatz
+other,der Geruch,the smell,,,2026-11-03,2,,Wortschatz
 other,der Gletscher,the glacier,Wir sind mehrmals mit Schlitten den Gletscher hinuntergefahren.,We rode sleds down the glacier several times.,2026-10-02,1,,Wortschatz
 other,der Großbuchstabe,the capital letter,,,2026-10-08,1,,Wortschatz
 other,der Grundpfeiler,the cornerstone / foundational pillar,,,2026-10-12,1,,Wortschatz
 other,der Holzdübel,the wooden peg / dowel,,,2026-09-16,1,,Wortschatz
 other,der Husten,the cough (noun),,,2026-10-29,2,,Wortschatz
-other,der Inbusschlüssel,the hex wrench / Allen key,,,2026-09-21,1,corrected spelling (missing umlaut),Wortschatz
+other,der Inbusschlüssel,the hex wrench / Allen key,,,2026-11-03,2,corrected spelling (missing umlaut),Wortschatz
 other,der Klacks,the dollop / dab,...einen Klacks Mayonnaise,...a dollop of mayonnaise,2026-09-18,1,,Wortschatz
 other,der Kleinbuchstabe,the lowercase letter,,,2026-09-28,1,,Wortschatz
 other,der Mucks,a sound / peep,,,2026-10-28,2,"colloquial, e.g. 'keinen Mucks machen'",Wortschatz
@@ -552,10 +552,10 @@ other,frei von (+Dat),free from / free of,"Wenn ich Urlaube habe, bin ich frei v
 other,freundlich zu (+Dat),friendly to / towards,Fadi Samet ist freundlich zu seinen Nachbarn.,,2026-09-17,1,"adjective + preposition (fixed collocation, from uploaded list)",Adjektiv + Präp.
 other,"Freut mich, dich kennenzulernen.",Nice to meet you.,,,2026-09-27,1,,Redemittel
 other,froh über (+Akk),glad about / pleased about,Malaika Hadrawi und ihre Mutter waren froh über den Mikrokredit.,,2026-10-12,1,"adjective + preposition (fixed collocation, from uploaded list)",Adjektiv + Präp.
-other,früh aus dem Unterricht kommen,to get out of class early,Wir sind ein bisschen früher aus dem Unterricht gekommen.,We got out of class a bit early.,2026-09-26,1,corrected garbled original,Wortschatz
+other,früh aus dem Unterricht kommen,to get out of class early,Wir sind ein bisschen früher aus dem Unterricht gekommen.,We got out of class a bit early.,2026-11-03,2,corrected garbled original,Wortschatz
 other,fördern,to support / promote,,,2026-09-17,1,,Wortschatz
 other,geben (+Dat/+Akk),to give,Sie gab ihm einen gut gemeinten Rat.,,2026-10-20,2,"governs case, no preposition (from uploaded list)",Verb + Kasus
-other,geeignet für (+Akk),suitable for / appropriate for,Dieses Getränk ist nicht für Schwangere und Kinder geeignet.,,2026-09-11,1,"adjective + preposition (fixed collocation, from uploaded list)",Adjektiv + Präp.
+other,geeignet für (+Akk),suitable for / appropriate for,Dieses Getränk ist nicht für Schwangere und Kinder geeignet.,,2026-11-03,2,"adjective + preposition (fixed collocation, from uploaded list)",Adjektiv + Präp.
 other,gefallen (+Dat),to please / to appeal to,Mir gefällt vor allem der neue Tisch.,I especially like the new table.,2026-10-21,2,,Wortschatz
 other,gemeinnützig,non-profit / charitable,,,2026-10-01,1,,Wortschatz
 other,genüsslich,with relish / savoring,,,2026-10-19,2,,Wortschatz
@@ -624,7 +624,7 @@ other,loben,to praise,,,2026-10-28,2,,Wortschatz
 other,mehrmals,several times,,,2026-10-15,2,,Wortschatz
 other,merken,to note / take note of,,,2026-10-31,2,,Wortschatz
 other,mindestens,at least,Ich brauche mindestens hundert Dollar.,I need at least a hundred dollars.,2026-09-24,1,,Wortschatz
-other,"Mir ist gerade klar geworden, dass...",I just realized that...,,,2026-10-27,2,,Redemittel
+other,"Mir ist gerade klar geworden, dass...",I just realized that...,,,2026-11-03,3,,Redemittel
 other,"Mir war nicht aufgefallen/bewusst, dass...",I hadn't noticed/realized that...,,,2026-10-31,2,,Redemittel
 other,missfallen (+Dat),to displease / to be displeasing,"Es missfiel ihm, dass seine Vorschläge ständig ignoriert wurden.",,2026-10-26,2,"governs case, no preposition (from uploaded list)",Verb + Kasus
 other,misstrauen (+Dat),to distrust / to be suspicious of,Sie misstraut seinem plötzlichen Sinneswandel.,,2026-09-29,1,"governs case, no preposition (from uploaded list)",Verb + Kasus
@@ -635,7 +635,7 @@ other,na klar,of course / sure,,,2026-10-03,1,,Redemittel
 other,nachfragen,to ask again / inquire further,,,2026-10-18,2,,Wortschatz
 other,nachgeben (+Dat),to give in / to yield,Nach langem Streit gab er schließlich nach und akzeptierte den Kompromiss.,,2026-10-27,2,"governs case, no preposition (from uploaded list)",Verb + Kasus
 other,Natrium,sodium,,,2026-10-03,1,,Wortschatz
-other,neidisch auf (+Akk),envious of,Ich bin nicht neidisch auf meinen reichen Nachbarn.,,2026-09-06,1,"adjective + preposition (fixed collocation, from uploaded list)",Adjektiv + Präp.
+other,neidisch auf (+Akk),envious of,Ich bin nicht neidisch auf meinen reichen Nachbarn.,,2026-11-03,2,"adjective + preposition (fixed collocation, from uploaded list)",Adjektiv + Präp.
 other,nett zu (+Dat),nice to / kind to,"Es zahlt sich aus, nett zu anderen Menschen zu sein.",,2026-09-24,1,"adjective + preposition (fixed collocation, from uploaded list)",Adjektiv + Präp.
 other,neugierig auf (+Akk),curious about,Die Kinder sind neugierig auf die Weihnachtsgeschenke.,,2026-09-30,1,"adjective + preposition (fixed collocation, from uploaded list)",Adjektiv + Präp.
 other,Nichts zu fassen.,Unbelievable.,,,2026-09-17,1,,Redewendung
@@ -762,7 +762,7 @@ other,verschweigen (+Dat/+Akk),to conceal / to withhold,"Er verschwieg ihr, dass
 other,verspeisen,to devour / eat up,,,2026-10-19,2,,Wortschatz
 other,versprchen (+Dat/+Akk),to promise,"Sie versprach ihm, pünktlich zu sein.",,2026-10-19,2,"governs case, no preposition (from uploaded list)",Verb + Kasus
 other,verstehen (+Akk),to understand,"Ich verstehe nicht, warum er so reagiert hat.",,2026-09-11,1,"governs case, no preposition (from uploaded list)",Verb + Kasus
-other,vertrauen (+Dat),to trust,"Sie vertraut ihm blind, seit er ihr einmal aus der Klemme geholfen hat.",,2026-09-02,1,"governs case, no preposition (from uploaded list)",Verb + Kasus
+other,vertrauen (+Dat),to trust,"Sie vertraut ihm blind, seit er ihr einmal aus der Klemme geholfen hat.",,2026-11-03,2,"governs case, no preposition (from uploaded list)",Verb + Kasus
 other,Vertrauen missbrauchen,to abuse / betray trust,Eine Bekannte missbrauchte das Vertrauen ihres Arbeitgebers und verlor fast ihre Stelle.,,2026-09-29,1,"idiomatic verb phrase, from uploaded list",Redemittel
 other,verwandt mit (+Dat),related to,Sind Sie mit jemandem aus dem Kurs verwandt?,,2026-10-05,1,"adjective + preposition (fixed collocation, from uploaded list)",Adjektiv + Präp.
 other,verweigern (+Dat/+Akk),to refuse / to deny,Das Amt verweigerte ihm die Genehmigung ohne Angabe von Gründen.,,2026-09-20,1,"governs case, no preposition (from uploaded list)",Verb + Kasus
@@ -774,7 +774,7 @@ other,vorkommen,to seem / to occur,,,2026-10-14,1,,Wortschatz
 other,wackeln,to wobble,Es wackelt.,It wobbles.,2026-10-15,2,,Wortschatz
 other,wagen,to dare,,,2026-10-28,2,,Wortschatz
 other,Ware umtauschen,to exchange goods / to swap an item,"Können wir die Ware umtauschen, wenn wir nicht zufrieden sind?",,2026-10-20,2,"idiomatic verb phrase, from uploaded list",Redemittel
-other,Was für ein Zufall!,What a coincidence!,,,2026-10-02,1,,Redemittel
+other,Was für ein Zufall!,What a coincidence!,,,2026-11-03,2,,Redemittel
 other,Was hältst du davon?,What do you think about that?,,,2026-09-04,1,,Redemittel
 other,wasserdicht,waterproof,,,2026-11-01,2,,Wortschatz
 other,wechseln,to change,Die Ampel wechselte von Rot auf Grün.,The traffic light changed from red to green.,2026-10-30,2,,Wortschatz
@@ -782,7 +782,7 @@ other,wegnehmen (+Dat/+Akk),to take away,Der Lehrer nahm dem Schüler das Handy 
 other,wegräumen,to clear away,,,2026-09-23,1,corrected from 'Weg räumen',Wortschatz
 other,wendig,agile,,,2026-10-27,2,,Wortschatz
 other,wichtig für (+Akk),important for / significant for,Für alle Menschen ist Erholung wichtig.,,2026-10-08,1,"adjective + preposition (fixed collocation, from uploaded list)",Adjektiv + Präp.
-other,widersprechen (+Dat),to contradict / to disagree with,Er widersprach dem Experten öffentlich und sorgte damit für Aufsehen.,,2026-09-08,1,"governs case, no preposition (from uploaded list)",Verb + Kasus
+other,widersprechen (+Dat),to contradict / to disagree with,Er widersprach dem Experten öffentlich und sorgte damit für Aufsehen.,,2026-11-03,2,"governs case, no preposition (from uploaded list)",Verb + Kasus
 other,"Wir freuen uns, Sie zu sehen.",We look forward to seeing you.,,,2026-10-25,2,,Redemittel
 other,wirken,to seem,Das wirkt sehr echt.,That seems very real.,2026-09-15,1,,Wortschatz
 other,wohl,probably / likely,,,2026-10-04,1,,Wortschatz
@@ -825,7 +825,7 @@ other,überlegt,considered / deliberate,,,2026-09-18,1,past participle / adjecti
 other,übernehmen,to take over / accept,,,2026-10-31,3,,Wortschatz
 other,überreichen (+Dat/+Akk),to hand over / to present,Der Bürgermeister überreichte ihr feierlich die Auszeichnung.,,2026-08-28,1,"governs case, no preposition (from uploaded list)",Verb + Kasus
 other,überschätzen,to overestimate,,,2026-09-29,1,,Wortschatz
-other,Überstunden abbauen,to reduce / work off overtime,Sie wird die Überstunden nächsten Monat abbauen und sich etwas erholen.,,2026-10-28,2,"idiomatic verb phrase, from uploaded list",Redemittel
+other,Überstunden abbauen,to reduce / work off overtime,Sie wird die Überstunden nächsten Monat abbauen und sich etwas erholen.,,2026-11-03,3,"idiomatic verb phrase, from uploaded list",Redemittel
 other,Überstunden machen,to do / work overtime,"Dimitra Papadopoulou macht momentan viele Überstunden, weil so viele Kollegen krank sind.",,2026-10-02,1,"idiomatic verb phrase, from uploaded list",Redemittel
 other,überwinden,to overcome,,,2026-11-01,2,,Wortschatz
 other,überzeugen,to convince,Ihr Kaffee hat mich nicht überzeugt.,Their coffee didn't impress me.,2026-10-12,1,,Wortschatz
