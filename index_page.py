@@ -21,6 +21,11 @@ from site_theme import (
 )
 
 READINGS_ARCHIVE_DIR = "archive/readings"
+
+GERMAN_MONTHS = [
+    "Januar", "Februar", "März", "April", "Mai", "Juni",
+    "Juli", "August", "September", "Oktober", "November", "Dezember",
+]
 TITLE_RE = re.compile(r"<title>(.*?)</title>", re.IGNORECASE | re.DOTALL)
 ARTICLE_RE = re.compile(r"^(der|die|das)\s+(.+)$")
 TRAILING_PAREN_RE = re.compile(r"\s*\([^)]*\)\s*$")
@@ -128,23 +133,49 @@ PAGE_CSS = (
   display: flex; flex-direction: column; justify-content: center; gap: 3px;
   min-height: 48px; padding: 16px 18px;
   background: var(--panel-bg); border-radius: var(--r-md);
-  transition: background 150ms ease;
+  transition: background-color 150ms ease;
 }
-.entry:hover { background: var(--panel-bg-hover); }
-.entry__title { font-size: 15px; font-weight: 600; color: var(--ink); }
-.entry__meta { font-size: 13px; color: var(--ink-muted); }
+.entry__title { font-size: 15px; font-weight: 600; color: var(--ink); transition: color 150ms ease; }
+.entry__meta { font-size: 13px; color: var(--ink-muted); transition: color 150ms ease; }
+.entry:hover { background: var(--blue-text); }
+.entry:hover .entry__title, .entry:hover .entry__meta { color: #fff; }
+.archive-section .stand { margin-top: 16px; }
 
 /* ---------- reading archive (adapted; not in the original design) ---------- */
 
 .archive-section { padding: 30px var(--pad-x) 0; }
 .archive-section h2 {
   font-family: var(--font-sans); font-size: 14px; font-weight: 600;
-  color: var(--ink); margin: 0 0 12px;
+  color: var(--ink); margin: 0 0 4px;
 }
-.archive-list { list-style: none; margin: 0; padding: 0; }
+.archive-accordion { border-top: 1px solid var(--rule); }
+.archive-month { border-bottom: 1px solid var(--rule); }
+.archive-month__summary {
+  display: flex; align-items: center; justify-content: space-between; gap: 14px;
+  min-height: 48px; padding: 12px 2px;
+  cursor: pointer; list-style: none;
+}
+.archive-month__summary::-webkit-details-marker { display: none; }
+.archive-month__summary:hover .archive-month__label { color: var(--blue-hover); }
+.archive-month__label {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 15px; font-weight: 600; color: var(--ink);
+  transition: color 150ms ease;
+}
+.archive-month__chevron {
+  flex: 0 0 auto; width: 7px; height: 7px;
+  border-right: 1.5px solid var(--ink-muted); border-bottom: 1.5px solid var(--ink-muted);
+  transform: rotate(-45deg);
+  transition: transform 150ms ease;
+}
+.archive-month[open] > .archive-month__summary .archive-month__chevron { transform: rotate(45deg); }
+.archive-month__count {
+  flex: 0 0 auto; font-family: var(--font-mono); font-size: 11px; color: var(--ink-faint);
+}
+.archive-list { list-style: none; margin: 0; padding: 0 0 12px; }
 .archive-list li {
   display: flex; gap: 14px; align-items: baseline;
-  padding: 10px 0; border-bottom: 1px solid var(--rule);
+  padding: 9px 0 9px 17px;
 }
 .archive-date {
   flex: 0 0 auto; font-family: var(--font-mono); font-size: 11px;
@@ -158,7 +189,7 @@ PAGE_CSS = (
 
 @media (min-width: 640px) {
   :root { --pad-x: 44px; }
-  .hero { padding: 34px var(--pad-x) 0; gap: 34px; }
+  .hero { padding: 0 var(--pad-x); gap: 34px; }
   .hero__copy { gap: 20px; }
   .hero__title { font-size: 52px; line-height: 1.06; }
   .hero__kicker { font-size: 13px; letter-spacing: 0.1em; }
@@ -195,7 +226,7 @@ PAGE_CSS = (
     grid-template-columns: 1.2fr 1fr;
     gap: 52px;
     align-items: center;
-    padding: 8px var(--pad-x) 0;
+    padding: 0 var(--pad-x);
     min-height: 420px;
   }
   .hero__copy { gap: 22px; }
@@ -242,6 +273,51 @@ def collect_reading_archive(archive_dir=READINGS_ARCHIVE_DIR):
 
     entries.sort(key=lambda e: e[0], reverse=True)
     return entries
+
+
+def group_archive_by_month(reading_archive):
+    """Group (date, title, href) entries by (year, month), preserving the
+    newest-first order of reading_archive within and across groups."""
+    groups = []
+    current_key = None
+    for entry in reading_archive:
+        d = entry[0]
+        key = (d.year, d.month)
+        if key != current_key:
+            groups.append({"year": d.year, "month": d.month, "entries": []})
+            current_key = key
+        groups[-1]["entries"].append(entry)
+    return groups
+
+
+def render_archive_accordion(reading_archive):
+    """Render the reading archive as an accordion of <details> elements,
+    one per month, each expanding to that month's daily links."""
+    if not reading_archive:
+        return '  <p class="empty-note">Noch keine archivierten Lesetexte.</p>'
+
+    blocks = []
+    for group in group_archive_by_month(reading_archive):
+        month_name = GERMAN_MONTHS[group["month"] - 1]
+        label = f"{month_name} {group['year']}"
+        count = len(group["entries"])
+        count_label = f"{count} Lesetext{'e' if count != 1 else ''}"
+        items = "\n".join(
+            f'      <li><span class="archive-date">{d.strftime("%d.%m.%Y")}</span>'
+            f'<a href="{html.escape(href)}">{html.escape(title)}</a></li>'
+            for d, title, href in group["entries"]
+        )
+        blocks.append(f"""  <details class="archive-month">
+    <summary class="archive-month__summary">
+      <span class="archive-month__label"><span class="archive-month__chevron"></span>{html.escape(label)}</span>
+      <span class="archive-month__count">{count_label}</span>
+    </summary>
+    <ul class="archive-list">
+{items}
+    </ul>
+  </details>""")
+
+    return "\n".join(blocks)
 
 
 def strip_trailing_annotations(text):
@@ -311,14 +387,7 @@ def render_card_of_day(entry):
 
 
 def build_index_html(today, card_of_day_entry, reading_word_count, rolling_card_count, reading_archive):
-    if reading_archive:
-        archive_items = "\n".join(
-            f'    <li><span class="archive-date">{d.strftime("%d.%m.%Y")}</span>'
-            f'<a href="{html.escape(href)}">{html.escape(title)}</a></li>'
-            for d, title, href in reading_archive
-        )
-    else:
-        archive_items = '    <li class="empty-note">Noch keine archivierten Lesetexte.</li>'
+    archive_accordion_html = render_archive_accordion(reading_archive)
 
     stand_date = today.strftime("%d.%m.%Y")
     stand_line = (
@@ -327,7 +396,7 @@ def build_index_html(today, card_of_day_entry, reading_word_count, rolling_card_
         f"{'e' if len(reading_archive) != 1 else ''} im Archiv"
     )
 
-    header_html = render_header(root_prefix="")
+    header_html = render_header(active_href="index.html", root_prefix="")
     card_html = render_card_of_day(card_of_day_entry)
 
     return f"""<!DOCTYPE html>
@@ -353,7 +422,6 @@ def build_index_html(today, card_of_day_entry, reading_word_count, rolling_card_
       <a class="btn btn--primary" href="reading.html">Heutigen Lesetext öffnen</a>
       <a class="btn btn--ghost" href="flashcards.html">Karteikarten der letzten 7 Tage</a>
     </div>
-    <p class="stand">{stand_line}</p>
   </div>
 
   <section class="hero__card" aria-labelledby="card-of-day">
@@ -379,9 +447,10 @@ def build_index_html(today, card_of_day_entry, reading_word_count, rolling_card_
 
 <section class="archive-section" aria-label="Lesetext-Archiv">
   <h2>Lesetext-Archiv</h2>
-  <ul class="archive-list">
-{archive_items}
-  </ul>
+  <div class="archive-accordion">
+{archive_accordion_html}
+  </div>
+  <p class="stand">{stand_line}</p>
 </section>
 
 <footer class="site-footer">Automatisch generiert · German Vocab Daily</footer>

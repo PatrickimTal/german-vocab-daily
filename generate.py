@@ -21,7 +21,7 @@ from index_page import (
     collect_reading_archive,
     pick_card_of_day,
 )
-from site_theme import GOOGLE_FONTS_LINKS
+from site_theme import GOOGLE_FONTS_LINKS, inject_site_header
 
 MODEL = "claude-opus-5"
 TODAY_JSON_DEFAULT = "today.json"
@@ -181,13 +181,13 @@ def main():
     today = date.today()
 
     with open("reading.html", "w", encoding="utf-8") as f:
-        f.write(inject_back_nav(reading_html, "index.html"))
+        f.write(inject_site_header(reading_html, root_prefix="", active_href="reading.html"))
     print("Wrote reading.html")
 
     os.makedirs(READINGS_ARCHIVE_DIR, exist_ok=True)
     archive_path = os.path.join(READINGS_ARCHIVE_DIR, f"{today.isoformat()}.html")
     with open(archive_path, "w", encoding="utf-8") as f:
-        f.write(inject_back_nav(reading_html, "../../index.html"))
+        f.write(inject_site_header(reading_html, root_prefix="../../"))
     print(f"Archived reading to {archive_path}")
 
     update_csv(args.csv, entries, today)

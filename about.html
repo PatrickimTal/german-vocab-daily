@@ -81,15 +81,21 @@ a:hover { color: var(--blue-hover); }
   * { transition: none !important; animation: none !important; }
 }
 
+.site-bar {
+  background: #fff;
+  border-bottom: 1px solid var(--rule);
+  box-shadow: 0 2px 12px rgba(30, 70, 45, 0.06);
+}
+.site-bar { margin-bottom: 26px; }
 .site-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 20px var(--pad-x);
+  padding: 14px var(--pad-x);
 }
-.brand { display: flex; flex-direction: column; gap: 1px; color: var(--ink); }
-.brand:hover { color: var(--ink); }
+.brand { display: flex; flex-direction: column; gap: 1px; color: var(--blue-text); }
+.brand:hover { color: var(--blue-hover); }
 .brand__name { font-family: var(--font-serif); font-size: 17px; }
 .brand__kicker {
   font-family: var(--font-mono);
@@ -103,22 +109,45 @@ a:hover { color: var(--blue-hover); }
   width: 44px; height: 44px;
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
   background: none; border: 1px solid var(--border); border-radius: var(--r-md); cursor: pointer;
+  transition: background-color 150ms ease, border-color 150ms ease;
 }
-.nav-toggle span { width: 18px; height: 1.5px; background: var(--ink-body); }
+.nav-toggle span { width: 18px; height: 1.5px; background: var(--ink-body); transition: background-color 150ms ease; }
+.nav-toggle:hover, .nav-toggle[aria-expanded="true"] { background: var(--blue-text); border-color: var(--blue-text); }
+.nav-toggle:hover span, .nav-toggle[aria-expanded="true"] span { background: #fff; }
 .mobile-nav { display: flex; flex-direction: column; padding: 4px var(--pad-x) 12px; gap: 2px; }
 .mobile-nav a {
   min-height: 48px; display: flex; align-items: center;
-  color: var(--ink-body); font-size: 16px; border-bottom: 1px solid var(--rule);
+  padding: 0 12px; margin: 0 -12px;
+  color: var(--blue-text); font-size: 16px; border-bottom: 1px solid var(--rule);
+  transition: background-color 150ms ease, color 150ms ease;
 }
+.mobile-nav[hidden] { display: none; }
+.mobile-nav a:hover, .mobile-nav a:active { background: var(--blue-text); color: #fff; }
+.mobile-nav .nav__current {
+  min-height: 48px; display: flex; align-items: center;
+  padding: 0 12px; margin: 0 -12px; font-size: 16px; border-bottom: 1px solid var(--rule);
+}
+.nav__current { background: var(--blue-text); color: #fff; cursor: default; }
 @media (min-width: 640px) {
   .nav-toggle, .mobile-nav { display: none !important; }
-  .nav { display: flex; align-items: center; gap: 24px; font-size: 15px; }
-  .nav a { color: var(--ink-body); }
-  .nav__about { padding: 10px 20px; border: 1px solid var(--border); border-radius: var(--r-pill); }
-  .site-header { padding: 34px var(--pad-x) 0; }
+  .nav { display: flex; align-items: center; gap: 8px; font-size: 15px; }
+  .nav a {
+    padding: 9px 16px;
+    border: 1px solid transparent;
+    border-radius: var(--r-pill);
+    color: var(--blue-text);
+    transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+  }
+  .nav a:hover { background: var(--blue-text); border-color: var(--blue-text); color: #fff; }
+  .nav .nav__current {
+    padding: 9px 16px; border: 1px solid var(--blue-text); border-radius: var(--r-pill);
+  }
+  .site-header { padding: 18px var(--pad-x); }
+  .site-bar { margin-bottom: 34px; --pad-x: 44px; }
 }
 @media (min-width: 1024px) {
-  .site-header { max-width: 1280px; margin-inline: auto; padding: 24px var(--pad-x); }
+  .site-header { max-width: 1280px; margin-inline: auto; }
+  .site-bar { margin-bottom: 44px; --pad-x: 52px; }
 }
 
 .chip {
@@ -139,7 +168,7 @@ a:hover { color: var(--blue-hover); }
 .about {
   max-width: 640px;
   margin: 0 auto;
-  padding: 8px var(--pad-x) 40px;
+  padding: 0 var(--pad-x) 40px;
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -160,7 +189,6 @@ a:hover { color: var(--blue-hover); }
 }
 .about .panel a { color: var(--blue-text); }
 @media (min-width: 640px) {
-  .about { padding-top: 16px; }
   .about h1 { font-size: 42px; }
 }
 
@@ -169,6 +197,7 @@ a:hover { color: var(--blue-hover); }
 <body>
 <a class="skip" href="#main">Zum Inhalt springen</a>
 
+<div class="site-bar">
 <header class="site-header">
   <a class="brand" href="index.html">
     <span class="brand__name">Deutscher Wortschatz</span>
@@ -177,8 +206,8 @@ a:hover { color: var(--blue-hover); }
   <nav class="nav" aria-label="Hauptnavigation">
     <a href="reading.html">Lesetext</a>
     <a href="flashcards.html">Karteikarten</a>
-    <a href="archive/flashcards.html">Archiv</a>
-    <a class="nav__about" href="about.html">Über das Projekt</a>
+    <span class="nav__current" aria-current="page">Über das Projekt</span>
+    <a href="index.html">Home</a>
   </nav>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menü öffnen">
     <span></span><span></span><span></span>
@@ -188,9 +217,10 @@ a:hover { color: var(--blue-hover); }
 <nav class="mobile-nav" id="mobile-nav" hidden aria-label="Hauptnavigation, mobil">
   <a href="reading.html">Lesetext</a>
   <a href="flashcards.html">Karteikarten</a>
-  <a href="archive/flashcards.html">Archiv</a>
-  <a href="about.html">Über das Projekt</a>
+  <span class="nav__current" aria-current="page">Über das Projekt</span>
+  <a href="index.html">Home</a>
 </nav>
+</div>
 
 <main id="main" class="about">
   <h1>Über das Projekt</h1>

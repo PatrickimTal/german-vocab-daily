@@ -287,7 +287,10 @@ def build_flashcards_html(
     page_js = PAGE_JS.replace(
         "__SUBTYPE_ORDER_JSON__", json.dumps(SUBTYPE_ORDER, ensure_ascii=False)
     )
-    header_html = render_header(root_prefix=root_prefix)
+    header_html = render_header(
+        active_href="flashcards.html" if window_days else "archive/flashcards.html",
+        root_prefix=root_prefix,
+    )
 
     return f"""<!DOCTYPE html>
 <html lang="de">

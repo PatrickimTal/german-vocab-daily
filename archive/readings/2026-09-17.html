@@ -93,9 +93,162 @@
     text-align:center;
   }
 </style>
-</head>
+
+<!-- site-header -->
+<style>
+.site-bar {
+  --page-bg: #e9fae9;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-bg-hover: rgba(255, 255, 255, 0.97);
+  --panel-bg: rgba(255, 255, 255, 0.62);
+  --panel-bg-hover: rgba(255, 255, 255, 0.82);
+
+  --ink: #082310;
+  --ink-body: #304635;
+  --ink-muted: #4b614f;
+  --ink-faint: #617865;
+
+  --blue: #0077c7;
+  --blue-hover: #0061b0;
+  --blue-text: #006eb8;
+  --article: #c56c00;
+
+  --border: #8ab091;
+  --rule: #dce9de;
+  --underline: #a8c7ad;
+
+  --chip-verb-praep-bg: #cdecff;      --chip-verb-praep-fg: #004e95;
+  --chip-verb-kasus-bg: #c2f2f8;      --chip-verb-kasus-fg: #005565;
+  --chip-redemittel-bg: #f0e4ff;      --chip-redemittel-fg: #603b93;
+  --chip-nomen-praep-bg: #c4f2cc;     --chip-nomen-praep-fg: #005222;
+  --chip-adjektiv-praep-bg: #ffe1ac;  --chip-adjektiv-praep-fg: #7b4300;
+  --chip-redewendung-bg: #ffd9d7;     --chip-redewendung-fg: #9a2733;
+  --chip-wortschatz-bg: #dce9de;      --chip-wortschatz-fg: #384e3c;
+
+  --font-serif: 'Libre Baskerville', Georgia, serif;
+  --font-sans: 'Sora', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --r-sm: 4px;
+  --r-md: 12px;
+  --r-lg: 14px;
+  --r-pill: 999px;
+  --shadow-card: 0 12px 30px rgba(30, 70, 45, 0.1);
+
+  --pad-x: 22px;
+
+  font-family: var(--font-sans); font-size: 16px; line-height: 1.55;
+  -webkit-font-smoothing: antialiased; text-align: left;
+}
+.site-bar *, .site-bar *::before, .site-bar *::after { box-sizing: border-box; }
+.site-bar header, .site-bar nav { margin: 0; border: 0; max-width: none; }
+.site-bar a { text-decoration: none; border-bottom: 0; }
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: 12px; top: 12px; background: #fff; padding: 10px 14px; border-radius: 12px; z-index: 100; }
+
+.site-bar {
+  background: #fff;
+  border-bottom: 1px solid var(--rule);
+  box-shadow: 0 2px 12px rgba(30, 70, 45, 0.06);
+}
+.site-bar { margin-bottom: 26px; }
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px var(--pad-x);
+}
+.brand { display: flex; flex-direction: column; gap: 1px; color: var(--blue-text); }
+.brand:hover { color: var(--blue-hover); }
+.brand__name { font-family: var(--font-serif); font-size: 17px; }
+.brand__kicker {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.nav { display: none; }
+.nav-toggle {
+  width: 44px; height: 44px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+  background: none; border: 1px solid var(--border); border-radius: var(--r-md); cursor: pointer;
+  transition: background-color 150ms ease, border-color 150ms ease;
+}
+.nav-toggle span { width: 18px; height: 1.5px; background: var(--ink-body); transition: background-color 150ms ease; }
+.nav-toggle:hover, .nav-toggle[aria-expanded="true"] { background: var(--blue-text); border-color: var(--blue-text); }
+.nav-toggle:hover span, .nav-toggle[aria-expanded="true"] span { background: #fff; }
+.mobile-nav { display: flex; flex-direction: column; padding: 4px var(--pad-x) 12px; gap: 2px; }
+.mobile-nav a {
+  min-height: 48px; display: flex; align-items: center;
+  padding: 0 12px; margin: 0 -12px;
+  color: var(--blue-text); font-size: 16px; border-bottom: 1px solid var(--rule);
+  transition: background-color 150ms ease, color 150ms ease;
+}
+.mobile-nav[hidden] { display: none; }
+.mobile-nav a:hover, .mobile-nav a:active { background: var(--blue-text); color: #fff; }
+.mobile-nav .nav__current {
+  min-height: 48px; display: flex; align-items: center;
+  padding: 0 12px; margin: 0 -12px; font-size: 16px; border-bottom: 1px solid var(--rule);
+}
+.nav__current { background: var(--blue-text); color: #fff; cursor: default; }
+@media (min-width: 640px) {
+  .nav-toggle, .mobile-nav { display: none !important; }
+  .nav { display: flex; align-items: center; gap: 8px; font-size: 15px; }
+  .nav a {
+    padding: 9px 16px;
+    border: 1px solid transparent;
+    border-radius: var(--r-pill);
+    color: var(--blue-text);
+    transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+  }
+  .nav a:hover { background: var(--blue-text); border-color: var(--blue-text); color: #fff; }
+  .nav .nav__current {
+    padding: 9px 16px; border: 1px solid var(--blue-text); border-radius: var(--r-pill);
+  }
+  .site-header { padding: 18px var(--pad-x); }
+  .site-bar { margin-bottom: 34px; --pad-x: 44px; }
+}
+@media (min-width: 1024px) {
+  .site-header { max-width: 1280px; margin-inline: auto; }
+  .site-bar { margin-bottom: 44px; --pad-x: 52px; }
+}
+
+.site-bar { margin-bottom: 0; }
+@media (min-width: 640px) { .site-bar { --pad-x: 44px; } }
+@media (min-width: 1024px) { .site-bar { --pad-x: 52px; } }
+</style>
+<!-- /site-header --></head>
 <body>
-<p style="font-family:'Sora',system-ui,sans-serif;font-size:0.85rem;margin:0.6rem 0 0;"><a href="../../index.html" style="color:#006eb8;">← Startseite</a></p>
+<!-- site-header -->
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<div class="site-bar">
+<header class="site-header">
+  <a class="brand" href="../../index.html">
+    <span class="brand__name">Deutscher Wortschatz</span>
+    <span class="brand__kicker">täglich · C1</span>
+  </a>
+  <nav class="nav" aria-label="Hauptnavigation">
+    <a href="../../reading.html">Lesetext</a>
+    <a href="../../flashcards.html">Karteikarten</a>
+    <a href="../../about.html">Über das Projekt</a>
+    <a href="../../index.html">Home</a>
+  </nav>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menü öffnen">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav" hidden aria-label="Hauptnavigation, mobil">
+  <a href="../../reading.html">Lesetext</a>
+  <a href="../../flashcards.html">Karteikarten</a>
+  <a href="../../about.html">Über das Projekt</a>
+  <a href="../../index.html">Home</a>
+</nav>
+</div>
+<!-- /site-header -->
 
 <div class="wrap">
 
@@ -183,5 +336,53 @@
 
   <footer>Sprachgarten · Lesetraining C1</footer>
 </div>
-</body>
+
+<!-- site-header -->
+<script>
+document.querySelectorAll('.nav-toggle').forEach(function (toggle) {
+  var panel = document.getElementById(toggle.getAttribute('aria-controls'));
+  toggle.addEventListener('click', function () {
+    var open = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!open));
+    toggle.setAttribute('aria-label', open ? 'Menü öffnen' : 'Menü schließen');
+    if (panel) panel.hidden = open;
+  });
+});
+
+(function () {
+  var bar = document.querySelector('.site-bar');
+  if (!bar) return;
+  function firstTextTop() {
+    var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (n) {
+        if (bar.contains(n) || !n.nodeValue.trim()) return NodeFilter.FILTER_SKIP;
+        var p = n.parentElement;
+        if (!p || p.closest('script,style,.skip') || !p.offsetParent) return NodeFilter.FILTER_SKIP;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var n = w.nextNode();
+    if (!n) return null;
+    var r = document.createRange(); r.selectNodeContents(n);
+    return r.getBoundingClientRect().top;
+  }
+  function fit() {
+    var cs = getComputedStyle(document.body);
+    bar.style.marginTop = '-' + cs.paddingTop;
+    bar.style.marginLeft = '-' + cs.paddingLeft;
+    bar.style.marginRight = '-' + cs.paddingRight;
+    bar.style.marginBottom = '0px';
+    var w = window.innerWidth, target = w >= 1024 ? 44 : (w >= 640 ? 34 : 26);
+    var top = firstTextTop();
+    if (top === null) return;
+    var gap = top - bar.getBoundingClientRect().bottom;
+    bar.style.marginBottom = (target - gap) + 'px';
+  }
+  fit();
+  window.addEventListener('load', fit);
+  window.addEventListener('resize', fit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+})();
+</script>
+<!-- /site-header --></body>
 </html>

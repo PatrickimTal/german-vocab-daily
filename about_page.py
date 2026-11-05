@@ -11,7 +11,7 @@ PAGE_CSS = (
 .about {
   max-width: 640px;
   margin: 0 auto;
-  padding: 8px var(--pad-x) 40px;
+  padding: 0 var(--pad-x) 40px;
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -32,7 +32,6 @@ PAGE_CSS = (
 }
 .about .panel a { color: var(--blue-text); }
 @media (min-width: 640px) {
-  .about { padding-top: 16px; }
   .about h1 { font-size: 42px; }
 }
 """
@@ -40,7 +39,7 @@ PAGE_CSS = (
 
 
 def build_about_html():
-    header_html = render_header(root_prefix="")
+    header_html = render_header(active_href="about.html", root_prefix="")
     return f"""<!DOCTYPE html>
 <html lang="de">
 <head>
