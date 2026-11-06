@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Das Schweigen im Großraumbüro — Sprachgarten</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#e9fae9;
+    --ink:#304635;
+    --head:#082310;
+    --accent:#0077c7;
+    --accent-hover:#0061b0;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    padding:1.6rem 1.1rem 3.5rem;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Sora', system-ui, sans-serif;
+    font-size:1.03rem;
+    line-height:1.72;
+  }
+  .wrap{max-width:46rem;margin:0 auto;}
+  .kicker{
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:.74rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:#5a7360;
+    margin:0 0 .6rem;
+  }
+  h1{
+    font-family:'Libre Baskerville', Georgia, serif;
+    color:var(--head);
+    font-weight:700;
+    font-size:1.85rem;
+    line-height:1.25;
+    margin:0 0 .5rem;
+  }
+  .standfirst{
+    font-family:'Libre Baskerville', Georgia, serif;
+    font-size:1.02rem;
+    line-height:1.6;
+    color:var(--head);
+    margin:0 0 1rem;
+  }
+  .meta{
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:.78rem;
+    color:#5a7360;
+    border-top:1px solid #c5e0c8;
+    border-bottom:1px solid #c5e0c8;
+    padding:.5rem 0;
+    margin:0 0 1.6rem;
+  }
+  article p{margin:0 0 1.05rem;}
+  article p:first-of-type::first-letter{
+    font-family:'Libre Baskerville', Georgia, serif;
+    font-size:2.9rem;
+    line-height:.9;
+    float:left;
+    padding:.18rem .45rem 0 0;
+    color:var(--head);
+  }
+  strong{font-weight:600;color:var(--head);}
+  h2{
+    font-family:'Libre Baskerville', Georgia, serif;
+    color:var(--head);
+    font-size:1.2rem;
+    margin:2.4rem 0 .9rem;
+    padding-top:1.3rem;
+    border-top:2px solid #c5e0c8;
+  }
+  dl{margin:0;}
+  dt{
+    font-weight:600;
+    color:var(--head);
+    margin-top:.85rem;
+  }
+  dd{
+    margin:.1rem 0 0;
+    padding-left:0;
+    font-size:.95rem;
+    color:var(--ink);
+  }
+  dd::before{content:"→ ";color:var(--accent);}
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{color:var(--accent-hover);text-decoration:underline;}
+  footer{
+    margin-top:2.6rem;
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:.75rem;
+    color:#5a7360;
+  }
+</style>
+
+<!-- site-header -->
+<style>
+.site-bar {
+  --page-bg: #e9fae9;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-bg-hover: rgba(255, 255, 255, 0.97);
+  --panel-bg: rgba(255, 255, 255, 0.62);
+  --panel-bg-hover: rgba(255, 255, 255, 0.82);
+
+  --ink: #082310;
+  --ink-body: #304635;
+  --ink-muted: #4b614f;
+  --ink-faint: #617865;
+
+  --blue: #0077c7;
+  --blue-hover: #0061b0;
+  --blue-text: #006eb8;
+  --article: #c56c00;
+
+  --border: #8ab091;
+  --rule: #dce9de;
+  --underline: #a8c7ad;
+
+  --chip-verb-praep-bg: #cdecff;      --chip-verb-praep-fg: #004e95;
+  --chip-verb-kasus-bg: #c2f2f8;      --chip-verb-kasus-fg: #005565;
+  --chip-redemittel-bg: #f0e4ff;      --chip-redemittel-fg: #603b93;
+  --chip-nomen-praep-bg: #c4f2cc;     --chip-nomen-praep-fg: #005222;
+  --chip-adjektiv-praep-bg: #ffe1ac;  --chip-adjektiv-praep-fg: #7b4300;
+  --chip-redewendung-bg: #ffd9d7;     --chip-redewendung-fg: #9a2733;
+  --chip-wortschatz-bg: #dce9de;      --chip-wortschatz-fg: #384e3c;
+
+  --font-serif: 'Libre Baskerville', Georgia, serif;
+  --font-sans: 'Sora', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --r-sm: 4px;
+  --r-md: 12px;
+  --r-lg: 14px;
+  --r-pill: 999px;
+  --shadow-card: 0 12px 30px rgba(30, 70, 45, 0.1);
+
+  --pad-x: 22px;
+
+  font-family: var(--font-sans); font-size: 16px; line-height: 1.55;
+  -webkit-font-smoothing: antialiased; text-align: left;
+}
+.site-bar *, .site-bar *::before, .site-bar *::after { box-sizing: border-box; }
+.site-bar header, .site-bar nav { margin: 0; border: 0; max-width: none; }
+.site-bar a { text-decoration: none; border-bottom: 0; }
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: 12px; top: 12px; background: #fff; padding: 10px 14px; border-radius: 12px; z-index: 100; }
+
+.site-bar {
+  background: #fff;
+  border-bottom: 1px solid var(--rule);
+  box-shadow: 0 2px 12px rgba(30, 70, 45, 0.06);
+}
+.site-bar { margin-bottom: 26px; }
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px var(--pad-x);
+}
+.brand { display: flex; flex-direction: column; gap: 1px; color: var(--blue-text); }
+.brand:hover { color: var(--blue-hover); }
+.brand__name { font-family: var(--font-serif); font-size: 17px; }
+.brand__kicker {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.nav { display: none; }
+.nav-toggle {
+  width: 44px; height: 44px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+  background: none; border: 1px solid var(--border); border-radius: var(--r-md); cursor: pointer;
+  transition: background-color 150ms ease, border-color 150ms ease;
+}
+.nav-toggle span { width: 18px; height: 1.5px; background: var(--ink-body); transition: background-color 150ms ease; }
+.nav-toggle:hover, .nav-toggle[aria-expanded="true"] { background: var(--blue-text); border-color: var(--blue-text); }
+.nav-toggle:hover span, .nav-toggle[aria-expanded="true"] span { background: #fff; }
+.mobile-nav { display: flex; flex-direction: column; padding: 4px var(--pad-x) 12px; gap: 2px; }
+.mobile-nav a {
+  min-height: 48px; display: flex; align-items: center;
+  padding: 0 12px; margin: 0 -12px;
+  color: var(--blue-text); font-size: 16px; border-bottom: 1px solid var(--rule);
+  transition: background-color 150ms ease, color 150ms ease;
+}
+.mobile-nav[hidden] { display: none; }
+.mobile-nav a:hover, .mobile-nav a:active { background: var(--blue-text); color: #fff; }
+.mobile-nav .nav__current {
+  min-height: 48px; display: flex; align-items: center;
+  padding: 0 12px; margin: 0 -12px; font-size: 16px; border-bottom: 1px solid var(--rule);
+}
+.nav__current { background: var(--blue-text); color: #fff; cursor: default; }
+@media (min-width: 640px) {
+  .nav-toggle, .mobile-nav { display: none !important; }
+  .nav { display: flex; align-items: center; gap: 8px; font-size: 15px; }
+  .nav a {
+    padding: 9px 16px;
+    border: 1px solid transparent;
+    border-radius: var(--r-pill);
+    color: var(--blue-text);
+    transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+  }
+  .nav a:hover { background: var(--blue-text); border-color: var(--blue-text); color: #fff; }
+  .nav .nav__current {
+    padding: 9px 16px; border: 1px solid var(--blue-text); border-radius: var(--r-pill);
+  }
+  .site-header { padding: 18px var(--pad-x); }
+  .site-bar { margin-bottom: 34px; --pad-x: 44px; }
+}
+@media (min-width: 1024px) {
+  .site-header { max-width: 1280px; margin-inline: auto; }
+  .site-bar { margin-bottom: 44px; --pad-x: 52px; }
+}
+
+.site-bar { margin-bottom: 0; }
+@media (min-width: 640px) { .site-bar { --pad-x: 44px; } }
+@media (min-width: 1024px) { .site-bar { --pad-x: 52px; } }
+</style>
+<!-- /site-header --></head>
+<body>
+<!-- site-header -->
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<div class="site-bar">
+<header class="site-header">
+  <a class="brand" href="../../index.html">
+    <span class="brand__name">Deutscher Wortschatz</span>
+    <span class="brand__kicker">täglich · C1</span>
+  </a>
+  <nav class="nav" aria-label="Hauptnavigation">
+    <a href="../../reading.html">Lesetext</a>
+    <a href="../../flashcards.html">Karteikarten</a>
+    <a href="../../about.html">Über das Projekt</a>
+    <a href="../../index.html">Home</a>
+  </nav>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menü öffnen">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav" hidden aria-label="Hauptnavigation, mobil">
+  <a href="../../reading.html">Lesetext</a>
+  <a href="../../flashcards.html">Karteikarten</a>
+  <a href="../../about.html">Über das Projekt</a>
+  <a href="../../index.html">Home</a>
+</nav>
+</div>
+<!-- /site-header -->
+<div class="wrap">
+
+  <p class="kicker">Feuilleton · Arbeitswelt</p>
+  <h1>Das Schweigen im Großraumbüro</h1>
+  <p class="standfirst">Über die unterschätzte Ökonomie der Höflichkeit — und warum ein Gruß am Morgen mehr wert ist als jede Betriebsvereinbarung.</p>
+  <p class="meta">Lesetext C1 · 325 Wörter · Niveau: Zeitungs­kommentar</p>
+
+  <article>
+    <p>Worauf sollte man <strong>achten</strong>, wenn man an einem Dienstagmorgen den vierten Stock betritt? Auf die ungelesenen E-Mails, auf die Frist am Freitag, selten auf die Menschen. Dabei <strong>handelt es sich</strong> bei der Frage, in welchem Ton wir miteinander sprechen, längst nicht mehr um eine Nebensächlichkeit der Büroetikette, sondern um einen harten betriebswirtschaftlichen Faktor.</p>
+
+    <p>Wer heute <strong>Beschäftigung in</strong> einer mittelgroßen Agentur <strong>findet</strong>, erhält in der ersten Woche einen Laptop, einen Zugangscode und die Belehrung, vertrauliche Unterlagen ordnungsgemäß zu <strong>kennzeichnen</strong>. Dass man eine solche <strong>Information für sich behalten</strong> muss, leuchtet jedem sofort ein. Dass man einem Kollegen am Morgen auch <strong>zulächeln</strong> könnte, steht in keinem Handbuch.</p>
+
+    <p><strong>Anscheinend</strong> ist das Zweite das Schwierigere. Die Erhebungen der Arbeitspsychologie zeigen <strong>deutlich</strong>: Seit der Rückkehr aus dem Homeoffice <strong>fällt es uns schwerer</strong>, beiläufige Freundlichkeit zu zeigen. Die Belegschaft sitzt <strong>schweigsam</strong> vor den Bildschirmen, zwischen zwei Videokonferenzen <strong>dehnt sich</strong> jemand hastig am Stehtisch, und was als agile Zusammenarbeit angekündigt war, erweist sich als terminliches <strong>Durcheinander</strong>, das <strong>mindestens</strong> so sehr ermüdet wie die Arbeit selbst.</p>
+
+    <p>Die <strong>Schuld an</strong> der gereizten Stimmung schieben Führungskräfte gern auf „die Umstände“. Wer aber im internen Chat notiert, der Kunde sei „ein <strong>Arschloch</strong>“, <strong>verstößt gegen</strong> etwas, das keine Betriebsvereinbarung je erfassen wird: gegen jenen Grundton, ohne den eine Gruppe von Spezialisten kein einziges Vorhaben <strong>zum Abschluss bringt</strong>.</p>
+
+    <p>Es geht dabei nicht um Harmoniekitsch. Das <strong>Glück über</strong> einen gewonnenen Auftrag verfliegt binnen Stunden; die <strong>Zufriedenheit mit</strong> der eigenen Tätigkeit dagegen speist sich aus etwas Langsamerem — aus dem Gefühl, gesehen zu werden. Niemand verlangt, dass Vorgesetzte <strong>lieb zu</strong> ihren Teams sind wie Erzieher zu Vorschulkindern. Es genügte, die Mitarbeitenden ernst zu nehmen.</p>
+
+    <p>Dass dies kein weiches Thema ist, lässt sich beziffern: Unternehmen, deren Beschäftigte das Betriebsklima als respektvoll beschreiben, verzeichnen eine messbar geringere Fluktuation. Wer also morgen den vierten Stock betritt, möge vor dem ersten Blick in den Posteingang kurz innehalten. Ein Gruß kostet nichts. Und manchmal entscheidet er darüber, ob am Freitag jemand bleibt — oder schweigend seine Kündigung schreibt.</p>
+  </article>
+
+  <h2>English gloss</h2>
+  <dl>
+    <dt>achten auf (+ Akk.)</dt>
+    <dd>to pay attention to / to watch out for</dd>
+
+    <dt>sich handeln um (+ Akk.)</dt>
+    <dd>to be about / to concern / to be a matter of</dd>
+
+    <dt>Beschäftigung finden in (+ Dat.)</dt>
+    <dd>to find occupation / employment / fulfilment in</dd>
+
+    <dt>kennzeichnen</dt>
+    <dd>to label / to mark / to tag</dd>
+
+    <dt>eine Information für sich behalten</dt>
+    <dd>to keep information to oneself</dd>
+
+    <dt>zulächeln (+ Dat.)</dt>
+    <dd>to smile at (someone)</dd>
+
+    <dt>anscheinend</dt>
+    <dd>apparently</dd>
+
+    <dt>deutlich</dt>
+    <dd>clearly</dd>
+
+    <dt>es fällt uns schwerer</dt>
+    <dd>it's harder for us</dd>
+
+    <dt>schweigsam</dt>
+    <dd>silent / taciturn</dd>
+
+    <dt>sich dehnen</dt>
+    <dd>to stretch (oneself)</dd>
+
+    <dt>ein Durcheinander</dt>
+    <dd>a mess / a muddle</dd>
+
+    <dt>mindestens</dt>
+    <dd>at least</dd>
+
+    <dt>die Schuld an (+ Dat.)</dt>
+    <dd>the guilt / the blame for</dd>
+
+    <dt>das Arschloch</dt>
+    <dd>asshole (vulgar)</dd>
+
+    <dt>verstoßen gegen (+ Akk.)</dt>
+    <dd>to violate / to breach / to go against</dd>
+
+    <dt>zum Abschluss bringen (+ Akk.)</dt>
+    <dd>to complete / to bring to a conclusion</dd>
+
+    <dt>das Glück über (+ Akk.)</dt>
+    <dd>the happiness / delight about</dd>
+
+    <dt>die Zufriedenheit mit (+ Dat.)</dt>
+    <dd>satisfaction with</dd>
+
+    <dt>lieb zu (+ Dat.)</dt>
+    <dd>kind to / sweet to</dd>
+  </dl>
+
+  <footer>Sprachgarten · Lesetraining C1</footer>
+
+</div>
+
+<!-- site-header -->
+<script>
+document.querySelectorAll('.nav-toggle').forEach(function (toggle) {
+  var panel = document.getElementById(toggle.getAttribute('aria-controls'));
+  toggle.addEventListener('click', function () {
+    var open = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!open));
+    toggle.setAttribute('aria-label', open ? 'Menü öffnen' : 'Menü schließen');
+    if (panel) panel.hidden = open;
+  });
+});
+
+(function () {
+  var bar = document.querySelector('.site-bar');
+  if (!bar) return;
+  function firstTextTop() {
+    var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (n) {
+        if (bar.contains(n) || !n.nodeValue.trim()) return NodeFilter.FILTER_SKIP;
+        var p = n.parentElement;
+        if (!p || p.closest('script,style,.skip') || !p.offsetParent) return NodeFilter.FILTER_SKIP;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var n = w.nextNode();
+    if (!n) return null;
+    var r = document.createRange(); r.selectNodeContents(n);
+    return r.getBoundingClientRect().top;
+  }
+  function fit() {
+    var cs = getComputedStyle(document.body);
+    bar.style.marginTop = '-' + cs.paddingTop;
+    bar.style.marginLeft = '-' + cs.paddingLeft;
+    bar.style.marginRight = '-' + cs.paddingRight;
+    bar.style.marginBottom = '0px';
+    var w = window.innerWidth, target = w >= 1024 ? 44 : (w >= 640 ? 34 : 26);
+    var top = firstTextTop();
+    if (top === null) return;
+    var gap = top - bar.getBoundingClientRect().bottom;
+    bar.style.marginBottom = (target - gap) + 'px';
+  }
+  fit();
+  window.addEventListener('load', fit);
+  window.addEventListener('resize', fit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+})();
+</script>
+<!-- /site-header --></body>
+</html>
