@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Am Ende des Eises – Lesetext (C1)</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#e9fae9;
+    --ink:#304635;
+    --head:#082310;
+    --accent:#0077c7;
+    --accent-hover:#0061b0;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    padding:1.5rem 1.1rem 3rem;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Sora', system-ui, sans-serif;
+    font-size:1.03rem;
+    line-height:1.72;
+  }
+  .wrap{max-width:40rem;margin:0 auto;}
+  .kicker{
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:.74rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin:0 0 .6rem;
+  }
+  h1{
+    font-family:'Libre Baskerville', Georgia, serif;
+    color:var(--head);
+    font-size:1.72rem;
+    line-height:1.26;
+    margin:0 0 .5rem;
+  }
+  .standfirst{
+    font-family:'Libre Baskerville', Georgia, serif;
+    font-size:1.02rem;
+    line-height:1.6;
+    color:var(--head);
+    margin:0 0 1rem;
+  }
+  .meta{
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:.78rem;
+    color:#4a6150;
+    margin:0 0 1.6rem;
+    padding-bottom:1rem;
+    border-bottom:1px solid #c3e2c7;
+  }
+  article p{margin:0 0 1.05rem;}
+  article p:first-of-type::first-letter{
+    font-family:'Libre Baskerville', Georgia, serif;
+    font-size:2.9rem;
+    line-height:.9;
+    float:left;
+    padding:.25rem .5rem .1rem 0;
+    color:var(--head);
+  }
+  strong{font-weight:600;color:var(--head);}
+  h2{
+    font-family:'Libre Baskerville', Georgia, serif;
+    color:var(--head);
+    font-size:1.2rem;
+    margin:2.4rem 0 .9rem;
+    padding-top:1.4rem;
+    border-top:1px solid #c3e2c7;
+  }
+  dl{margin:0;}
+  dt{
+    font-weight:600;
+    color:var(--head);
+    margin-top:.85rem;
+  }
+  dd{
+    margin:.1rem 0 0;
+    padding-left:.9rem;
+    border-left:2px solid #c3e2c7;
+  }
+  a{color:var(--accent);}
+  a:hover{color:var(--accent-hover);}
+  footer{
+    margin-top:2.4rem;
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:.74rem;
+    color:#4a6150;
+  }
+</style>
+
+<!-- site-header -->
+<style>
+.site-bar {
+  --site-green: #e9fae9;
+  --page-bg: #fff;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-bg-hover: rgba(255, 255, 255, 0.97);
+  --panel-bg: rgba(255, 255, 255, 0.62);
+  --panel-bg-hover: rgba(255, 255, 255, 0.82);
+
+  --ink: #082310;
+  --ink-body: #304635;
+  --ink-muted: #4b614f;
+  --ink-faint: #617865;
+
+  --blue: #0077c7;
+  --blue-hover: #0061b0;
+  --blue-text: #006eb8;
+  --article: #c56c00;
+
+  --border: #8ab091;
+  --rule: #dce9de;
+  --underline: #a8c7ad;
+
+  --chip-verb-praep-bg: #cdecff;      --chip-verb-praep-fg: #004e95;
+  --chip-verb-kasus-bg: #c2f2f8;      --chip-verb-kasus-fg: #005565;
+  --chip-redemittel-bg: #f0e4ff;      --chip-redemittel-fg: #603b93;
+  --chip-nomen-praep-bg: #c4f2cc;     --chip-nomen-praep-fg: #005222;
+  --chip-adjektiv-praep-bg: #ffe1ac;  --chip-adjektiv-praep-fg: #7b4300;
+  --chip-redewendung-bg: #ffd9d7;     --chip-redewendung-fg: #9a2733;
+  --chip-wortschatz-bg: #dce9de;      --chip-wortschatz-fg: #384e3c;
+
+  --font-serif: 'Libre Baskerville', Georgia, serif;
+  --font-sans: 'Sora', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --r-sm: 4px;
+  --r-md: 12px;
+  --r-lg: 14px;
+  --r-pill: 999px;
+  --shadow-card: 0 12px 30px rgba(30, 70, 45, 0.1);
+
+  --pad-x: 22px;
+
+  font-family: var(--font-sans); font-size: 16px; line-height: 1.55;
+  -webkit-font-smoothing: antialiased; text-align: left;
+}
+.site-bar *, .site-bar *::before, .site-bar *::after { box-sizing: border-box; }
+.site-bar header, .site-bar nav { margin: 0; border: 0; max-width: none; }
+.site-bar a { text-decoration: none; border-bottom: 0; }
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: 12px; top: 12px; background: #fff; padding: 10px 14px; border-radius: 12px; z-index: 100; }
+
+.site-bar {
+  background: var(--blue-text);
+  border-bottom: 1px solid var(--blue-text);
+  box-shadow: 0 2px 12px rgba(30, 70, 45, 0.06);
+}
+.site-bar { margin-bottom: 26px; }
+.site-bar :focus-visible { outline-color: #fff; }
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px var(--pad-x);
+}
+.brand { display: flex; }
+.brand__logo { display: block; height: 40px; width: auto; max-width: none; }
+.nav { display: none; }
+.nav-toggle {
+  width: 44px; height: 44px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+  background: none; border: 1px solid rgba(255, 255, 255, 0.6); border-radius: var(--r-md); cursor: pointer;
+  transition: border-color 150ms ease;
+}
+.nav-toggle span { width: 18px; height: 1.5px; background: #fff; }
+.nav-toggle:hover, .nav-toggle[aria-expanded="true"] { border-color: #fff; }
+.mobile-nav { display: flex; flex-direction: column; padding: 4px var(--pad-x) 12px; gap: 2px; }
+.mobile-nav a {
+  min-height: 48px; display: flex; align-items: center;
+  padding: 0 12px; margin: 0 -12px;
+  color: #fff; font-size: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  transition: box-shadow 150ms ease;
+}
+.mobile-nav[hidden] { display: none; }
+.mobile-nav a:hover, .mobile-nav a:active { color: #fff; box-shadow: inset 0 0 0 1px #fff; }
+.mobile-nav .nav__current {
+  min-height: 48px; display: flex; align-items: center;
+  padding: 0 12px; margin: 0 -12px; font-size: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+/* current page: inverted white pill with blue text */
+.nav__current { background: #fff; color: var(--blue-text); cursor: default; }
+@media (min-width: 640px) {
+  .nav-toggle, .mobile-nav { display: none !important; }
+  .nav { display: flex; align-items: center; gap: 8px; font-size: 15px; }
+  .nav a {
+    padding: 9px 16px;
+    border: 1px solid transparent;
+    border-radius: var(--r-pill);
+    color: #fff;
+    transition: border-color 150ms ease;
+  }
+  /* hover: text stays white, a white outline appears */
+  .nav a:hover { border-color: #fff; color: #fff; }
+  .nav .nav__current {
+    padding: 9px 16px; border: 1px solid #fff; border-radius: var(--r-pill);
+  }
+  .brand__logo { height: 48px; }
+  .site-header { padding: 18px var(--pad-x); }
+  .site-bar { margin-bottom: 34px; --pad-x: 44px; }
+}
+@media (min-width: 1024px) {
+  .site-header { max-width: 1280px; margin-inline: auto; }
+  .site-bar { margin-bottom: 44px; --pad-x: 52px; }
+}
+
+.site-bar { margin-bottom: 0; }
+html body { background: #fff; }
+html body p.site-page-title {
+  font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400; font-style: normal;
+  font-size: 34px; line-height: 1.1; letter-spacing: normal; text-transform: none;
+  color: #082310; margin: 0 0 18px; padding: 0; border: 0; background: none;
+}
+@media (min-width: 640px) { html body p.site-page-title { font-size: 42px; } }
+@media (min-width: 640px) { .site-bar { --pad-x: 44px; } }
+@media (min-width: 1024px) { .site-bar { --pad-x: 52px; } }
+</style>
+<!-- /site-header --></head>
+<body>
+<!-- site-header -->
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<div class="site-bar">
+<header class="site-header">
+  <a class="brand" href="../../index.html">
+    <img class="brand__logo" src="../../wortschatz_logo_white.png" width="521" height="112" alt="Täglicher Deutscher Wortschatz C1">
+  </a>
+  <nav class="nav" aria-label="Hauptnavigation">
+    <a href="../../reading.html">Lesetext</a>
+    <a href="../../flashcards.html">Karteikarten</a>
+    <a href="../../about.html">Über das Projekt</a>
+    <a href="../../index.html">Home</a>
+  </nav>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menü öffnen">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav" hidden aria-label="Hauptnavigation, mobil">
+  <a href="../../reading.html">Lesetext</a>
+  <a href="../../flashcards.html">Karteikarten</a>
+  <a href="../../about.html">Über das Projekt</a>
+  <a href="../../index.html">Home</a>
+</nav>
+</div>
+<!-- /site-header -->
+<div class="wrap">
+
+  <!-- site-header -->
+<p class="site-page-title">Lesetext</p>
+<!-- /site-header -->
+<p class="kicker">Feuilleton &middot; Reportage</p>
+  <h1>Am Ende des Eises</h1>
+  <p class="standfirst">In einem Alpental streiten Investoren, Angestellte und Jugendliche über das letzte Wasser – und über die Frage, was nach dem Rückzug des Eises von der Heimat übrig bleibt.</p>
+  <p class="meta">Wortzahl: 317<span class="site-date"> · 08.11.2026</span> &middot; Niveau C1</p>
+
+  <article>
+    <p>Wer das Tal von früher <strong>kennt</strong>, erkennt es im Spätsommer kaum wieder. <strong>Der Gletscher</strong>, der vor dreißig Jahren beinahe bis zur Talstation reichte, hat sich um mehrere hundert Meter zurückgezogen; die Hitze der vergangenen Sommer hat in wenigen Wochen <strong>vernichtet</strong>, was über Jahrhunderte gewachsen war. Den Älteren im Dorf <strong>kommt</strong> es <strong>vor</strong>, als sei ihnen ein Stück der eigenen Biografie abhandengekommen. Die <strong>Trauer über</strong> diesen Verlust ist in den Gesprächen an der Bushaltestelle deutlicher zu spüren als in jedem Gutachten.</p>
+
+    <p>Wer heute <strong>einen Eindruck von</strong> der Lage <strong>gewinnen</strong> will, muss nicht bis an den Eisrand steigen. Es genügt, am Donnerstagabend die Turnhalle zu besuchen, in der über das Vorhaben eines Investors verhandelt wurde: eine Beschneiungsanlage, deren Speicherbecken den Bächen im Hochsommer das Wasser <strong>entziehen</strong> würde. Der Vertreter des Unternehmens <strong>stellte</strong> den Anwesenden dreißig neue Arbeitsplätze <strong>in Aussicht</strong>; <strong>überzeugt</strong> hat er damit kaum jemanden. Die <strong>Beteiligung an</strong> der Bürgerversammlung war ungewöhnlich hoch, der <strong>Protest gegen</strong> die Pläne unüberhörbar.</p>
+
+    <p>Gegen zehn Uhr <strong>meldete sich</strong> eine junge Hotelfachfrau zu Wort. Seit Wochen müsse sie <strong>Überstunden machen</strong>, weil die Hälfte der Kollegen gekündigt habe; man <strong>tue</strong> der Region keinen <strong>Gefallen</strong>, wenn man ihr noch mehr Gäste verspreche und zugleich noch weniger Wasser lasse. Ihr trockener Nachsatz, den letzten Bus habe sie nach solchen Schichten ohnehin nie <strong>erwischt</strong>, <strong>brachte</strong> den Saal für einen Moment <strong>zum Lachen</strong>.</p>
+
+    <p>Draußen warteten Jugendliche im Nieselregen, die Gesichter halb unter der <strong>Kapuze</strong> verborgen. Wer je mit ihnen gesprochen hat, weiß, dass es ihnen nicht um Symbolik geht. Ihr Vorwurf wiegt schwer: Die Tourismusbranche <strong>neige dazu</strong>, ökologische Grenzen als vorübergehende Unannehmlichkeit zu behandeln. Tatsächlich <strong>leiden</strong> viele Beschäftigte im Tal <strong>an</strong> chronischer Erschöpfung, und die Betriebe <strong>leiden unter</strong> einem Winter, der jedes Jahr später beginnt.</p>
+
+    <p>„Wir dürfen keine <strong>Zeit verlieren</strong>“, sagte eine Gemeinderätin zum Schluss. Der Satz klingt abgegriffen, doch im Angesicht des schrumpfenden Eises bekommt er eine beinahe körperliche Bedeutung: Was hier verschwindet, kehrt in keinem Lebensalter zurück.</p>
+  </article>
+
+  <h2>English gloss</h2>
+  <dl>
+    <dt>kennen (+Akk)</dt>
+    <dd>to know / to be familiar with</dd>
+
+    <dt>der Gletscher</dt>
+    <dd>the glacier</dd>
+
+    <dt>vernichten</dt>
+    <dd>to destroy</dd>
+
+    <dt>vorkommen</dt>
+    <dd>to seem / to occur</dd>
+
+    <dt>die Trauer über (+Akk)</dt>
+    <dd>the grief / sadness about</dd>
+
+    <dt>einen Eindruck gewinnen von (+Dat)</dt>
+    <dd>to gain an impression of / to get a sense of</dd>
+
+    <dt>entziehen (+Dat/+Akk)</dt>
+    <dd>to withdraw / to deprive (someone of something)</dd>
+
+    <dt>in Aussicht stellen</dt>
+    <dd>to hold out the prospect of / to promise</dd>
+
+    <dt>überzeugen</dt>
+    <dd>to convince</dd>
+
+    <dt>die Beteiligung an (+Dat)</dt>
+    <dd>the participation / involvement in</dd>
+
+    <dt>der Protest gegen (+Akk)</dt>
+    <dd>protest against</dd>
+
+    <dt>sich melden</dt>
+    <dd>to raise one's hand / to speak up</dd>
+
+    <dt>Überstunden machen</dt>
+    <dd>to do / work overtime</dd>
+
+    <dt>einen Gefallen tun (+Dat)</dt>
+    <dd>to do someone a favour</dd>
+
+    <dt>erwischen</dt>
+    <dd>to catch</dd>
+
+    <dt>zum Lachen bringen (+Akk)</dt>
+    <dd>to make someone laugh</dd>
+
+    <dt>die Kapuze</dt>
+    <dd>the hood</dd>
+
+    <dt>neigen zu (+Dat)</dt>
+    <dd>to tend towards / to be inclined to</dd>
+
+    <dt>leiden an / unter (+Dat)</dt>
+    <dd>to suffer from (an illness / from circumstances)</dd>
+
+    <dt>Zeit verlieren</dt>
+    <dd>to lose time</dd>
+  </dl>
+
+  <footer>Sprachgarten &middot; Lesetraining C1 &middot; Zielwortschatz des Tages</footer>
+
+</div>
+
+<!-- site-header -->
+<script>
+document.querySelectorAll('.nav-toggle').forEach(function (toggle) {
+  var panel = document.getElementById(toggle.getAttribute('aria-controls'));
+  toggle.addEventListener('click', function () {
+    var open = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!open));
+    toggle.setAttribute('aria-label', open ? 'Menü öffnen' : 'Menü schließen');
+    if (panel) panel.hidden = open;
+  });
+});
+
+(function () {
+  var bar = document.querySelector('.site-bar');
+  if (!bar) return;
+  function firstTextTop() {
+    var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (n) {
+        if (bar.contains(n) || !n.nodeValue.trim()) return NodeFilter.FILTER_SKIP;
+        var p = n.parentElement;
+        if (!p || p.closest('script,style,.skip') || !p.offsetParent) return NodeFilter.FILTER_SKIP;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var n = w.nextNode();
+    if (!n) return null;
+    var r = document.createRange(); r.selectNodeContents(n);
+    return r.getBoundingClientRect().top;
+  }
+  function fit() {
+    var cs = getComputedStyle(document.body);
+    bar.style.marginTop = '-' + cs.paddingTop;
+    bar.style.marginLeft = '-' + cs.paddingLeft;
+    bar.style.marginRight = '-' + cs.paddingRight;
+    bar.style.marginBottom = '0px';
+    var w = window.innerWidth, target = w >= 1024 ? 44 : (w >= 640 ? 34 : 26);
+    var top = firstTextTop();
+    if (top === null) return;
+    var gap = top - bar.getBoundingClientRect().bottom;
+    bar.style.marginBottom = (target - gap) + 'px';
+  }
+  fit();
+  window.addEventListener('load', fit);
+  window.addEventListener('resize', fit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+})();
+</script>
+<!-- /site-header --></body>
+</html>
