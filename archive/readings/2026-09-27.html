@@ -95,7 +95,8 @@
 <!-- site-header -->
 <style>
 .site-bar {
-  --page-bg: #e9fae9;
+  --site-green: #e9fae9;
+  --page-bg: #fff;
   --card-bg: rgba(255, 255, 255, 0.85);
   --card-bg-hover: rgba(255, 255, 255, 0.97);
   --panel-bg: rgba(255, 255, 255, 0.62);
@@ -145,11 +146,12 @@
 .skip:focus { left: 12px; top: 12px; background: #fff; padding: 10px 14px; border-radius: 12px; z-index: 100; }
 
 .site-bar {
-  background: #fff;
-  border-bottom: 1px solid var(--rule);
+  background: var(--blue-text);
+  border-bottom: 1px solid var(--blue-text);
   box-shadow: 0 2px 12px rgba(30, 70, 45, 0.06);
 }
 .site-bar { margin-bottom: 26px; }
+.site-bar :focus-visible { outline-color: #fff; }
 .site-header {
   display: flex;
   align-items: center;
@@ -157,40 +159,32 @@
   gap: 16px;
   padding: 14px var(--pad-x);
 }
-.brand { display: flex; flex-direction: column; gap: 1px; color: var(--blue-text); }
-.brand:hover { color: var(--blue-hover); }
-.brand__name { font-family: var(--font-serif); font-size: 17px; }
-.brand__kicker {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
+.brand { display: flex; }
+.brand__logo { display: block; height: 40px; width: auto; max-width: none; }
 .nav { display: none; }
 .nav-toggle {
   width: 44px; height: 44px;
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
-  background: none; border: 1px solid var(--border); border-radius: var(--r-md); cursor: pointer;
-  transition: background-color 150ms ease, border-color 150ms ease;
+  background: none; border: 1px solid rgba(255, 255, 255, 0.6); border-radius: var(--r-md); cursor: pointer;
+  transition: border-color 150ms ease;
 }
-.nav-toggle span { width: 18px; height: 1.5px; background: var(--ink-body); transition: background-color 150ms ease; }
-.nav-toggle:hover, .nav-toggle[aria-expanded="true"] { background: var(--blue-text); border-color: var(--blue-text); }
-.nav-toggle:hover span, .nav-toggle[aria-expanded="true"] span { background: #fff; }
+.nav-toggle span { width: 18px; height: 1.5px; background: #fff; }
+.nav-toggle:hover, .nav-toggle[aria-expanded="true"] { border-color: #fff; }
 .mobile-nav { display: flex; flex-direction: column; padding: 4px var(--pad-x) 12px; gap: 2px; }
 .mobile-nav a {
   min-height: 48px; display: flex; align-items: center;
   padding: 0 12px; margin: 0 -12px;
-  color: var(--blue-text); font-size: 16px; border-bottom: 1px solid var(--rule);
-  transition: background-color 150ms ease, color 150ms ease;
+  color: #fff; font-size: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  transition: box-shadow 150ms ease;
 }
 .mobile-nav[hidden] { display: none; }
-.mobile-nav a:hover, .mobile-nav a:active { background: var(--blue-text); color: #fff; }
+.mobile-nav a:hover, .mobile-nav a:active { color: #fff; box-shadow: inset 0 0 0 1px #fff; }
 .mobile-nav .nav__current {
   min-height: 48px; display: flex; align-items: center;
-  padding: 0 12px; margin: 0 -12px; font-size: 16px; border-bottom: 1px solid var(--rule);
+  padding: 0 12px; margin: 0 -12px; font-size: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
-.nav__current { background: var(--blue-text); color: #fff; cursor: default; }
+/* current page: inverted white pill with blue text */
+.nav__current { background: #fff; color: var(--blue-text); cursor: default; }
 @media (min-width: 640px) {
   .nav-toggle, .mobile-nav { display: none !important; }
   .nav { display: flex; align-items: center; gap: 8px; font-size: 15px; }
@@ -198,13 +192,15 @@
     padding: 9px 16px;
     border: 1px solid transparent;
     border-radius: var(--r-pill);
-    color: var(--blue-text);
-    transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+    color: #fff;
+    transition: border-color 150ms ease;
   }
-  .nav a:hover { background: var(--blue-text); border-color: var(--blue-text); color: #fff; }
+  /* hover: text stays white, a white outline appears */
+  .nav a:hover { border-color: #fff; color: #fff; }
   .nav .nav__current {
-    padding: 9px 16px; border: 1px solid var(--blue-text); border-radius: var(--r-pill);
+    padding: 9px 16px; border: 1px solid #fff; border-radius: var(--r-pill);
   }
+  .brand__logo { height: 48px; }
   .site-header { padding: 18px var(--pad-x); }
   .site-bar { margin-bottom: 34px; --pad-x: 44px; }
 }
@@ -214,6 +210,13 @@
 }
 
 .site-bar { margin-bottom: 0; }
+html body { background: #fff; }
+html body p.site-page-title {
+  font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400; font-style: normal;
+  font-size: 34px; line-height: 1.1; letter-spacing: normal; text-transform: none;
+  color: #082310; margin: 0 0 18px; padding: 0; border: 0; background: none;
+}
+@media (min-width: 640px) { html body p.site-page-title { font-size: 42px; } }
 @media (min-width: 640px) { .site-bar { --pad-x: 44px; } }
 @media (min-width: 1024px) { .site-bar { --pad-x: 52px; } }
 </style>
@@ -225,8 +228,7 @@
 <div class="site-bar">
 <header class="site-header">
   <a class="brand" href="../../index.html">
-    <span class="brand__name">Deutscher Wortschatz</span>
-    <span class="brand__kicker">täglich · C1</span>
+    <img class="brand__logo" src="../../wortschatz_logo_white.png" width="521" height="112" alt="Täglicher Deutscher Wortschatz C1">
   </a>
   <nav class="nav" aria-label="Hauptnavigation">
     <a href="../../reading.html">Lesetext</a>
@@ -250,10 +252,13 @@
 
 <div class="wrap">
 
-  <p class="kicker">Feuilleton · Verbraucher</p>
+  <!-- site-header -->
+<p class="site-page-title">Lesetext</p>
+<!-- /site-header -->
+<p class="kicker">Feuilleton · Verbraucher</p>
   <h1>Das Gold in der Schublade</h1>
   <p class="standfirst">Ankaufsläden versprechen schnelles Bargeld. Ein Besuch zwischen Samt, Messingwaage und schlechten Kursen.</p>
-  <p class="meta">Lesetext C1 · ca. 325 Wörter · Lesezeit 3 Minuten</p>
+  <p class="meta">Lesetext C1 · ca. 325 Wörter<span class="site-date"> · 27.09.2026</span> · Lesezeit 3 Minuten</p>
 
   <article>
     <p>Wer dieser Tage durch die Fußgängerzonen der mittelgroßen Städte geht, kommt an ihnen kaum vorbei: Ankaufsläden für Altgold. Die <strong>Gestaltung</strong> der Schaufenster gleicht sich bis ins Detail – dunkles Holz, roter Samt, eine Waage aus Messing. Das zuverlässigste <strong>Kennzeichen</strong> der Branche aber ist jener Satz, der auf fast jedem Plakat prangt: „Wer sein Zahngold weiter aufbewahrt, <strong>verschenkt bares Geld</strong>.“</p>

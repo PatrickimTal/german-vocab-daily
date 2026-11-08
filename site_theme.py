@@ -16,7 +16,8 @@ GOOGLE_FONTS_LINKS = (
 
 TOKENS_CSS = """
 :root {
-  --page-bg: #e9fae9;
+  --site-green: #e9fae9;
+  --page-bg: #fff;
   --card-bg: rgba(255, 255, 255, 0.85);
   --card-bg-hover: rgba(255, 255, 255, 0.97);
   --panel-bg: rgba(255, 255, 255, 0.62);
@@ -93,11 +94,12 @@ a:hover { color: var(--blue-hover); }
 
 HEADER_CSS = """
 .site-bar {
-  background: #fff;
-  border-bottom: 1px solid var(--rule);
+  background: var(--blue-text);
+  border-bottom: 1px solid var(--blue-text);
   box-shadow: 0 2px 12px rgba(30, 70, 45, 0.06);
 }
 .site-bar { margin-bottom: 26px; }
+.site-bar :focus-visible { outline-color: #fff; }
 .site-header {
   display: flex;
   align-items: center;
@@ -105,40 +107,32 @@ HEADER_CSS = """
   gap: 16px;
   padding: 14px var(--pad-x);
 }
-.brand { display: flex; flex-direction: column; gap: 1px; color: var(--blue-text); }
-.brand:hover { color: var(--blue-hover); }
-.brand__name { font-family: var(--font-serif); font-size: 17px; }
-.brand__kicker {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
+.brand { display: flex; }
+.brand__logo { display: block; height: 40px; width: auto; max-width: none; }
 .nav { display: none; }
 .nav-toggle {
   width: 44px; height: 44px;
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
-  background: none; border: 1px solid var(--border); border-radius: var(--r-md); cursor: pointer;
-  transition: background-color 150ms ease, border-color 150ms ease;
+  background: none; border: 1px solid rgba(255, 255, 255, 0.6); border-radius: var(--r-md); cursor: pointer;
+  transition: border-color 150ms ease;
 }
-.nav-toggle span { width: 18px; height: 1.5px; background: var(--ink-body); transition: background-color 150ms ease; }
-.nav-toggle:hover, .nav-toggle[aria-expanded="true"] { background: var(--blue-text); border-color: var(--blue-text); }
-.nav-toggle:hover span, .nav-toggle[aria-expanded="true"] span { background: #fff; }
+.nav-toggle span { width: 18px; height: 1.5px; background: #fff; }
+.nav-toggle:hover, .nav-toggle[aria-expanded="true"] { border-color: #fff; }
 .mobile-nav { display: flex; flex-direction: column; padding: 4px var(--pad-x) 12px; gap: 2px; }
 .mobile-nav a {
   min-height: 48px; display: flex; align-items: center;
   padding: 0 12px; margin: 0 -12px;
-  color: var(--blue-text); font-size: 16px; border-bottom: 1px solid var(--rule);
-  transition: background-color 150ms ease, color 150ms ease;
+  color: #fff; font-size: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  transition: box-shadow 150ms ease;
 }
 .mobile-nav[hidden] { display: none; }
-.mobile-nav a:hover, .mobile-nav a:active { background: var(--blue-text); color: #fff; }
+.mobile-nav a:hover, .mobile-nav a:active { color: #fff; box-shadow: inset 0 0 0 1px #fff; }
 .mobile-nav .nav__current {
   min-height: 48px; display: flex; align-items: center;
-  padding: 0 12px; margin: 0 -12px; font-size: 16px; border-bottom: 1px solid var(--rule);
+  padding: 0 12px; margin: 0 -12px; font-size: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
-.nav__current { background: var(--blue-text); color: #fff; cursor: default; }
+/* current page: inverted white pill with blue text */
+.nav__current { background: #fff; color: var(--blue-text); cursor: default; }
 @media (min-width: 640px) {
   .nav-toggle, .mobile-nav { display: none !important; }
   .nav { display: flex; align-items: center; gap: 8px; font-size: 15px; }
@@ -146,13 +140,15 @@ HEADER_CSS = """
     padding: 9px 16px;
     border: 1px solid transparent;
     border-radius: var(--r-pill);
-    color: var(--blue-text);
-    transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+    color: #fff;
+    transition: border-color 150ms ease;
   }
-  .nav a:hover { background: var(--blue-text); border-color: var(--blue-text); color: #fff; }
+  /* hover: text stays white, a white outline appears */
+  .nav a:hover { border-color: #fff; color: #fff; }
   .nav .nav__current {
-    padding: 9px 16px; border: 1px solid var(--blue-text); border-radius: var(--r-pill);
+    padding: 9px 16px; border: 1px solid #fff; border-radius: var(--r-pill);
   }
+  .brand__logo { height: 48px; }
   .site-header { padding: 18px var(--pad-x); }
   .site-bar { margin-bottom: 34px; --pad-x: 44px; }
 }
@@ -188,8 +184,7 @@ def render_header(active_href=None, root_prefix=""):
 <div class="site-bar">
 <header class="site-header">
   <a class="brand" href="{href('index.html')}">
-    <span class="brand__name">Deutscher Wortschatz</span>
-    <span class="brand__kicker">täglich · C1</span>
+    <img class="brand__logo" src="{href('wortschatz_logo_white.png')}" width="521" height="112" alt="Täglicher Deutscher Wortschatz C1">
   </a>
   <nav class="nav" aria-label="Hauptnavigation">
 {desktop_links}
@@ -216,6 +211,18 @@ import re as _re
 _MARK = "site-header"
 _MARKED_RE = _re.compile(r"\n<!-- %s -->.*?<!-- /%s -->" % (_MARK, _MARK), _re.S)
 _OLD_BACK_NAV_RE = _re.compile(r"\n?<p style=\"[^\"]*\"><a href=\"[^\"]*index\.html\"[^>]*>← Startseite</a></p>\n?")
+# Reading date spliced into the article's meta line (inline, so it has its
+# own marker instead of the comment-delimited blocks).
+_TITLE_BLOCK_RE = _re.compile(
+    r"<!-- %s -->\n<p class=\"site-page-title\">[^<]*</p>\n<!-- /%s -->\n" % (_MARK, _MARK))
+_DATE_SPAN_RE = _re.compile(r'<span class="site-date">.*?</span>', _re.S)
+_H1_RE = _re.compile(r"<h1[\s>]", _re.I)
+_KICKER_BEFORE_RE = _re.compile(
+    r'<(p|div)\b[^>]*class="[^"]*\bkicker\b[^"]*"[^>]*>(?:(?!</?\1\b).)*</\1>\s*$', _re.S | _re.I)
+_META_RE = _re.compile(r'(<(p|div)\b[^>]*class="[^"]*\bmeta\b[^"]*"[^>]*>)(.*?)(</\2>)', _re.S | _re.I)
+# "330 Wörter", "Wortzahl: 337", "Wörter: 341", "Wortzahl: ca. 310 Wörter"
+_WORDCOUNT_RE = _re.compile(r"(?:Wortzahl|Wörter)\s*:\s*(?:ca\.\s*)?\d+(?:\s*Wörter)?|\d+\s*Wörter")
+_SEP_RE = _re.compile(r"(?:\s|&nbsp;)*[·|](?:\s|&nbsp;)*")
 
 
 def _scoped_header_css():
@@ -231,6 +238,14 @@ def _scoped_header_css():
         + HEADER_CSS
         # the reading page's own top padding provides the gap below the bar
         + "\n.site-bar { margin-bottom: 0; }\n"
+        # white page; "Lesetext" title styled like the about page's <h1>
+        "html body { background: #fff; }\n"
+        "html body p.site-page-title {\n"
+        "  font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400; font-style: normal;\n"
+        "  font-size: 34px; line-height: 1.1; letter-spacing: normal; text-transform: none;\n"
+        "  color: #082310; margin: 0 0 18px; padding: 0; border: 0; background: none;\n"
+        "}\n"
+        "@media (min-width: 640px) { html body p.site-page-title { font-size: 42px; } }\n"
         "@media (min-width: 640px) { .site-bar { --pad-x: 44px; } }\n"
         "@media (min-width: 1024px) { .site-bar { --pad-x: 52px; } }\n"
     )
@@ -277,12 +292,51 @@ _FIT_BAR_JS = """
 """
 
 
-def inject_site_header(html_text, root_prefix="", active_href=None):
-    """Put the shared top menu into a standalone (AI-generated) page."""
-    s = _MARKED_RE.sub("", html_text)
+def _add_reading_date(s, reading_date):
+    """Put the reading's date next to the word count in its meta line."""
+    stamp = reading_date.strftime("%d.%m.%Y")
+    m = _META_RE.search(s)
+    if not m:  # no meta line: give the date its own line under the headline
+        h1_end = s.lower().find("</h1>")
+        if h1_end < 0:
+            return s
+        h1_end += len("</h1>")
+        return s[:h1_end] + f'\n<p><span class="site-date">{stamp}</span></p>' + s[h1_end:]
+    inner = m.group(3)
+    sep_m = _SEP_RE.search(inner)
+    sep = sep_m.group(0) if sep_m else " · "
+    span = f'<span class="site-date">{sep}{stamp}</span>'
+    wc = _WORDCOUNT_RE.search(inner)
+    at = wc.end() if wc else len(inner.rstrip())
+    inner = inner[:at] + span + inner[at:]
+    return s[: m.start(3)] + inner + s[m.end(3):]
+
+
+def _add_page_title(s, block, title):
+    """Insert a page title above the article's kicker/headline."""
+    h1 = _H1_RE.search(s)
+    if not h1:
+        return s
+    pos = h1.start()
+    kicker = _KICKER_BEFORE_RE.search(s[:pos])
+    if kicker:
+        pos = kicker.start()
+    return s[:pos] + block(f'<p class="site-page-title">{title}</p>').lstrip("\n") + "\n" + s[pos:]
+
+
+def inject_site_header(html_text, root_prefix="", active_href=None, reading_date=None,
+                       page_title="Lesetext"):
+    """Put the shared top menu into a standalone (AI-generated) page, plus a
+    page title and (when reading_date is given) the date in the meta line."""
+    s = strip_site_header(html_text)
     s = _OLD_BACK_NAV_RE.sub("\n", s, count=1)
     def block(body):
         return f"\n<!-- {_MARK} -->\n{body}\n<!-- /{_MARK} -->"
+
+    if page_title:
+        s = _add_page_title(s, block, page_title)
+    if reading_date is not None:
+        s = _add_reading_date(s, reading_date)
 
     style = block(f"<style>\n{_scoped_header_css()}</style>")
     header = block(render_header(active_href=active_href, root_prefix=root_prefix))
@@ -294,7 +348,10 @@ def inject_site_header(html_text, root_prefix="", active_href=None):
 
 
 def strip_site_header(html_text):
-    return _MARKED_RE.sub("", html_text)
+    s = _DATE_SPAN_RE.sub("", html_text)
+    s = _MARKED_RE.sub("", s)
+    # page title block (indented, so not preceded by a newline)
+    return _TITLE_BLOCK_RE.sub("", s)
 
 
 NAV_TOGGLE_JS = """

@@ -9,7 +9,8 @@
 <style>
 
 :root {
-  --page-bg: #e9fae9;
+  --site-green: #e9fae9;
+  --page-bg: #fff;
   --card-bg: rgba(255, 255, 255, 0.85);
   --card-bg-hover: rgba(255, 255, 255, 0.97);
   --panel-bg: rgba(255, 255, 255, 0.62);
@@ -82,11 +83,12 @@ a:hover { color: var(--blue-hover); }
 }
 
 .site-bar {
-  background: #fff;
-  border-bottom: 1px solid var(--rule);
+  background: var(--blue-text);
+  border-bottom: 1px solid var(--blue-text);
   box-shadow: 0 2px 12px rgba(30, 70, 45, 0.06);
 }
 .site-bar { margin-bottom: 26px; }
+.site-bar :focus-visible { outline-color: #fff; }
 .site-header {
   display: flex;
   align-items: center;
@@ -94,40 +96,32 @@ a:hover { color: var(--blue-hover); }
   gap: 16px;
   padding: 14px var(--pad-x);
 }
-.brand { display: flex; flex-direction: column; gap: 1px; color: var(--blue-text); }
-.brand:hover { color: var(--blue-hover); }
-.brand__name { font-family: var(--font-serif); font-size: 17px; }
-.brand__kicker {
-  font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
+.brand { display: flex; }
+.brand__logo { display: block; height: 40px; width: auto; max-width: none; }
 .nav { display: none; }
 .nav-toggle {
   width: 44px; height: 44px;
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
-  background: none; border: 1px solid var(--border); border-radius: var(--r-md); cursor: pointer;
-  transition: background-color 150ms ease, border-color 150ms ease;
+  background: none; border: 1px solid rgba(255, 255, 255, 0.6); border-radius: var(--r-md); cursor: pointer;
+  transition: border-color 150ms ease;
 }
-.nav-toggle span { width: 18px; height: 1.5px; background: var(--ink-body); transition: background-color 150ms ease; }
-.nav-toggle:hover, .nav-toggle[aria-expanded="true"] { background: var(--blue-text); border-color: var(--blue-text); }
-.nav-toggle:hover span, .nav-toggle[aria-expanded="true"] span { background: #fff; }
+.nav-toggle span { width: 18px; height: 1.5px; background: #fff; }
+.nav-toggle:hover, .nav-toggle[aria-expanded="true"] { border-color: #fff; }
 .mobile-nav { display: flex; flex-direction: column; padding: 4px var(--pad-x) 12px; gap: 2px; }
 .mobile-nav a {
   min-height: 48px; display: flex; align-items: center;
   padding: 0 12px; margin: 0 -12px;
-  color: var(--blue-text); font-size: 16px; border-bottom: 1px solid var(--rule);
-  transition: background-color 150ms ease, color 150ms ease;
+  color: #fff; font-size: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  transition: box-shadow 150ms ease;
 }
 .mobile-nav[hidden] { display: none; }
-.mobile-nav a:hover, .mobile-nav a:active { background: var(--blue-text); color: #fff; }
+.mobile-nav a:hover, .mobile-nav a:active { color: #fff; box-shadow: inset 0 0 0 1px #fff; }
 .mobile-nav .nav__current {
   min-height: 48px; display: flex; align-items: center;
-  padding: 0 12px; margin: 0 -12px; font-size: 16px; border-bottom: 1px solid var(--rule);
+  padding: 0 12px; margin: 0 -12px; font-size: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
-.nav__current { background: var(--blue-text); color: #fff; cursor: default; }
+/* current page: inverted white pill with blue text */
+.nav__current { background: #fff; color: var(--blue-text); cursor: default; }
 @media (min-width: 640px) {
   .nav-toggle, .mobile-nav { display: none !important; }
   .nav { display: flex; align-items: center; gap: 8px; font-size: 15px; }
@@ -135,13 +129,15 @@ a:hover { color: var(--blue-hover); }
     padding: 9px 16px;
     border: 1px solid transparent;
     border-radius: var(--r-pill);
-    color: var(--blue-text);
-    transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+    color: #fff;
+    transition: border-color 150ms ease;
   }
-  .nav a:hover { background: var(--blue-text); border-color: var(--blue-text); color: #fff; }
+  /* hover: text stays white, a white outline appears */
+  .nav a:hover { border-color: #fff; color: #fff; }
   .nav .nav__current {
-    padding: 9px 16px; border: 1px solid var(--blue-text); border-radius: var(--r-pill);
+    padding: 9px 16px; border: 1px solid #fff; border-radius: var(--r-pill);
   }
+  .brand__logo { height: 48px; }
   .site-header { padding: 18px var(--pad-x); }
   .site-bar { margin-bottom: 34px; --pad-x: 44px; }
 }
@@ -164,6 +160,13 @@ a:hover { color: var(--blue-hover); }
 .chip--adjektiv-praep  { background: var(--chip-adjektiv-praep-bg);  color: var(--chip-adjektiv-praep-fg); }
 .chip--redewendung     { background: var(--chip-redewendung-bg);     color: var(--chip-redewendung-fg); }
 .chip--wortschatz      { background: var(--chip-wortschatz-bg);      color: var(--chip-wortschatz-fg); }
+
+/* ---------- homepage colours ---------- */
+
+/* green canvas so the green lower section runs to the window bottom; body stays white */
+html { background: var(--site-green); }
+/* Lesetext-Archiv and footer sit on the original site green */
+.home-lower { background: var(--site-green); }
 
 /* ---------- hero ---------- */
 
@@ -228,7 +231,7 @@ a:hover { color: var(--blue-hover); }
 .flashcard {
   display: flex; flex-direction: column; gap: 13px;
   width: 100%; padding: 22px; text-align: left;
-  background: var(--card-bg); border: 0; border-radius: var(--r-lg);
+  background: #fff; border: 1px solid var(--blue-text); border-radius: var(--r-lg);
   box-shadow: var(--shadow-card);
   font-family: inherit;
 }
@@ -257,12 +260,12 @@ a:hover { color: var(--blue-hover); }
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
-  padding: 26px var(--pad-x) 0;
+  padding: 26px var(--pad-x) 26px;
 }
 .entry {
   display: flex; flex-direction: column; justify-content: center; gap: 3px;
   min-height: 48px; padding: 16px 18px;
-  background: var(--panel-bg); border-radius: var(--r-md);
+  background: #fff; border: 1px solid var(--blue-text); border-radius: var(--r-md);
   transition: background-color 150ms ease;
 }
 .entry__title { font-size: 15px; font-weight: 600; color: var(--ink); transition: color 150ms ease; }
@@ -339,7 +342,7 @@ a:hover { color: var(--blue-hover); }
   .flashcard__gloss { font-size: 18px; }
   .flashcard__example { font-size: 15px; }
   .tag-de { font-size: 11px; padding: 2px 6px; margin-right: 8px; }
-  .entries { grid-template-columns: repeat(3, 1fr); gap: 14px; padding-top: 34px; }
+  .entries { grid-template-columns: repeat(3, 1fr); gap: 14px; padding-top: 34px; padding-bottom: 34px; }
   .entry { padding: 18px 20px; }
   .archive-section { max-width: 760px; }
 }
@@ -357,7 +360,6 @@ a:hover { color: var(--blue-hover); }
     gap: 52px;
     align-items: center;
     padding: 0 var(--pad-x);
-    min-height: 420px;
   }
   .hero__copy { gap: 22px; }
   .hero__title { font-size: 62px; line-height: 1.05; }
@@ -366,11 +368,11 @@ a:hover { color: var(--blue-hover); }
   .hero__card { gap: 14px; }
   .flashcard { padding: 30px 32px; gap: 18px; min-height: 280px; }
   .flashcard__term { font-size: 40px; }
-  .entries { gap: 16px; padding: 30px var(--pad-x) 34px; }
+  .entries { gap: 16px; padding: 34px var(--pad-x) 34px; }
   .entry { padding: 20px 22px; }
   .entry__title { font-size: 16px; }
   .entry__meta { font-size: 14px; }
-  .archive-section { padding-top: 8px; max-width: 760px; margin-inline: 0; }
+  .archive-section { padding-top: 34px; max-width: 760px; margin-inline: 0; }
 }
 
 </style>
@@ -381,8 +383,7 @@ a:hover { color: var(--blue-hover); }
 <div class="site-bar">
 <header class="site-header">
   <a class="brand" href="index.html">
-    <span class="brand__name">Deutscher Wortschatz</span>
-    <span class="brand__kicker">täglich · C1</span>
+    <img class="brand__logo" src="wortschatz_logo_white.png" width="521" height="112" alt="Täglicher Deutscher Wortschatz C1">
   </a>
   <nav class="nav" aria-label="Hauptnavigation">
     <a href="reading.html">Lesetext</a>
@@ -442,6 +443,7 @@ a:hover { color: var(--blue-hover); }
   </a>
 </nav>
 
+<div class="home-lower">
 <section class="archive-section" aria-label="Lesetext-Archiv">
   <h2>Lesetext-Archiv</h2>
   <div class="archive-accordion">
@@ -551,6 +553,7 @@ a:hover { color: var(--blue-hover); }
 </section>
 
 <footer class="site-footer">Automatisch generiert · German Vocab Daily</footer>
+</div>
 
 <script>
 

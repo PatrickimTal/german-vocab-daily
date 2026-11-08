@@ -114,7 +114,7 @@ PAGE_CSS = (
 .page-header{max-width:960px;margin:0 auto 1rem;text-align:center;padding:0 var(--pad-x);}
 .page-header h1{
   margin:0.2rem 0;font-family:var(--font-serif);font-weight:400;
-  font-size:2rem;color:var(--ink);
+  font-size:34px;line-height:1.1;color:var(--ink);
 }
 .page-header .subtitle{margin:0;font-size:0.85rem;color:var(--ink-faint);font-family:var(--font-mono);}
 
@@ -190,6 +190,7 @@ PAGE_CSS = (
 }
 
 @media (min-width: 640px){
+  .page-header h1{font-size:42px;}
   .page-header, .controls, #cardGrid { padding-left: var(--pad-x); padding-right: var(--pad-x); }
 }
 """

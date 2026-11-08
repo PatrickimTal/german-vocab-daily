@@ -80,7 +80,7 @@ def build_system_prompt(entries):
         "- Match the rest of the site's visual identity ('Sprachgarten'): "
         "in <head>, include exactly this before your <style> block:\n"
         f"  {GOOGLE_FONTS_LINKS}\n"
-        "  Then in CSS use: body background #e9fae9; body text #304635; "
+        "  Then in CSS use: body background #ffffff; body text #304635; "
         "headings/headline #082310 in 'Libre Baskerville', Georgia, serif; "
         "body copy and UI text in 'Sora', system-ui, sans-serif; small "
         "caption/meta text (e.g. a word-count line) in 'IBM Plex Mono', "
@@ -181,13 +181,13 @@ def main():
     today = date.today()
 
     with open("reading.html", "w", encoding="utf-8") as f:
-        f.write(inject_site_header(reading_html, root_prefix="", active_href="reading.html"))
+        f.write(inject_site_header(reading_html, root_prefix="", active_href="reading.html", reading_date=today))
     print("Wrote reading.html")
 
     os.makedirs(READINGS_ARCHIVE_DIR, exist_ok=True)
     archive_path = os.path.join(READINGS_ARCHIVE_DIR, f"{today.isoformat()}.html")
     with open(archive_path, "w", encoding="utf-8") as f:
-        f.write(inject_site_header(reading_html, root_prefix="../../"))
+        f.write(inject_site_header(reading_html, root_prefix="../../", reading_date=today))
     print(f"Archived reading to {archive_path}")
 
     update_csv(args.csv, entries, today)

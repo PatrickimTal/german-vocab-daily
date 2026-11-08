@@ -35,6 +35,13 @@ PAGE_CSS = (
     + HEADER_CSS
     + CHIP_CSS
     + """
+/* ---------- homepage colours ---------- */
+
+/* green canvas so the green lower section runs to the window bottom; body stays white */
+html { background: var(--site-green); }
+/* Lesetext-Archiv and footer sit on the original site green */
+.home-lower { background: var(--site-green); }
+
 /* ---------- hero ---------- */
 
 .hero {
@@ -98,7 +105,7 @@ PAGE_CSS = (
 .flashcard {
   display: flex; flex-direction: column; gap: 13px;
   width: 100%; padding: 22px; text-align: left;
-  background: var(--card-bg); border: 0; border-radius: var(--r-lg);
+  background: #fff; border: 1px solid var(--blue-text); border-radius: var(--r-lg);
   box-shadow: var(--shadow-card);
   font-family: inherit;
 }
@@ -127,12 +134,12 @@ PAGE_CSS = (
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
-  padding: 26px var(--pad-x) 0;
+  padding: 26px var(--pad-x) 26px;
 }
 .entry {
   display: flex; flex-direction: column; justify-content: center; gap: 3px;
   min-height: 48px; padding: 16px 18px;
-  background: var(--panel-bg); border-radius: var(--r-md);
+  background: #fff; border: 1px solid var(--blue-text); border-radius: var(--r-md);
   transition: background-color 150ms ease;
 }
 .entry__title { font-size: 15px; font-weight: 600; color: var(--ink); transition: color 150ms ease; }
@@ -209,7 +216,7 @@ PAGE_CSS = (
   .flashcard__gloss { font-size: 18px; }
   .flashcard__example { font-size: 15px; }
   .tag-de { font-size: 11px; padding: 2px 6px; margin-right: 8px; }
-  .entries { grid-template-columns: repeat(3, 1fr); gap: 14px; padding-top: 34px; }
+  .entries { grid-template-columns: repeat(3, 1fr); gap: 14px; padding-top: 34px; padding-bottom: 34px; }
   .entry { padding: 18px 20px; }
   .archive-section { max-width: 760px; }
 }
@@ -227,7 +234,6 @@ PAGE_CSS = (
     gap: 52px;
     align-items: center;
     padding: 0 var(--pad-x);
-    min-height: 420px;
   }
   .hero__copy { gap: 22px; }
   .hero__title { font-size: 62px; line-height: 1.05; }
@@ -236,11 +242,11 @@ PAGE_CSS = (
   .hero__card { gap: 14px; }
   .flashcard { padding: 30px 32px; gap: 18px; min-height: 280px; }
   .flashcard__term { font-size: 40px; }
-  .entries { gap: 16px; padding: 30px var(--pad-x) 34px; }
+  .entries { gap: 16px; padding: 34px var(--pad-x) 34px; }
   .entry { padding: 20px 22px; }
   .entry__title { font-size: 16px; }
   .entry__meta { font-size: 14px; }
-  .archive-section { padding-top: 8px; max-width: 760px; margin-inline: 0; }
+  .archive-section { padding-top: 34px; max-width: 760px; margin-inline: 0; }
 }
 """
 )
@@ -445,6 +451,7 @@ def build_index_html(today, card_of_day_entry, reading_word_count, rolling_card_
   </a>
 </nav>
 
+<div class="home-lower">
 <section class="archive-section" aria-label="Lesetext-Archiv">
   <h2>Lesetext-Archiv</h2>
   <div class="archive-accordion">
@@ -454,6 +461,7 @@ def build_index_html(today, card_of_day_entry, reading_word_count, rolling_card_
 </section>
 
 <footer class="site-footer">Automatisch generiert · German Vocab Daily</footer>
+</div>
 
 <script>
 {PAGE_JS}

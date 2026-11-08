@@ -27,7 +27,7 @@ PAGE_CSS = (
 .about p { font-size: 16px; color: var(--ink-body); margin: 0; }
 .about .chip-legend { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
 .about .panel {
-  background: var(--panel-bg); border-radius: var(--r-md);
+  background: var(--site-green); border-radius: var(--r-md);
   padding: 18px 20px; font-size: 14px; color: var(--ink-muted);
 }
 .about .panel a { color: var(--blue-text); }
