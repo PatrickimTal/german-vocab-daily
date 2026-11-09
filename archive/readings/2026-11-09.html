@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Der letzte Hefezopf – Lesetext C1 | Sprachgarten</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#e9fae9;
+    --ink:#304635;
+    --head:#082310;
+    --accent:#0077c7;
+    --accent-hover:#0061b0;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    padding:1.5rem 1.1rem 3rem;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Sora', system-ui, sans-serif;
+    font-size:1.05rem;
+    line-height:1.72;
+  }
+  main{max-width:40rem;margin:0 auto;}
+  .kicker{
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:.75rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin:0 0 .6rem;
+  }
+  h1{
+    font-family:'Libre Baskerville', Georgia, serif;
+    color:var(--head);
+    font-size:1.75rem;
+    line-height:1.28;
+    margin:0 0 .5rem;
+  }
+  .standfirst{
+    font-size:1.02rem;
+    color:var(--ink);
+    margin:0 0 1rem;
+  }
+  .meta{
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:.78rem;
+    color:#4a6350;
+    border-top:1px solid #c6e3c9;
+    border-bottom:1px solid #c6e3c9;
+    padding:.55rem 0;
+    margin:0 0 1.6rem;
+  }
+  article p{margin:0 0 1.1rem;}
+  article p:first-of-type::first-letter{
+    font-family:'Libre Baskerville', Georgia, serif;
+    font-size:3rem;
+    line-height:.9;
+    float:left;
+    padding:.25rem .5rem .1rem 0;
+    color:var(--head);
+  }
+  strong{font-weight:600;color:var(--head);}
+  h2{
+    font-family:'Libre Baskerville', Georgia, serif;
+    color:var(--head);
+    font-size:1.2rem;
+    margin:2.4rem 0 .9rem;
+    padding-top:1.3rem;
+    border-top:2px solid #c6e3c9;
+  }
+  dl{margin:0;}
+  dt{
+    font-weight:600;
+    color:var(--head);
+    margin-top:.85rem;
+  }
+  dd{
+    margin:.1rem 0 0;
+    padding-left:.9rem;
+    border-left:2px solid #c6e3c9;
+    font-size:.98rem;
+  }
+  a{color:var(--accent);}
+  a:hover{color:var(--accent-hover);}
+  footer{
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:.74rem;
+    color:#4a6350;
+    margin-top:2.6rem;
+    text-align:center;
+  }
+</style>
+
+<!-- site-header -->
+<style>
+.site-bar {
+  --site-green: #e9fae9;
+  --page-bg: #fff;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-bg-hover: rgba(255, 255, 255, 0.97);
+  --panel-bg: rgba(255, 255, 255, 0.62);
+  --panel-bg-hover: rgba(255, 255, 255, 0.82);
+
+  --ink: #082310;
+  --ink-body: #304635;
+  --ink-muted: #4b614f;
+  --ink-faint: #617865;
+
+  --blue: #0077c7;
+  --blue-hover: #0061b0;
+  --blue-text: #006eb8;
+  --article: #c56c00;
+
+  --border: #8ab091;
+  --rule: #dce9de;
+  --underline: #a8c7ad;
+
+  --chip-verb-praep-bg: #cdecff;      --chip-verb-praep-fg: #004e95;
+  --chip-verb-kasus-bg: #c2f2f8;      --chip-verb-kasus-fg: #005565;
+  --chip-redemittel-bg: #f0e4ff;      --chip-redemittel-fg: #603b93;
+  --chip-nomen-praep-bg: #c4f2cc;     --chip-nomen-praep-fg: #005222;
+  --chip-adjektiv-praep-bg: #ffe1ac;  --chip-adjektiv-praep-fg: #7b4300;
+  --chip-redewendung-bg: #ffd9d7;     --chip-redewendung-fg: #9a2733;
+  --chip-wortschatz-bg: #dce9de;      --chip-wortschatz-fg: #384e3c;
+
+  --font-serif: 'Libre Baskerville', Georgia, serif;
+  --font-sans: 'Sora', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --r-sm: 4px;
+  --r-md: 12px;
+  --r-lg: 14px;
+  --r-pill: 999px;
+  --shadow-card: 0 12px 30px rgba(30, 70, 45, 0.1);
+
+  --pad-x: 22px;
+
+  font-family: var(--font-sans); font-size: 16px; line-height: 1.55;
+  -webkit-font-smoothing: antialiased; text-align: left;
+}
+.site-bar *, .site-bar *::before, .site-bar *::after { box-sizing: border-box; }
+.site-bar header, .site-bar nav { margin: 0; border: 0; max-width: none; }
+.site-bar a { text-decoration: none; border-bottom: 0; }
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: 12px; top: 12px; background: #fff; padding: 10px 14px; border-radius: 12px; z-index: 100; }
+
+.site-bar {
+  background: var(--blue-text);
+  border-bottom: 1px solid var(--blue-text);
+  box-shadow: 0 2px 12px rgba(30, 70, 45, 0.06);
+}
+.site-bar { margin-bottom: 26px; }
+.site-bar :focus-visible { outline-color: #fff; }
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px var(--pad-x);
+}
+.brand { display: flex; }
+.brand__logo { display: block; height: 40px; width: auto; max-width: none; }
+.nav { display: none; }
+.nav-toggle {
+  width: 44px; height: 44px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+  background: none; border: 1px solid rgba(255, 255, 255, 0.6); border-radius: var(--r-md); cursor: pointer;
+  transition: border-color 150ms ease;
+}
+.nav-toggle span { width: 18px; height: 1.5px; background: #fff; }
+.nav-toggle:hover, .nav-toggle[aria-expanded="true"] { border-color: #fff; }
+.mobile-nav { display: flex; flex-direction: column; padding: 4px var(--pad-x) 12px; gap: 2px; }
+.mobile-nav a {
+  min-height: 48px; display: flex; align-items: center;
+  padding: 0 12px; margin: 0 -12px;
+  color: #fff; font-size: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  transition: box-shadow 150ms ease;
+}
+.mobile-nav[hidden] { display: none; }
+.mobile-nav a:hover, .mobile-nav a:active { color: #fff; box-shadow: inset 0 0 0 1px #fff; }
+.mobile-nav .nav__current {
+  min-height: 48px; display: flex; align-items: center;
+  padding: 0 12px; margin: 0 -12px; font-size: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+/* current page: inverted white pill with blue text */
+.nav__current { background: #fff; color: var(--blue-text); cursor: default; }
+@media (min-width: 640px) {
+  .nav-toggle, .mobile-nav { display: none !important; }
+  .nav { display: flex; align-items: center; gap: 8px; font-size: 15px; }
+  .nav a {
+    padding: 9px 16px;
+    border: 1px solid transparent;
+    border-radius: var(--r-pill);
+    color: #fff;
+    transition: border-color 150ms ease;
+  }
+  /* hover: text stays white, a white outline appears */
+  .nav a:hover { border-color: #fff; color: #fff; }
+  .nav .nav__current {
+    padding: 9px 16px; border: 1px solid #fff; border-radius: var(--r-pill);
+  }
+  .brand__logo { height: 48px; }
+  .site-header { padding: 18px var(--pad-x); }
+  .site-bar { margin-bottom: 34px; --pad-x: 44px; }
+}
+@media (min-width: 1024px) {
+  .site-header { max-width: 1280px; margin-inline: auto; }
+  .site-bar { margin-bottom: 44px; --pad-x: 52px; }
+}
+
+.site-bar { margin-bottom: 0; }
+html body { background: #fff; }
+html body p.site-page-title {
+  font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400; font-style: normal;
+  font-size: 34px; line-height: 1.1; letter-spacing: normal; text-transform: none;
+  color: #082310; margin: 0 0 18px; padding: 0; border: 0; background: none;
+}
+@media (min-width: 640px) { html body p.site-page-title { font-size: 42px; } }
+@media (min-width: 640px) { .site-bar { --pad-x: 44px; } }
+@media (min-width: 1024px) { .site-bar { --pad-x: 52px; } }
+</style>
+<!-- /site-header --></head>
+<body>
+<!-- site-header -->
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<div class="site-bar">
+<header class="site-header">
+  <a class="brand" href="../../index.html">
+    <img class="brand__logo" src="../../wortschatz_logo_white.png" width="521" height="112" alt="Täglicher Deutscher Wortschatz C1">
+  </a>
+  <nav class="nav" aria-label="Hauptnavigation">
+    <a href="../../reading.html">Lesetext</a>
+    <a href="../../flashcards.html">Karteikarten</a>
+    <a href="../../about.html">Über das Projekt</a>
+    <a href="../../index.html">Home</a>
+  </nav>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menü öffnen">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav" hidden aria-label="Hauptnavigation, mobil">
+  <a href="../../reading.html">Lesetext</a>
+  <a href="../../flashcards.html">Karteikarten</a>
+  <a href="../../about.html">Über das Projekt</a>
+  <a href="../../index.html">Home</a>
+</nav>
+</div>
+<!-- /site-header -->
+<main>
+  <!-- site-header -->
+<p class="site-page-title">Lesetext</p>
+<!-- /site-header -->
+<p class="kicker">Feuilleton · Handwerk</p>
+  <h1>Der letzte Hefezopf</h1>
+  <p class="standfirst">In einer Lüneburger Backstube endet nach vierundvierzig Jahren eine Ära – und beginnt, gegen alle Wahrscheinlichkeit, eine neue.</p>
+  <p class="meta">Lesetext C1 · ca. 320 Wörter<span class="site-date"> · 09.11.2026</span> · Lesezeit ≈ 3 Minuten</p>
+
+  <article>
+    <p>Seit vierundvierzig Jahren steht Marlene Harms um halb vier in ihrer Backstube in der Lüneburger Altstadt; im kommenden Frühjahr will sie <strong>in Rente gehen</strong>. Die Nachbarschaft <strong>schwärmt von</strong> ihrem Sauerteigbrot, und die <strong>Spezialisierung auf</strong> fast vergessene Getreidesorten hat dem winzigen Betrieb eine Aufmerksamkeit verschafft, die größere Unternehmen mit teuren Kampagnen selten erreichen. Journalisten, die <strong>über</strong> das Verschwinden des Handwerks <strong>schreiben</strong>, haben den Weg in diese Gasse längst gefunden. Ein Zettel an der Tür kündigt den Wechsel nüchtern an.</p>
+
+    <p>Zwei Jahre dauerte die <strong>Suche nach</strong> einer Nachfolgerin. Dass sie erfolgreich endete, grenzt an ein kleines Wunder. Es gibt durchaus junge Menschen, die <strong>interessiert an</strong> diesem Handwerk sind, doch viele von ihnen sind <strong>unzufrieden mit</strong> Nachtarbeit, Bezahlung und Bürokratie und wechseln die Branche. Die <strong>Beruhigung über</strong> die Zusage ihrer früheren Auszubildenden Jana Leitner steht der Chefin ins Gesicht geschrieben. „Ich war <strong>unglücklich über</strong> die Vorstellung, dass hier bald ein Handyladen einzieht“, sagt sie.</p>
+
+    <p>In der Backstube ist es warm und laut. Ein Blech ist <strong>heruntergefallen</strong>, doch niemand <strong>erschrickt</strong> mehr darüber. Frau Leitner <strong>bestreut</strong> Hefezöpfe mit Hagelzucker, <strong>bindet</strong> über dem Ofen Bündel getrockneter Kräuter zusammen und <strong>arbeitet an</strong> einem Rezept für ein Roggenbrot, das ohne industrielle Hefe auskommt. Der Betrieb <strong>verzichtet auf</strong> Backmischungen und Emulgatoren; das kostet Zeit, die in keiner Kalkulation vorgesehen ist. Dass eine Kundschaft solche Qualität auch bezahlt, ist keineswegs selbstverständlich.</p>
+
+    <p>Die Übergabe ist mehr als ein ökonomischer Vorgang. Marlene Harms <strong>trifft</strong> bereits <strong>Vorbereitungen für</strong> ein Hoffest, bei dem sie den Kindern des Viertels frische Brezeln <strong>schenken</strong> will. <strong>Traurig über</strong> den Abschied sei sie nicht, sagt sie; der Zeitpunkt sei <strong>angenehm für</strong> beide Seiten. Nur eines werde sie vermissen: den Geruch um vier Uhr morgens. Sie sei, mit siebenundsechzig Jahren, noch immer <strong>verliebt in</strong> diesen Beruf. Wer das sentimental findet, war vermutlich nie um diese Zeit wach.</p>
+  </article>
+
+  <h2>English gloss</h2>
+  <dl>
+    <dt>in Rente gehen</dt>
+    <dd>to retire / to go into retirement</dd>
+
+    <dt>schwärmen von (+Dat)</dt>
+    <dd>to rave about / to be enthusiastic about</dd>
+
+    <dt>die Spezialisierung auf (+Akk)</dt>
+    <dd>the specialisation in</dd>
+
+    <dt>schreiben über (+Akk)</dt>
+    <dd>to write about</dd>
+
+    <dt>die Suche nach (+Dat)</dt>
+    <dd>search for</dd>
+
+    <dt>interessiert an (+Dat)</dt>
+    <dd>interested in</dd>
+
+    <dt>unzufrieden mit (+Dat)</dt>
+    <dd>dissatisfied with / unhappy with</dd>
+
+    <dt>die Beruhigung über (+Akk)</dt>
+    <dd>the relief / reassurance about</dd>
+
+    <dt>unglücklich über (+Akk)</dt>
+    <dd>unhappy about / distressed about</dd>
+
+    <dt>heruntergefallen</dt>
+    <dd>fallen down</dd>
+
+    <dt>erschrecken</dt>
+    <dd>to be startled / to frighten, scare</dd>
+
+    <dt>bestreuen</dt>
+    <dd>to sprinkle</dd>
+
+    <dt>binden</dt>
+    <dd>to bind / tie</dd>
+
+    <dt>arbeiten an (+Dat)</dt>
+    <dd>to work on</dd>
+
+    <dt>verzichten auf (+Akk)</dt>
+    <dd>to do without / to give up / to forgo</dd>
+
+    <dt>Vorbereitungen treffen für (+Akk)</dt>
+    <dd>to make preparations for</dd>
+
+    <dt>schenken (+Dat/+Akk)</dt>
+    <dd>to give as a gift</dd>
+
+    <dt>traurig über (+Akk)</dt>
+    <dd>sad about</dd>
+
+    <dt>angenehm für (+Akk)</dt>
+    <dd>pleasant for / agreeable to</dd>
+
+    <dt>verliebt in (+Akk)</dt>
+    <dd>in love with</dd>
+  </dl>
+
+  <footer>Sprachgarten · Leseübung C1</footer>
+</main>
+
+<!-- site-header -->
+<script>
+document.querySelectorAll('.nav-toggle').forEach(function (toggle) {
+  var panel = document.getElementById(toggle.getAttribute('aria-controls'));
+  toggle.addEventListener('click', function () {
+    var open = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!open));
+    toggle.setAttribute('aria-label', open ? 'Menü öffnen' : 'Menü schließen');
+    if (panel) panel.hidden = open;
+  });
+});
+
+(function () {
+  var bar = document.querySelector('.site-bar');
+  if (!bar) return;
+  function firstTextTop() {
+    var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (n) {
+        if (bar.contains(n) || !n.nodeValue.trim()) return NodeFilter.FILTER_SKIP;
+        var p = n.parentElement;
+        if (!p || p.closest('script,style,.skip') || !p.offsetParent) return NodeFilter.FILTER_SKIP;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var n = w.nextNode();
+    if (!n) return null;
+    var r = document.createRange(); r.selectNodeContents(n);
+    return r.getBoundingClientRect().top;
+  }
+  function fit() {
+    var cs = getComputedStyle(document.body);
+    bar.style.marginTop = '-' + cs.paddingTop;
+    bar.style.marginLeft = '-' + cs.paddingLeft;
+    bar.style.marginRight = '-' + cs.paddingRight;
+    bar.style.marginBottom = '0px';
+    var w = window.innerWidth, target = w >= 1024 ? 44 : (w >= 640 ? 34 : 26);
+    var top = firstTextTop();
+    if (top === null) return;
+    var gap = top - bar.getBoundingClientRect().bottom;
+    bar.style.marginBottom = (target - gap) + 'px';
+  }
+  fit();
+  window.addEventListener('load', fit);
+  window.addEventListener('resize', fit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+})();
+</script>
+<!-- /site-header --></body>
+</html>
