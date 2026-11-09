@@ -4,10 +4,11 @@ Builds a rolling flashcards.html directly from vocab_master.csv's
 date_last_used column -- no LLM call, so it's fast, free, and immune to
 truncation. Shows every entry used within the last WINDOW_DAYS days,
 newest first by default, with client-side sort (chronological / by
-category) and colour-coded category filter chips. Badges/filters are
-keyed off the 'subtype' column (see classify_subtypes.py); the seven
-category colours live in site_theme.py and are shared with index.html
-and about.html.
+category), category filter chips and a single-select time-period filter
+(Heute / Letzte 7 Tage / Alle Tage, default Heute). One page covers what
+used to be the rolling deck plus the all-time archive. Badges/filters are
+keyed off the 'subtype' column (see classify_subtypes.py). On this page all
+buttons and category badges share one style: white with a green border.
 """
 import csv
 import html
@@ -15,13 +16,11 @@ import json
 from datetime import datetime
 
 from site_theme import (
-    CHIP_CSS,
     GOOGLE_FONTS_LINKS,
     HEADER_CSS,
     NAV_TOGGLE_JS,
     SUBTYPE_ORDER,
     TOKENS_CSS,
-    chip_slug,
     render_header,
 )
 
@@ -72,12 +71,12 @@ def days_ago_label(d, today):
 
 def render_card(index, entry_date, row, today):
     subtype = row.get("subtype") if row.get("subtype") in SUBTYPE_ORDER else DEFAULT_SUBTYPE
-    slug = chip_slug(subtype)
     german = html.escape(row["german"])
     english = html.escape(row["english"])
     example_de = html.escape(row["example_de"]) if row["example_de"] else ""
     example_en = html.escape(row["example_en"]) if row["example_en"] else ""
     date_tag = days_ago_label(entry_date, today)
+    age = (today - entry_date).days
 
     example_html = ""
     if example_de or example_en:
@@ -89,11 +88,11 @@ def render_card(index, entry_date, row, today):
         parts.append("</div>")
         example_html = "".join(parts)
 
-    return f"""  <label class="card" data-id="{index}" data-type="{html.escape(subtype)}" data-date="{entry_date.isoformat()}">
+    return f"""  <label class="card" data-id="{index}" data-type="{html.escape(subtype)}" data-date="{entry_date.isoformat()}" data-age="{age}">
     <input type="checkbox">
     <div class="inner">
       <div class="face front">
-        <span class="chip chip--{slug}">{html.escape(subtype)}</span>
+        <span class="chip">{html.escape(subtype)}</span>
         <span class="term">{german}</span>
         <span class="date-tag">{date_tag}</span>
         <span class="hint">Klicken zum Umdrehen</span>
@@ -109,8 +108,14 @@ def render_card(index, entry_date, row, today):
 PAGE_CSS = (
     TOKENS_CSS
     + HEADER_CSS
-    + CHIP_CSS
     + """
+.fc-page{--btn-green:#2f8f4e;}
+.chip{
+  display:inline-flex;align-items:center;
+  padding:5px 11px;border-radius:var(--r-pill);
+  font-size:12px;font-weight:600;white-space:nowrap;
+  background:#fff;color:var(--ink-body);border:1.5px solid var(--btn-green);
+}
 .page-header{max-width:960px;margin:0 auto 1rem;text-align:center;padding:0 var(--pad-x);}
 .page-header h1{
   margin:0.2rem 0;font-family:var(--font-serif);font-weight:400;
@@ -129,14 +134,18 @@ PAGE_CSS = (
   display:flex;flex-wrap:wrap;gap:0.6rem 1rem;align-items:center;
 }
 .ctrl-label{font-size:0.78rem;color:var(--ink-faint);margin-right:0.3rem;}
-.sort-group,.filter-group{display:flex;align-items:center;flex-wrap:wrap;gap:0.4rem;}
+.sort-group,.filter-group,.time-group{display:flex;align-items:center;flex-wrap:wrap;gap:0.4rem;}
+.time-row{flex-basis:100%;display:flex;align-items:center;flex-wrap:wrap;gap:0.6rem 1rem;}
 .sort-btn{
-  background:var(--panel-bg);color:var(--ink-body);border:1px solid var(--border);
+  background:#fff;color:var(--ink-muted);border:1.5px solid var(--btn-green);
   border-radius:var(--r-pill);padding:0.3rem 0.8rem;font-size:0.8rem;cursor:pointer;
-  font-family:var(--font-sans);
+  font-family:var(--font-sans);opacity:0.6;
+  transition:opacity 150ms ease, box-shadow 150ms ease;
 }
-.sort-btn.active{background:var(--blue);color:#f7fcff;border-color:var(--blue);font-weight:600;}
+.sort-btn:hover{opacity:0.85;}
+.sort-btn.active{opacity:1;color:var(--ink);font-weight:600;box-shadow:inset 0 0 0 1px var(--btn-green);}
 .count-line{margin-left:auto;font-size:0.78rem;color:var(--ink-faint);font-family:var(--font-mono);}
+.empty-msg{max-width:960px;margin:0 auto 2rem;padding:0 var(--pad-x);text-align:center;color:var(--ink-faint);font-size:0.9rem;}
 
 .filter-chip{
   position:relative;cursor:pointer;opacity:0.55;
@@ -145,7 +154,7 @@ PAGE_CSS = (
 .filter-chip input{
   position:absolute;opacity:0;width:1px;height:1px;
 }
-.filter-chip:has(input:checked){opacity:1;box-shadow:inset 0 0 0 1.5px currentColor;}
+.filter-chip:has(input:checked){opacity:1;color:var(--ink);box-shadow:inset 0 0 0 1px var(--btn-green);}
 .filter-chip:focus-within{outline:2px solid var(--blue);outline-offset:2px;}
 
 #cardGrid{
@@ -206,6 +215,9 @@ PAGE_JS = (
   var sortTypeBtn = document.getElementById('sortTypeBtn');
   var typeOrder = __SUBTYPE_ORDER_JSON__;
   var visibleCountEl = document.getElementById('visibleCount');
+  var emptyMsg = document.getElementById('emptyMsg');
+  var timeBtns = Array.prototype.slice.call(document.querySelectorAll('.time-btn'));
+  var maxAge = 0;
 
   function sortCards(mode){
     var sorted = cards.slice().sort(function(a, b){
@@ -233,11 +245,22 @@ PAGE_JS = (
     });
     var visible = 0;
     cards.forEach(function(card){
-      var show = !!checked[card.dataset.type];
+      var show = !!checked[card.dataset.type] && Number(card.dataset.age) <= maxAge;
       card.style.display = show ? '' : 'none';
       if(show) visible++;
     });
     visibleCountEl.textContent = visible;
+    emptyMsg.hidden = visible !== 0;
+  }
+
+  function setTime(btn){
+    timeBtns.forEach(function(b){
+      var on = b === btn;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    maxAge = Number(btn.dataset.maxAge);
+    applyFilter();
   }
 
   sortDateBtn.addEventListener('click', function(){ sortCards('date'); });
@@ -246,8 +269,17 @@ PAGE_JS = (
     cb.addEventListener('change', applyFilter);
   });
 
+  timeBtns.forEach(function(b){
+    b.addEventListener('click', function(){ setTime(b); });
+  });
+
   sortCards('date');
-  applyFilter();
+  // ?zeitraum=heute|7-tage|alle preselects a period (used by index.html links)
+  var wanted = null;
+  try { wanted = new URLSearchParams(window.location.search).get('zeitraum'); } catch(e) {}
+  var startBtn = timeBtns.filter(function(b){ return b.dataset.key === wanted; })[0]
+    || document.querySelector('.time-btn.active');
+  setTime(startBtn);
 })();
 """
 )
@@ -256,7 +288,7 @@ PAGE_JS = (
 def build_flashcards_html(
     csv_path,
     today,
-    window_days=WINDOW_DAYS,
+    window_days=None,
     page_title="Wortschatz-Karteikarten – C1",
     scope_label=None,
     root_prefix="",
@@ -281,7 +313,7 @@ def build_flashcards_html(
         )
 
     filter_chips_html = "\n".join(
-        f'    <label class="filter-chip chip chip--{chip_slug(st)}">'
+        f'    <label class="filter-chip chip">'
         f'<input type="checkbox" class="type-filter" value="{html.escape(st)}" checked> {html.escape(st)}</label>'
         for st in SUBTYPE_ORDER
     )
@@ -289,7 +321,7 @@ def build_flashcards_html(
         "__SUBTYPE_ORDER_JSON__", json.dumps(SUBTYPE_ORDER, ensure_ascii=False)
     )
     header_html = render_header(
-        active_href="flashcards.html" if window_days else "archive/flashcards.html",
+        active_href="flashcards.html",
         root_prefix=root_prefix,
     )
 
@@ -307,7 +339,7 @@ def build_flashcards_html(
 <body>
 {header_html}
 
-<main id="main">
+<main id="main" class="fc-page">
 <header class="page-header">
   <h1>Wortschatz-Karteikarten</h1>
   <p class="subtitle">{html.escape(scope_label)} · {date_range} · {count} Karten insgesamt</p>
@@ -323,12 +355,21 @@ def build_flashcards_html(
     <span class="ctrl-label">Filter:</span>
 {filter_chips_html}
   </div>
-  <div class="count-line"><span id="visibleCount">{count}</span> / {count} Karten sichtbar</div>
+  <div class="time-row">
+    <div class="time-group" role="group" aria-label="Zeitraum">
+      <span class="ctrl-label">Zeitraum:</span>
+      <button class="sort-btn time-btn active" data-max-age="0" data-key="heute" aria-pressed="true" type="button">Heute</button>
+      <button class="sort-btn time-btn" data-max-age="{WINDOW_DAYS - 1}" data-key="{WINDOW_DAYS}-tage" aria-pressed="false" type="button">Letzte {WINDOW_DAYS} Tage</button>
+      <button class="sort-btn time-btn" data-max-age="1000000" data-key="alle" aria-pressed="false" type="button">Alle Tage</button>
+    </div>
+    <div class="count-line"><span id="visibleCount">{count}</span> / {count} Karten sichtbar</div>
+  </div>
 </div>
 
 <div id="cardGrid">
 {cards_html}
 </div>
+<p id="emptyMsg" class="empty-msg" hidden>Keine Karten für diese Auswahl.</p>
 </main>
 
 <footer class="site-footer">Klicken oder tippen zum Umdrehen · viel Erfolg beim Lernen!</footer>

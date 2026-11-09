@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Generate reading.html from today.json via the Anthropic API, archive it
 under archive/readings/, update vocab_master.csv usage stats, then build
-flashcards.html (rolling 7-day deck) and archive/flashcards.html (all-time
-archive) deterministically, and regenerate the index.html landing page.
+flashcards.html (every card, filterable by Heute / Letzte 7 Tage / Alle Tage)
+deterministically, and regenerate the index.html landing page.
+archive/flashcards.html is kept only as a redirect to flashcards.html.
 """
 import argparse
 import csv
@@ -26,6 +27,22 @@ from site_theme import GOOGLE_FONTS_LINKS, inject_site_header
 MODEL = "claude-opus-5"
 TODAY_JSON_DEFAULT = "today.json"
 CSV_PATH_DEFAULT = "vocab_master.csv"
+
+# The old all-time archive page now lives inside flashcards.html ("Alle Tage");
+# keep the old URL working for bookmarks.
+ARCHIVE_REDIRECT_HTML = """<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="refresh" content="0; url=../flashcards.html">
+<link rel="canonical" href="../flashcards.html">
+<title>Wortschatz-Karteikarten</title>
+</head>
+<body>
+<p>Das Karteikarten-Archiv ist jetzt Teil der <a href="../flashcards.html">Karteikarten</a>-Seite (Filter „Alle Tage“).</p>
+</body>
+</html>
+"""
 
 HTML_FENCE_RE = re.compile(r"^```(?:html)?\s*|\s*```$", re.MULTILINE)
 BODY_OPEN_RE = re.compile(r"(<body[^>]*>)", re.IGNORECASE)
@@ -196,19 +213,12 @@ def main():
     flashcards_html = build_flashcards_html(args.csv, today)
     with open("flashcards.html", "w", encoding="utf-8") as f:
         f.write(flashcards_html)
-    print("Wrote flashcards.html (rolling 7-day deck, built from vocab_master.csv)")
+    print("Wrote flashcards.html (all cards, time-period filter, built from vocab_master.csv)")
 
     os.makedirs("archive", exist_ok=True)
-    flashcards_archive_html = build_flashcards_html(
-        args.csv,
-        today,
-        window_days=None,
-        page_title="Wortschatz-Karteikarten – Archiv",
-        root_prefix="../",
-    )
     with open("archive/flashcards.html", "w", encoding="utf-8") as f:
-        f.write(flashcards_archive_html)
-    print("Wrote archive/flashcards.html (all-time archive)")
+        f.write(ARCHIVE_REDIRECT_HTML)
+    print("Wrote archive/flashcards.html (redirect to flashcards.html)")
 
     reading_archive = collect_reading_archive()
     rolling_card_count = len(collect_recent_entries(args.csv, today))

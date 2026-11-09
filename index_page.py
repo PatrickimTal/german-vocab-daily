@@ -16,7 +16,6 @@ from site_theme import (
     HEADER_CSS,
     NAV_TOGGLE_JS,
     TOKENS_CSS,
-    chip_slug,
     render_header,
 )
 
@@ -77,6 +76,7 @@ html { background: var(--site-green); }
   font-size: 16px;
   transition: background 150ms ease, color 150ms ease;
 }
+.chip--solid { align-self: flex-start; background: var(--blue); border: 1px solid var(--blue); color: #f7fcff; }
 .btn--primary { min-height: 52px; background: var(--blue); color: #f7fcff; font-weight: 600; }
 .btn--primary:hover { background: var(--blue-hover); color: #f7fcff; }
 .btn--ghost { min-height: 48px; border: 1px solid var(--border); color: var(--ink-body); font-size: 15px; }
@@ -146,6 +146,20 @@ html { background: var(--site-green); }
 .entry__meta { font-size: 13px; color: var(--ink-muted); transition: color 150ms ease; }
 .entry:hover { background: var(--blue-text); }
 .entry:hover .entry__title, .entry:hover .entry__meta { color: #fff; }
+/* Entries with an icon: text in the left half, icon centred in the right half.
+   The white icon swaps in whenever the entry turns blue. */
+.entry--icon {
+  display: grid; grid-template-columns: 1fr 1fr; align-items: center; column-gap: 12px;
+}
+.entry__text { display: flex; flex-direction: column; gap: 3px; }
+.entry__icon { position: relative; justify-self: center; width: 56px; height: 56px; }
+.entry__icon img { position: absolute; inset: 0; width: 100%; height: 100%; transition: opacity 150ms ease; }
+.entry__icon .icon-white { opacity: 0; }
+.entry:hover .icon-blue, .entry:focus-visible .icon-blue, .entry:active .icon-blue { opacity: 0; }
+.entry:hover .icon-white, .entry:focus-visible .icon-white, .entry:active .icon-white { opacity: 1; }
+.entry:focus-visible, .entry:active { background: var(--blue-text); }
+.entry:focus-visible .entry__title, .entry:focus-visible .entry__meta,
+.entry:active .entry__title, .entry:active .entry__meta { color: #fff; }
 .archive-section .stand { margin-top: 16px; }
 
 /* ---------- reading archive (adapted; not in the original design) ---------- */
@@ -216,7 +230,7 @@ html { background: var(--site-green); }
   .flashcard__gloss { font-size: 18px; }
   .flashcard__example { font-size: 15px; }
   .tag-de { font-size: 11px; padding: 2px 6px; margin-right: 8px; }
-  .entries { grid-template-columns: repeat(3, 1fr); gap: 14px; padding-top: 34px; padding-bottom: 34px; }
+  .entries { grid-template-columns: repeat(2, 1fr); gap: 14px; padding-top: 34px; padding-bottom: 34px; }
   .entry { padding: 18px 20px; }
   .archive-section { max-width: 760px; }
 }
@@ -373,7 +387,6 @@ def render_card_of_day(entry):
     else:
         term_html = html.escape(german_clean)
 
-    slug = chip_slug(entry.get("subtype", "Wortschatz"))
     subtype = entry.get("subtype", "Wortschatz")
     example_html = ""
     if entry.get("example_de"):
@@ -383,7 +396,7 @@ def render_card_of_day(entry):
         )
 
     return f"""    <div class="flashcard">
-      <span class="chip chip--{slug}">{html.escape(subtype)}</span>
+      <span class="chip chip--solid">{html.escape(subtype)}</span>
       <span class="flashcard__term">{term_html}</span>
       <span class="flashcard__back">
         <span class="flashcard__gloss">{html.escape(entry["english"])}</span>
@@ -423,10 +436,10 @@ def build_index_html(today, card_of_day_entry, reading_word_count, rolling_card_
   <div class="hero__copy">
     <h1 class="hero__title">Ein Lesetext. Zwanzig Wörter. Jeden Tag.</h1>
     <p class="hero__kicker">One article, twenty words, every morning</p>
-    <p class="hero__lede">Jeden Morgen ein neuer C1-Artikel und die Vokabeln, die darin vorkommen. Als Karteikarten der letzten sieben Tage, dazu das vollständige Archiv.</p>
+    <p class="hero__lede">Jeden Morgen ein neuer C1-Artikel und die Vokabeln, die darin vorkommen. Als Karteikarten von heute, der letzten sieben Tage oder aller bisherigen Tage.</p>
     <div class="hero__actions">
       <a class="btn btn--primary" href="reading.html">Heutigen Lesetext öffnen</a>
-      <a class="btn btn--ghost" href="flashcards.html">Karteikarten der letzten 7 Tage</a>
+      <a class="btn btn--ghost" href="flashcards.html">Heutigen Karteikarten öffnen</a>
     </div>
   </div>
 
@@ -437,17 +450,25 @@ def build_index_html(today, card_of_day_entry, reading_word_count, rolling_card_
 </main>
 
 <nav class="entries" aria-label="Bereiche">
-  <a class="entry" href="reading.html">
-    <span class="entry__title">Heutiger Lesetext</span>
-    <span class="entry__meta">Neuester C1-Artikel · rund {reading_word_count} Wörter</span>
+  <a class="entry entry--icon" href="flashcards.html?zeitraum=7-tage">
+    <span class="entry__text">
+      <span class="entry__title">Karteikarten</span>
+      <span class="entry__meta">Letzte 7 Tage</span>
+    </span>
+    <span class="entry__icon" aria-hidden="true">
+      <img class="icon-blue" src="icons/letzte-7-tage-blue.png" alt="">
+      <img class="icon-white" src="icons/letzte-7-tage-white.png" alt="">
+    </span>
   </a>
-  <a class="entry" href="flashcards.html">
-    <span class="entry__title">Karteikarten</span>
-    <span class="entry__meta">Letzte 7 Tage · {rolling_card_count} Karten</span>
-  </a>
-  <a class="entry" href="archive/flashcards.html">
-    <span class="entry__title">Karteikarten-Archiv</span>
-    <span class="entry__meta">Alle bisherigen Vokabeln</span>
+  <a class="entry entry--icon" href="flashcards.html?zeitraum=alle">
+    <span class="entry__text">
+      <span class="entry__title">Karteikarten</span>
+      <span class="entry__meta">Alle Tage</span>
+    </span>
+    <span class="entry__icon" aria-hidden="true">
+      <img class="icon-blue" src="icons/alle-tage-blue.png" alt="">
+      <img class="icon-white" src="icons/alle-tage-white.png" alt="">
+    </span>
   </a>
 </nav>
 
