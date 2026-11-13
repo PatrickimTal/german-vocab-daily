@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sprachgarten — Lesetext: Ein Denkmal, das sinkt</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#082310;
+    --body:#304635;
+    --accent:#0077c7;
+    --accent-hover:#0061b0;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:#ffffff;
+    color:var(--body);
+    font-family:'Sora', system-ui, sans-serif;
+    font-size:17px;
+    line-height:1.7;
+    -webkit-text-size-adjust:100%;
+  }
+  .wrap{
+    max-width:40rem;
+    margin:0 auto;
+    padding:2rem 1.15rem 4rem;
+  }
+  .kicker{
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--body);
+    margin:0 0 0.9rem;
+  }
+  h1{
+    font-family:'Libre Baskerville', Georgia, serif;
+    color:var(--ink);
+    font-weight:700;
+    font-size:1.65rem;
+    line-height:1.28;
+    margin:0 0 0.7rem;
+  }
+  .standfirst{
+    font-family:'Libre Baskerville', Georgia, serif;
+    font-size:1.02rem;
+    line-height:1.6;
+    color:var(--body);
+    margin:0 0 1.1rem;
+  }
+  .meta{
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:0.74rem;
+    color:var(--body);
+    border-top:1px solid #d8e2d9;
+    border-bottom:1px solid #d8e2d9;
+    padding:0.5rem 0;
+    margin:0 0 1.8rem;
+  }
+  article p{
+    margin:0 0 1.15rem;
+  }
+  article p:first-of-type::first-letter{
+    font-family:'Libre Baskerville', Georgia, serif;
+    color:var(--ink);
+    font-size:2.9rem;
+    line-height:0.9;
+    float:left;
+    padding:0.18rem 0.5rem 0 0;
+  }
+  strong{
+    font-weight:600;
+    color:var(--ink);
+  }
+  h2{
+    font-family:'Libre Baskerville', Georgia, serif;
+    color:var(--ink);
+    font-size:1.15rem;
+    margin:2.6rem 0 0.4rem;
+  }
+  .glosshint{
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:0.74rem;
+    margin:0 0 1.2rem;
+  }
+  dl{
+    margin:0;
+    border-top:1px solid #d8e2d9;
+  }
+  dt{
+    font-weight:600;
+    color:var(--ink);
+    margin-top:0.85rem;
+  }
+  dd{
+    margin:0.15rem 0 0.85rem;
+    padding-bottom:0.85rem;
+    border-bottom:1px solid #eef2ee;
+    font-size:0.95rem;
+  }
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{color:var(--accent-hover);text-decoration:underline;}
+  footer{
+    margin-top:2.6rem;
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:0.72rem;
+  }
+  @media (max-width:420px){
+    h1{font-size:1.42rem;}
+    body{font-size:16px;}
+  }
+</style>
+
+<!-- site-header -->
+<style>
+.site-bar {
+  --site-green: #e9fae9;
+  --page-bg: #fff;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-bg-hover: rgba(255, 255, 255, 0.97);
+  --panel-bg: rgba(255, 255, 255, 0.62);
+  --panel-bg-hover: rgba(255, 255, 255, 0.82);
+
+  --ink: #082310;
+  --ink-body: #304635;
+  --ink-muted: #4b614f;
+  --ink-faint: #617865;
+
+  --blue: #0077c7;
+  --blue-hover: #0061b0;
+  --blue-text: #006eb8;
+  --article: #c56c00;
+
+  --border: #8ab091;
+  --rule: #dce9de;
+  --underline: #a8c7ad;
+
+  --chip-verb-praep-bg: #cdecff;      --chip-verb-praep-fg: #004e95;
+  --chip-verb-kasus-bg: #c2f2f8;      --chip-verb-kasus-fg: #005565;
+  --chip-redemittel-bg: #f0e4ff;      --chip-redemittel-fg: #603b93;
+  --chip-nomen-praep-bg: #c4f2cc;     --chip-nomen-praep-fg: #005222;
+  --chip-adjektiv-praep-bg: #ffe1ac;  --chip-adjektiv-praep-fg: #7b4300;
+  --chip-redewendung-bg: #ffd9d7;     --chip-redewendung-fg: #9a2733;
+  --chip-wortschatz-bg: #dce9de;      --chip-wortschatz-fg: #384e3c;
+
+  --font-serif: 'Libre Baskerville', Georgia, serif;
+  --font-sans: 'Sora', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --r-sm: 4px;
+  --r-md: 12px;
+  --r-lg: 14px;
+  --r-pill: 999px;
+  --shadow-card: 0 12px 30px rgba(30, 70, 45, 0.1);
+
+  --pad-x: 22px;
+
+  font-family: var(--font-sans); font-size: 16px; line-height: 1.55;
+  -webkit-font-smoothing: antialiased; text-align: left;
+}
+.site-bar *, .site-bar *::before, .site-bar *::after { box-sizing: border-box; }
+.site-bar header, .site-bar nav { margin: 0; border: 0; max-width: none; }
+.site-bar a { text-decoration: none; border-bottom: 0; }
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: 12px; top: 12px; background: #fff; padding: 10px 14px; border-radius: 12px; z-index: 100; }
+
+.site-bar {
+  background: var(--blue-text);
+  border-bottom: 1px solid var(--blue-text);
+  box-shadow: 0 2px 12px rgba(30, 70, 45, 0.06);
+}
+.site-bar { margin-bottom: 26px; }
+.site-bar :focus-visible { outline-color: #fff; }
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px var(--pad-x);
+}
+.brand { display: flex; }
+.brand__logo { display: block; height: 40px; width: auto; max-width: none; }
+.nav { display: none; }
+.nav-toggle {
+  width: 44px; height: 44px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+  background: none; border: 1px solid rgba(255, 255, 255, 0.6); border-radius: var(--r-md); cursor: pointer;
+  transition: border-color 150ms ease;
+}
+.nav-toggle span { width: 18px; height: 1.5px; background: #fff; }
+.nav-toggle:hover, .nav-toggle[aria-expanded="true"] { border-color: #fff; }
+.mobile-nav { display: flex; flex-direction: column; padding: 4px var(--pad-x) 12px; gap: 2px; }
+.mobile-nav a {
+  min-height: 48px; display: flex; align-items: center;
+  padding: 0 12px; margin: 0 -12px;
+  color: #fff; font-size: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  transition: box-shadow 150ms ease;
+}
+.mobile-nav[hidden] { display: none; }
+.mobile-nav a:hover, .mobile-nav a:active { color: #fff; box-shadow: inset 0 0 0 1px #fff; }
+.mobile-nav .nav__current {
+  min-height: 48px; display: flex; align-items: center;
+  padding: 0 12px; margin: 0 -12px; font-size: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+/* current page: inverted white pill with blue text */
+.nav__current { background: #fff; color: var(--blue-text); cursor: default; }
+@media (min-width: 640px) {
+  .nav-toggle, .mobile-nav { display: none !important; }
+  .nav { display: flex; align-items: center; gap: 8px; font-size: 15px; }
+  .nav a {
+    padding: 9px 16px;
+    border: 1px solid transparent;
+    border-radius: var(--r-pill);
+    color: #fff;
+    transition: border-color 150ms ease;
+  }
+  /* hover: text stays white, a white outline appears */
+  .nav a:hover { border-color: #fff; color: #fff; }
+  .nav .nav__current {
+    padding: 9px 16px; border: 1px solid #fff; border-radius: var(--r-pill);
+  }
+  .brand__logo { height: 48px; }
+  .site-header { padding: 18px var(--pad-x); }
+  .site-bar { margin-bottom: 34px; --pad-x: 44px; }
+}
+@media (min-width: 1024px) {
+  .site-header { max-width: 1280px; margin-inline: auto; }
+  .site-bar { margin-bottom: 44px; --pad-x: 52px; }
+}
+
+.site-bar { margin-bottom: 0; }
+html body { background: #fff; }
+html body p.site-page-title {
+  font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400; font-style: normal;
+  font-size: 34px; line-height: 1.1; letter-spacing: normal; text-transform: none;
+  color: #082310; margin: 0 0 18px; padding: 0; border: 0; background: none;
+}
+@media (min-width: 640px) { html body p.site-page-title { font-size: 42px; } }
+@media (min-width: 640px) { .site-bar { --pad-x: 44px; } }
+@media (min-width: 1024px) { .site-bar { --pad-x: 52px; } }
+</style>
+<!-- /site-header --></head>
+<body>
+<!-- site-header -->
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<div class="site-bar">
+<header class="site-header">
+  <a class="brand" href="../../index.html">
+    <img class="brand__logo" src="../../wortschatz_logo_white.png" width="521" height="112" alt="Täglicher Deutscher Wortschatz C1">
+  </a>
+  <nav class="nav" aria-label="Hauptnavigation">
+    <a href="../../reading.html">Lesetext</a>
+    <a href="../../flashcards.html">Karteikarten</a>
+    <a href="../../about.html">Über das Projekt</a>
+    <a href="../../index.html">Home</a>
+  </nav>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menü öffnen">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav" hidden aria-label="Hauptnavigation, mobil">
+  <a href="../../reading.html">Lesetext</a>
+  <a href="../../flashcards.html">Karteikarten</a>
+  <a href="../../about.html">Über das Projekt</a>
+  <a href="../../index.html">Home</a>
+</nav>
+</div>
+<!-- /site-header -->
+<div class="wrap">
+
+  <!-- site-header -->
+<p class="site-page-title">Lesetext</p>
+<!-- /site-header -->
+<p class="kicker">Feuilleton · Aus der Provinz</p>
+  <h1>Ein Denkmal, das sinkt — und eine Stadt, die nachfragt</h1>
+  <p class="standfirst">In Lindenau streitet man über eine Bronzefigur im Schlamm. Der Konflikt zeigt, wie viel Vertrauen eine Kommune noch aufbringt.</p>
+  <p class="meta">Lesetext · Niveau C1 · 331 Wörter<span class="site-date"> · 13.11.2026</span></p>
+
+  <article>
+    <p>Wer am frühen Morgen am Ufer von Lindenau steht, sieht zunächst nur graues Wasser. Erst wer <strong>taucht</strong>, erkennt das Ausmaß des Schadens: Das bronzene <strong>Denkmal</strong> für die Flößer, 1912 errichtet, rutscht seit Jahren in den Schlamm.</p>
+
+    <p>Im Stadtrat hat der Bürgermeister den Anwohnern <strong>sein Wort gegeben</strong>, die Figur noch vor dem Frühjahr zu sichern. <strong>Deshalb</strong> rollen seit Montag Lastwagen über die Uferstraße, deren Sperrung erhebliche <strong>Unannehmlichkeiten für</strong> Pendler und Lieferanten bedeutet. Der Baustaub <strong>sorgt für</strong> schlechte Luft bis in den Sitzungssaal hinein, wo am Dienstagabend mehr Zuhörer <strong>husteten</strong> als applaudierten. Die <strong>Unbeliebtheit</strong> des Projekts <strong>bei</strong> den Händlern der Altstadt ist seither mit Händen zu greifen; die Umsatzverluste seien, so ein Buchhändler, deutlich <strong>spürbar</strong>.</p>
+
+    <p>Hilfe kommt von unerwarteter Seite. Ein Tauchverein aus der Nachbargemeinde hat der Stadt <strong>seine Hilfe angeboten</strong>: Die Mitglieder wollen unentgeltlich vermessen und dokumentieren, und die Verwaltung konnte den Freiwilligen diesen <strong>Wunsch</strong> schwerlich <strong>abschlagen</strong>. Ihr Vorsitzender, ein pensionierter Statiker, beziffert den Zeitaufwand auf rund dreihundert Arbeitsstunden, die niemand bezahlen müsse. Viele Lindenauer zeigen sich <strong>begeistert von</strong> so viel Engagement; in den Kommentarspalten ist zu lesen, man sei beinahe <strong>neidisch auf</strong> die Organisationsgabe der Nachbarn.</p>
+
+    <p>Doch der Streit ist damit nicht beendet. Der Sanierungsauftrag ging an eine Firma, deren Geschäftsführer der <strong>Schwager</strong> des Bauamtsleiters ist. Die Lokalzeitung hatte den Vorgang vergangene Woche öffentlich gemacht. Der Bürgermeister nahm seinen Mitarbeiter <strong>vor</strong> den Vorwürfen der Opposition <strong>in Schutz</strong>: Es bestehe kein <strong>Zusammenhang</strong> zwischen Verwandtschaft und Vergabe, das Verfahren sei öffentlich gewesen. Wer wolle, könne jederzeit <strong>eine Frage stellen</strong> — und die Verwaltung werde antworten. Dass die Ratsmitglieder dennoch weiter <strong>nachfragen</strong>, gehört zu ihren Pflichten, nicht zu ihren Launen.</p>
+
+    <p>Vielleicht wird sich am Ende herausstellen, dass hier vor allem ein <strong>Missverständnis</strong> zu <strong>klären</strong> ist: zwischen einer Verwaltung, die Tempo verspricht, und einer Öffentlichkeit, die Belege verlangt. Dass ein kleines Gemeinwesen die <strong>Kraft</strong> aufbringt, über Monate hinweg um ein Denkmal zu streiten, das die meisten nur bei Niedrigwasser sehen, ist kein Zeichen von Kleinlichkeit. Es ist ein Zeichen dafür, dass Geschichte hier noch jemandem gehört.</p>
+  </article>
+
+  <h2>English gloss</h2>
+  <p class="glosshint">In order of first appearance in the text.</p>
+  <dl>
+    <dt>tauchen</dt>
+    <dd>to dive</dd>
+
+    <dt>das Denkmal</dt>
+    <dd>the monument, the memorial</dd>
+
+    <dt>jemandem sein Wort geben (+ Dat.)</dt>
+    <dd>to give someone one's word</dd>
+
+    <dt>deshalb</dt>
+    <dd>therefore, that is why</dd>
+
+    <dt>die Unannehmlichkeit für (+ Akk.)</dt>
+    <dd>the inconvenience / trouble for</dd>
+
+    <dt>sorgen für (+ Akk.)</dt>
+    <dd>to take care of, to provide for, to ensure (here: to cause)</dd>
+
+    <dt>husten</dt>
+    <dd>to cough</dd>
+
+    <dt>die Unbeliebtheit bei (+ Dat.)</dt>
+    <dd>the unpopularity with</dd>
+
+    <dt>spürbar</dt>
+    <dd>noticeable, palpable</dd>
+
+    <dt>jemandem seine Hilfe anbieten (+ Dat.)</dt>
+    <dd>to offer someone one's help</dd>
+
+    <dt>jemandem einen Wunsch abschlagen (+ Akk.)</dt>
+    <dd>to turn down / refuse someone's request</dd>
+
+    <dt>begeistert von (+ Dat.)</dt>
+    <dd>enthusiastic about, thrilled by</dd>
+
+    <dt>neidisch auf (+ Akk.)</dt>
+    <dd>envious of</dd>
+
+    <dt>der Schwager</dt>
+    <dd>the brother-in-law</dd>
+
+    <dt>jemanden in Schutz nehmen vor (+ Dat.)</dt>
+    <dd>to protect / defend someone from</dd>
+
+    <dt>der Zusammenhang</dt>
+    <dd>the connection, the context</dd>
+
+    <dt>eine Frage stellen</dt>
+    <dd>to ask a question</dd>
+
+    <dt>nachfragen</dt>
+    <dd>to ask again, to inquire further</dd>
+
+    <dt>ein Missverständnis klären</dt>
+    <dd>to clear up a misunderstanding</dd>
+
+    <dt>die Kraft</dt>
+    <dd>the strength, the power</dd>
+  </dl>
+
+  <footer>Sprachgarten · Lesetraining C1</footer>
+
+</div>
+
+<!-- site-header -->
+<script>
+document.querySelectorAll('.nav-toggle').forEach(function (toggle) {
+  var panel = document.getElementById(toggle.getAttribute('aria-controls'));
+  toggle.addEventListener('click', function () {
+    var open = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!open));
+    toggle.setAttribute('aria-label', open ? 'Menü öffnen' : 'Menü schließen');
+    if (panel) panel.hidden = open;
+  });
+});
+
+(function () {
+  var bar = document.querySelector('.site-bar');
+  if (!bar) return;
+  function firstTextTop() {
+    var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (n) {
+        if (bar.contains(n) || !n.nodeValue.trim()) return NodeFilter.FILTER_SKIP;
+        var p = n.parentElement;
+        if (!p || p.closest('script,style,.skip') || !p.offsetParent) return NodeFilter.FILTER_SKIP;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var n = w.nextNode();
+    if (!n) return null;
+    var r = document.createRange(); r.selectNodeContents(n);
+    return r.getBoundingClientRect().top;
+  }
+  function fit() {
+    var cs = getComputedStyle(document.body);
+    bar.style.marginTop = '-' + cs.paddingTop;
+    bar.style.marginLeft = '-' + cs.paddingLeft;
+    bar.style.marginRight = '-' + cs.paddingRight;
+    bar.style.marginBottom = '0px';
+    var w = window.innerWidth, target = w >= 1024 ? 44 : (w >= 640 ? 34 : 26);
+    var top = firstTextTop();
+    if (top === null) return;
+    var gap = top - bar.getBoundingClientRect().bottom;
+    bar.style.marginBottom = (target - gap) + 'px';
+  }
+  fit();
+  window.addEventListener('load', fit);
+  window.addEventListener('resize', fit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+})();
+</script>
+<!-- /site-header --></body>
+</html>

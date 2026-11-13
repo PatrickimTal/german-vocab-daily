@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sprachgarten – Lesetext: Der Alarm, der alles anhielt</title>
+<title>Sprachgarten — Lesetext: Ein Denkmal, das sinkt</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#304635;
-    --head:#082310;
+    --ink:#082310;
+    --body:#304635;
     --accent:#0077c7;
     --accent-hover:#0061b0;
   }
@@ -17,7 +17,7 @@
   body{
     margin:0;
     background:#ffffff;
-    color:var(--ink);
+    color:var(--body);
     font-family:'Sora', system-ui, sans-serif;
     font-size:17px;
     line-height:1.7;
@@ -26,75 +26,90 @@
   .wrap{
     max-width:40rem;
     margin:0 auto;
-    padding:2rem 1.25rem 4rem;
+    padding:2rem 1.15rem 4rem;
   }
   .kicker{
     font-family:'IBM Plex Mono', ui-monospace, monospace;
-    font-size:0.75rem;
-    letter-spacing:0.12em;
+    font-size:0.72rem;
+    letter-spacing:0.14em;
     text-transform:uppercase;
-    color:var(--accent);
-    margin:0 0 0.75rem;
+    color:var(--body);
+    margin:0 0 0.9rem;
   }
   h1{
     font-family:'Libre Baskerville', Georgia, serif;
-    color:var(--head);
-    font-size:1.85rem;
-    line-height:1.25;
+    color:var(--ink);
     font-weight:700;
-    margin:0 0 0.5rem;
+    font-size:1.65rem;
+    line-height:1.28;
+    margin:0 0 0.7rem;
   }
   .standfirst{
     font-family:'Libre Baskerville', Georgia, serif;
     font-size:1.02rem;
     line-height:1.6;
-    color:var(--ink);
-    margin:0 0 1rem;
+    color:var(--body);
+    margin:0 0 1.1rem;
   }
   .meta{
     font-family:'IBM Plex Mono', ui-monospace, monospace;
     font-size:0.74rem;
-    color:#6b7d6f;
-    letter-spacing:0.04em;
-    margin:0 0 1.75rem;
-    padding-bottom:1.25rem;
-    border-bottom:1px solid #e2e8e3;
+    color:var(--body);
+    border-top:1px solid #d8e2d9;
+    border-bottom:1px solid #d8e2d9;
+    padding:0.5rem 0;
+    margin:0 0 1.8rem;
   }
-  article p{margin:0 0 1.15rem;}
+  article p{
+    margin:0 0 1.15rem;
+  }
   article p:first-of-type::first-letter{
     font-family:'Libre Baskerville', Georgia, serif;
-    font-size:3.1rem;
+    color:var(--ink);
+    font-size:2.9rem;
     line-height:0.9;
     float:left;
-    padding:0.25rem 0.5rem 0 0;
-    color:var(--head);
+    padding:0.18rem 0.5rem 0 0;
   }
   strong{
     font-weight:600;
-    color:var(--head);
+    color:var(--ink);
   }
   h2{
     font-family:'Libre Baskerville', Georgia, serif;
-    color:var(--head);
-    font-size:1.2rem;
-    margin:2.5rem 0 1rem;
-    padding-top:1.5rem;
-    border-top:1px solid #e2e8e3;
+    color:var(--ink);
+    font-size:1.15rem;
+    margin:2.6rem 0 0.4rem;
   }
-  dl{margin:0;}
+  .glosshint{
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:0.74rem;
+    margin:0 0 1.2rem;
+  }
+  dl{
+    margin:0;
+    border-top:1px solid #d8e2d9;
+  }
   dt{
     font-weight:600;
-    color:var(--head);
-    margin-top:0.9rem;
+    color:var(--ink);
+    margin-top:0.85rem;
   }
   dd{
-    margin:0.15rem 0 0;
-    color:var(--ink);
+    margin:0.15rem 0 0.85rem;
+    padding-bottom:0.85rem;
+    border-bottom:1px solid #eef2ee;
+    font-size:0.95rem;
   }
   a{color:var(--accent);text-decoration:none;}
   a:hover{color:var(--accent-hover);text-decoration:underline;}
+  footer{
+    margin-top:2.6rem;
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:0.72rem;
+  }
   @media (max-width:420px){
-    h1{font-size:1.55rem;}
+    h1{font-size:1.42rem;}
     body{font-size:16px;}
   }
 </style>
@@ -261,85 +276,88 @@ html body p.site-page-title {
   <!-- site-header -->
 <p class="site-page-title">Lesetext</p>
 <!-- /site-header -->
-<p class="kicker">Feuilleton · Bildung</p>
-  <h1>Der Alarm, der eine ganze Schule anhielt</h1>
-  <p class="standfirst">Ein Fehlalarm unterbricht eine Abiturprüfung – und legt offen, wie viel Druck in deutschen Oberstufen zur Normalität geworden ist.</p>
-  <p class="meta">Lesetext · Niveau C1 · 339 Wörter<span class="site-date"> · 12.11.2026</span></p>
+<p class="kicker">Feuilleton · Aus der Provinz</p>
+  <h1>Ein Denkmal, das sinkt — und eine Stadt, die nachfragt</h1>
+  <p class="standfirst">In Lindenau streitet man über eine Bronzefigur im Schlamm. Der Konflikt zeigt, wie viel Vertrauen eine Kommune noch aufbringt.</p>
+  <p class="meta">Lesetext · Niveau C1 · 331 Wörter<span class="site-date"> · 13.11.2026</span></p>
 
   <article>
-    <p>Es war der schrillste Moment des Schuljahres, und er kam <strong>unerwartet</strong>: Mitten in der schriftlichen Deutschprüfung schlug an der Gesamtschule am Stadtpark ein <strong>Rauchmelder</strong> an. Die Feuerwehr rückte aus, <strong>untersuchte</strong> das Gebäude und fand nichts als ein verschmortes Kabel im Technikraum. Eine halbe Stunde später <strong>teilte</strong> die Schulleitung den 112 Prüflingen <strong>mit</strong>, der Termin werde verschoben, und <strong>schickte</strong> sie nach Hause.</p>
+    <p>Wer am frühen Morgen am Ufer von Lindenau steht, sieht zunächst nur graues Wasser. Erst wer <strong>taucht</strong>, erkennt das Ausmaß des Schadens: Das bronzene <strong>Denkmal</strong> für die Flößer, 1912 errichtet, rutscht seit Jahren in den Schlamm.</p>
 
-    <p>Was danach geschah, verdient mehr Aufmerksamkeit als der Fehlalarm selbst. <strong>Zig</strong> Eltern riefen noch am selben Abend im Sekretariat an, einige empört, andere mit der leisen <strong>Hoffnung auf</strong> eine Kulanzregelung. Im Sekretariat, heißt es, habe das Telefon bis spät in den Abend nicht stillgestanden. Ein Vater erklärte, seine Tochter habe monatelang auf diesen Vormittag hingearbeitet und sich geradezu darauf <strong>gefreut</strong>; nun sei sie <strong>überhaupt</strong> nicht mehr in der Lage, sich zu konzentrieren.</p>
+    <p>Im Stadtrat hat der Bürgermeister den Anwohnern <strong>sein Wort gegeben</strong>, die Figur noch vor dem Frühjahr zu sichern. <strong>Deshalb</strong> rollen seit Montag Lastwagen über die Uferstraße, deren Sperrung erhebliche <strong>Unannehmlichkeiten für</strong> Pendler und Lieferanten bedeutet. Der Baustaub <strong>sorgt für</strong> schlechte Luft bis in den Sitzungssaal hinein, wo am Dienstagabend mehr Zuhörer <strong>husteten</strong> als applaudierten. Die <strong>Unbeliebtheit</strong> des Projekts <strong>bei</strong> den Händlern der Altstadt ist seither mit Händen zu greifen; die Umsatzverluste seien, so ein Buchhändler, deutlich <strong>spürbar</strong>.</p>
 
-    <p>Der Vorfall legt frei, wie dünn die Nerven in deutschen Oberstufen inzwischen liegen. Auf den Fluren gilt, wer seinen Ehrgeiz offen zeigt, noch immer als <strong>Streber</strong>; <strong>grundsätzlich</strong> aber rechnet hier fast jeder <strong>stets</strong> mit spitzem Bleistift am eigenen Notendurchschnitt herum. Viele <strong>träumen von</strong> einem Studienplatz in Medizin, und die <strong>Fülle an</strong> Zusatzangeboten – Austausche, Wettbewerbe, Praktika – macht die Sache nicht leichter. Wer dem Vergleich <strong>aus dem Weg gehen</strong> will, muss die Schule schon verlassen.</p>
+    <p>Hilfe kommt von unerwarteter Seite. Ein Tauchverein aus der Nachbargemeinde hat der Stadt <strong>seine Hilfe angeboten</strong>: Die Mitglieder wollen unentgeltlich vermessen und dokumentieren, und die Verwaltung konnte den Freiwilligen diesen <strong>Wunsch</strong> schwerlich <strong>abschlagen</strong>. Ihr Vorsitzender, ein pensionierter Statiker, beziffert den Zeitaufwand auf rund dreihundert Arbeitsstunden, die niemand bezahlen müsse. Viele Lindenauer zeigen sich <strong>begeistert von</strong> so viel Engagement; in den Kommentarspalten ist zu lesen, man sei beinahe <strong>neidisch auf</strong> die Organisationsgabe der Nachbarn.</p>
 
-    <p>Die Lehrkräfte <strong>reden</strong> ihren Schülern gut <strong>zu</strong>, Niederlagen auszuhalten; <strong>dennoch</strong> wissen sie, dass sie Teil des Systems sind, das den Druck erzeugt. Eine Deutschlehrerin, seit achtzehn Jahren im Dienst, sagt, sie <strong>übe sich</strong> inzwischen täglich <strong>in</strong> Gelassenheit. Sie erzählt von einem Schüler, der sich nach der Absage weigerte, das Gebäude zu verlassen, weil er fürchtete, seine ganze Vorbereitung sei nun verloren. Was sie <strong>an</strong> ihren Jugendlichen <strong>schätze</strong>, sei weniger der <strong>Stolz auf</strong> eine Eins als die Fähigkeit, nach einer Zwei weiterzuarbeiten.</p>
+    <p>Doch der Streit ist damit nicht beendet. Der Sanierungsauftrag ging an eine Firma, deren Geschäftsführer der <strong>Schwager</strong> des Bauamtsleiters ist. Die Lokalzeitung hatte den Vorgang vergangene Woche öffentlich gemacht. Der Bürgermeister nahm seinen Mitarbeiter <strong>vor</strong> den Vorwürfen der Opposition <strong>in Schutz</strong>: Es bestehe kein <strong>Zusammenhang</strong> zwischen Verwandtschaft und Vergabe, das Verfahren sei öffentlich gewesen. Wer wolle, könne jederzeit <strong>eine Frage stellen</strong> — und die Verwaltung werde antworten. Dass die Ratsmitglieder dennoch weiter <strong>nachfragen</strong>, gehört zu ihren Pflichten, nicht zu ihren Launen.</p>
 
-    <p>Technisch ist der Fall längst erledigt: Das Kabel wurde ausgetauscht, der Melder ersetzt. Vielleicht war der schrille Ton an jenem Morgen mehr als eine Störung. Er hielt eine ganze Schule für zwanzig Minuten an und machte sichtbar, was im Stundenplan sonst untergeht: dass Prüfungen vergehen, Angst aber bleibt, wenn niemand sie benennt.</p>
+    <p>Vielleicht wird sich am Ende herausstellen, dass hier vor allem ein <strong>Missverständnis</strong> zu <strong>klären</strong> ist: zwischen einer Verwaltung, die Tempo verspricht, und einer Öffentlichkeit, die Belege verlangt. Dass ein kleines Gemeinwesen die <strong>Kraft</strong> aufbringt, über Monate hinweg um ein Denkmal zu streiten, das die meisten nur bei Niedrigwasser sehen, ist kein Zeichen von Kleinlichkeit. Es ist ein Zeichen dafür, dass Geschichte hier noch jemandem gehört.</p>
   </article>
 
   <h2>English gloss</h2>
+  <p class="glosshint">In order of first appearance in the text.</p>
   <dl>
-    <dt>unerwartet</dt>
-    <dd>unexpected</dd>
+    <dt>tauchen</dt>
+    <dd>to dive</dd>
 
-    <dt>der Rauchmelder</dt>
-    <dd>the smoke detector</dd>
+    <dt>das Denkmal</dt>
+    <dd>the monument, the memorial</dd>
 
-    <dt>untersuchen (+Akk)</dt>
-    <dd>to examine / to investigate</dd>
+    <dt>jemandem sein Wort geben (+ Dat.)</dt>
+    <dd>to give someone one's word</dd>
 
-    <dt>mitteilen (+Dat/+Akk)</dt>
-    <dd>to inform / to communicate</dd>
+    <dt>deshalb</dt>
+    <dd>therefore, that is why</dd>
 
-    <dt>schicken (+Dat/+Akk)</dt>
-    <dd>to send</dd>
+    <dt>die Unannehmlichkeit für (+ Akk.)</dt>
+    <dd>the inconvenience / trouble for</dd>
 
-    <dt>zig</dt>
-    <dd>a bunch of / umpteen</dd>
+    <dt>sorgen für (+ Akk.)</dt>
+    <dd>to take care of, to provide for, to ensure (here: to cause)</dd>
 
-    <dt>die Hoffnung auf (+Akk)</dt>
-    <dd>the hope for</dd>
+    <dt>husten</dt>
+    <dd>to cough</dd>
 
-    <dt>sich freuen auf (+Akk)</dt>
-    <dd>to look forward to (a thing)</dd>
+    <dt>die Unbeliebtheit bei (+ Dat.)</dt>
+    <dd>the unpopularity with</dd>
 
-    <dt>überhaupt</dt>
-    <dd>at all</dd>
+    <dt>spürbar</dt>
+    <dd>noticeable, palpable</dd>
 
-    <dt>der Streber</dt>
-    <dd>the overachiever / swot</dd>
+    <dt>jemandem seine Hilfe anbieten (+ Dat.)</dt>
+    <dd>to offer someone one's help</dd>
 
-    <dt>grundsätzlich</dt>
-    <dd>fundamentally / basically</dd>
+    <dt>jemandem einen Wunsch abschlagen (+ Akk.)</dt>
+    <dd>to turn down / refuse someone's request</dd>
 
-    <dt>stets</dt>
-    <dd>always</dd>
+    <dt>begeistert von (+ Dat.)</dt>
+    <dd>enthusiastic about, thrilled by</dd>
 
-    <dt>träumen von (+Dat)</dt>
-    <dd>to dream of / to dream about</dd>
+    <dt>neidisch auf (+ Akk.)</dt>
+    <dd>envious of</dd>
 
-    <dt>die Fülle an (+Dat)</dt>
-    <dd>the abundance / wealth of</dd>
+    <dt>der Schwager</dt>
+    <dd>the brother-in-law</dd>
 
-    <dt>aus dem Weg gehen (+Dat)</dt>
-    <dd>to avoid / to get out of someone's way</dd>
+    <dt>jemanden in Schutz nehmen vor (+ Dat.)</dt>
+    <dd>to protect / defend someone from</dd>
 
-    <dt>zureden (+Dat)</dt>
-    <dd>to encourage / to persuade</dd>
+    <dt>der Zusammenhang</dt>
+    <dd>the connection, the context</dd>
 
-    <dt>dennoch</dt>
-    <dd>nevertheless</dd>
+    <dt>eine Frage stellen</dt>
+    <dd>to ask a question</dd>
 
-    <dt>sich üben in (+Dat)</dt>
-    <dd>to practice</dd>
+    <dt>nachfragen</dt>
+    <dd>to ask again, to inquire further</dd>
 
-    <dt>schätzen an (+Dat)</dt>
-    <dd>to appreciate (a quality) about (someone)</dd>
+    <dt>ein Missverständnis klären</dt>
+    <dd>to clear up a misunderstanding</dd>
 
-    <dt>der Stolz auf (+Akk)</dt>
-    <dd>pride in</dd>
+    <dt>die Kraft</dt>
+    <dd>the strength, the power</dd>
   </dl>
+
+  <footer>Sprachgarten · Lesetraining C1</footer>
 
 </div>
 
