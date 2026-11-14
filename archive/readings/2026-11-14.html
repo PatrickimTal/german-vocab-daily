@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sprachgarten — Lesetext C1: Zwischen Messehalle und Misstrauen</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#304635;
+    --head:#082310;
+    --accent:#0077c7;
+    --accent-hover:#0061b0;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:#ffffff;
+    color:var(--ink);
+    font-family:'Sora', system-ui, sans-serif;
+    font-size:17px;
+    line-height:1.72;
+    -webkit-text-size-adjust:100%;
+  }
+  .wrap{
+    max-width:40rem;
+    margin:0 auto;
+    padding:2.2rem 1.15rem 4rem;
+  }
+  .kicker{
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:0.72rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin:0 0 0.9rem;
+  }
+  h1{
+    font-family:'Libre Baskerville', Georgia, serif;
+    color:var(--head);
+    font-weight:700;
+    font-size:1.72rem;
+    line-height:1.28;
+    margin:0 0 0.5rem;
+  }
+  .standfirst{
+    font-family:'Libre Baskerville', Georgia, serif;
+    font-size:1.02rem;
+    line-height:1.6;
+    color:var(--ink);
+    margin:0 0 1.1rem;
+  }
+  .meta{
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:0.74rem;
+    color:#6a7a6c;
+    margin:0 0 1.6rem;
+    padding-bottom:1.2rem;
+    border-bottom:1px solid #e2e8e2;
+  }
+  article p{
+    margin:0 0 1.1rem;
+  }
+  article p:first-of-type::first-letter{
+    font-family:'Libre Baskerville', Georgia, serif;
+    color:var(--head);
+    font-size:3.1rem;
+    line-height:0.86;
+    float:left;
+    padding:0.22rem 0.5rem 0 0;
+  }
+  strong{
+    font-weight:600;
+    color:var(--head);
+  }
+  h2{
+    font-family:'Libre Baskerville', Georgia, serif;
+    color:var(--head);
+    font-size:1.2rem;
+    margin:2.6rem 0 0.4rem;
+    padding-top:1.5rem;
+    border-top:1px solid #e2e8e2;
+  }
+  .gloss-note{
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:0.74rem;
+    color:#6a7a6c;
+    margin:0 0 1.3rem;
+  }
+  dl{margin:0;}
+  dt{
+    font-weight:600;
+    color:var(--head);
+    margin-top:0.95rem;
+  }
+  dd{
+    margin:0.1rem 0 0;
+    padding-left:0;
+    color:var(--ink);
+    font-size:0.95rem;
+  }
+  dd::before{
+    content:"→ ";
+    color:var(--accent);
+  }
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{color:var(--accent-hover);text-decoration:underline;}
+  footer{
+    margin-top:2.8rem;
+    padding-top:1.2rem;
+    border-top:1px solid #e2e8e2;
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:0.72rem;
+    color:#6a7a6c;
+  }
+  @media (max-width:420px){
+    h1{font-size:1.45rem;}
+    body{font-size:16.5px;}
+  }
+</style>
+
+<!-- site-header -->
+<style>
+.site-bar {
+  --site-green: #e9fae9;
+  --page-bg: #fff;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-bg-hover: rgba(255, 255, 255, 0.97);
+  --panel-bg: rgba(255, 255, 255, 0.62);
+  --panel-bg-hover: rgba(255, 255, 255, 0.82);
+
+  --ink: #082310;
+  --ink-body: #304635;
+  --ink-muted: #4b614f;
+  --ink-faint: #617865;
+
+  --blue: #0077c7;
+  --blue-hover: #0061b0;
+  --blue-text: #006eb8;
+  --article: #c56c00;
+
+  --border: #8ab091;
+  --rule: #dce9de;
+  --underline: #a8c7ad;
+
+  --chip-verb-praep-bg: #cdecff;      --chip-verb-praep-fg: #004e95;
+  --chip-verb-kasus-bg: #c2f2f8;      --chip-verb-kasus-fg: #005565;
+  --chip-redemittel-bg: #f0e4ff;      --chip-redemittel-fg: #603b93;
+  --chip-nomen-praep-bg: #c4f2cc;     --chip-nomen-praep-fg: #005222;
+  --chip-adjektiv-praep-bg: #ffe1ac;  --chip-adjektiv-praep-fg: #7b4300;
+  --chip-redewendung-bg: #ffd9d7;     --chip-redewendung-fg: #9a2733;
+  --chip-wortschatz-bg: #dce9de;      --chip-wortschatz-fg: #384e3c;
+
+  --font-serif: 'Libre Baskerville', Georgia, serif;
+  --font-sans: 'Sora', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --r-sm: 4px;
+  --r-md: 12px;
+  --r-lg: 14px;
+  --r-pill: 999px;
+  --shadow-card: 0 12px 30px rgba(30, 70, 45, 0.1);
+
+  --pad-x: 22px;
+
+  font-family: var(--font-sans); font-size: 16px; line-height: 1.55;
+  -webkit-font-smoothing: antialiased; text-align: left;
+}
+.site-bar *, .site-bar *::before, .site-bar *::after { box-sizing: border-box; }
+.site-bar header, .site-bar nav { margin: 0; border: 0; max-width: none; }
+.site-bar a { text-decoration: none; border-bottom: 0; }
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: 12px; top: 12px; background: #fff; padding: 10px 14px; border-radius: 12px; z-index: 100; }
+
+.site-bar {
+  background: var(--blue-text);
+  border-bottom: 1px solid var(--blue-text);
+  box-shadow: 0 2px 12px rgba(30, 70, 45, 0.06);
+}
+.site-bar { margin-bottom: 26px; }
+.site-bar :focus-visible { outline-color: #fff; }
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px var(--pad-x);
+}
+.brand { display: flex; }
+.brand__logo { display: block; height: 40px; width: auto; max-width: none; }
+.nav { display: none; }
+.nav-toggle {
+  width: 44px; height: 44px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+  background: none; border: 1px solid rgba(255, 255, 255, 0.6); border-radius: var(--r-md); cursor: pointer;
+  transition: border-color 150ms ease;
+}
+.nav-toggle span { width: 18px; height: 1.5px; background: #fff; }
+.nav-toggle:hover, .nav-toggle[aria-expanded="true"] { border-color: #fff; }
+.mobile-nav { display: flex; flex-direction: column; padding: 4px var(--pad-x) 12px; gap: 2px; }
+.mobile-nav a {
+  min-height: 48px; display: flex; align-items: center;
+  padding: 0 12px; margin: 0 -12px;
+  color: #fff; font-size: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  transition: box-shadow 150ms ease;
+}
+.mobile-nav[hidden] { display: none; }
+.mobile-nav a:hover, .mobile-nav a:active { color: #fff; box-shadow: inset 0 0 0 1px #fff; }
+.mobile-nav .nav__current {
+  min-height: 48px; display: flex; align-items: center;
+  padding: 0 12px; margin: 0 -12px; font-size: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+/* current page: inverted white pill with blue text */
+.nav__current { background: #fff; color: var(--blue-text); cursor: default; }
+@media (min-width: 640px) {
+  .nav-toggle, .mobile-nav { display: none !important; }
+  .nav { display: flex; align-items: center; gap: 8px; font-size: 15px; }
+  .nav a {
+    padding: 9px 16px;
+    border: 1px solid transparent;
+    border-radius: var(--r-pill);
+    color: #fff;
+    transition: border-color 150ms ease;
+  }
+  /* hover: text stays white, a white outline appears */
+  .nav a:hover { border-color: #fff; color: #fff; }
+  .nav .nav__current {
+    padding: 9px 16px; border: 1px solid #fff; border-radius: var(--r-pill);
+  }
+  .brand__logo { height: 48px; }
+  .site-header { padding: 18px var(--pad-x); }
+  .site-bar { margin-bottom: 34px; --pad-x: 44px; }
+}
+@media (min-width: 1024px) {
+  .site-header { max-width: 1280px; margin-inline: auto; }
+  .site-bar { margin-bottom: 44px; --pad-x: 52px; }
+}
+
+.site-bar { margin-bottom: 0; }
+html body { background: #fff; }
+html body p.site-page-title {
+  font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400; font-style: normal;
+  font-size: 34px; line-height: 1.1; letter-spacing: normal; text-transform: none;
+  color: #082310; margin: 0 0 18px; padding: 0; border: 0; background: none;
+}
+@media (min-width: 640px) { html body p.site-page-title { font-size: 42px; } }
+@media (min-width: 640px) { .site-bar { --pad-x: 44px; } }
+@media (min-width: 1024px) { .site-bar { --pad-x: 52px; } }
+</style>
+<!-- /site-header --></head>
+<body>
+<!-- site-header -->
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<div class="site-bar">
+<header class="site-header">
+  <a class="brand" href="../../index.html">
+    <img class="brand__logo" src="../../wortschatz_logo_white.png" width="521" height="112" alt="Täglicher Deutscher Wortschatz C1">
+  </a>
+  <nav class="nav" aria-label="Hauptnavigation">
+    <a href="../../reading.html">Lesetext</a>
+    <a href="../../flashcards.html">Karteikarten</a>
+    <a href="../../about.html">Über das Projekt</a>
+    <a href="../../index.html">Home</a>
+  </nav>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menü öffnen">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav" hidden aria-label="Hauptnavigation, mobil">
+  <a href="../../reading.html">Lesetext</a>
+  <a href="../../flashcards.html">Karteikarten</a>
+  <a href="../../about.html">Über das Projekt</a>
+  <a href="../../index.html">Home</a>
+</nav>
+</div>
+<!-- /site-header -->
+<div class="wrap">
+
+  <!-- site-header -->
+<p class="site-page-title">Lesetext</p>
+<!-- /site-header -->
+<p class="kicker">Sprachgarten · Lesetext C1 · Wirtschaft</p>
+  <h1>Zwischen Messehalle und Misstrauen</h1>
+  <p class="standfirst">Drei Tage Gründermesse in der Provinz: Wer dort zuhört, erfährt mehr über den Handel von morgen als in manchem Konjunkturbericht.</p>
+  <p class="meta">Wortzahl: ca. 341 Wörter<span class="site-date"> · 14.11.2026</span> · Lesezeit ≈ 3 Minuten</p>
+
+  <article>
+    <p>Die <strong>Teilnahme an</strong> der regionalen Gründermesse ist kostenlos, setzt jedoch eine Anmeldung und damit <strong>eine gültige E-Mailadresse</strong> voraus. Gut viertausend Besucher haben sich registriert; die <strong>Freude auf</strong> drei Tage Austausch war schon im Vorfeld spürbar, die <strong>Freude über</strong> die hohen Anmeldezahlen bei den Veranstaltern noch größer.</p>
+
+    <p>Der Anlass ist weniger heiter, als es die Stimmung in den Hallen vermuten lässt. Die Region wächst, doch die hiesige Wirtschaft ist kaum noch in der Lage, <strong>den Bedarf an</strong> gut ausgebildeten Fachkräften <strong>zu decken</strong>. Wer heute ein Unternehmen gründet, konkurriert nicht mit dem Nachbarn, sondern mit Konzernen, die <strong>beeindruckende</strong> Gehälter zahlen.</p>
+
+    <p>Hinter zwei <strong>Buchstaben</strong> – KI – verbirgt sich auch in diesem Jahr das beherrschende Thema. An jedem zweiten Stand klingen die Versprechen verblüffend <strong>ähnlich</strong>: Algorithmen, die Prozesse ordnen, <strong>Unterlagen erstellen</strong> und binnen Minuten Angebote vergleichen. Dass solche Systeme längst <strong>Einfluss auf</strong> politische und wirtschaftliche Entscheidungen <strong>nehmen</strong>, bestreitet niemand; strittig ist allein, unter welchen <strong>Bedingungen</strong> das geschehen darf.</p>
+
+    <p>Am Nachmittag wird es konkret. Eine Podiumsdiskussion widmet sich dem Onlinehandel, genauer der Frage, wie leicht sich Verbraucher heute <strong>betrügen</strong> lassen. Händler, die im Kleingedruckten verschweigen, dass man die <strong>Ware</strong> nur binnen vierzehn Tagen <strong>umtauschen</strong> kann; Plattformen, deren <strong>Bezeichnung für</strong> eine Gebühr – „Servicepauschale“ – mehr verschleiert als erklärt und deren <strong>Bezeichnung als</strong> bloßer Vermittler juristisch fragwürdig bleibt. Eine Verbraucherschützerin <strong>besteht auf</strong> verständlicher Sprache und auf Verträgen, die auch ohne anwaltliche Beratung lesbar sind. <strong>Zu einem Ergebnis kommt</strong> das Podium an diesem Nachmittag gleichwohl nicht.</p>
+
+    <p>In den Gängen zählt ohnehin anderes. Wer hier <strong>Kontakte mit</strong> Investoren, Zulieferern und künftigen Mitarbeitern <strong>knüpft</strong>, hat die Standgebühr meist schon am ersten Abend wieder eingespielt. Ein Softwareunternehmer aus dem Umland, der im Frühjahr sein erstes größeres <strong>Projekt abgeschlossen</strong> hat, sagt, er habe einen ausgesprochen <strong>guten Eindruck von</strong> der Organisation und von der Offenheit der Gespräche. „<strong>Das macht uns Mut</strong>“, sagt er. Ob <strong>sich</strong> die Messe am Ende tatsächlich <strong>lohnt</strong>, wird sich erst in einigen Monaten zeigen – dann nämlich, wenn aus Visitenkarten Aufträge geworden sind.</p>
+  </article>
+
+  <h2>English gloss</h2>
+  <p class="gloss-note">In order of first appearance in the article.</p>
+  <dl>
+    <dt>die Teilnahme an (+Dat)</dt>
+    <dd>participation in</dd>
+
+    <dt>die gültige E-Mailadresse</dt>
+    <dd>the valid email address</dd>
+
+    <dt>die Freude auf / über (+Akk)</dt>
+    <dd>the joy in (something anticipated) / about (something past)</dd>
+
+    <dt>den Bedarf decken an (+Dat)</dt>
+    <dd>to meet / cover the demand for</dd>
+
+    <dt>beeindruckend</dt>
+    <dd>impressive</dd>
+
+    <dt>der Buchstabe (die Buchstaben)</dt>
+    <dd>the letter(s) of the alphabet</dd>
+
+    <dt>ähnlich</dt>
+    <dd>similar</dd>
+
+    <dt>Unterlagen erstellen</dt>
+    <dd>to prepare / draw up documents</dd>
+
+    <dt>Einfluss nehmen auf (+Akk)</dt>
+    <dd>to exert influence on / to have an impact on</dd>
+
+    <dt>die Bedingung(en)</dt>
+    <dd>the condition(s)</dd>
+
+    <dt>betrügen</dt>
+    <dd>to cheat, to defraud</dd>
+
+    <dt>Ware umtauschen</dt>
+    <dd>to exchange goods / to swap an item</dd>
+
+    <dt>die Bezeichnung für (+Akk) / als (+Akk)</dt>
+    <dd>the term / designation for / as</dd>
+
+    <dt>bestehen auf (+Dat)</dt>
+    <dd>to insist on something / to demand that it be respected</dd>
+
+    <dt>zu einem Ergebnis kommen</dt>
+    <dd>to reach a conclusion / result</dd>
+
+    <dt>Kontakte knüpfen mit (+Dat)</dt>
+    <dd>to make / establish contacts with</dd>
+
+    <dt>ein Projekt abschließen</dt>
+    <dd>to complete a project</dd>
+
+    <dt>einen guten/schlechten Eindruck haben von (+Dat)</dt>
+    <dd>to have a good/bad impression of</dd>
+
+    <dt>Das macht uns Mut.</dt>
+    <dd>That gives us courage.</dd>
+
+    <dt>sich lohnen</dt>
+    <dd>to be worth it</dd>
+  </dl>
+
+  <footer>Sprachgarten · Lesetraining C1 · Zielwortschatz: 20 Einheiten</footer>
+
+</div>
+
+<!-- site-header -->
+<script>
+document.querySelectorAll('.nav-toggle').forEach(function (toggle) {
+  var panel = document.getElementById(toggle.getAttribute('aria-controls'));
+  toggle.addEventListener('click', function () {
+    var open = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!open));
+    toggle.setAttribute('aria-label', open ? 'Menü öffnen' : 'Menü schließen');
+    if (panel) panel.hidden = open;
+  });
+});
+
+(function () {
+  var bar = document.querySelector('.site-bar');
+  if (!bar) return;
+  function firstTextTop() {
+    var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (n) {
+        if (bar.contains(n) || !n.nodeValue.trim()) return NodeFilter.FILTER_SKIP;
+        var p = n.parentElement;
+        if (!p || p.closest('script,style,.skip') || !p.offsetParent) return NodeFilter.FILTER_SKIP;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var n = w.nextNode();
+    if (!n) return null;
+    var r = document.createRange(); r.selectNodeContents(n);
+    return r.getBoundingClientRect().top;
+  }
+  function fit() {
+    var cs = getComputedStyle(document.body);
+    bar.style.marginTop = '-' + cs.paddingTop;
+    bar.style.marginLeft = '-' + cs.paddingLeft;
+    bar.style.marginRight = '-' + cs.paddingRight;
+    bar.style.marginBottom = '0px';
+    var w = window.innerWidth, target = w >= 1024 ? 44 : (w >= 640 ? 34 : 26);
+    var top = firstTextTop();
+    if (top === null) return;
+    var gap = top - bar.getBoundingClientRect().bottom;
+    bar.style.marginBottom = (target - gap) + 'px';
+  }
+  fit();
+  window.addEventListener('load', fit);
+  window.addEventListener('resize', fit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+})();
+</script>
+<!-- /site-header --></body>
+</html>

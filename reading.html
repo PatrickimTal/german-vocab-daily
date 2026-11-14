@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sprachgarten — Lesetext: Ein Denkmal, das sinkt</title>
+<title>Sprachgarten — Lesetext C1: Zwischen Messehalle und Misstrauen</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#082310;
-    --body:#304635;
+    --ink:#304635;
+    --head:#082310;
     --accent:#0077c7;
     --accent-hover:#0061b0;
   }
@@ -17,100 +17,106 @@
   body{
     margin:0;
     background:#ffffff;
-    color:var(--body);
+    color:var(--ink);
     font-family:'Sora', system-ui, sans-serif;
     font-size:17px;
-    line-height:1.7;
+    line-height:1.72;
     -webkit-text-size-adjust:100%;
   }
   .wrap{
     max-width:40rem;
     margin:0 auto;
-    padding:2rem 1.15rem 4rem;
+    padding:2.2rem 1.15rem 4rem;
   }
   .kicker{
     font-family:'IBM Plex Mono', ui-monospace, monospace;
     font-size:0.72rem;
-    letter-spacing:0.14em;
+    letter-spacing:0.12em;
     text-transform:uppercase;
-    color:var(--body);
+    color:var(--accent);
     margin:0 0 0.9rem;
   }
   h1{
     font-family:'Libre Baskerville', Georgia, serif;
-    color:var(--ink);
+    color:var(--head);
     font-weight:700;
-    font-size:1.65rem;
+    font-size:1.72rem;
     line-height:1.28;
-    margin:0 0 0.7rem;
+    margin:0 0 0.5rem;
   }
   .standfirst{
     font-family:'Libre Baskerville', Georgia, serif;
     font-size:1.02rem;
     line-height:1.6;
-    color:var(--body);
+    color:var(--ink);
     margin:0 0 1.1rem;
   }
   .meta{
     font-family:'IBM Plex Mono', ui-monospace, monospace;
     font-size:0.74rem;
-    color:var(--body);
-    border-top:1px solid #d8e2d9;
-    border-bottom:1px solid #d8e2d9;
-    padding:0.5rem 0;
-    margin:0 0 1.8rem;
+    color:#6a7a6c;
+    margin:0 0 1.6rem;
+    padding-bottom:1.2rem;
+    border-bottom:1px solid #e2e8e2;
   }
   article p{
-    margin:0 0 1.15rem;
+    margin:0 0 1.1rem;
   }
   article p:first-of-type::first-letter{
     font-family:'Libre Baskerville', Georgia, serif;
-    color:var(--ink);
-    font-size:2.9rem;
-    line-height:0.9;
+    color:var(--head);
+    font-size:3.1rem;
+    line-height:0.86;
     float:left;
-    padding:0.18rem 0.5rem 0 0;
+    padding:0.22rem 0.5rem 0 0;
   }
   strong{
     font-weight:600;
-    color:var(--ink);
+    color:var(--head);
   }
   h2{
     font-family:'Libre Baskerville', Georgia, serif;
-    color:var(--ink);
-    font-size:1.15rem;
+    color:var(--head);
+    font-size:1.2rem;
     margin:2.6rem 0 0.4rem;
+    padding-top:1.5rem;
+    border-top:1px solid #e2e8e2;
   }
-  .glosshint{
+  .gloss-note{
     font-family:'IBM Plex Mono', ui-monospace, monospace;
     font-size:0.74rem;
-    margin:0 0 1.2rem;
+    color:#6a7a6c;
+    margin:0 0 1.3rem;
   }
-  dl{
-    margin:0;
-    border-top:1px solid #d8e2d9;
-  }
+  dl{margin:0;}
   dt{
     font-weight:600;
-    color:var(--ink);
-    margin-top:0.85rem;
+    color:var(--head);
+    margin-top:0.95rem;
   }
   dd{
-    margin:0.15rem 0 0.85rem;
-    padding-bottom:0.85rem;
-    border-bottom:1px solid #eef2ee;
+    margin:0.1rem 0 0;
+    padding-left:0;
+    color:var(--ink);
     font-size:0.95rem;
+  }
+  dd::before{
+    content:"→ ";
+    color:var(--accent);
   }
   a{color:var(--accent);text-decoration:none;}
   a:hover{color:var(--accent-hover);text-decoration:underline;}
   footer{
-    margin-top:2.6rem;
+    margin-top:2.8rem;
+    padding-top:1.2rem;
+    border-top:1px solid #e2e8e2;
     font-family:'IBM Plex Mono', ui-monospace, monospace;
     font-size:0.72rem;
+    color:#6a7a6c;
   }
   @media (max-width:420px){
-    h1{font-size:1.42rem;}
-    body{font-size:16px;}
+    h1{font-size:1.45rem;}
+    body{font-size:16.5px;}
   }
 </style>
 
@@ -276,88 +282,88 @@ html body p.site-page-title {
   <!-- site-header -->
 <p class="site-page-title">Lesetext</p>
 <!-- /site-header -->
-<p class="kicker">Feuilleton · Aus der Provinz</p>
-  <h1>Ein Denkmal, das sinkt — und eine Stadt, die nachfragt</h1>
-  <p class="standfirst">In Lindenau streitet man über eine Bronzefigur im Schlamm. Der Konflikt zeigt, wie viel Vertrauen eine Kommune noch aufbringt.</p>
-  <p class="meta">Lesetext · Niveau C1 · 331 Wörter<span class="site-date"> · 13.11.2026</span></p>
+<p class="kicker">Sprachgarten · Lesetext C1 · Wirtschaft</p>
+  <h1>Zwischen Messehalle und Misstrauen</h1>
+  <p class="standfirst">Drei Tage Gründermesse in der Provinz: Wer dort zuhört, erfährt mehr über den Handel von morgen als in manchem Konjunkturbericht.</p>
+  <p class="meta">Wortzahl: ca. 341 Wörter<span class="site-date"> · 14.11.2026</span> · Lesezeit ≈ 3 Minuten</p>
 
   <article>
-    <p>Wer am frühen Morgen am Ufer von Lindenau steht, sieht zunächst nur graues Wasser. Erst wer <strong>taucht</strong>, erkennt das Ausmaß des Schadens: Das bronzene <strong>Denkmal</strong> für die Flößer, 1912 errichtet, rutscht seit Jahren in den Schlamm.</p>
+    <p>Die <strong>Teilnahme an</strong> der regionalen Gründermesse ist kostenlos, setzt jedoch eine Anmeldung und damit <strong>eine gültige E-Mailadresse</strong> voraus. Gut viertausend Besucher haben sich registriert; die <strong>Freude auf</strong> drei Tage Austausch war schon im Vorfeld spürbar, die <strong>Freude über</strong> die hohen Anmeldezahlen bei den Veranstaltern noch größer.</p>
 
-    <p>Im Stadtrat hat der Bürgermeister den Anwohnern <strong>sein Wort gegeben</strong>, die Figur noch vor dem Frühjahr zu sichern. <strong>Deshalb</strong> rollen seit Montag Lastwagen über die Uferstraße, deren Sperrung erhebliche <strong>Unannehmlichkeiten für</strong> Pendler und Lieferanten bedeutet. Der Baustaub <strong>sorgt für</strong> schlechte Luft bis in den Sitzungssaal hinein, wo am Dienstagabend mehr Zuhörer <strong>husteten</strong> als applaudierten. Die <strong>Unbeliebtheit</strong> des Projekts <strong>bei</strong> den Händlern der Altstadt ist seither mit Händen zu greifen; die Umsatzverluste seien, so ein Buchhändler, deutlich <strong>spürbar</strong>.</p>
+    <p>Der Anlass ist weniger heiter, als es die Stimmung in den Hallen vermuten lässt. Die Region wächst, doch die hiesige Wirtschaft ist kaum noch in der Lage, <strong>den Bedarf an</strong> gut ausgebildeten Fachkräften <strong>zu decken</strong>. Wer heute ein Unternehmen gründet, konkurriert nicht mit dem Nachbarn, sondern mit Konzernen, die <strong>beeindruckende</strong> Gehälter zahlen.</p>
 
-    <p>Hilfe kommt von unerwarteter Seite. Ein Tauchverein aus der Nachbargemeinde hat der Stadt <strong>seine Hilfe angeboten</strong>: Die Mitglieder wollen unentgeltlich vermessen und dokumentieren, und die Verwaltung konnte den Freiwilligen diesen <strong>Wunsch</strong> schwerlich <strong>abschlagen</strong>. Ihr Vorsitzender, ein pensionierter Statiker, beziffert den Zeitaufwand auf rund dreihundert Arbeitsstunden, die niemand bezahlen müsse. Viele Lindenauer zeigen sich <strong>begeistert von</strong> so viel Engagement; in den Kommentarspalten ist zu lesen, man sei beinahe <strong>neidisch auf</strong> die Organisationsgabe der Nachbarn.</p>
+    <p>Hinter zwei <strong>Buchstaben</strong> – KI – verbirgt sich auch in diesem Jahr das beherrschende Thema. An jedem zweiten Stand klingen die Versprechen verblüffend <strong>ähnlich</strong>: Algorithmen, die Prozesse ordnen, <strong>Unterlagen erstellen</strong> und binnen Minuten Angebote vergleichen. Dass solche Systeme längst <strong>Einfluss auf</strong> politische und wirtschaftliche Entscheidungen <strong>nehmen</strong>, bestreitet niemand; strittig ist allein, unter welchen <strong>Bedingungen</strong> das geschehen darf.</p>
 
-    <p>Doch der Streit ist damit nicht beendet. Der Sanierungsauftrag ging an eine Firma, deren Geschäftsführer der <strong>Schwager</strong> des Bauamtsleiters ist. Die Lokalzeitung hatte den Vorgang vergangene Woche öffentlich gemacht. Der Bürgermeister nahm seinen Mitarbeiter <strong>vor</strong> den Vorwürfen der Opposition <strong>in Schutz</strong>: Es bestehe kein <strong>Zusammenhang</strong> zwischen Verwandtschaft und Vergabe, das Verfahren sei öffentlich gewesen. Wer wolle, könne jederzeit <strong>eine Frage stellen</strong> — und die Verwaltung werde antworten. Dass die Ratsmitglieder dennoch weiter <strong>nachfragen</strong>, gehört zu ihren Pflichten, nicht zu ihren Launen.</p>
+    <p>Am Nachmittag wird es konkret. Eine Podiumsdiskussion widmet sich dem Onlinehandel, genauer der Frage, wie leicht sich Verbraucher heute <strong>betrügen</strong> lassen. Händler, die im Kleingedruckten verschweigen, dass man die <strong>Ware</strong> nur binnen vierzehn Tagen <strong>umtauschen</strong> kann; Plattformen, deren <strong>Bezeichnung für</strong> eine Gebühr – „Servicepauschale“ – mehr verschleiert als erklärt und deren <strong>Bezeichnung als</strong> bloßer Vermittler juristisch fragwürdig bleibt. Eine Verbraucherschützerin <strong>besteht auf</strong> verständlicher Sprache und auf Verträgen, die auch ohne anwaltliche Beratung lesbar sind. <strong>Zu einem Ergebnis kommt</strong> das Podium an diesem Nachmittag gleichwohl nicht.</p>
 
-    <p>Vielleicht wird sich am Ende herausstellen, dass hier vor allem ein <strong>Missverständnis</strong> zu <strong>klären</strong> ist: zwischen einer Verwaltung, die Tempo verspricht, und einer Öffentlichkeit, die Belege verlangt. Dass ein kleines Gemeinwesen die <strong>Kraft</strong> aufbringt, über Monate hinweg um ein Denkmal zu streiten, das die meisten nur bei Niedrigwasser sehen, ist kein Zeichen von Kleinlichkeit. Es ist ein Zeichen dafür, dass Geschichte hier noch jemandem gehört.</p>
+    <p>In den Gängen zählt ohnehin anderes. Wer hier <strong>Kontakte mit</strong> Investoren, Zulieferern und künftigen Mitarbeitern <strong>knüpft</strong>, hat die Standgebühr meist schon am ersten Abend wieder eingespielt. Ein Softwareunternehmer aus dem Umland, der im Frühjahr sein erstes größeres <strong>Projekt abgeschlossen</strong> hat, sagt, er habe einen ausgesprochen <strong>guten Eindruck von</strong> der Organisation und von der Offenheit der Gespräche. „<strong>Das macht uns Mut</strong>“, sagt er. Ob <strong>sich</strong> die Messe am Ende tatsächlich <strong>lohnt</strong>, wird sich erst in einigen Monaten zeigen – dann nämlich, wenn aus Visitenkarten Aufträge geworden sind.</p>
   </article>
 
   <h2>English gloss</h2>
-  <p class="glosshint">In order of first appearance in the text.</p>
+  <p class="gloss-note">In order of first appearance in the article.</p>
   <dl>
-    <dt>tauchen</dt>
-    <dd>to dive</dd>
+    <dt>die Teilnahme an (+Dat)</dt>
+    <dd>participation in</dd>
 
-    <dt>das Denkmal</dt>
-    <dd>the monument, the memorial</dd>
+    <dt>die gültige E-Mailadresse</dt>
+    <dd>the valid email address</dd>
 
-    <dt>jemandem sein Wort geben (+ Dat.)</dt>
-    <dd>to give someone one's word</dd>
+    <dt>die Freude auf / über (+Akk)</dt>
+    <dd>the joy in (something anticipated) / about (something past)</dd>
 
-    <dt>deshalb</dt>
-    <dd>therefore, that is why</dd>
+    <dt>den Bedarf decken an (+Dat)</dt>
+    <dd>to meet / cover the demand for</dd>
 
-    <dt>die Unannehmlichkeit für (+ Akk.)</dt>
-    <dd>the inconvenience / trouble for</dd>
+    <dt>beeindruckend</dt>
+    <dd>impressive</dd>
 
-    <dt>sorgen für (+ Akk.)</dt>
-    <dd>to take care of, to provide for, to ensure (here: to cause)</dd>
+    <dt>der Buchstabe (die Buchstaben)</dt>
+    <dd>the letter(s) of the alphabet</dd>
 
-    <dt>husten</dt>
-    <dd>to cough</dd>
+    <dt>ähnlich</dt>
+    <dd>similar</dd>
 
-    <dt>die Unbeliebtheit bei (+ Dat.)</dt>
-    <dd>the unpopularity with</dd>
+    <dt>Unterlagen erstellen</dt>
+    <dd>to prepare / draw up documents</dd>
 
-    <dt>spürbar</dt>
-    <dd>noticeable, palpable</dd>
+    <dt>Einfluss nehmen auf (+Akk)</dt>
+    <dd>to exert influence on / to have an impact on</dd>
 
-    <dt>jemandem seine Hilfe anbieten (+ Dat.)</dt>
-    <dd>to offer someone one's help</dd>
+    <dt>die Bedingung(en)</dt>
+    <dd>the condition(s)</dd>
 
-    <dt>jemandem einen Wunsch abschlagen (+ Akk.)</dt>
-    <dd>to turn down / refuse someone's request</dd>
+    <dt>betrügen</dt>
+    <dd>to cheat, to defraud</dd>
 
-    <dt>begeistert von (+ Dat.)</dt>
-    <dd>enthusiastic about, thrilled by</dd>
+    <dt>Ware umtauschen</dt>
+    <dd>to exchange goods / to swap an item</dd>
 
-    <dt>neidisch auf (+ Akk.)</dt>
-    <dd>envious of</dd>
+    <dt>die Bezeichnung für (+Akk) / als (+Akk)</dt>
+    <dd>the term / designation for / as</dd>
 
-    <dt>der Schwager</dt>
-    <dd>the brother-in-law</dd>
+    <dt>bestehen auf (+Dat)</dt>
+    <dd>to insist on something / to demand that it be respected</dd>
 
-    <dt>jemanden in Schutz nehmen vor (+ Dat.)</dt>
-    <dd>to protect / defend someone from</dd>
+    <dt>zu einem Ergebnis kommen</dt>
+    <dd>to reach a conclusion / result</dd>
 
-    <dt>der Zusammenhang</dt>
-    <dd>the connection, the context</dd>
+    <dt>Kontakte knüpfen mit (+Dat)</dt>
+    <dd>to make / establish contacts with</dd>
 
-    <dt>eine Frage stellen</dt>
-    <dd>to ask a question</dd>
+    <dt>ein Projekt abschließen</dt>
+    <dd>to complete a project</dd>
 
-    <dt>nachfragen</dt>
-    <dd>to ask again, to inquire further</dd>
+    <dt>einen guten/schlechten Eindruck haben von (+Dat)</dt>
+    <dd>to have a good/bad impression of</dd>
 
-    <dt>ein Missverständnis klären</dt>
-    <dd>to clear up a misunderstanding</dd>
+    <dt>Das macht uns Mut.</dt>
+    <dd>That gives us courage.</dd>
 
-    <dt>die Kraft</dt>
-    <dd>the strength, the power</dd>
+    <dt>sich lohnen</dt>
+    <dd>to be worth it</dd>
   </dl>
 
-  <footer>Sprachgarten · Lesetraining C1</footer>
+  <footer>Sprachgarten · Lesetraining C1 · Zielwortschatz: 20 Einheiten</footer>
 
 </div>
 
