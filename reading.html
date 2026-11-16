@@ -1,92 +1,101 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lesetext – Die Schule des Streits</title>
+<title>Lesetext — Zwölf Erwachsene, ein Übungsbogen</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: #ffffff;
-    color: #304635;
-    font-family: 'Sora', system-ui, sans-serif;
-    font-size: 1.05rem;
-    line-height: 1.7;
+  :root{
+    --ink:#304635;
+    --head:#082310;
+    --accent:#0077c7;
   }
-  .wrap {
-    max-width: 44rem;
-    margin: 0 auto;
-    padding: 1.75rem 1.1rem 3.5rem;
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:#ffffff;
+    color:var(--ink);
+    font-family:'Sora', system-ui, sans-serif;
+    font-size:17px;
+    line-height:1.7;
+    -webkit-text-size-adjust:100%;
   }
-  .kicker {
-    font-family: 'IBM Plex Mono', ui-monospace, monospace;
-    font-size: 0.78rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: #0077c7;
-    margin: 0 0 0.6rem;
+  .wrap{
+    max-width:40rem;
+    margin:0 auto;
+    padding:2rem 1.15rem 4rem;
   }
-  h1 {
-    font-family: 'Libre Baskerville', Georgia, serif;
-    color: #082310;
-    font-size: 1.75rem;
-    line-height: 1.3;
-    margin: 0 0 0.5rem;
+  .kicker{
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:.75rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin:0 0 .6rem;
   }
-  .standfirst {
-    font-family: 'Libre Baskerville', Georgia, serif;
-    color: #082310;
-    font-size: 1.02rem;
-    line-height: 1.6;
-    margin: 0 0 1rem;
+  h1{
+    font-family:'Libre Baskerville', Georgia, serif;
+    color:var(--head);
+    font-size:1.65rem;
+    line-height:1.3;
+    margin:0 0 .5rem;
   }
-  .meta {
-    font-family: 'IBM Plex Mono', ui-monospace, monospace;
-    font-size: 0.8rem;
-    color: #304635;
-    border-top: 1px solid #e2e8e3;
-    border-bottom: 1px solid #e2e8e3;
-    padding: 0.5rem 0;
-    margin: 0 0 1.6rem;
+  .standfirst{
+    font-family:'Libre Baskerville', Georgia, serif;
+    color:var(--head);
+    font-size:1rem;
+    line-height:1.6;
+    margin:0 0 1rem;
   }
-  article p { margin: 0 0 1.05rem; }
-  article p:first-of-type::first-letter {
-    font-family: 'Libre Baskerville', Georgia, serif;
-    color: #082310;
-    font-size: 2.9rem;
-    line-height: 1;
-    float: left;
-    padding: 0.1rem 0.5rem 0 0;
+  .meta{
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:.78rem;
+    color:#5c7063;
+    margin:0 0 1.6rem;
+    padding-bottom:1.1rem;
+    border-bottom:1px solid #e2e8e3;
   }
-  strong { font-weight: 600; color: #082310; }
-  h2 {
-    font-family: 'Libre Baskerville', Georgia, serif;
-    color: #082310;
-    font-size: 1.2rem;
-    margin: 2.4rem 0 0.9rem;
-    padding-top: 1.3rem;
-    border-top: 2px solid #082310;
+  article p{margin:0 0 1.15rem;}
+  article p:first-of-type::first-letter{
+    font-family:'Libre Baskerville', Georgia, serif;
+    color:var(--head);
+    font-size:3rem;
+    line-height:.9;
+    float:left;
+    padding:.18rem .5rem .1rem 0;
   }
-  dl { margin: 0; }
-  dt {
-    font-weight: 600;
-    color: #082310;
-    margin-top: 0.85rem;
+  strong{font-weight:600;color:var(--head);}
+  h2{
+    font-family:'Libre Baskerville', Georgia, serif;
+    color:var(--head);
+    font-size:1.15rem;
+    margin:2.6rem 0 1rem;
+    padding-top:1.6rem;
+    border-top:1px solid #e2e8e3;
   }
-  dd {
-    margin: 0.1rem 0 0;
-    padding-left: 0.9rem;
-    border-left: 2px solid #e2e8e3;
-    font-size: 0.98rem;
+  dl{margin:0;}
+  dt{
+    font-weight:600;
+    color:var(--head);
+    margin-top:.9rem;
   }
-  a { color: #0077c7; text-decoration: none; }
-  a:hover { color: #0061b0; }
-  @media (max-width: 420px) {
-    h1 { font-size: 1.45rem; }
-    body { font-size: 1rem; }
+  dd{
+    margin:.15rem 0 0;
+    padding-left:0;
+    color:var(--ink);
+  }
+  dd::before{content:"→ ";color:var(--accent);}
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{color:#0061b0;text-decoration:underline;}
+  footer{
+    margin-top:2.6rem;
+    padding-top:1.1rem;
+    border-top:1px solid #e2e8e3;
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:.72rem;
+    color:#5c7063;
   }
 </style>
 
@@ -252,88 +261,87 @@ html body p.site-page-title {
   <!-- site-header -->
 <p class="site-page-title">Lesetext</p>
 <!-- /site-header -->
-<p class="kicker">Feuilleton &middot; Gesellschaft</p>
-  <h1>Die Schule des Streits</h1>
-  <p class="standfirst">In einem Vereinshaus im Ruhrgebiet üben Nachbarn, miteinander zu reden, statt übereinander zu urteilen. Ein Besuch bei einem Projekt, das mehr verlangt, als es verspricht.</p>
-  <p class="meta">Lesetext &middot; Niveau C1 &middot; 330 Wörter<span class="site-date"> · 15.11.2026</span></p>
+<p class="kicker">Feuilleton · Bildung</p>
+  <h1>Zwölf Erwachsene, ein Übungsbogen</h1>
+  <p class="standfirst">Vom langen, stillen Weg zur zweiten Sprache — ein Donnerstagabend an einer Münchner Volkshochschule.</p>
+  <p class="meta">Lesetext C1 · 344 Wörter<span class="site-date"> · 16.11.2026</span></p>
 
   <article>
-    <p>Dienstagabend, kurz nach sieben: Im Vereinshaus an der Hafenstraße <strong>trifft sich</strong> Nhan Nguyen <strong>mit</strong> einem Dutzend Nachbarn, die einander vor einem Jahr noch nicht einmal gegrüßt hätten. Die „Streitschule“, wie das Projekt im Stadtteil genannt wird, <strong>basiert auf</strong> einer unbequemen Annahme: dass die Fähigkeit zum Widerspruch erlernbar ist wie eine Fremdsprache.</p>
+    <p>Es ist Donnerstagabend, kurz nach halb acht, und in einem Kursraum der Volkshochschule im Münchner Westen <strong>schwitzen</strong> zwölf Erwachsene, die <strong>sich</strong> seit September <strong>auf die Sprachprüfung vorbereiten</strong>. An der Tafel steht eine <strong>Schätzfrage</strong>: Wie viele Stunden braucht ein Mensch, um eine fremde Sprache auf hohem Niveau zu beherrschen? Die Schätzungen reichen von zweihundert bis zweitausend. Die Kursleiterin lächelt und <strong>sagt</strong> ihren Teilnehmenden, dass beide Lager ein wenig <strong>Recht hätten</strong>.</p>
 
-    <p>Jeder Abend <strong>beginnt mit</strong> einem Protokoll der vergangenen Woche. Wer wurde im Netz als <strong>Trottel</strong> beschimpft, wer hat selbst zurückgeschlagen, wer war am Ende nur noch <strong>wütend</strong>? Das Wort <strong>Fick</strong> fällt dabei häufiger, als es den Veranstaltern lieb sein kann; es ist, sagt die Leiterin, kein Ausrutscher mehr, sondern Satzzeichen.</p>
+    <p>Dann beginnt die Übung. Ein Mann Mitte vierzig sucht ein Wort, findet es nicht und greift zu jenem Verlegenheitsbegriff, den das Deutsche für solche Augenblicke bereithält: „dieses <strong>Dingsbums</strong> da, mit dem man Kaffee macht“. Gelächter im Raum. Wer regelmäßig den Faden <strong>verliert</strong>, lernt irgendwann, dass auch das zum Handwerk gehört; und wer am Ende das Zertifikat <strong>kriegt</strong>, hat meist genau diese Umwege geübt.</p>
 
-    <p>Moderiert wird der Abend von Fadi Samet, der als Übersetzer <strong>bei</strong> der Polizei <strong>Vertrauen genießt</strong> und deshalb weiß, wie schnell ein Satz kippt. Seine <strong>Überzeugung von</strong> einem gelingenden Gespräch ist schlicht: Wer <strong>sich gegen</strong> eine Beleidigung <strong>wehren</strong> will, muss nicht selbst beleidigen. <strong>Freundlichkeit gegenüber</strong> Fremden, sagt er, sei keine Schwäche, sondern eine Technik – und wie jede Technik muss man sie üben, auch wenn man zu Beginn <strong>unerfahren in</strong> ihr ist.</p>
+    <p>Fachleute <strong>wundern sich</strong> längst nicht mehr <strong>über</strong> das Durchhaltevermögen solcher Gruppen. Die Neurolinguistik hat den Befund oft bestätigt: Erwachsene lernen nicht langsamer, sondern anders — bewusster, zögernder, mit deutlich mehr Angst vor dem Fehler. Was <strong>für kleine Kinder leicht</strong> ist, verlangt ihnen Disziplin ab. Man muss <strong>sich</strong> nur <strong>vorstellen</strong>, nach neun Stunden Schichtarbeit Nebensätze zu sortieren. Und doch sitzen sie da, Woche für Woche, und es wäre <strong>seltsam</strong>, darin bloß Pflichterfüllung zu sehen.</p>
 
-    <p>Das <strong>Erstaunen über</strong> den Zuspruch ist auch bei der Stadtverwaltung groß. Die Zahl der Anmeldungen <strong>sprang</strong> binnen eines Jahres von zwölf auf achtzig; die Räume sind an vier Abenden kostenlos <strong>verfügbar</strong>, <strong>außerdem</strong> zahlt ein Stiftungsfonds die Moderation. <strong>Erstaunlich</strong> ist vor allem, wer kommt: nicht die ohnehin Geübten, sondern Busfahrer, Pflegekräfte, Verkäuferinnen – Menschen, deren Arbeitstag <strong>reich an</strong> Konflikten und arm an Zeit ist.</p>
+    <p>Toma Popescu, 38, hat sich in Rumänien jahrelang vergeblich <strong>um eine Arbeitsstelle bemüht</strong>; heute arbeitet er in einer Werkstatt in Pasing. Der <strong>Traum von</strong> einem eigenen kleinen Betrieb sei nie ganz verschwunden, sagt er; die finanzielle <strong>Unabhängigkeit von</strong> staatlichen Leistungen ist ihm wichtiger als jedes Zeugnis. Die <strong>Gewöhnung an</strong> die neue Umgebung sei schneller gegangen als gedacht, schwieriger bleibe die Sprache. Vor zwei Jahren habe er den <strong>Entschluss gefasst</strong>, keinen Kursabend mehr ausfallen zu lassen.</p>
 
-    <p>Kritiker halten dem Projekt vor, es erziehe zur Harmlosigkeit und <strong>nehme</strong> den Bürgern <strong>weg</strong>, was ihnen zusteht: den scharfen, den zornigen Ton. Doch dieser Einwand verwechselt Lautstärke mit Haltung. Wer brüllt, verliert das Gegenüber – und damit jede Aussicht, etwas zu verändern.</p>
-
-    <p>Am Ende des Abends <strong>überreicht</strong> die Bezirksbürgermeisterin den Teilnehmern eine schlichte Urkunde; ein kleines Ritual, über das in anderen Städten gelächelt würde. Hier klatschen sie. Im Herbst soll die Streitschule an drei Schulen gehen. Man darf <strong>gespannt auf</strong> den Versuch sein – und auf die Frage, ob sich das Zuhören tatsächlich so unterrichten lässt wie das Rechnen.</p>
+    <p>Dass solche Biografien im Land inzwischen eher Regel als Ausnahme sind, macht sie nicht weniger <strong>außergewöhnlich</strong>. Wer <strong>an</strong> den Wert dieser Mühe <strong>glaubt</strong>, sollte sich diese Donnerstagabende ansehen: Drei Stunden Grammatik haben den zwölf Erwachsenen sichtlich <strong>ein Gutes getan</strong> — und der Volkshochschule ohnehin. Die Prüfung findet im Juni statt; schwitzen wird dort niemand allein.</p>
   </article>
 
   <h2>English gloss</h2>
   <dl>
-    <dt>sich treffen mit (+Dat)</dt>
-    <dd>to meet with</dd>
+    <dt>schwitzen</dt>
+    <dd>to sweat</dd>
 
-    <dt>basieren auf (+Dat)</dt>
-    <dd>to be based on</dd>
+    <dt>sich vorbereiten auf (+Akk)</dt>
+    <dd>to prepare for</dd>
 
-    <dt>beginnen mit (+Dat)</dt>
-    <dd>to begin with / to start with</dd>
+    <dt>die Schätzfrage(n)</dt>
+    <dd>the estimation question(s)</dd>
 
-    <dt>der Trottel</dt>
-    <dd>the idiot</dd>
+    <dt>sagen (+Dat/+Akk)</dt>
+    <dd>to say / to tell</dd>
 
-    <dt>wütend</dt>
-    <dd>angry</dd>
+    <dt>Recht haben</dt>
+    <dd>to be correct / to be right</dd>
 
-    <dt>der/das Fick</dt>
-    <dd>the fuck (crude)</dd>
+    <dt>das Dingsbums</dt>
+    <dd>the thingamajig</dd>
 
-    <dt>Vertrauen genießen bei (+Dat)</dt>
-    <dd>to enjoy the trust of / to be trusted by</dd>
+    <dt>verlieren</dt>
+    <dd>to lose</dd>
 
-    <dt>die Überzeugung von (+Dat)</dt>
-    <dd>the conviction / belief in</dd>
+    <dt>kriegen</dt>
+    <dd>to get / to receive (informal)</dd>
 
-    <dt>sich wehren gegen (+Akk)</dt>
-    <dd>to defend oneself against</dd>
+    <dt>sich wundern über (+Akk)</dt>
+    <dd>to be surprised at / to marvel at</dd>
 
-    <dt>die Freundlichkeit zu/gegenüber (+Dat)</dt>
-    <dd>friendliness to / towards</dd>
+    <dt>leicht für (+Akk)</dt>
+    <dd>easy for</dd>
 
-    <dt>unerfahren in (+Dat)</dt>
-    <dd>inexperienced in</dd>
+    <dt>sich vorstellen</dt>
+    <dd>to imagine</dd>
 
-    <dt>das Erstaunen über (+Akk)</dt>
-    <dd>the astonishment / amazement at</dd>
+    <dt>seltsam</dt>
+    <dd>unusual / strange</dd>
 
-    <dt>springen</dt>
-    <dd>to jump</dd>
+    <dt>sich bemühen um (+Akk)</dt>
+    <dd>to strive for / to make an effort for</dd>
 
-    <dt>verfügbar</dt>
-    <dd>available</dd>
+    <dt>der Traum von</dt>
+    <dd>dream of</dd>
 
-    <dt>außerdem</dt>
-    <dd>besides / moreover</dd>
+    <dt>die Unabhängigkeit von (+Dat)</dt>
+    <dd>independence from</dd>
 
-    <dt>erstaunlich</dt>
-    <dd>astounding</dd>
+    <dt>die Gewöhnung an (+Akk)</dt>
+    <dd>the habituation / getting used to</dd>
 
-    <dt>reich an (+Dat)</dt>
-    <dd>rich in / abundant in</dd>
+    <dt>einen Entschluss fassen</dt>
+    <dd>to make a decision / to resolve</dd>
 
-    <dt>wegnehmen (+Dat/+Akk)</dt>
-    <dd>to take away</dd>
+    <dt>außergewöhnlich</dt>
+    <dd>extraordinary</dd>
 
-    <dt>überreichen (+Dat/+Akk)</dt>
-    <dd>to hand over / to present</dd>
+    <dt>glauben an (+Akk)</dt>
+    <dd>to believe in</dd>
 
-    <dt>gespannt auf (+Akk)</dt>
-    <dd>excited about / curious about / looking forward to</dd>
+    <dt>ein Gutes tun (+Dat)</dt>
+    <dd>to do someone good / to be beneficial to</dd>
   </dl>
 
+  <footer>Sprachgarten · Lesetraining C1 · Zielwortschatz fett markiert bei Erstnennung</footer>
 </div>
 
 <!-- site-header -->

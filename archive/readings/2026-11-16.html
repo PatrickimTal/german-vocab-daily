@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesetext — Zwölf Erwachsene, ein Übungsbogen</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#304635;
+    --head:#082310;
+    --accent:#0077c7;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:#ffffff;
+    color:var(--ink);
+    font-family:'Sora', system-ui, sans-serif;
+    font-size:17px;
+    line-height:1.7;
+    -webkit-text-size-adjust:100%;
+  }
+  .wrap{
+    max-width:40rem;
+    margin:0 auto;
+    padding:2rem 1.15rem 4rem;
+  }
+  .kicker{
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:.75rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin:0 0 .6rem;
+  }
+  h1{
+    font-family:'Libre Baskerville', Georgia, serif;
+    color:var(--head);
+    font-size:1.65rem;
+    line-height:1.3;
+    margin:0 0 .5rem;
+  }
+  .standfirst{
+    font-family:'Libre Baskerville', Georgia, serif;
+    color:var(--head);
+    font-size:1rem;
+    line-height:1.6;
+    margin:0 0 1rem;
+  }
+  .meta{
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:.78rem;
+    color:#5c7063;
+    margin:0 0 1.6rem;
+    padding-bottom:1.1rem;
+    border-bottom:1px solid #e2e8e3;
+  }
+  article p{margin:0 0 1.15rem;}
+  article p:first-of-type::first-letter{
+    font-family:'Libre Baskerville', Georgia, serif;
+    color:var(--head);
+    font-size:3rem;
+    line-height:.9;
+    float:left;
+    padding:.18rem .5rem .1rem 0;
+  }
+  strong{font-weight:600;color:var(--head);}
+  h2{
+    font-family:'Libre Baskerville', Georgia, serif;
+    color:var(--head);
+    font-size:1.15rem;
+    margin:2.6rem 0 1rem;
+    padding-top:1.6rem;
+    border-top:1px solid #e2e8e3;
+  }
+  dl{margin:0;}
+  dt{
+    font-weight:600;
+    color:var(--head);
+    margin-top:.9rem;
+  }
+  dd{
+    margin:.15rem 0 0;
+    padding-left:0;
+    color:var(--ink);
+  }
+  dd::before{content:"→ ";color:var(--accent);}
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{color:#0061b0;text-decoration:underline;}
+  footer{
+    margin-top:2.6rem;
+    padding-top:1.1rem;
+    border-top:1px solid #e2e8e3;
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:.72rem;
+    color:#5c7063;
+  }
+</style>
+
+<!-- site-header -->
+<style>
+.site-bar {
+  --site-green: #e9fae9;
+  --page-bg: #fff;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-bg-hover: rgba(255, 255, 255, 0.97);
+  --panel-bg: rgba(255, 255, 255, 0.62);
+  --panel-bg-hover: rgba(255, 255, 255, 0.82);
+
+  --ink: #082310;
+  --ink-body: #304635;
+  --ink-muted: #4b614f;
+  --ink-faint: #617865;
+
+  --blue: #0077c7;
+  --blue-hover: #0061b0;
+  --blue-text: #006eb8;
+  --article: #c56c00;
+
+  --border: #8ab091;
+  --rule: #dce9de;
+  --underline: #a8c7ad;
+
+  --chip-verb-praep-bg: #cdecff;      --chip-verb-praep-fg: #004e95;
+  --chip-verb-kasus-bg: #c2f2f8;      --chip-verb-kasus-fg: #005565;
+  --chip-redemittel-bg: #f0e4ff;      --chip-redemittel-fg: #603b93;
+  --chip-nomen-praep-bg: #c4f2cc;     --chip-nomen-praep-fg: #005222;
+  --chip-adjektiv-praep-bg: #ffe1ac;  --chip-adjektiv-praep-fg: #7b4300;
+  --chip-redewendung-bg: #ffd9d7;     --chip-redewendung-fg: #9a2733;
+  --chip-wortschatz-bg: #dce9de;      --chip-wortschatz-fg: #384e3c;
+
+  --font-serif: 'Libre Baskerville', Georgia, serif;
+  --font-sans: 'Sora', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --r-sm: 4px;
+  --r-md: 12px;
+  --r-lg: 14px;
+  --r-pill: 999px;
+  --shadow-card: 0 12px 30px rgba(30, 70, 45, 0.1);
+
+  --pad-x: 22px;
+
+  font-family: var(--font-sans); font-size: 16px; line-height: 1.55;
+  -webkit-font-smoothing: antialiased; text-align: left;
+}
+.site-bar *, .site-bar *::before, .site-bar *::after { box-sizing: border-box; }
+.site-bar header, .site-bar nav { margin: 0; border: 0; max-width: none; }
+.site-bar a { text-decoration: none; border-bottom: 0; }
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: 12px; top: 12px; background: #fff; padding: 10px 14px; border-radius: 12px; z-index: 100; }
+
+.site-bar {
+  background: var(--blue-text);
+  border-bottom: 1px solid var(--blue-text);
+  box-shadow: 0 2px 12px rgba(30, 70, 45, 0.06);
+}
+.site-bar { margin-bottom: 26px; }
+.site-bar :focus-visible { outline-color: #fff; }
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px var(--pad-x);
+}
+.brand { display: flex; }
+.brand__logo { display: block; height: 40px; width: auto; max-width: none; }
+.nav { display: none; }
+.nav-toggle {
+  width: 44px; height: 44px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+  background: none; border: 1px solid rgba(255, 255, 255, 0.6); border-radius: var(--r-md); cursor: pointer;
+  transition: border-color 150ms ease;
+}
+.nav-toggle span { width: 18px; height: 1.5px; background: #fff; }
+.nav-toggle:hover, .nav-toggle[aria-expanded="true"] { border-color: #fff; }
+.mobile-nav { display: flex; flex-direction: column; padding: 4px var(--pad-x) 12px; gap: 2px; }
+.mobile-nav a {
+  min-height: 48px; display: flex; align-items: center;
+  padding: 0 12px; margin: 0 -12px;
+  color: #fff; font-size: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  transition: box-shadow 150ms ease;
+}
+.mobile-nav[hidden] { display: none; }
+.mobile-nav a:hover, .mobile-nav a:active { color: #fff; box-shadow: inset 0 0 0 1px #fff; }
+.mobile-nav .nav__current {
+  min-height: 48px; display: flex; align-items: center;
+  padding: 0 12px; margin: 0 -12px; font-size: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+/* current page: inverted white pill with blue text */
+.nav__current { background: #fff; color: var(--blue-text); cursor: default; }
+@media (min-width: 640px) {
+  .nav-toggle, .mobile-nav { display: none !important; }
+  .nav { display: flex; align-items: center; gap: 8px; font-size: 15px; }
+  .nav a {
+    padding: 9px 16px;
+    border: 1px solid transparent;
+    border-radius: var(--r-pill);
+    color: #fff;
+    transition: border-color 150ms ease;
+  }
+  /* hover: text stays white, a white outline appears */
+  .nav a:hover { border-color: #fff; color: #fff; }
+  .nav .nav__current {
+    padding: 9px 16px; border: 1px solid #fff; border-radius: var(--r-pill);
+  }
+  .brand__logo { height: 48px; }
+  .site-header { padding: 18px var(--pad-x); }
+  .site-bar { margin-bottom: 34px; --pad-x: 44px; }
+}
+@media (min-width: 1024px) {
+  .site-header { max-width: 1280px; margin-inline: auto; }
+  .site-bar { margin-bottom: 44px; --pad-x: 52px; }
+}
+
+.site-bar { margin-bottom: 0; }
+html body { background: #fff; }
+html body p.site-page-title {
+  font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400; font-style: normal;
+  font-size: 34px; line-height: 1.1; letter-spacing: normal; text-transform: none;
+  color: #082310; margin: 0 0 18px; padding: 0; border: 0; background: none;
+}
+@media (min-width: 640px) { html body p.site-page-title { font-size: 42px; } }
+@media (min-width: 640px) { .site-bar { --pad-x: 44px; } }
+@media (min-width: 1024px) { .site-bar { --pad-x: 52px; } }
+</style>
+<!-- /site-header --></head>
+<body>
+<!-- site-header -->
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<div class="site-bar">
+<header class="site-header">
+  <a class="brand" href="../../index.html">
+    <img class="brand__logo" src="../../wortschatz_logo_white.png" width="521" height="112" alt="Täglicher Deutscher Wortschatz C1">
+  </a>
+  <nav class="nav" aria-label="Hauptnavigation">
+    <a href="../../reading.html">Lesetext</a>
+    <a href="../../flashcards.html">Karteikarten</a>
+    <a href="../../about.html">Über das Projekt</a>
+    <a href="../../index.html">Home</a>
+  </nav>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menü öffnen">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav" hidden aria-label="Hauptnavigation, mobil">
+  <a href="../../reading.html">Lesetext</a>
+  <a href="../../flashcards.html">Karteikarten</a>
+  <a href="../../about.html">Über das Projekt</a>
+  <a href="../../index.html">Home</a>
+</nav>
+</div>
+<!-- /site-header -->
+<div class="wrap">
+
+  <!-- site-header -->
+<p class="site-page-title">Lesetext</p>
+<!-- /site-header -->
+<p class="kicker">Feuilleton · Bildung</p>
+  <h1>Zwölf Erwachsene, ein Übungsbogen</h1>
+  <p class="standfirst">Vom langen, stillen Weg zur zweiten Sprache — ein Donnerstagabend an einer Münchner Volkshochschule.</p>
+  <p class="meta">Lesetext C1 · 344 Wörter<span class="site-date"> · 16.11.2026</span></p>
+
+  <article>
+    <p>Es ist Donnerstagabend, kurz nach halb acht, und in einem Kursraum der Volkshochschule im Münchner Westen <strong>schwitzen</strong> zwölf Erwachsene, die <strong>sich</strong> seit September <strong>auf die Sprachprüfung vorbereiten</strong>. An der Tafel steht eine <strong>Schätzfrage</strong>: Wie viele Stunden braucht ein Mensch, um eine fremde Sprache auf hohem Niveau zu beherrschen? Die Schätzungen reichen von zweihundert bis zweitausend. Die Kursleiterin lächelt und <strong>sagt</strong> ihren Teilnehmenden, dass beide Lager ein wenig <strong>Recht hätten</strong>.</p>
+
+    <p>Dann beginnt die Übung. Ein Mann Mitte vierzig sucht ein Wort, findet es nicht und greift zu jenem Verlegenheitsbegriff, den das Deutsche für solche Augenblicke bereithält: „dieses <strong>Dingsbums</strong> da, mit dem man Kaffee macht“. Gelächter im Raum. Wer regelmäßig den Faden <strong>verliert</strong>, lernt irgendwann, dass auch das zum Handwerk gehört; und wer am Ende das Zertifikat <strong>kriegt</strong>, hat meist genau diese Umwege geübt.</p>
+
+    <p>Fachleute <strong>wundern sich</strong> längst nicht mehr <strong>über</strong> das Durchhaltevermögen solcher Gruppen. Die Neurolinguistik hat den Befund oft bestätigt: Erwachsene lernen nicht langsamer, sondern anders — bewusster, zögernder, mit deutlich mehr Angst vor dem Fehler. Was <strong>für kleine Kinder leicht</strong> ist, verlangt ihnen Disziplin ab. Man muss <strong>sich</strong> nur <strong>vorstellen</strong>, nach neun Stunden Schichtarbeit Nebensätze zu sortieren. Und doch sitzen sie da, Woche für Woche, und es wäre <strong>seltsam</strong>, darin bloß Pflichterfüllung zu sehen.</p>
+
+    <p>Toma Popescu, 38, hat sich in Rumänien jahrelang vergeblich <strong>um eine Arbeitsstelle bemüht</strong>; heute arbeitet er in einer Werkstatt in Pasing. Der <strong>Traum von</strong> einem eigenen kleinen Betrieb sei nie ganz verschwunden, sagt er; die finanzielle <strong>Unabhängigkeit von</strong> staatlichen Leistungen ist ihm wichtiger als jedes Zeugnis. Die <strong>Gewöhnung an</strong> die neue Umgebung sei schneller gegangen als gedacht, schwieriger bleibe die Sprache. Vor zwei Jahren habe er den <strong>Entschluss gefasst</strong>, keinen Kursabend mehr ausfallen zu lassen.</p>
+
+    <p>Dass solche Biografien im Land inzwischen eher Regel als Ausnahme sind, macht sie nicht weniger <strong>außergewöhnlich</strong>. Wer <strong>an</strong> den Wert dieser Mühe <strong>glaubt</strong>, sollte sich diese Donnerstagabende ansehen: Drei Stunden Grammatik haben den zwölf Erwachsenen sichtlich <strong>ein Gutes getan</strong> — und der Volkshochschule ohnehin. Die Prüfung findet im Juni statt; schwitzen wird dort niemand allein.</p>
+  </article>
+
+  <h2>English gloss</h2>
+  <dl>
+    <dt>schwitzen</dt>
+    <dd>to sweat</dd>
+
+    <dt>sich vorbereiten auf (+Akk)</dt>
+    <dd>to prepare for</dd>
+
+    <dt>die Schätzfrage(n)</dt>
+    <dd>the estimation question(s)</dd>
+
+    <dt>sagen (+Dat/+Akk)</dt>
+    <dd>to say / to tell</dd>
+
+    <dt>Recht haben</dt>
+    <dd>to be correct / to be right</dd>
+
+    <dt>das Dingsbums</dt>
+    <dd>the thingamajig</dd>
+
+    <dt>verlieren</dt>
+    <dd>to lose</dd>
+
+    <dt>kriegen</dt>
+    <dd>to get / to receive (informal)</dd>
+
+    <dt>sich wundern über (+Akk)</dt>
+    <dd>to be surprised at / to marvel at</dd>
+
+    <dt>leicht für (+Akk)</dt>
+    <dd>easy for</dd>
+
+    <dt>sich vorstellen</dt>
+    <dd>to imagine</dd>
+
+    <dt>seltsam</dt>
+    <dd>unusual / strange</dd>
+
+    <dt>sich bemühen um (+Akk)</dt>
+    <dd>to strive for / to make an effort for</dd>
+
+    <dt>der Traum von</dt>
+    <dd>dream of</dd>
+
+    <dt>die Unabhängigkeit von (+Dat)</dt>
+    <dd>independence from</dd>
+
+    <dt>die Gewöhnung an (+Akk)</dt>
+    <dd>the habituation / getting used to</dd>
+
+    <dt>einen Entschluss fassen</dt>
+    <dd>to make a decision / to resolve</dd>
+
+    <dt>außergewöhnlich</dt>
+    <dd>extraordinary</dd>
+
+    <dt>glauben an (+Akk)</dt>
+    <dd>to believe in</dd>
+
+    <dt>ein Gutes tun (+Dat)</dt>
+    <dd>to do someone good / to be beneficial to</dd>
+  </dl>
+
+  <footer>Sprachgarten · Lesetraining C1 · Zielwortschatz fett markiert bei Erstnennung</footer>
+</div>
+
+<!-- site-header -->
+<script>
+document.querySelectorAll('.nav-toggle').forEach(function (toggle) {
+  var panel = document.getElementById(toggle.getAttribute('aria-controls'));
+  toggle.addEventListener('click', function () {
+    var open = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!open));
+    toggle.setAttribute('aria-label', open ? 'Menü öffnen' : 'Menü schließen');
+    if (panel) panel.hidden = open;
+  });
+});
+
+(function () {
+  var bar = document.querySelector('.site-bar');
+  if (!bar) return;
+  function firstTextTop() {
+    var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (n) {
+        if (bar.contains(n) || !n.nodeValue.trim()) return NodeFilter.FILTER_SKIP;
+        var p = n.parentElement;
+        if (!p || p.closest('script,style,.skip') || !p.offsetParent) return NodeFilter.FILTER_SKIP;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var n = w.nextNode();
+    if (!n) return null;
+    var r = document.createRange(); r.selectNodeContents(n);
+    return r.getBoundingClientRect().top;
+  }
+  function fit() {
+    var cs = getComputedStyle(document.body);
+    bar.style.marginTop = '-' + cs.paddingTop;
+    bar.style.marginLeft = '-' + cs.paddingLeft;
+    bar.style.marginRight = '-' + cs.paddingRight;
+    bar.style.marginBottom = '0px';
+    var w = window.innerWidth, target = w >= 1024 ? 44 : (w >= 640 ? 34 : 26);
+    var top = firstTextTop();
+    if (top === null) return;
+    var gap = top - bar.getBoundingClientRect().bottom;
+    bar.style.marginBottom = (target - gap) + 'px';
+  }
+  fit();
+  window.addEventListener('load', fit);
+  window.addEventListener('resize', fit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+})();
+</script>
+<!-- /site-header --></body>
+</html>
