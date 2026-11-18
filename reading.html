@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lesetext — Nach dem Brand auf dem Festivalgelände</title>
+<title>Lesetext C1 — Vierzig Minuten Panflöte</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -11,75 +11,89 @@
     --ink:#304635;
     --head:#082310;
     --accent:#0077c7;
-    --accent-hover:#0061b0;
   }
   *{box-sizing:border-box;}
   body{
     margin:0;
     background:#ffffff;
     color:var(--ink);
-    font-family:'Sora',system-ui,sans-serif;
-    font-size:1.05rem;
-    line-height:1.72;
-    padding:1.6rem 1.1rem 3.5rem;
+    font-family:'Sora', system-ui, sans-serif;
+    font-size:17px;
+    line-height:1.7;
+    -webkit-text-size-adjust:100%;
   }
-  .wrap{max-width:40rem;margin:0 auto;}
+  .wrap{
+    max-width:40rem;
+    margin:0 auto;
+    padding:1.75rem 1.1rem 4rem;
+  }
   .kicker{
-    font-family:'IBM Plex Mono',ui-monospace,monospace;
-    font-size:.75rem;
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:.72rem;
     letter-spacing:.11em;
     text-transform:uppercase;
     color:var(--accent);
     margin:0 0 .6rem;
   }
   h1{
-    font-family:'Libre Baskerville',Georgia,serif;
+    font-family:'Libre Baskerville', Georgia, serif;
     color:var(--head);
     font-size:1.72rem;
-    line-height:1.3;
+    line-height:1.28;
+    font-weight:700;
     margin:0 0 .5rem;
   }
-  h2{
-    font-family:'Libre Baskerville',Georgia,serif;
+  .standfirst{
+    font-family:'Libre Baskerville', Georgia, serif;
     color:var(--head);
-    font-size:1.2rem;
-    margin:2.6rem 0 .9rem;
+    font-size:1.02rem;
+    line-height:1.55;
+    margin:0 0 1rem;
   }
   .meta{
-    font-family:'IBM Plex Mono',ui-monospace,monospace;
-    font-size:.78rem;
-    color:#5c7263;
-    margin:0 0 1.8rem;
-    padding-bottom:1.2rem;
-    border-bottom:1px solid #e2eae3;
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:.74rem;
+    color:#5c6e60;
+    border-top:1px solid #e1e8e2;
+    border-bottom:1px solid #e1e8e2;
+    padding:.5rem 0;
+    margin:0 0 1.6rem;
   }
-  .lead{font-size:1.1rem;}
   article p{margin:0 0 1.15rem;}
+  article p:first-of-type::first-letter{
+    font-family:'Libre Baskerville', Georgia, serif;
+    font-size:3rem;
+    float:left;
+    line-height:.9;
+    padding:.15rem .5rem .1rem 0;
+    color:var(--head);
+  }
   strong{font-weight:600;color:var(--head);}
-  .gloss{
-    border-top:1px solid #e2eae3;
-    padding-top:.4rem;
+  h2{
+    font-family:'Libre Baskerville', Georgia, serif;
+    color:var(--head);
+    font-size:1.2rem;
+    margin:2.6rem 0 1rem;
+    padding-top:1.2rem;
+    border-top:2px solid var(--head);
   }
   dl{margin:0;}
   dt{
     font-weight:600;
     color:var(--head);
-    margin-top:1.05rem;
+    margin-top:.9rem;
   }
   dd{
-    margin:.15rem 0 0;
-    padding-left:0;
-    font-size:.96rem;
+    margin:.12rem 0 0;
+    padding-left:.9rem;
+    border-left:2px solid #e1e8e2;
     color:var(--ink);
   }
-  dd::before{content:"→ ";color:var(--accent);}
   a{color:var(--accent);text-decoration:none;}
-  a:hover{color:var(--accent-hover);text-decoration:underline;}
-  footer{
-    margin-top:3rem;
-    font-family:'IBM Plex Mono',ui-monospace,monospace;
-    font-size:.74rem;
-    color:#5c7263;
+  a:hover{color:#0061b0;text-decoration:underline;}
+  @media (max-width:420px){
+    h1{font-size:1.45rem;}
+    body{font-size:16px;}
   }
 </style>
 
@@ -245,86 +259,88 @@ html body p.site-page-title {
   <!-- site-header -->
 <p class="site-page-title">Lesetext</p>
 <!-- /site-header -->
-<p class="kicker">Feuilleton · Kommentar</p>
-  <h1>Jetzt reicht’s! Ein Festivalbrand und die Frage, wer am Ende haftet</h1>
-  <p class="meta">341 Wörter<span class="site-date"> · 17.11.2026</span> · Niveau C1 · Lesezeit ca. 3 Minuten</p>
+<p class="kicker">Feuilleton · Dienstleistung</p>
+  <h1>Vierzig Minuten Panflöte: Die Warteschleife als Spiegel einer Dienstleistungsgesellschaft</h1>
+  <p class="standfirst">Hotlines versprechen Nähe und liefern Musik. Was das Warten über den Zustand unserer Wirtschaft verrät.</p>
+  <p class="meta">Wortzahl: 331<span class="site-date"> · 18.11.2026</span> · Niveau C1 · Lesezeit ca. 3 Minuten</p>
 
   <article>
-    <p class="lead">Es war kurz nach 22 Uhr, als ein Funkenregen die Plane des Hauptzeltes <strong>entzündete</strong>. Der Wind blies in jener Nacht ungewöhnlich <strong>heftig</strong>; binnen weniger Minuten stand die halbe Konstruktion in Flammen. Dass niemand ernsthaft verletzt wurde, verdanken die achttausend Besucher einem Ordnerteam, das die Menge mit bemerkenswerter Ruhe <strong>in Sicherheit brachte</strong>. Der Brand hatte den sofortigen Abbruch der Veranstaltung <strong>zur Folge</strong>; der Landrat hat die Einsatzkräfte inzwischen öffentlich <strong>zu ihrem besonnenen Vorgehen beglückwünscht</strong> und <strong>sich bei den freiwilligen Helfern für die lange Nacht bedankt</strong>.</p>
+    <p>Es beginnt harmlos. Der Kunde, der <strong>Bezug auf seine Jahresabrechnung nehmen</strong> möchte, wählt die kostenfreie Nummer und wird von einer makellos freundlichen Stimme gebeten, <strong>Ruhe zu bewahren</strong>. Dann setzt die Musik ein, und die <strong>Schleife</strong> schließt sich.</p>
 
-    <p>Damit jedoch <strong>hört das Lob auf</strong>. Die Veranstalter beteuern ihre <strong>Unschuld an</strong> dem Unglück: ein technischer Defekt, heißt es, niemand habe etwas ahnen können. Die Aktenlage <strong>spricht gegen</strong> diese Darstellung. Schon im Frühjahr hatten Prüfer bemängelt, dass die <strong>Verantwortlichkeiten für</strong> den Brandschutz zwischen Agentur, Subunternehmer und Kommune nirgends verbindlich geregelt seien. Ein Sicherheitskonzept ist keine Formsache, die man im Zweifel nachreicht. Wer unter solchen Bedingungen ein Großereignis durchführt, <strong>setzt</strong> Menschenleben <strong>aufs Spiel</strong> — und zwar sehenden Auges.</p>
+    <p>Man hielte es für <strong>unwahrscheinlich</strong>, dass ausgerechnet ein Konzern, der seine <strong>Berühmtheit für</strong> vorbildlichen Service in jeder Anzeige beschwört, seine Anrufer vierzig Minuten lang mit Panflötenklängen abspeist. Die Erfahrung lehrt anderes. »<strong>Das ist doch nicht zu fassen!</strong>« ruft irgendwann jemand in den Hörer — ein Ausbruch, den die Spracherkennung so wenig versteht wie ein <strong>Niesen</strong>, das sie umgehend als Wunsch nach Vertragsverlängerung verbucht.</p>
 
-    <p>Die <strong>Enttäuschung über</strong> die Kommunikation der Geschäftsführung ist entsprechend groß. Statt Aufklärung gab es Gutscheine; wer sein Geld zurückverlangte, wurde auf ein Formular verwiesen, das auf der Internetseite tagelang nicht auffindbar war. „Wir fühlen uns <strong>verarscht</strong>“, sagt eine Besucherin, die zweihundertvierzig Euro für zwei Tickets bezahlt hatte. In den sozialen Netzwerken ist längst von <strong>Abzocke</strong> die Rede, und die Empörung <strong>wirkt</strong> keineswegs inszeniert. Wer sich betrogen fühlt, verlangt nicht nur Geld zurück, sondern Respekt. „<strong>Jetzt reicht’s!</strong>“ — so heißt eine Petition, die binnen einer Woche dreißigtausend Unterschriften gesammelt hat. Ob ihre Initiatoren ihr <strong>Ziel erreichen</strong>, eine unabhängige Untersuchungskommission nämlich, ist offen.</p>
+    <p>Der <strong>Ärger auf</strong> die Anbieter und <strong>über</strong> die eigene Ohnmacht ist mittlerweile ein kollektives Gefühl. Die Zahl der Beschwerden bei der Bundesnetzagentur ist im vergangenen Jahr deutlich gestiegen, die Zahl der Servicekräfte nicht. Wer <strong>Rat bei den Verbraucherzentralen sucht</strong>, hört, er möge alles dokumentieren: Datum, Uhrzeit, Name. Juristen <strong>arbeiten an</strong> Musterschreiben, Politiker an Gesetzentwürfen. Doch wer <strong>sich über die Wartezeit beklagt</strong>, erhält meist jenen Textbaustein, der Verständnis signalisiert und nichts verspricht.</p>
 
-    <p>Die Folgen reichen weiter, als es der Geschäftsführung lieb sein kann. Mehrere Studierende, die <strong>sich</strong> im Frühjahr <strong>bei</strong> der Agentur <strong>beworben</strong> hatten, haben ihre Unterlagen zurückgezogen; zwei Sponsoren prüfen den Ausstieg. <strong>Erfreut über</strong> die Schlagzeilen dürfte allein die Konkurrenz sein. Was den Besuchern als unvergessliches <strong>Erlebnis</strong> verkauft worden war, ist für viele zu einer teuren <strong>Erfahrung</strong> geworden — und für die gesamte Branche zu einer Lektion darüber, dass Sicherheit keine Position ist, an der sich sparen lässt.</p>
+    <p>Bemerkenswert ist die Diskrepanz zwischen Bühne und Alltag. Dieselben Vorstände, die auf Kongressen <strong>von ihren digitalen Assistenten schwärmen</strong>, haben ihre Servicezentren jahrelang ausgedünnt. <strong>Schuld an</strong> dem Debakel sind selten die Beschäftigten; viele räumen offen ein, anfangs <strong>einen Fehler gemacht</strong> zu haben, weil ihre <strong>Unerfahrenheit im</strong> Umgang mit der neuen Software größer war als die zweitägige Schulung.</p>
+
+    <p>Dass es anders geht, zeigt ein Dortmunder Dienstleister, der seine Umstellung <strong>behutsam</strong> gestaltet hat: Kein Anrufer wartet länger als fünf Minuten, jeder Mitarbeiter darf Kulanz gewähren, ohne zu fragen. Die Belegschaft ist <strong>glücklich über</strong> die Regelung, die Kündigungsquote sank um ein Drittel. Wer lieber <strong>dem Unternehmen eine E-Mail schreibt</strong>, bekommt binnen 24 Stunden Antwort — anderswo kann das <strong>schon mal</strong> drei Wochen dauern.</p>
+
+    <p>Vielleicht ist die Warteschleife deshalb mehr als eine Lästigkeit. Sie macht sichtbar, wie viel Lebenszeit eine Gesellschaft bereit ist, dem Sparzwang zu opfern. Erst wenn das Telefon endlich schweigt, <strong>kommt</strong> der Kunde <strong>zur Ruhe</strong> — und weiß doch, dass er morgen erneut wählen wird.</p>
   </article>
 
   <h2>English gloss</h2>
-  <section class="gloss">
-    <dl>
-      <dt>entzünden</dt>
-      <dd>to ignite, to kindle (also, medically: to become inflamed)</dd>
+  <dl>
+    <dt>Bezug nehmen auf (+Akk)</dt>
+    <dd>to refer to / to make reference to</dd>
 
-      <dt>heftig</dt>
-      <dd>violently, fiercely, intensely</dd>
+    <dt>Ruhe bewahren</dt>
+    <dd>to keep calm / to maintain composure</dd>
 
-      <dt>in Sicherheit bringen (+Akk)</dt>
-      <dd>to bring someone/something to safety</dd>
+    <dt>die Schleife</dt>
+    <dd>the loop / bow</dd>
 
-      <dt>zur Folge haben</dt>
-      <dd>to result in, to have as a consequence</dd>
+    <dt>unwahrscheinlich</dt>
+    <dd>unlikely</dd>
 
-      <dt>beglückwünschen (zu) (+Akk)</dt>
-      <dd>to congratulate (on)</dd>
+    <dt>die Berühmtheit für (+Akk)</dt>
+    <dd>the fame / renown for</dd>
 
-      <dt>sich bedanken für (+Akk)</dt>
-      <dd>to say thank you for, to express gratitude for</dd>
+    <dt>Das ist doch nicht zu fassen!</dt>
+    <dd>That's unbelievable!</dd>
 
-      <dt>aufhören</dt>
-      <dd>to stop, to end</dd>
+    <dt>das Niesen</dt>
+    <dd>the sneeze (noun)</dd>
 
-      <dt>die Unschuld an (+Dat)</dt>
-      <dd>the innocence of (i.e. not being to blame for something)</dd>
+    <dt>der Ärger auf (+Akk) / über (+Akk)</dt>
+    <dd>anger at / about</dd>
 
-      <dt>sprechen gegen (+Akk)</dt>
-      <dd>to speak against, to argue against</dd>
+    <dt>Rat suchen bei (+Dat)</dt>
+    <dd>to seek advice from</dd>
 
-      <dt>die Verantwortlichkeit für (+Akk)</dt>
-      <dd>the accountability / responsibility for</dd>
+    <dt>arbeiten an (+Dat)</dt>
+    <dd>to work on</dd>
 
-      <dt>aufs Spiel setzen (+Akk)</dt>
-      <dd>to put at risk, to stake, to gamble with</dd>
+    <dt>sich beklagen über (+Akk)</dt>
+    <dd>to complain about</dd>
 
-      <dt>die Enttäuschung über (+Akk)</dt>
-      <dd>the disappointment about</dd>
+    <dt>schwärmen von (+Dat)</dt>
+    <dd>to rave about / to be enthusiastic about</dd>
 
-      <dt>verarscht</dt>
-      <dd>screwed over, fooled, taken for a ride (colloquial)</dd>
+    <dt>schuld an (+Dat)</dt>
+    <dd>guilty of / to blame for</dd>
 
-      <dt>die Abzocke</dt>
-      <dd>the rip-off</dd>
+    <dt>einen Fehler machen</dt>
+    <dd>to make a mistake</dd>
 
-      <dt>wirken</dt>
-      <dd>to seem, to come across (as)</dd>
+    <dt>die Unerfahrenheit in (+Dat)</dt>
+    <dd>the inexperience in</dd>
 
-      <dt>Jetzt reicht’s!</dt>
-      <dd>Now that’s enough!</dd>
+    <dt>behutsam</dt>
+    <dd>careful, gentle, cautious</dd>
 
-      <dt>ein Ziel erreichen</dt>
-      <dd>to achieve a goal</dd>
+    <dt>glücklich über (+Akk)</dt>
+    <dd>happy about / delighted about</dd>
 
-      <dt>sich bewerben bei (+Dat)</dt>
-      <dd>to apply to (a company or institution)</dd>
+    <dt>schreiben (+Dat/+Akk)</dt>
+    <dd>to write (something to someone)</dd>
 
-      <dt>erfreut über (+Akk)</dt>
-      <dd>pleased about, delighted by</dd>
+    <dt>schon mal</dt>
+    <dd>already / beforehand; (here) easily, on occasion</dd>
 
-      <dt>das Erlebnis / die Erfahrung</dt>
-      <dd>the experience (a single event one lives through / knowledge gained over time)</dd>
-    </dl>
-  </section>
+    <dt>zur Ruhe kommen</dt>
+    <dd>to find peace / to settle down / to get some rest</dd>
+  </dl>
 
-  <footer>Sprachgarten · Lesetraining C1 · Lektion: Präpositionale Fügungen</footer>
 </div>
 
 <!-- site-header -->

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesetext C1 — Vierzig Minuten Panflöte</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#304635;
+    --head:#082310;
+    --accent:#0077c7;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:#ffffff;
+    color:var(--ink);
+    font-family:'Sora', system-ui, sans-serif;
+    font-size:17px;
+    line-height:1.7;
+    -webkit-text-size-adjust:100%;
+  }
+  .wrap{
+    max-width:40rem;
+    margin:0 auto;
+    padding:1.75rem 1.1rem 4rem;
+  }
+  .kicker{
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:.72rem;
+    letter-spacing:.11em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin:0 0 .6rem;
+  }
+  h1{
+    font-family:'Libre Baskerville', Georgia, serif;
+    color:var(--head);
+    font-size:1.72rem;
+    line-height:1.28;
+    font-weight:700;
+    margin:0 0 .5rem;
+  }
+  .standfirst{
+    font-family:'Libre Baskerville', Georgia, serif;
+    color:var(--head);
+    font-size:1.02rem;
+    line-height:1.55;
+    margin:0 0 1rem;
+  }
+  .meta{
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:.74rem;
+    color:#5c6e60;
+    border-top:1px solid #e1e8e2;
+    border-bottom:1px solid #e1e8e2;
+    padding:.5rem 0;
+    margin:0 0 1.6rem;
+  }
+  article p{margin:0 0 1.15rem;}
+  article p:first-of-type::first-letter{
+    font-family:'Libre Baskerville', Georgia, serif;
+    font-size:3rem;
+    float:left;
+    line-height:.9;
+    padding:.15rem .5rem .1rem 0;
+    color:var(--head);
+  }
+  strong{font-weight:600;color:var(--head);}
+  h2{
+    font-family:'Libre Baskerville', Georgia, serif;
+    color:var(--head);
+    font-size:1.2rem;
+    margin:2.6rem 0 1rem;
+    padding-top:1.2rem;
+    border-top:2px solid var(--head);
+  }
+  dl{margin:0;}
+  dt{
+    font-weight:600;
+    color:var(--head);
+    margin-top:.9rem;
+  }
+  dd{
+    margin:.12rem 0 0;
+    padding-left:.9rem;
+    border-left:2px solid #e1e8e2;
+    color:var(--ink);
+  }
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{color:#0061b0;text-decoration:underline;}
+  @media (max-width:420px){
+    h1{font-size:1.45rem;}
+    body{font-size:16px;}
+  }
+</style>
+
+<!-- site-header -->
+<style>
+.site-bar {
+  --site-green: #e9fae9;
+  --page-bg: #fff;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-bg-hover: rgba(255, 255, 255, 0.97);
+  --panel-bg: rgba(255, 255, 255, 0.62);
+  --panel-bg-hover: rgba(255, 255, 255, 0.82);
+
+  --ink: #082310;
+  --ink-body: #304635;
+  --ink-muted: #4b614f;
+  --ink-faint: #617865;
+
+  --blue: #0077c7;
+  --blue-hover: #0061b0;
+  --blue-text: #006eb8;
+  --article: #c56c00;
+
+  --border: #8ab091;
+  --rule: #dce9de;
+  --underline: #a8c7ad;
+
+  --chip-verb-praep-bg: #cdecff;      --chip-verb-praep-fg: #004e95;
+  --chip-verb-kasus-bg: #c2f2f8;      --chip-verb-kasus-fg: #005565;
+  --chip-redemittel-bg: #f0e4ff;      --chip-redemittel-fg: #603b93;
+  --chip-nomen-praep-bg: #c4f2cc;     --chip-nomen-praep-fg: #005222;
+  --chip-adjektiv-praep-bg: #ffe1ac;  --chip-adjektiv-praep-fg: #7b4300;
+  --chip-redewendung-bg: #ffd9d7;     --chip-redewendung-fg: #9a2733;
+  --chip-wortschatz-bg: #dce9de;      --chip-wortschatz-fg: #384e3c;
+
+  --font-serif: 'Libre Baskerville', Georgia, serif;
+  --font-sans: 'Sora', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --r-sm: 4px;
+  --r-md: 12px;
+  --r-lg: 14px;
+  --r-pill: 999px;
+  --shadow-card: 0 12px 30px rgba(30, 70, 45, 0.1);
+
+  --pad-x: 22px;
+
+  font-family: var(--font-sans); font-size: 16px; line-height: 1.55;
+  -webkit-font-smoothing: antialiased; text-align: left;
+}
+.site-bar *, .site-bar *::before, .site-bar *::after { box-sizing: border-box; }
+.site-bar header, .site-bar nav { margin: 0; border: 0; max-width: none; }
+.site-bar a { text-decoration: none; border-bottom: 0; }
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: 12px; top: 12px; background: #fff; padding: 10px 14px; border-radius: 12px; z-index: 100; }
+
+.site-bar {
+  background: var(--blue-text);
+  border-bottom: 1px solid var(--blue-text);
+  box-shadow: 0 2px 12px rgba(30, 70, 45, 0.06);
+}
+.site-bar { margin-bottom: 26px; }
+.site-bar :focus-visible { outline-color: #fff; }
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px var(--pad-x);
+}
+.brand { display: flex; }
+.brand__logo { display: block; height: 40px; width: auto; max-width: none; }
+.nav { display: none; }
+.nav-toggle {
+  width: 44px; height: 44px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+  background: none; border: 1px solid rgba(255, 255, 255, 0.6); border-radius: var(--r-md); cursor: pointer;
+  transition: border-color 150ms ease;
+}
+.nav-toggle span { width: 18px; height: 1.5px; background: #fff; }
+.nav-toggle:hover, .nav-toggle[aria-expanded="true"] { border-color: #fff; }
+.mobile-nav { display: flex; flex-direction: column; padding: 4px var(--pad-x) 12px; gap: 2px; }
+.mobile-nav a {
+  min-height: 48px; display: flex; align-items: center;
+  padding: 0 12px; margin: 0 -12px;
+  color: #fff; font-size: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  transition: box-shadow 150ms ease;
+}
+.mobile-nav[hidden] { display: none; }
+.mobile-nav a:hover, .mobile-nav a:active { color: #fff; box-shadow: inset 0 0 0 1px #fff; }
+.mobile-nav .nav__current {
+  min-height: 48px; display: flex; align-items: center;
+  padding: 0 12px; margin: 0 -12px; font-size: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+/* current page: inverted white pill with blue text */
+.nav__current { background: #fff; color: var(--blue-text); cursor: default; }
+@media (min-width: 640px) {
+  .nav-toggle, .mobile-nav { display: none !important; }
+  .nav { display: flex; align-items: center; gap: 8px; font-size: 15px; }
+  .nav a {
+    padding: 9px 16px;
+    border: 1px solid transparent;
+    border-radius: var(--r-pill);
+    color: #fff;
+    transition: border-color 150ms ease;
+  }
+  /* hover: text stays white, a white outline appears */
+  .nav a:hover { border-color: #fff; color: #fff; }
+  .nav .nav__current {
+    padding: 9px 16px; border: 1px solid #fff; border-radius: var(--r-pill);
+  }
+  .brand__logo { height: 48px; }
+  .site-header { padding: 18px var(--pad-x); }
+  .site-bar { margin-bottom: 34px; --pad-x: 44px; }
+}
+@media (min-width: 1024px) {
+  .site-header { max-width: 1280px; margin-inline: auto; }
+  .site-bar { margin-bottom: 44px; --pad-x: 52px; }
+}
+
+.site-bar { margin-bottom: 0; }
+html body { background: #fff; }
+html body p.site-page-title {
+  font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400; font-style: normal;
+  font-size: 34px; line-height: 1.1; letter-spacing: normal; text-transform: none;
+  color: #082310; margin: 0 0 18px; padding: 0; border: 0; background: none;
+}
+@media (min-width: 640px) { html body p.site-page-title { font-size: 42px; } }
+@media (min-width: 640px) { .site-bar { --pad-x: 44px; } }
+@media (min-width: 1024px) { .site-bar { --pad-x: 52px; } }
+</style>
+<!-- /site-header --></head>
+<body>
+<!-- site-header -->
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<div class="site-bar">
+<header class="site-header">
+  <a class="brand" href="../../index.html">
+    <img class="brand__logo" src="../../wortschatz_logo_white.png" width="521" height="112" alt="Täglicher Deutscher Wortschatz C1">
+  </a>
+  <nav class="nav" aria-label="Hauptnavigation">
+    <a href="../../reading.html">Lesetext</a>
+    <a href="../../flashcards.html">Karteikarten</a>
+    <a href="../../about.html">Über das Projekt</a>
+    <a href="../../index.html">Home</a>
+  </nav>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menü öffnen">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav" hidden aria-label="Hauptnavigation, mobil">
+  <a href="../../reading.html">Lesetext</a>
+  <a href="../../flashcards.html">Karteikarten</a>
+  <a href="../../about.html">Über das Projekt</a>
+  <a href="../../index.html">Home</a>
+</nav>
+</div>
+<!-- /site-header -->
+<div class="wrap">
+
+  <!-- site-header -->
+<p class="site-page-title">Lesetext</p>
+<!-- /site-header -->
+<p class="kicker">Feuilleton · Dienstleistung</p>
+  <h1>Vierzig Minuten Panflöte: Die Warteschleife als Spiegel einer Dienstleistungsgesellschaft</h1>
+  <p class="standfirst">Hotlines versprechen Nähe und liefern Musik. Was das Warten über den Zustand unserer Wirtschaft verrät.</p>
+  <p class="meta">Wortzahl: 331<span class="site-date"> · 18.11.2026</span> · Niveau C1 · Lesezeit ca. 3 Minuten</p>
+
+  <article>
+    <p>Es beginnt harmlos. Der Kunde, der <strong>Bezug auf seine Jahresabrechnung nehmen</strong> möchte, wählt die kostenfreie Nummer und wird von einer makellos freundlichen Stimme gebeten, <strong>Ruhe zu bewahren</strong>. Dann setzt die Musik ein, und die <strong>Schleife</strong> schließt sich.</p>
+
+    <p>Man hielte es für <strong>unwahrscheinlich</strong>, dass ausgerechnet ein Konzern, der seine <strong>Berühmtheit für</strong> vorbildlichen Service in jeder Anzeige beschwört, seine Anrufer vierzig Minuten lang mit Panflötenklängen abspeist. Die Erfahrung lehrt anderes. »<strong>Das ist doch nicht zu fassen!</strong>« ruft irgendwann jemand in den Hörer — ein Ausbruch, den die Spracherkennung so wenig versteht wie ein <strong>Niesen</strong>, das sie umgehend als Wunsch nach Vertragsverlängerung verbucht.</p>
+
+    <p>Der <strong>Ärger auf</strong> die Anbieter und <strong>über</strong> die eigene Ohnmacht ist mittlerweile ein kollektives Gefühl. Die Zahl der Beschwerden bei der Bundesnetzagentur ist im vergangenen Jahr deutlich gestiegen, die Zahl der Servicekräfte nicht. Wer <strong>Rat bei den Verbraucherzentralen sucht</strong>, hört, er möge alles dokumentieren: Datum, Uhrzeit, Name. Juristen <strong>arbeiten an</strong> Musterschreiben, Politiker an Gesetzentwürfen. Doch wer <strong>sich über die Wartezeit beklagt</strong>, erhält meist jenen Textbaustein, der Verständnis signalisiert und nichts verspricht.</p>
+
+    <p>Bemerkenswert ist die Diskrepanz zwischen Bühne und Alltag. Dieselben Vorstände, die auf Kongressen <strong>von ihren digitalen Assistenten schwärmen</strong>, haben ihre Servicezentren jahrelang ausgedünnt. <strong>Schuld an</strong> dem Debakel sind selten die Beschäftigten; viele räumen offen ein, anfangs <strong>einen Fehler gemacht</strong> zu haben, weil ihre <strong>Unerfahrenheit im</strong> Umgang mit der neuen Software größer war als die zweitägige Schulung.</p>
+
+    <p>Dass es anders geht, zeigt ein Dortmunder Dienstleister, der seine Umstellung <strong>behutsam</strong> gestaltet hat: Kein Anrufer wartet länger als fünf Minuten, jeder Mitarbeiter darf Kulanz gewähren, ohne zu fragen. Die Belegschaft ist <strong>glücklich über</strong> die Regelung, die Kündigungsquote sank um ein Drittel. Wer lieber <strong>dem Unternehmen eine E-Mail schreibt</strong>, bekommt binnen 24 Stunden Antwort — anderswo kann das <strong>schon mal</strong> drei Wochen dauern.</p>
+
+    <p>Vielleicht ist die Warteschleife deshalb mehr als eine Lästigkeit. Sie macht sichtbar, wie viel Lebenszeit eine Gesellschaft bereit ist, dem Sparzwang zu opfern. Erst wenn das Telefon endlich schweigt, <strong>kommt</strong> der Kunde <strong>zur Ruhe</strong> — und weiß doch, dass er morgen erneut wählen wird.</p>
+  </article>
+
+  <h2>English gloss</h2>
+  <dl>
+    <dt>Bezug nehmen auf (+Akk)</dt>
+    <dd>to refer to / to make reference to</dd>
+
+    <dt>Ruhe bewahren</dt>
+    <dd>to keep calm / to maintain composure</dd>
+
+    <dt>die Schleife</dt>
+    <dd>the loop / bow</dd>
+
+    <dt>unwahrscheinlich</dt>
+    <dd>unlikely</dd>
+
+    <dt>die Berühmtheit für (+Akk)</dt>
+    <dd>the fame / renown for</dd>
+
+    <dt>Das ist doch nicht zu fassen!</dt>
+    <dd>That's unbelievable!</dd>
+
+    <dt>das Niesen</dt>
+    <dd>the sneeze (noun)</dd>
+
+    <dt>der Ärger auf (+Akk) / über (+Akk)</dt>
+    <dd>anger at / about</dd>
+
+    <dt>Rat suchen bei (+Dat)</dt>
+    <dd>to seek advice from</dd>
+
+    <dt>arbeiten an (+Dat)</dt>
+    <dd>to work on</dd>
+
+    <dt>sich beklagen über (+Akk)</dt>
+    <dd>to complain about</dd>
+
+    <dt>schwärmen von (+Dat)</dt>
+    <dd>to rave about / to be enthusiastic about</dd>
+
+    <dt>schuld an (+Dat)</dt>
+    <dd>guilty of / to blame for</dd>
+
+    <dt>einen Fehler machen</dt>
+    <dd>to make a mistake</dd>
+
+    <dt>die Unerfahrenheit in (+Dat)</dt>
+    <dd>the inexperience in</dd>
+
+    <dt>behutsam</dt>
+    <dd>careful, gentle, cautious</dd>
+
+    <dt>glücklich über (+Akk)</dt>
+    <dd>happy about / delighted about</dd>
+
+    <dt>schreiben (+Dat/+Akk)</dt>
+    <dd>to write (something to someone)</dd>
+
+    <dt>schon mal</dt>
+    <dd>already / beforehand; (here) easily, on occasion</dd>
+
+    <dt>zur Ruhe kommen</dt>
+    <dd>to find peace / to settle down / to get some rest</dd>
+  </dl>
+
+</div>
+
+<!-- site-header -->
+<script>
+document.querySelectorAll('.nav-toggle').forEach(function (toggle) {
+  var panel = document.getElementById(toggle.getAttribute('aria-controls'));
+  toggle.addEventListener('click', function () {
+    var open = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!open));
+    toggle.setAttribute('aria-label', open ? 'Menü öffnen' : 'Menü schließen');
+    if (panel) panel.hidden = open;
+  });
+});
+
+(function () {
+  var bar = document.querySelector('.site-bar');
+  if (!bar) return;
+  function firstTextTop() {
+    var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (n) {
+        if (bar.contains(n) || !n.nodeValue.trim()) return NodeFilter.FILTER_SKIP;
+        var p = n.parentElement;
+        if (!p || p.closest('script,style,.skip') || !p.offsetParent) return NodeFilter.FILTER_SKIP;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var n = w.nextNode();
+    if (!n) return null;
+    var r = document.createRange(); r.selectNodeContents(n);
+    return r.getBoundingClientRect().top;
+  }
+  function fit() {
+    var cs = getComputedStyle(document.body);
+    bar.style.marginTop = '-' + cs.paddingTop;
+    bar.style.marginLeft = '-' + cs.paddingLeft;
+    bar.style.marginRight = '-' + cs.paddingRight;
+    bar.style.marginBottom = '0px';
+    var w = window.innerWidth, target = w >= 1024 ? 44 : (w >= 640 ? 34 : 26);
+    var top = firstTextTop();
+    if (top === null) return;
+    var gap = top - bar.getBoundingClientRect().bottom;
+    bar.style.marginBottom = (target - gap) + 'px';
+  }
+  fit();
+  window.addEventListener('load', fit);
+  window.addEventListener('resize', fit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+})();
+</script>
+<!-- /site-header --></body>
+</html>
