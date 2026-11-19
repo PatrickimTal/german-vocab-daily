@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesetext: Die Mispel, das Ypsilon und ein Dorf, das sich nicht ergibt</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#304635;
+    --head:#082310;
+    --accent:#0077c7;
+    --accent-hover:#0061b0;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:#ffffff;
+    color:var(--ink);
+    font-family:'Sora', system-ui, sans-serif;
+    font-size:17px;
+    line-height:1.7;
+    -webkit-text-size-adjust:100%;
+  }
+  .wrap{
+    max-width:40rem;
+    margin:0 auto;
+    padding:2rem 1.15rem 4rem;
+  }
+  .kicker{
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:0.72rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin:0 0 0.6rem;
+  }
+  h1{
+    font-family:'Libre Baskerville', Georgia, serif;
+    color:var(--head);
+    font-weight:700;
+    font-size:1.65rem;
+    line-height:1.3;
+    margin:0 0 0.7rem;
+  }
+  h2{
+    font-family:'Libre Baskerville', Georgia, serif;
+    color:var(--head);
+    font-weight:700;
+    font-size:1.15rem;
+    margin:2.6rem 0 0.9rem;
+  }
+  .standfirst{
+    font-family:'Libre Baskerville', Georgia, serif;
+    font-size:1rem;
+    line-height:1.6;
+    color:var(--ink);
+    margin:0 0 1.1rem;
+  }
+  .meta{
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:0.75rem;
+    color:#5d7262;
+    border-top:1px solid #dfe8e0;
+    border-bottom:1px solid #dfe8e0;
+    padding:0.5rem 0;
+    margin:0 0 1.8rem;
+  }
+  article p{margin:0 0 1.15rem;}
+  article p:first-of-type::first-letter{
+    font-family:'Libre Baskerville', Georgia, serif;
+    color:var(--head);
+    font-size:2.9rem;
+    line-height:0.9;
+    float:left;
+    padding:0.18rem 0.5rem 0 0;
+  }
+  strong{font-weight:600; color:var(--head);}
+  dl{margin:0; padding:0;}
+  dt{
+    font-weight:600;
+    color:var(--head);
+    margin:1rem 0 0.15rem;
+  }
+  dd{
+    margin:0;
+    padding-left:0;
+    color:var(--ink);
+    font-size:0.95rem;
+  }
+  dd::before{content:"→ "; color:var(--accent);}
+  a{color:var(--accent); text-decoration:none;}
+  a:hover{color:var(--accent-hover); text-decoration:underline;}
+  footer{
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:0.72rem;
+    color:#5d7262;
+    margin-top:3rem;
+    border-top:1px solid #dfe8e0;
+    padding-top:0.8rem;
+  }
+</style>
+
+<!-- site-header -->
+<style>
+.site-bar {
+  --site-green: #e9fae9;
+  --page-bg: #fff;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-bg-hover: rgba(255, 255, 255, 0.97);
+  --panel-bg: rgba(255, 255, 255, 0.62);
+  --panel-bg-hover: rgba(255, 255, 255, 0.82);
+
+  --ink: #082310;
+  --ink-body: #304635;
+  --ink-muted: #4b614f;
+  --ink-faint: #617865;
+
+  --blue: #0077c7;
+  --blue-hover: #0061b0;
+  --blue-text: #006eb8;
+  --article: #c56c00;
+
+  --border: #8ab091;
+  --rule: #dce9de;
+  --underline: #a8c7ad;
+
+  --chip-verb-praep-bg: #cdecff;      --chip-verb-praep-fg: #004e95;
+  --chip-verb-kasus-bg: #c2f2f8;      --chip-verb-kasus-fg: #005565;
+  --chip-redemittel-bg: #f0e4ff;      --chip-redemittel-fg: #603b93;
+  --chip-nomen-praep-bg: #c4f2cc;     --chip-nomen-praep-fg: #005222;
+  --chip-adjektiv-praep-bg: #ffe1ac;  --chip-adjektiv-praep-fg: #7b4300;
+  --chip-redewendung-bg: #ffd9d7;     --chip-redewendung-fg: #9a2733;
+  --chip-wortschatz-bg: #dce9de;      --chip-wortschatz-fg: #384e3c;
+
+  --font-serif: 'Libre Baskerville', Georgia, serif;
+  --font-sans: 'Sora', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --r-sm: 4px;
+  --r-md: 12px;
+  --r-lg: 14px;
+  --r-pill: 999px;
+  --shadow-card: 0 12px 30px rgba(30, 70, 45, 0.1);
+
+  --pad-x: 22px;
+
+  font-family: var(--font-sans); font-size: 16px; line-height: 1.55;
+  -webkit-font-smoothing: antialiased; text-align: left;
+}
+.site-bar *, .site-bar *::before, .site-bar *::after { box-sizing: border-box; }
+.site-bar header, .site-bar nav { margin: 0; border: 0; max-width: none; }
+.site-bar a { text-decoration: none; border-bottom: 0; }
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: 12px; top: 12px; background: #fff; padding: 10px 14px; border-radius: 12px; z-index: 100; }
+
+.site-bar {
+  background: var(--blue-text);
+  border-bottom: 1px solid var(--blue-text);
+  box-shadow: 0 2px 12px rgba(30, 70, 45, 0.06);
+}
+.site-bar { margin-bottom: 26px; }
+.site-bar :focus-visible { outline-color: #fff; }
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px var(--pad-x);
+}
+.brand { display: flex; }
+.brand__logo { display: block; height: 40px; width: auto; max-width: none; }
+.nav { display: none; }
+.nav-toggle {
+  width: 44px; height: 44px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+  background: none; border: 1px solid rgba(255, 255, 255, 0.6); border-radius: var(--r-md); cursor: pointer;
+  transition: border-color 150ms ease;
+}
+.nav-toggle span { width: 18px; height: 1.5px; background: #fff; }
+.nav-toggle:hover, .nav-toggle[aria-expanded="true"] { border-color: #fff; }
+.mobile-nav { display: flex; flex-direction: column; padding: 4px var(--pad-x) 12px; gap: 2px; }
+.mobile-nav a {
+  min-height: 48px; display: flex; align-items: center;
+  padding: 0 12px; margin: 0 -12px;
+  color: #fff; font-size: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  transition: box-shadow 150ms ease;
+}
+.mobile-nav[hidden] { display: none; }
+.mobile-nav a:hover, .mobile-nav a:active { color: #fff; box-shadow: inset 0 0 0 1px #fff; }
+.mobile-nav .nav__current {
+  min-height: 48px; display: flex; align-items: center;
+  padding: 0 12px; margin: 0 -12px; font-size: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+/* current page: inverted white pill with blue text */
+.nav__current { background: #fff; color: var(--blue-text); cursor: default; }
+@media (min-width: 640px) {
+  .nav-toggle, .mobile-nav { display: none !important; }
+  .nav { display: flex; align-items: center; gap: 8px; font-size: 15px; }
+  .nav a {
+    padding: 9px 16px;
+    border: 1px solid transparent;
+    border-radius: var(--r-pill);
+    color: #fff;
+    transition: border-color 150ms ease;
+  }
+  /* hover: text stays white, a white outline appears */
+  .nav a:hover { border-color: #fff; color: #fff; }
+  .nav .nav__current {
+    padding: 9px 16px; border: 1px solid #fff; border-radius: var(--r-pill);
+  }
+  .brand__logo { height: 48px; }
+  .site-header { padding: 18px var(--pad-x); }
+  .site-bar { margin-bottom: 34px; --pad-x: 44px; }
+}
+@media (min-width: 1024px) {
+  .site-header { max-width: 1280px; margin-inline: auto; }
+  .site-bar { margin-bottom: 44px; --pad-x: 52px; }
+}
+
+.site-bar { margin-bottom: 0; }
+html body { background: #fff; }
+html body p.site-page-title {
+  font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400; font-style: normal;
+  font-size: 34px; line-height: 1.1; letter-spacing: normal; text-transform: none;
+  color: #082310; margin: 0 0 18px; padding: 0; border: 0; background: none;
+}
+@media (min-width: 640px) { html body p.site-page-title { font-size: 42px; } }
+@media (min-width: 640px) { .site-bar { --pad-x: 44px; } }
+@media (min-width: 1024px) { .site-bar { --pad-x: 52px; } }
+</style>
+<!-- /site-header --></head>
+<body>
+<!-- site-header -->
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<div class="site-bar">
+<header class="site-header">
+  <a class="brand" href="../../index.html">
+    <img class="brand__logo" src="../../wortschatz_logo_white.png" width="521" height="112" alt="Täglicher Deutscher Wortschatz C1">
+  </a>
+  <nav class="nav" aria-label="Hauptnavigation">
+    <a href="../../reading.html">Lesetext</a>
+    <a href="../../flashcards.html">Karteikarten</a>
+    <a href="../../about.html">Über das Projekt</a>
+    <a href="../../index.html">Home</a>
+  </nav>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menü öffnen">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav" hidden aria-label="Hauptnavigation, mobil">
+  <a href="../../reading.html">Lesetext</a>
+  <a href="../../flashcards.html">Karteikarten</a>
+  <a href="../../about.html">Über das Projekt</a>
+  <a href="../../index.html">Home</a>
+</nav>
+</div>
+<!-- /site-header -->
+<div class="wrap">
+
+  <!-- site-header -->
+<p class="site-page-title">Lesetext</p>
+<!-- /site-header -->
+<p class="kicker">Sprachgarten · Lesetext C1</p>
+  <h1>Die Mispel, das Ypsilon und ein Dorf, das sich nicht ergibt</h1>
+  <p class="standfirst">In Kleinroda soll die letzte Grundschule schließen. Was als Verwaltungsakt beginnt, endet als Frage nach dem Selbstverständnis einer Gemeinde.</p>
+  <p class="meta">Feuilleton · 345 Wörter<span class="site-date"> · 19.11.2026</span> · Lesezeit ca. 3 Minuten</p>
+
+  <article>
+    <p>Kleinroda, im November. Hinter dem Schulhaus steht ein alter Baum, dessen Früchte kaum noch jemand kennt: <strong>die Mispel</strong>, herb, braun, erst nach dem ersten Frost genießbar. Für die Kinder der einzigen Grundschule des Ortes ist sie längst zum Wappenzeichen geworden – und zum Argument. Denn die Schule soll geschlossen werden.</p>
+
+    <p>Die Gemeinde ist <strong>in Schwierigkeiten geraten</strong>, seit der Kreis seine Mittel neu verteilt. Zwei Lehrkräfte <strong>unterrichten in</strong> Deutsch, Mathematik und Sachkunde, mehr gibt der Stellenplan nicht her. Man <strong>teilt</strong> die vierzig Kinder <strong>in</strong> zwei Lerngruppen, Erst- und Zweitklässler zusammen mit den Älteren. Wer von außen kommt, ist zunächst <strong>erstaunt über</strong> die Ruhe in diesen Räumen; die Besucher aus der Kreisstadt <strong>beneiden</strong> die Kollegen <strong>um</strong> eine Gelassenheit, die größere Einrichtungen längst verloren haben.</p>
+
+    <p>Schulleiterin Anita Jiménez, vor fünfzehn Jahren aus Valencia hergezogen, hat damals <strong>die Entscheidung getroffen</strong>, zu bleiben. Sie erinnert sich an ihre erste Stunde, in der sie das Alphabet an die Tafel schrieb und dabei selbst lernen musste, dass <strong>V „fau“, Y „Ypsilon“ und Z „Zett“</strong> heißt. Heute <strong>beharrt</strong> sie <strong>auf</strong> ihrem Standpunkt: Die kurzen Wege <strong>spielen für</strong> die Familien eine entscheidende <strong>Rolle</strong>; ein Dorf ohne Schule verliert zuerst die jungen Eltern, dann den Bäcker, zuletzt sich selbst.</p>
+
+    <p>Im Gemeinderat ging es vorige Woche weniger gesittet zu. Als ein Sprecher des Kreises die <strong>Wichtigkeit für</strong> den Haushalt betonte, rief jemand aus der hinteren Reihe „<strong>Arschloch</strong>“ – <strong>auf einmal</strong> war die Sitzung keine Verwaltungsangelegenheit mehr, sondern eine Kränkung. Die Mehrheit <strong>schielte</strong> anschließend verlegen auf die Uhr. Man vertagte sich, wünschte einander „<strong>Einen schönen Abend noch!</strong>“ und ging.</p>
+
+    <p>Die statistische <strong>Tendenz zu</strong> größeren Zentralschulen ist unübersehbar, und sie lässt sich nicht allein mit Sentiment widerlegen. Doch Zahlen <strong>schützen</strong> niemanden <strong>vor</strong> Fehlern. Wo Kinder auf dem Land <strong>auf</strong> den Bus <strong>angewiesen</strong> sind, beginnt ihr Schultag faktisch um halb sechs. Die <strong>Beschäftigung mit</strong> solchen Nebenwirkungen fehlt in den Gutachten; eine Beschäftigung bei der Molkerei im Nachbarort gibt es ohnehin nicht mehr. Ehrlicher wäre die Rechnung dann <strong>wohl</strong>, aber eben auch teurer.</p>
+
+    <p>Die Mispeln hängen noch. Geerntet wird nach dem Frost.</p>
+  </article>
+
+  <h2>English gloss</h2>
+  <dl>
+    <dt>die Mispel</dt><dd>the medlar (fruit)</dd>
+    <dt>in Schwierigkeiten kommen/geraten</dt><dd>to get into difficulties / trouble</dd>
+    <dt>unterrichten in (+Dat)</dt><dd>to teach / give lessons in</dd>
+    <dt>teilen in (+Akk)</dt><dd>to divide into</dd>
+    <dt>erstaunt über (+Akk)</dt><dd>astonished at / surprised by</dd>
+    <dt>beneiden um (+Akk)</dt><dd>to envy (someone) for (something)</dd>
+    <dt>eine Entscheidung treffen</dt><dd>to make a decision</dd>
+    <dt>V = „fau“, Y = „Ypsilon“, Z = „Zett“</dt><dd>the German names of the letters V, Y and Z</dd>
+    <dt>beharren auf (+Dat)</dt><dd>to persist in / stubbornly stick to a position</dd>
+    <dt>eine Rolle spielen für (+Akk)</dt><dd>to play a role for / to matter to</dd>
+    <dt>die Wichtigkeit für (+Akk)</dt><dd>the importance / significance for</dd>
+    <dt>das Arschloch</dt><dd>asshole (vulgar insult)</dd>
+    <dt>auf einmal</dt><dd>all at once / suddenly</dd>
+    <dt>schielen</dt><dd>to squint / glance sideways</dd>
+    <dt>Einen schönen Abend noch!</dt><dd>Have a nice evening!</dd>
+    <dt>die Tendenz zu (+Dat)</dt><dd>the tendency towards</dd>
+    <dt>schützen vor (+Dat)</dt><dd>to protect against</dd>
+    <dt>angewiesen auf (+Akk)</dt><dd>dependent on / reliant on</dd>
+    <dt>die Beschäftigung mit (+Dat) / bei (+Dat)</dt><dd>the engagement/occupation with something; employment at (a company)</dd>
+    <dt>wohl</dt><dd>probably / likely</dd>
+  </dl>
+
+  <footer>Sprachgarten · Lesetraining · Wortschatz des Tages</footer>
+</div>
+
+<!-- site-header -->
+<script>
+document.querySelectorAll('.nav-toggle').forEach(function (toggle) {
+  var panel = document.getElementById(toggle.getAttribute('aria-controls'));
+  toggle.addEventListener('click', function () {
+    var open = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!open));
+    toggle.setAttribute('aria-label', open ? 'Menü öffnen' : 'Menü schließen');
+    if (panel) panel.hidden = open;
+  });
+});
+
+(function () {
+  var bar = document.querySelector('.site-bar');
+  if (!bar) return;
+  function firstTextTop() {
+    var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (n) {
+        if (bar.contains(n) || !n.nodeValue.trim()) return NodeFilter.FILTER_SKIP;
+        var p = n.parentElement;
+        if (!p || p.closest('script,style,.skip') || !p.offsetParent) return NodeFilter.FILTER_SKIP;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var n = w.nextNode();
+    if (!n) return null;
+    var r = document.createRange(); r.selectNodeContents(n);
+    return r.getBoundingClientRect().top;
+  }
+  function fit() {
+    var cs = getComputedStyle(document.body);
+    bar.style.marginTop = '-' + cs.paddingTop;
+    bar.style.marginLeft = '-' + cs.paddingLeft;
+    bar.style.marginRight = '-' + cs.paddingRight;
+    bar.style.marginBottom = '0px';
+    var w = window.innerWidth, target = w >= 1024 ? 44 : (w >= 640 ? 34 : 26);
+    var top = firstTextTop();
+    if (top === null) return;
+    var gap = top - bar.getBoundingClientRect().bottom;
+    bar.style.marginBottom = (target - gap) + 'px';
+  }
+  fit();
+  window.addEventListener('load', fit);
+  window.addEventListener('resize', fit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+})();
+</script>
+<!-- /site-header --></body>
+</html>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lesetext C1 — Vierzig Minuten Panflöte</title>
+<title>Lesetext: Die Mispel, das Ypsilon und ein Dorf, das sich nicht ergibt</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -11,6 +11,7 @@
     --ink:#304635;
     --head:#082310;
     --accent:#0077c7;
+    --accent-hover:#0061b0;
   }
   *{box-sizing:border-box;}
   body{
@@ -25,75 +26,79 @@
   .wrap{
     max-width:40rem;
     margin:0 auto;
-    padding:1.75rem 1.1rem 4rem;
+    padding:2rem 1.15rem 4rem;
   }
   .kicker{
     font-family:'IBM Plex Mono', ui-monospace, monospace;
-    font-size:.72rem;
-    letter-spacing:.11em;
+    font-size:0.72rem;
+    letter-spacing:0.12em;
     text-transform:uppercase;
     color:var(--accent);
-    margin:0 0 .6rem;
+    margin:0 0 0.6rem;
   }
   h1{
     font-family:'Libre Baskerville', Georgia, serif;
     color:var(--head);
-    font-size:1.72rem;
-    line-height:1.28;
     font-weight:700;
-    margin:0 0 .5rem;
+    font-size:1.65rem;
+    line-height:1.3;
+    margin:0 0 0.7rem;
+  }
+  h2{
+    font-family:'Libre Baskerville', Georgia, serif;
+    color:var(--head);
+    font-weight:700;
+    font-size:1.15rem;
+    margin:2.6rem 0 0.9rem;
   }
   .standfirst{
     font-family:'Libre Baskerville', Georgia, serif;
-    color:var(--head);
-    font-size:1.02rem;
-    line-height:1.55;
-    margin:0 0 1rem;
+    font-size:1rem;
+    line-height:1.6;
+    color:var(--ink);
+    margin:0 0 1.1rem;
   }
   .meta{
     font-family:'IBM Plex Mono', ui-monospace, monospace;
-    font-size:.74rem;
-    color:#5c6e60;
-    border-top:1px solid #e1e8e2;
-    border-bottom:1px solid #e1e8e2;
-    padding:.5rem 0;
-    margin:0 0 1.6rem;
+    font-size:0.75rem;
+    color:#5d7262;
+    border-top:1px solid #dfe8e0;
+    border-bottom:1px solid #dfe8e0;
+    padding:0.5rem 0;
+    margin:0 0 1.8rem;
   }
   article p{margin:0 0 1.15rem;}
   article p:first-of-type::first-letter{
     font-family:'Libre Baskerville', Georgia, serif;
-    font-size:3rem;
+    color:var(--head);
+    font-size:2.9rem;
+    line-height:0.9;
     float:left;
-    line-height:.9;
-    padding:.15rem .5rem .1rem 0;
-    color:var(--head);
+    padding:0.18rem 0.5rem 0 0;
   }
-  strong{font-weight:600;color:var(--head);}
-  h2{
-    font-family:'Libre Baskerville', Georgia, serif;
-    color:var(--head);
-    font-size:1.2rem;
-    margin:2.6rem 0 1rem;
-    padding-top:1.2rem;
-    border-top:2px solid var(--head);
-  }
-  dl{margin:0;}
+  strong{font-weight:600; color:var(--head);}
+  dl{margin:0; padding:0;}
   dt{
     font-weight:600;
     color:var(--head);
-    margin-top:.9rem;
+    margin:1rem 0 0.15rem;
   }
   dd{
-    margin:.12rem 0 0;
-    padding-left:.9rem;
-    border-left:2px solid #e1e8e2;
+    margin:0;
+    padding-left:0;
     color:var(--ink);
+    font-size:0.95rem;
   }
-  a{color:var(--accent);text-decoration:none;}
-  a:hover{color:#0061b0;text-decoration:underline;}
-  @media (max-width:420px){
-    h1{font-size:1.45rem;}
-    body{font-size:16px;}
+  dd::before{content:"→ "; color:var(--accent);}
+  a{color:var(--accent); text-decoration:none;}
+  a:hover{color:var(--accent-hover); text-decoration:underline;}
+  footer{
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:0.72rem;
+    color:#5d7262;
+    margin-top:3rem;
+    border-top:1px solid #dfe8e0;
+    padding-top:0.8rem;
   }
 </style>
 
@@ -259,88 +264,50 @@ html body p.site-page-title {
   <!-- site-header -->
 <p class="site-page-title">Lesetext</p>
 <!-- /site-header -->
-<p class="kicker">Feuilleton · Dienstleistung</p>
-  <h1>Vierzig Minuten Panflöte: Die Warteschleife als Spiegel einer Dienstleistungsgesellschaft</h1>
-  <p class="standfirst">Hotlines versprechen Nähe und liefern Musik. Was das Warten über den Zustand unserer Wirtschaft verrät.</p>
-  <p class="meta">Wortzahl: 331<span class="site-date"> · 18.11.2026</span> · Niveau C1 · Lesezeit ca. 3 Minuten</p>
+<p class="kicker">Sprachgarten · Lesetext C1</p>
+  <h1>Die Mispel, das Ypsilon und ein Dorf, das sich nicht ergibt</h1>
+  <p class="standfirst">In Kleinroda soll die letzte Grundschule schließen. Was als Verwaltungsakt beginnt, endet als Frage nach dem Selbstverständnis einer Gemeinde.</p>
+  <p class="meta">Feuilleton · 345 Wörter<span class="site-date"> · 19.11.2026</span> · Lesezeit ca. 3 Minuten</p>
 
   <article>
-    <p>Es beginnt harmlos. Der Kunde, der <strong>Bezug auf seine Jahresabrechnung nehmen</strong> möchte, wählt die kostenfreie Nummer und wird von einer makellos freundlichen Stimme gebeten, <strong>Ruhe zu bewahren</strong>. Dann setzt die Musik ein, und die <strong>Schleife</strong> schließt sich.</p>
+    <p>Kleinroda, im November. Hinter dem Schulhaus steht ein alter Baum, dessen Früchte kaum noch jemand kennt: <strong>die Mispel</strong>, herb, braun, erst nach dem ersten Frost genießbar. Für die Kinder der einzigen Grundschule des Ortes ist sie längst zum Wappenzeichen geworden – und zum Argument. Denn die Schule soll geschlossen werden.</p>
 
-    <p>Man hielte es für <strong>unwahrscheinlich</strong>, dass ausgerechnet ein Konzern, der seine <strong>Berühmtheit für</strong> vorbildlichen Service in jeder Anzeige beschwört, seine Anrufer vierzig Minuten lang mit Panflötenklängen abspeist. Die Erfahrung lehrt anderes. »<strong>Das ist doch nicht zu fassen!</strong>« ruft irgendwann jemand in den Hörer — ein Ausbruch, den die Spracherkennung so wenig versteht wie ein <strong>Niesen</strong>, das sie umgehend als Wunsch nach Vertragsverlängerung verbucht.</p>
+    <p>Die Gemeinde ist <strong>in Schwierigkeiten geraten</strong>, seit der Kreis seine Mittel neu verteilt. Zwei Lehrkräfte <strong>unterrichten in</strong> Deutsch, Mathematik und Sachkunde, mehr gibt der Stellenplan nicht her. Man <strong>teilt</strong> die vierzig Kinder <strong>in</strong> zwei Lerngruppen, Erst- und Zweitklässler zusammen mit den Älteren. Wer von außen kommt, ist zunächst <strong>erstaunt über</strong> die Ruhe in diesen Räumen; die Besucher aus der Kreisstadt <strong>beneiden</strong> die Kollegen <strong>um</strong> eine Gelassenheit, die größere Einrichtungen längst verloren haben.</p>
 
-    <p>Der <strong>Ärger auf</strong> die Anbieter und <strong>über</strong> die eigene Ohnmacht ist mittlerweile ein kollektives Gefühl. Die Zahl der Beschwerden bei der Bundesnetzagentur ist im vergangenen Jahr deutlich gestiegen, die Zahl der Servicekräfte nicht. Wer <strong>Rat bei den Verbraucherzentralen sucht</strong>, hört, er möge alles dokumentieren: Datum, Uhrzeit, Name. Juristen <strong>arbeiten an</strong> Musterschreiben, Politiker an Gesetzentwürfen. Doch wer <strong>sich über die Wartezeit beklagt</strong>, erhält meist jenen Textbaustein, der Verständnis signalisiert und nichts verspricht.</p>
+    <p>Schulleiterin Anita Jiménez, vor fünfzehn Jahren aus Valencia hergezogen, hat damals <strong>die Entscheidung getroffen</strong>, zu bleiben. Sie erinnert sich an ihre erste Stunde, in der sie das Alphabet an die Tafel schrieb und dabei selbst lernen musste, dass <strong>V „fau“, Y „Ypsilon“ und Z „Zett“</strong> heißt. Heute <strong>beharrt</strong> sie <strong>auf</strong> ihrem Standpunkt: Die kurzen Wege <strong>spielen für</strong> die Familien eine entscheidende <strong>Rolle</strong>; ein Dorf ohne Schule verliert zuerst die jungen Eltern, dann den Bäcker, zuletzt sich selbst.</p>
 
-    <p>Bemerkenswert ist die Diskrepanz zwischen Bühne und Alltag. Dieselben Vorstände, die auf Kongressen <strong>von ihren digitalen Assistenten schwärmen</strong>, haben ihre Servicezentren jahrelang ausgedünnt. <strong>Schuld an</strong> dem Debakel sind selten die Beschäftigten; viele räumen offen ein, anfangs <strong>einen Fehler gemacht</strong> zu haben, weil ihre <strong>Unerfahrenheit im</strong> Umgang mit der neuen Software größer war als die zweitägige Schulung.</p>
+    <p>Im Gemeinderat ging es vorige Woche weniger gesittet zu. Als ein Sprecher des Kreises die <strong>Wichtigkeit für</strong> den Haushalt betonte, rief jemand aus der hinteren Reihe „<strong>Arschloch</strong>“ – <strong>auf einmal</strong> war die Sitzung keine Verwaltungsangelegenheit mehr, sondern eine Kränkung. Die Mehrheit <strong>schielte</strong> anschließend verlegen auf die Uhr. Man vertagte sich, wünschte einander „<strong>Einen schönen Abend noch!</strong>“ und ging.</p>
 
-    <p>Dass es anders geht, zeigt ein Dortmunder Dienstleister, der seine Umstellung <strong>behutsam</strong> gestaltet hat: Kein Anrufer wartet länger als fünf Minuten, jeder Mitarbeiter darf Kulanz gewähren, ohne zu fragen. Die Belegschaft ist <strong>glücklich über</strong> die Regelung, die Kündigungsquote sank um ein Drittel. Wer lieber <strong>dem Unternehmen eine E-Mail schreibt</strong>, bekommt binnen 24 Stunden Antwort — anderswo kann das <strong>schon mal</strong> drei Wochen dauern.</p>
+    <p>Die statistische <strong>Tendenz zu</strong> größeren Zentralschulen ist unübersehbar, und sie lässt sich nicht allein mit Sentiment widerlegen. Doch Zahlen <strong>schützen</strong> niemanden <strong>vor</strong> Fehlern. Wo Kinder auf dem Land <strong>auf</strong> den Bus <strong>angewiesen</strong> sind, beginnt ihr Schultag faktisch um halb sechs. Die <strong>Beschäftigung mit</strong> solchen Nebenwirkungen fehlt in den Gutachten; eine Beschäftigung bei der Molkerei im Nachbarort gibt es ohnehin nicht mehr. Ehrlicher wäre die Rechnung dann <strong>wohl</strong>, aber eben auch teurer.</p>
 
-    <p>Vielleicht ist die Warteschleife deshalb mehr als eine Lästigkeit. Sie macht sichtbar, wie viel Lebenszeit eine Gesellschaft bereit ist, dem Sparzwang zu opfern. Erst wenn das Telefon endlich schweigt, <strong>kommt</strong> der Kunde <strong>zur Ruhe</strong> — und weiß doch, dass er morgen erneut wählen wird.</p>
+    <p>Die Mispeln hängen noch. Geerntet wird nach dem Frost.</p>
   </article>
 
   <h2>English gloss</h2>
   <dl>
-    <dt>Bezug nehmen auf (+Akk)</dt>
-    <dd>to refer to / to make reference to</dd>
-
-    <dt>Ruhe bewahren</dt>
-    <dd>to keep calm / to maintain composure</dd>
-
-    <dt>die Schleife</dt>
-    <dd>the loop / bow</dd>
-
-    <dt>unwahrscheinlich</dt>
-    <dd>unlikely</dd>
-
-    <dt>die Berühmtheit für (+Akk)</dt>
-    <dd>the fame / renown for</dd>
-
-    <dt>Das ist doch nicht zu fassen!</dt>
-    <dd>That's unbelievable!</dd>
-
-    <dt>das Niesen</dt>
-    <dd>the sneeze (noun)</dd>
-
-    <dt>der Ärger auf (+Akk) / über (+Akk)</dt>
-    <dd>anger at / about</dd>
-
-    <dt>Rat suchen bei (+Dat)</dt>
-    <dd>to seek advice from</dd>
-
-    <dt>arbeiten an (+Dat)</dt>
-    <dd>to work on</dd>
-
-    <dt>sich beklagen über (+Akk)</dt>
-    <dd>to complain about</dd>
-
-    <dt>schwärmen von (+Dat)</dt>
-    <dd>to rave about / to be enthusiastic about</dd>
-
-    <dt>schuld an (+Dat)</dt>
-    <dd>guilty of / to blame for</dd>
-
-    <dt>einen Fehler machen</dt>
-    <dd>to make a mistake</dd>
-
-    <dt>die Unerfahrenheit in (+Dat)</dt>
-    <dd>the inexperience in</dd>
-
-    <dt>behutsam</dt>
-    <dd>careful, gentle, cautious</dd>
-
-    <dt>glücklich über (+Akk)</dt>
-    <dd>happy about / delighted about</dd>
-
-    <dt>schreiben (+Dat/+Akk)</dt>
-    <dd>to write (something to someone)</dd>
-
-    <dt>schon mal</dt>
-    <dd>already / beforehand; (here) easily, on occasion</dd>
-
-    <dt>zur Ruhe kommen</dt>
-    <dd>to find peace / to settle down / to get some rest</dd>
+    <dt>die Mispel</dt><dd>the medlar (fruit)</dd>
+    <dt>in Schwierigkeiten kommen/geraten</dt><dd>to get into difficulties / trouble</dd>
+    <dt>unterrichten in (+Dat)</dt><dd>to teach / give lessons in</dd>
+    <dt>teilen in (+Akk)</dt><dd>to divide into</dd>
+    <dt>erstaunt über (+Akk)</dt><dd>astonished at / surprised by</dd>
+    <dt>beneiden um (+Akk)</dt><dd>to envy (someone) for (something)</dd>
+    <dt>eine Entscheidung treffen</dt><dd>to make a decision</dd>
+    <dt>V = „fau“, Y = „Ypsilon“, Z = „Zett“</dt><dd>the German names of the letters V, Y and Z</dd>
+    <dt>beharren auf (+Dat)</dt><dd>to persist in / stubbornly stick to a position</dd>
+    <dt>eine Rolle spielen für (+Akk)</dt><dd>to play a role for / to matter to</dd>
+    <dt>die Wichtigkeit für (+Akk)</dt><dd>the importance / significance for</dd>
+    <dt>das Arschloch</dt><dd>asshole (vulgar insult)</dd>
+    <dt>auf einmal</dt><dd>all at once / suddenly</dd>
+    <dt>schielen</dt><dd>to squint / glance sideways</dd>
+    <dt>Einen schönen Abend noch!</dt><dd>Have a nice evening!</dd>
+    <dt>die Tendenz zu (+Dat)</dt><dd>the tendency towards</dd>
+    <dt>schützen vor (+Dat)</dt><dd>to protect against</dd>
+    <dt>angewiesen auf (+Akk)</dt><dd>dependent on / reliant on</dd>
+    <dt>die Beschäftigung mit (+Dat) / bei (+Dat)</dt><dd>the engagement/occupation with something; employment at (a company)</dd>
+    <dt>wohl</dt><dd>probably / likely</dd>
   </dl>
 
+  <footer>Sprachgarten · Lesetraining · Wortschatz des Tages</footer>
 </div>
 
 <!-- site-header -->
