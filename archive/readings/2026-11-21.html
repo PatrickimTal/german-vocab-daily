@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sprachgarten – Lesetext: Das Geschäft mit dem guten Gefühl</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#304635;
+    --head:#082310;
+    --accent:#0077c7;
+    --accent-hover:#0061b0;
+    --rule:#e2e8e3;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:#ffffff;
+    color:var(--ink);
+    font-family:'Sora', system-ui, sans-serif;
+    font-size:17px;
+    line-height:1.72;
+    -webkit-text-size-adjust:100%;
+  }
+  .wrap{
+    max-width:680px;
+    margin:0 auto;
+    padding:28px 20px 64px;
+  }
+  .kicker{
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin:0 0 10px;
+  }
+  h1{
+    font-family:'Libre Baskerville', Georgia, serif;
+    color:var(--head);
+    font-size:1.72rem;
+    line-height:1.3;
+    font-weight:700;
+    margin:0 0 12px;
+  }
+  .standfirst{
+    font-family:'Libre Baskerville', Georgia, serif;
+    font-size:1.02rem;
+    line-height:1.6;
+    color:var(--ink);
+    margin:0 0 16px;
+  }
+  .meta{
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:12.5px;
+    color:#5d7363;
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:8px 0;
+    margin:0 0 26px;
+  }
+  article p{
+    margin:0 0 1.15em;
+  }
+  article p:first-of-type::first-letter{
+    font-family:'Libre Baskerville', Georgia, serif;
+    color:var(--head);
+    font-size:3.1rem;
+    line-height:.9;
+    float:left;
+    padding:4px 10px 0 0;
+  }
+  strong{
+    font-weight:600;
+    color:var(--head);
+  }
+  h2{
+    font-family:'Libre Baskerville', Georgia, serif;
+    color:var(--head);
+    font-size:1.22rem;
+    font-weight:700;
+    margin:40px 0 4px;
+  }
+  .gloss-note{
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:12.5px;
+    color:#5d7363;
+    margin:0 0 18px;
+  }
+  dl{
+    margin:0;
+    border-top:1px solid var(--rule);
+  }
+  dt{
+    font-weight:600;
+    color:var(--head);
+    margin-top:14px;
+  }
+  dd{
+    margin:2px 0 14px;
+    padding-bottom:14px;
+    border-bottom:1px solid var(--rule);
+    color:var(--ink);
+  }
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{color:var(--accent-hover);text-decoration:underline;}
+  footer{
+    margin-top:40px;
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:12px;
+    color:#5d7363;
+  }
+  @media (max-width:420px){
+    body{font-size:16.5px;}
+    h1{font-size:1.45rem;}
+  }
+</style>
+
+<!-- site-header -->
+<style>
+.site-bar {
+  --site-green: #e9fae9;
+  --page-bg: #fff;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-bg-hover: rgba(255, 255, 255, 0.97);
+  --panel-bg: rgba(255, 255, 255, 0.62);
+  --panel-bg-hover: rgba(255, 255, 255, 0.82);
+
+  --ink: #082310;
+  --ink-body: #304635;
+  --ink-muted: #4b614f;
+  --ink-faint: #617865;
+
+  --blue: #0077c7;
+  --blue-hover: #0061b0;
+  --blue-text: #006eb8;
+  --article: #c56c00;
+
+  --border: #8ab091;
+  --rule: #dce9de;
+  --underline: #a8c7ad;
+
+  --chip-verb-praep-bg: #cdecff;      --chip-verb-praep-fg: #004e95;
+  --chip-verb-kasus-bg: #c2f2f8;      --chip-verb-kasus-fg: #005565;
+  --chip-redemittel-bg: #f0e4ff;      --chip-redemittel-fg: #603b93;
+  --chip-nomen-praep-bg: #c4f2cc;     --chip-nomen-praep-fg: #005222;
+  --chip-adjektiv-praep-bg: #ffe1ac;  --chip-adjektiv-praep-fg: #7b4300;
+  --chip-redewendung-bg: #ffd9d7;     --chip-redewendung-fg: #9a2733;
+  --chip-wortschatz-bg: #dce9de;      --chip-wortschatz-fg: #384e3c;
+
+  --font-serif: 'Libre Baskerville', Georgia, serif;
+  --font-sans: 'Sora', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --r-sm: 4px;
+  --r-md: 12px;
+  --r-lg: 14px;
+  --r-pill: 999px;
+  --shadow-card: 0 12px 30px rgba(30, 70, 45, 0.1);
+
+  --pad-x: 22px;
+
+  font-family: var(--font-sans); font-size: 16px; line-height: 1.55;
+  -webkit-font-smoothing: antialiased; text-align: left;
+}
+.site-bar *, .site-bar *::before, .site-bar *::after { box-sizing: border-box; }
+.site-bar header, .site-bar nav { margin: 0; border: 0; max-width: none; }
+.site-bar a { text-decoration: none; border-bottom: 0; }
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: 12px; top: 12px; background: #fff; padding: 10px 14px; border-radius: 12px; z-index: 100; }
+
+.site-bar {
+  background: var(--blue-text);
+  border-bottom: 1px solid var(--blue-text);
+  box-shadow: 0 2px 12px rgba(30, 70, 45, 0.06);
+}
+.site-bar { margin-bottom: 26px; }
+.site-bar :focus-visible { outline-color: #fff; }
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px var(--pad-x);
+}
+.brand { display: flex; }
+.brand__logo { display: block; height: 40px; width: auto; max-width: none; }
+.nav { display: none; }
+.nav-toggle {
+  width: 44px; height: 44px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+  background: none; border: 1px solid rgba(255, 255, 255, 0.6); border-radius: var(--r-md); cursor: pointer;
+  transition: border-color 150ms ease;
+}
+.nav-toggle span { width: 18px; height: 1.5px; background: #fff; }
+.nav-toggle:hover, .nav-toggle[aria-expanded="true"] { border-color: #fff; }
+.mobile-nav { display: flex; flex-direction: column; padding: 4px var(--pad-x) 12px; gap: 2px; }
+.mobile-nav a {
+  min-height: 48px; display: flex; align-items: center;
+  padding: 0 12px; margin: 0 -12px;
+  color: #fff; font-size: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  transition: box-shadow 150ms ease;
+}
+.mobile-nav[hidden] { display: none; }
+.mobile-nav a:hover, .mobile-nav a:active { color: #fff; box-shadow: inset 0 0 0 1px #fff; }
+.mobile-nav .nav__current {
+  min-height: 48px; display: flex; align-items: center;
+  padding: 0 12px; margin: 0 -12px; font-size: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+/* current page: inverted white pill with blue text */
+.nav__current { background: #fff; color: var(--blue-text); cursor: default; }
+@media (min-width: 640px) {
+  .nav-toggle, .mobile-nav { display: none !important; }
+  .nav { display: flex; align-items: center; gap: 8px; font-size: 15px; }
+  .nav a {
+    padding: 9px 16px;
+    border: 1px solid transparent;
+    border-radius: var(--r-pill);
+    color: #fff;
+    transition: border-color 150ms ease;
+  }
+  /* hover: text stays white, a white outline appears */
+  .nav a:hover { border-color: #fff; color: #fff; }
+  .nav .nav__current {
+    padding: 9px 16px; border: 1px solid #fff; border-radius: var(--r-pill);
+  }
+  .brand__logo { height: 48px; }
+  .site-header { padding: 18px var(--pad-x); }
+  .site-bar { margin-bottom: 34px; --pad-x: 44px; }
+}
+@media (min-width: 1024px) {
+  .site-header { max-width: 1280px; margin-inline: auto; }
+  .site-bar { margin-bottom: 44px; --pad-x: 52px; }
+}
+
+.site-bar { margin-bottom: 0; }
+html body { background: #fff; }
+html body p.site-page-title {
+  font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400; font-style: normal;
+  font-size: 34px; line-height: 1.1; letter-spacing: normal; text-transform: none;
+  color: #082310; margin: 0 0 18px; padding: 0; border: 0; background: none;
+}
+@media (min-width: 640px) { html body p.site-page-title { font-size: 42px; } }
+@media (min-width: 640px) { .site-bar { --pad-x: 44px; } }
+@media (min-width: 1024px) { .site-bar { --pad-x: 52px; } }
+</style>
+<!-- /site-header --></head>
+<body>
+<!-- site-header -->
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<div class="site-bar">
+<header class="site-header">
+  <a class="brand" href="../../index.html">
+    <img class="brand__logo" src="../../wortschatz_logo_white.png" width="521" height="112" alt="Täglicher Deutscher Wortschatz C1">
+  </a>
+  <nav class="nav" aria-label="Hauptnavigation">
+    <a href="../../reading.html">Lesetext</a>
+    <a href="../../flashcards.html">Karteikarten</a>
+    <a href="../../about.html">Über das Projekt</a>
+    <a href="../../index.html">Home</a>
+  </nav>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menü öffnen">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav" hidden aria-label="Hauptnavigation, mobil">
+  <a href="../../reading.html">Lesetext</a>
+  <a href="../../flashcards.html">Karteikarten</a>
+  <a href="../../about.html">Über das Projekt</a>
+  <a href="../../index.html">Home</a>
+</nav>
+</div>
+<!-- /site-header -->
+<div class="wrap">
+
+  <!-- site-header -->
+<p class="site-page-title">Lesetext</p>
+<!-- /site-header -->
+<p class="kicker">Medien &middot; Feuilleton</p>
+  <h1>Das Geschäft mit dem guten Gefühl</h1>
+  <p class="standfirst">Gesundheitsratgeber im Netz erreichen ein Millionenpublikum. Über Haftung, Halbwissen und eine Regulierung, die seit Jahren nicht vom Fleck kommt.</p>
+  <p class="meta">Lesetext C1 &middot; 328 Wörter<span class="site-date"> · 21.11.2026</span> &middot; Sprachgarten</p>
+
+  <article>
+    <p>Im Hinterzimmer einer Berliner Altbauwohnung <strong>baumelt</strong> ein Mikrofon an einem Galgen über dem Schreibtisch, daneben steht ein Ringlicht. Der Raum riecht nach Kaffee und Erkältungstee. Marek L. hustet, <strong>schnieft</strong> und entschuldigt sich für seine Stimme. <strong>Dennoch</strong> nimmt er auf: drei Videos pro Woche, seit vier Jahren.</p>
+
+    <p>Der 34-Jährige <strong>lebt von</strong> dem, was die Branche Creator Economy nennt. Seine <strong>Spezialisierung auf</strong> Nahrungsergänzungsmittel hat ihm ein <strong>relativ</strong> kleines, aber treues Publikum verschafft: knapp vierzigtausend Abonnenten, die wissen wollen, welches Magnesiumpräparat etwas taugt. Er <strong>spricht</strong> in seinen Clips <strong>über</strong> Studien, die er nach eigener Aussage selbst liest, und er <strong>schreibt</strong> in einem wöchentlichen Newsletter <strong>über</strong> Dosierungen, Preise und Marketinglügen. Die Tonalität ist freundlich, die Grafiken sind <strong>ansprechend</strong> gestaltet, die Zahlen mit Animationen <strong>aufgepeppt</strong>.</p>
+
+    <p>Genau hier beginnt das Problem. Denn die <strong>Wirkung auf</strong> ein Publikum, das medizinische Fachliteratur nicht gegenlesen kann, ist kaum zu kontrollieren. Hochdosierte Präparate können der Leber <strong>schaden</strong>, Wechselwirkungen mit Medikamenten werden selten erwähnt. Information und Werbung lassen sich ohnehin kaum trennen, sobald im Video ein Rabattcode eingeblendet wird. Wer <strong>zwischen</strong> einem beiläufigen Satz in Minute sieben <strong>und</strong> dem Kaufverhalten tausender Zuschauer <strong>einen Zusammenhang herstellen</strong> möchte, stößt an methodische Grenzen: belastbare Daten fehlen.</p>
+
+    <p>Marek L. sagt, er sei längst <strong>an</strong> harsche Kommentare <strong>gewöhnt</strong>. Und doch <strong>fürchtet er sich vor</strong> dem Tag, an dem ihm jemand schreibt, ein Hinweis von ihm habe geschadet. Zweimal habe er Kooperationen abgelehnt, sagt er, und beide Male habe es wehgetan. Die <strong>Verantwortung für</strong> medizinische Aussagen, findet er, dürfe nicht allein bei Einzelpersonen liegen; <strong>notwendig</strong> seien klare Kennzeichnungspflichten. <strong>Außerdem</strong>, fügt er hinzu, müsse man ehrlich bleiben: Wer glaubt, Reichweite ersetze eine Ausbildung, <strong>überschätzt sich</strong>.</p>
+
+    <p>Man muss dem Mann das nicht abnehmen; es gehört zum Geschäftsmodell, selbstkritisch aufzutreten, denn Demut verkauft sich gut. Doch wenn Ärztekammern und Verbraucherschützer seit Jahren nach Regulierung rufen und dabei auf der Stelle <strong>treten</strong>, dann liegt das nicht an fehlenden Argumenten. Die Gesetzgebung ist langsam, der Algorithmus ist schnell. Wer darauf wartet, dass der Markt sich selbst diszipliniert, wartet vermutlich vergeblich.</p>
+  </article>
+
+  <h2>English gloss</h2>
+  <p class="gloss-note">In order of first appearance in the text.</p>
+  <dl>
+    <dt>baumeln</dt>
+    <dd>to dangle</dd>
+
+    <dt>schniefen</dt>
+    <dd>to sniffle</dd>
+
+    <dt>dennoch</dt>
+    <dd>nevertheless</dd>
+
+    <dt>leben von (+Dat)</dt>
+    <dd>to make a living from</dd>
+
+    <dt>die Spezialisierung auf (+Akk)</dt>
+    <dd>the specialisation in</dd>
+
+    <dt>relativ</dt>
+    <dd>relatively</dd>
+
+    <dt>sprechen über (+Akk)</dt>
+    <dd>to talk about / to speak about</dd>
+
+    <dt>schreiben über (+Akk)</dt>
+    <dd>to write about</dd>
+
+    <dt>ansprechend</dt>
+    <dd>appealing</dd>
+
+    <dt>aufgepeppt</dt>
+    <dd>pepped up / spiced up</dd>
+
+    <dt>die Wirkung auf (+Akk)</dt>
+    <dd>effect on</dd>
+
+    <dt>schaden (+Dat)</dt>
+    <dd>to harm / to damage</dd>
+
+    <dt>einen Zusammenhang herstellen zwischen (+Dat) und (+Dat)</dt>
+    <dd>to establish a connection between … and …</dd>
+
+    <dt>gewöhnt an (+Akk)</dt>
+    <dd>used to / accustomed to</dd>
+
+    <dt>sich fürchten vor (+Dat)</dt>
+    <dd>to be afraid of / to fear</dd>
+
+    <dt>die Verantwortung für (+Akk)</dt>
+    <dd>the responsibility for</dd>
+
+    <dt>notwendig</dt>
+    <dd>necessary / required</dd>
+
+    <dt>außerdem</dt>
+    <dd>besides / moreover</dd>
+
+    <dt>sich überschätzen</dt>
+    <dd>to overestimate oneself</dd>
+
+    <dt>treten</dt>
+    <dd>to step / to kick (hier: <em>auf der Stelle treten</em> – to mark time, to make no progress)</dd>
+  </dl>
+
+  <footer>Sprachgarten &middot; Lesen &amp; Wortschatz C1</footer>
+</div>
+
+<!-- site-header -->
+<script>
+document.querySelectorAll('.nav-toggle').forEach(function (toggle) {
+  var panel = document.getElementById(toggle.getAttribute('aria-controls'));
+  toggle.addEventListener('click', function () {
+    var open = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!open));
+    toggle.setAttribute('aria-label', open ? 'Menü öffnen' : 'Menü schließen');
+    if (panel) panel.hidden = open;
+  });
+});
+
+(function () {
+  var bar = document.querySelector('.site-bar');
+  if (!bar) return;
+  function firstTextTop() {
+    var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (n) {
+        if (bar.contains(n) || !n.nodeValue.trim()) return NodeFilter.FILTER_SKIP;
+        var p = n.parentElement;
+        if (!p || p.closest('script,style,.skip') || !p.offsetParent) return NodeFilter.FILTER_SKIP;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var n = w.nextNode();
+    if (!n) return null;
+    var r = document.createRange(); r.selectNodeContents(n);
+    return r.getBoundingClientRect().top;
+  }
+  function fit() {
+    var cs = getComputedStyle(document.body);
+    bar.style.marginTop = '-' + cs.paddingTop;
+    bar.style.marginLeft = '-' + cs.paddingLeft;
+    bar.style.marginRight = '-' + cs.paddingRight;
+    bar.style.marginBottom = '0px';
+    var w = window.innerWidth, target = w >= 1024 ? 44 : (w >= 640 ? 34 : 26);
+    var top = firstTextTop();
+    if (top === null) return;
+    var gap = top - bar.getBoundingClientRect().bottom;
+    bar.style.marginBottom = (target - gap) + 'px';
+  }
+  fit();
+  window.addEventListener('load', fit);
+  window.addEventListener('resize', fit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+})();
+</script>
+<!-- /site-header --></body>
+</html>
