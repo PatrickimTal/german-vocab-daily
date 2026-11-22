@@ -3,118 +3,87 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sprachgarten – Lesetext: Das Geschäft mit dem guten Gefühl</title>
+<title>Lesetext C1 – Zwischen Anpassung und Eigensinn</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --ink:#304635;
-    --head:#082310;
-    --accent:#0077c7;
-    --accent-hover:#0061b0;
-    --rule:#e2e8e3;
-  }
   *{box-sizing:border-box;}
   body{
     margin:0;
     background:#ffffff;
-    color:var(--ink);
-    font-family:'Sora', system-ui, sans-serif;
+    color:#304635;
+    font-family:'Sora',system-ui,sans-serif;
     font-size:17px;
-    line-height:1.72;
-    -webkit-text-size-adjust:100%;
+    line-height:1.65;
+    padding:28px 18px 60px;
   }
-  .wrap{
-    max-width:680px;
-    margin:0 auto;
-    padding:28px 20px 64px;
-  }
+  .wrap{max-width:680px;margin:0 auto;}
   .kicker{
-    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-family:'IBM Plex Mono',ui-monospace,monospace;
     font-size:12px;
-    letter-spacing:.12em;
+    letter-spacing:.09em;
     text-transform:uppercase;
-    color:var(--accent);
-    margin:0 0 10px;
+    color:#0077c7;
+    margin-bottom:10px;
   }
   h1{
-    font-family:'Libre Baskerville', Georgia, serif;
-    color:var(--head);
-    font-size:1.72rem;
-    line-height:1.3;
-    font-weight:700;
-    margin:0 0 12px;
-  }
-  .standfirst{
-    font-family:'Libre Baskerville', Georgia, serif;
-    font-size:1.02rem;
-    line-height:1.6;
-    color:var(--ink);
-    margin:0 0 16px;
-  }
-  .meta{
-    font-family:'IBM Plex Mono', ui-monospace, monospace;
-    font-size:12.5px;
-    color:#5d7363;
-    border-top:1px solid var(--rule);
-    border-bottom:1px solid var(--rule);
-    padding:8px 0;
-    margin:0 0 26px;
-  }
-  article p{
-    margin:0 0 1.15em;
-  }
-  article p:first-of-type::first-letter{
-    font-family:'Libre Baskerville', Georgia, serif;
-    color:var(--head);
-    font-size:3.1rem;
-    line-height:.9;
-    float:left;
-    padding:4px 10px 0 0;
-  }
-  strong{
-    font-weight:600;
-    color:var(--head);
+    font-family:'Libre Baskerville',Georgia,serif;
+    color:#082310;
+    font-size:28px;
+    line-height:1.25;
+    margin:0 0 6px;
   }
   h2{
-    font-family:'Libre Baskerville', Georgia, serif;
-    color:var(--head);
-    font-size:1.22rem;
-    font-weight:700;
-    margin:40px 0 4px;
+    font-family:'Libre Baskerville',Georgia,serif;
+    color:#082310;
+    font-size:20px;
+    margin:36px 0 12px;
   }
-  .gloss-note{
-    font-family:'IBM Plex Mono', ui-monospace, monospace;
+  .standfirst{
+    font-size:17px;
+    color:#304635;
+    margin:0 0 14px;
+  }
+  .meta{
+    font-family:'IBM Plex Mono',ui-monospace,monospace;
     font-size:12.5px;
-    color:#5d7363;
-    margin:0 0 18px;
+    color:#5a6f5e;
+    margin:0 0 24px;
+    padding-bottom:16px;
+    border-bottom:1px solid #e2e8e3;
   }
-  dl{
-    margin:0;
-    border-top:1px solid var(--rule);
+  article p{margin:0 0 16px;}
+  article p:first-of-type::first-letter{
+    font-family:'Libre Baskerville',Georgia,serif;
+    color:#082310;
+    font-size:3em;
+    line-height:.9;
+    float:left;
+    padding:4px 8px 0 0;
   }
+  strong{font-weight:600;color:#082310;}
+  .gloss{
+    margin-top:14px;
+    border-top:1px solid #e2e8e3;
+    padding-top:10px;
+  }
+  dl{margin:0;}
   dt{
     font-weight:600;
-    color:var(--head);
+    color:#082310;
     margin-top:14px;
   }
   dd{
-    margin:2px 0 14px;
-    padding-bottom:14px;
-    border-bottom:1px solid var(--rule);
-    color:var(--ink);
+    margin:2px 0 0;
+    padding-left:0;
+    color:#304635;
   }
-  a{color:var(--accent);text-decoration:none;}
-  a:hover{color:var(--accent-hover);text-decoration:underline;}
-  footer{
-    margin-top:40px;
-    font-family:'IBM Plex Mono', ui-monospace, monospace;
-    font-size:12px;
-    color:#5d7363;
-  }
+  dd::before{content:"→ ";color:#0077c7;}
+  a{color:#0077c7;text-decoration:none;}
+  a:hover{color:#0061b0;}
   @media (max-width:420px){
-    body{font-size:16.5px;}
-    h1{font-size:1.45rem;}
+    h1{font-size:24px;}
+    body{font-size:16px;}
   }
 </style>
 
@@ -280,88 +249,86 @@ html body p.site-page-title {
   <!-- site-header -->
 <p class="site-page-title">Lesetext</p>
 <!-- /site-header -->
-<p class="kicker">Medien &middot; Feuilleton</p>
-  <h1>Das Geschäft mit dem guten Gefühl</h1>
-  <p class="standfirst">Gesundheitsratgeber im Netz erreichen ein Millionenpublikum. Über Haftung, Halbwissen und eine Regulierung, die seit Jahren nicht vom Fleck kommt.</p>
-  <p class="meta">Lesetext C1 &middot; 328 Wörter<span class="site-date"> · 21.11.2026</span> &middot; Sprachgarten</p>
+<div class="kicker">Feuilleton · Reportage</div>
+  <h1>Zwischen Anpassung und Eigensinn</h1>
+  <p class="standfirst">Eine Unternehmerin über die unsichtbaren Kosten des Ankommens – und über die Frage, wer sich hier eigentlich an wen gewöhnen muss.</p>
+  <p class="meta">307 Wörter<span class="site-date"> · 22.11.2026</span> · Niveau C1 · Lesezeit ca. 3 Minuten</p>
 
   <article>
-    <p>Im Hinterzimmer einer Berliner Altbauwohnung <strong>baumelt</strong> ein Mikrofon an einem Galgen über dem Schreibtisch, daneben steht ein Ringlicht. Der Raum riecht nach Kaffee und Erkältungstee. Marek L. hustet, <strong>schnieft</strong> und entschuldigt sich für seine Stimme. <strong>Dennoch</strong> nimmt er auf: drei Videos pro Woche, seit vier Jahren.</p>
+    <p>Kurz nach sieben Uhr, Gewerbegebiet am Stadtrand: Leila Farhadi <strong>verspeist</strong> im Stehen das letzte Stück Brot vom Vorabend, bevor der Rechner hochfährt. Seit elf Jahren <strong>leitet</strong> sie <strong>ein Unternehmen</strong>, das Messgeräte für die Industrie fertigt – vierzig Beschäftigte, zwei Hallen, ein Auftragsbuch, das sich nicht von allein füllt. Dass sie sich an diesem Morgen überhaupt <strong>mit</strong> einem Besucher aus der Redaktion <strong>unterhält</strong>, hat einen Grund: Sie ist <strong>neugierig auf</strong> dessen Frage. Wie viel Anpassung darf ein Land von denen verlangen, die in ihm ankommen?</p>
 
-    <p>Der 34-Jährige <strong>lebt von</strong> dem, was die Branche Creator Economy nennt. Seine <strong>Spezialisierung auf</strong> Nahrungsergänzungsmittel hat ihm ein <strong>relativ</strong> kleines, aber treues Publikum verschafft: knapp vierzigtausend Abonnenten, die wissen wollen, welches Magnesiumpräparat etwas taugt. Er <strong>spricht</strong> in seinen Clips <strong>über</strong> Studien, die er nach eigener Aussage selbst liest, und er <strong>schreibt</strong> in einem wöchentlichen Newsletter <strong>über</strong> Dosierungen, Preise und Marketinglügen. Die Tonalität ist freundlich, die Grafiken sind <strong>ansprechend</strong> gestaltet, die Zahlen mit Animationen <strong>aufgepeppt</strong>.</p>
+    <p>Farhadi antwortet mit einer Anekdote. Als sie mit zweiundzwanzig einwanderte, riet ihr die <strong>Schwägerin</strong>, sich möglichst rasch <strong>an</strong> die hiesigen Gepflogenheiten <strong>anzupassen</strong>: pünktlich erscheinen, klar formulieren und keinesfalls in der Teeküche über die Vorgesetzten <strong>schimpfen</strong>. Wer ihr damals <strong>einen Hinweis gab</strong>, meinte es gut – und übersah doch, wie viel Kraft solche Korrekturen kosten. Die <strong>Müdigkeit von</strong> den Doppelschichten in der Gastronomie habe sie noch Jahre später gespürt. Schlimmer aber sei die <strong>Scham</strong> über jeden misslungenen Nebensatz gewesen; sie hatte <strong>zur Folge</strong>, dass die junge Frau in Besprechungen schwieg.</p>
 
-    <p>Genau hier beginnt das Problem. Denn die <strong>Wirkung auf</strong> ein Publikum, das medizinische Fachliteratur nicht gegenlesen kann, ist kaum zu kontrollieren. Hochdosierte Präparate können der Leber <strong>schaden</strong>, Wechselwirkungen mit Medikamenten werden selten erwähnt. Information und Werbung lassen sich ohnehin kaum trennen, sobald im Video ein Rabattcode eingeblendet wird. Wer <strong>zwischen</strong> einem beiläufigen Satz in Minute sieben <strong>und</strong> dem Kaufverhalten tausender Zuschauer <strong>einen Zusammenhang herstellen</strong> möchte, stößt an methodische Grenzen: belastbare Daten fehlen.</p>
+    <p>Solche Hemmungen, sagt Farhadi, lassen sich nicht durch Willenskraft <strong>bekämpfen</strong>. Geholfen habe ihr die <strong>Konzentration auf</strong> das Handwerkliche: Toleranzen, Kalibrierung, Lieferfristen. Und eine Kollegin, die ihr <strong>empfahl</strong>, den Schritt in die Selbstständigkeit endlich <strong>in Angriff zu nehmen</strong>. Aus der kollegialen Nähe wurde die <strong>Freundschaft mit</strong> jener Frau, die heute ihre Prokuristin ist; die <strong>Freundschaft zwischen</strong> beiden hat drei Krisen überdauert. Als der Wirtschaftsverband ihr unlängst <strong>zum</strong> Firmenjubiläum <strong>gratulierte</strong>, <strong>zwinkerte</strong> sie ihr von der Bühne aus <strong>zu</strong>.</p>
 
-    <p>Marek L. sagt, er sei längst <strong>an</strong> harsche Kommentare <strong>gewöhnt</strong>. Und doch <strong>fürchtet er sich vor</strong> dem Tag, an dem ihm jemand schreibt, ein Hinweis von ihm habe geschadet. Zweimal habe er Kooperationen abgelehnt, sagt er, und beide Male habe es wehgetan. Die <strong>Verantwortung für</strong> medizinische Aussagen, findet er, dürfe nicht allein bei Einzelpersonen liegen; <strong>notwendig</strong> seien klare Kennzeichnungspflichten. <strong>Außerdem</strong>, fügt er hinzu, müsse man ehrlich bleiben: Wer glaubt, Reichweite ersetze eine Ausbildung, <strong>überschätzt sich</strong>.</p>
-
-    <p>Man muss dem Mann das nicht abnehmen; es gehört zum Geschäftsmodell, selbstkritisch aufzutreten, denn Demut verkauft sich gut. Doch wenn Ärztekammern und Verbraucherschützer seit Jahren nach Regulierung rufen und dabei auf der Stelle <strong>treten</strong>, dann liegt das nicht an fehlenden Argumenten. Die Gesetzgebung ist langsam, der Algorithmus ist schnell. Wer darauf wartet, dass der Markt sich selbst diszipliniert, wartet vermutlich vergeblich.</p>
+    <p>Den Applaus hält Farhadi dennoch für wohlfeil. Förderprogramme seien oft nur auf Deutsch <strong>verfügbar</strong>, Beratungstermine erst nach Monaten; wer ein <strong>Schlupfloch</strong> im Steuerrecht kenne, komme weiter als wer Normen erfülle. Anpassung, sagt sie, sei keine Einbahnstraße. Wer Zuwanderung als bloße Bringschuld der Ankommenden begreife, verschenke Talente, die ohnehin knapp sind. Auch Institutionen könnten lernen, Fremdheit auszuhalten, statt sie zu verwalten.</p>
   </article>
 
   <h2>English gloss</h2>
-  <p class="gloss-note">In order of first appearance in the text.</p>
-  <dl>
-    <dt>baumeln</dt>
-    <dd>to dangle</dd>
+  <div class="gloss">
+    <dl>
+      <dt>verspeisen</dt>
+      <dd>to devour, to eat up</dd>
 
-    <dt>schniefen</dt>
-    <dd>to sniffle</dd>
+      <dt>ein Unternehmen leiten</dt>
+      <dd>to run a company</dd>
 
-    <dt>dennoch</dt>
-    <dd>nevertheless</dd>
+      <dt>sich unterhalten mit (+Dat)</dt>
+      <dd>to talk / chat / converse with</dd>
 
-    <dt>leben von (+Dat)</dt>
-    <dd>to make a living from</dd>
+      <dt>neugierig auf (+Akk)</dt>
+      <dd>curious about</dd>
 
-    <dt>die Spezialisierung auf (+Akk)</dt>
-    <dd>the specialisation in</dd>
+      <dt>die Schwägerin</dt>
+      <dd>the sister-in-law</dd>
 
-    <dt>relativ</dt>
-    <dd>relatively</dd>
+      <dt>sich anpassen an (+Akk)</dt>
+      <dd>to adapt to, to adjust to</dd>
 
-    <dt>sprechen über (+Akk)</dt>
-    <dd>to talk about / to speak about</dd>
+      <dt>schimpfen über (+Akk)</dt>
+      <dd>to rant about, to scold about</dd>
 
-    <dt>schreiben über (+Akk)</dt>
-    <dd>to write about</dd>
+      <dt>einen Hinweis geben (+Dat)</dt>
+      <dd>to give someone a tip, hint or piece of advice</dd>
 
-    <dt>ansprechend</dt>
-    <dd>appealing</dd>
+      <dt>die Müdigkeit von (+Dat)</dt>
+      <dd>the tiredness / fatigue from</dd>
 
-    <dt>aufgepeppt</dt>
-    <dd>pepped up / spiced up</dd>
+      <dt>die Scham</dt>
+      <dd>the shame</dd>
 
-    <dt>die Wirkung auf (+Akk)</dt>
-    <dd>effect on</dd>
+      <dt>zur Folge haben</dt>
+      <dd>to result in, to have as a consequence</dd>
 
-    <dt>schaden (+Dat)</dt>
-    <dd>to harm / to damage</dd>
+      <dt>bekämpfen</dt>
+      <dd>to fight, to combat</dd>
 
-    <dt>einen Zusammenhang herstellen zwischen (+Dat) und (+Dat)</dt>
-    <dd>to establish a connection between … and …</dd>
+      <dt>die Konzentration auf (+Akk)</dt>
+      <dd>the concentration / focus on</dd>
 
-    <dt>gewöhnt an (+Akk)</dt>
-    <dd>used to / accustomed to</dd>
+      <dt>empfehlen (+Dat/+Akk)</dt>
+      <dd>to recommend</dd>
 
-    <dt>sich fürchten vor (+Dat)</dt>
-    <dd>to be afraid of / to fear</dd>
+      <dt>in Angriff nehmen</dt>
+      <dd>to tackle, to set about, to get started on</dd>
 
-    <dt>die Verantwortung für (+Akk)</dt>
-    <dd>the responsibility for</dd>
+      <dt>die Freundschaft mit (+Dat) / zwischen (+Dat)</dt>
+      <dd>friendship with / between</dd>
 
-    <dt>notwendig</dt>
-    <dd>necessary / required</dd>
+      <dt>gratulieren (zu) (+Dat)</dt>
+      <dd>to congratulate (on)</dd>
 
-    <dt>außerdem</dt>
-    <dd>besides / moreover</dd>
+      <dt>zuzwinkern (+Dat)</dt>
+      <dd>to wink at (someone)</dd>
 
-    <dt>sich überschätzen</dt>
-    <dd>to overestimate oneself</dd>
+      <dt>verfügbar</dt>
+      <dd>available</dd>
 
-    <dt>treten</dt>
-    <dd>to step / to kick (hier: <em>auf der Stelle treten</em> – to mark time, to make no progress)</dd>
-  </dl>
+      <dt>das Schlupfloch</dt>
+      <dd>the loophole</dd>
+    </dl>
+  </div>
 
-  <footer>Sprachgarten &middot; Lesen &amp; Wortschatz C1</footer>
 </div>
 
 <!-- site-header -->
