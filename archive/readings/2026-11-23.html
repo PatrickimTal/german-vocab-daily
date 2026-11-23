@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sprachgarten · Lesetext C1 — Knusprig, aber digital</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:#ffffff;
+    color:#304635;
+    font-family:'Sora',system-ui,sans-serif;
+    font-size:17px;
+    line-height:1.7;
+    padding:28px 18px 64px;
+  }
+  .wrap{max-width:660px;margin:0 auto;}
+  .kicker{
+    font-family:'IBM Plex Mono',ui-monospace,monospace;
+    font-size:12px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:#0077c7;
+    margin-bottom:10px;
+  }
+  h1{
+    font-family:'Libre Baskerville',Georgia,serif;
+    color:#082310;
+    font-size:1.72rem;
+    line-height:1.28;
+    margin:0 0 6px;
+  }
+  h2{
+    font-family:'Libre Baskerville',Georgia,serif;
+    color:#082310;
+    font-size:1.12rem;
+    margin:44px 0 14px;
+  }
+  .standfirst{
+    font-family:'Libre Baskerville',Georgia,serif;
+    font-size:1rem;
+    line-height:1.6;
+    color:#304635;
+    margin:0 0 14px;
+  }
+  .meta{
+    font-family:'IBM Plex Mono',ui-monospace,monospace;
+    font-size:12.5px;
+    color:#5c6f60;
+    border-top:1px solid #dfe7e0;
+    border-bottom:1px solid #dfe7e0;
+    padding:8px 0;
+    margin:0 0 26px;
+  }
+  article p{margin:0 0 18px;}
+  article p:first-of-type::first-letter{
+    font-family:'Libre Baskerville',Georgia,serif;
+    font-size:3rem;
+    line-height:.9;
+    float:left;
+    padding:6px 10px 0 0;
+    color:#082310;
+  }
+  strong{font-weight:600;color:#082310;}
+  dl{
+    margin:0;
+    border-top:1px solid #dfe7e0;
+  }
+  dt{
+    font-weight:600;
+    color:#082310;
+    margin-top:14px;
+  }
+  dd{
+    margin:2px 0 12px;
+    padding-bottom:12px;
+    border-bottom:1px solid #eef2ee;
+    color:#304635;
+  }
+  a{color:#0077c7;text-decoration:none;}
+  a:hover{color:#0061b0;text-decoration:underline;}
+  footer{
+    font-family:'IBM Plex Mono',ui-monospace,monospace;
+    font-size:12px;
+    color:#5c6f60;
+    margin-top:40px;
+  }
+</style>
+
+<!-- site-header -->
+<style>
+.site-bar {
+  --site-green: #e9fae9;
+  --page-bg: #fff;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-bg-hover: rgba(255, 255, 255, 0.97);
+  --panel-bg: rgba(255, 255, 255, 0.62);
+  --panel-bg-hover: rgba(255, 255, 255, 0.82);
+
+  --ink: #082310;
+  --ink-body: #304635;
+  --ink-muted: #4b614f;
+  --ink-faint: #617865;
+
+  --blue: #0077c7;
+  --blue-hover: #0061b0;
+  --blue-text: #006eb8;
+  --article: #c56c00;
+
+  --border: #8ab091;
+  --rule: #dce9de;
+  --underline: #a8c7ad;
+
+  --chip-verb-praep-bg: #cdecff;      --chip-verb-praep-fg: #004e95;
+  --chip-verb-kasus-bg: #c2f2f8;      --chip-verb-kasus-fg: #005565;
+  --chip-redemittel-bg: #f0e4ff;      --chip-redemittel-fg: #603b93;
+  --chip-nomen-praep-bg: #c4f2cc;     --chip-nomen-praep-fg: #005222;
+  --chip-adjektiv-praep-bg: #ffe1ac;  --chip-adjektiv-praep-fg: #7b4300;
+  --chip-redewendung-bg: #ffd9d7;     --chip-redewendung-fg: #9a2733;
+  --chip-wortschatz-bg: #dce9de;      --chip-wortschatz-fg: #384e3c;
+
+  --font-serif: 'Libre Baskerville', Georgia, serif;
+  --font-sans: 'Sora', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --r-sm: 4px;
+  --r-md: 12px;
+  --r-lg: 14px;
+  --r-pill: 999px;
+  --shadow-card: 0 12px 30px rgba(30, 70, 45, 0.1);
+
+  --pad-x: 22px;
+
+  font-family: var(--font-sans); font-size: 16px; line-height: 1.55;
+  -webkit-font-smoothing: antialiased; text-align: left;
+}
+.site-bar *, .site-bar *::before, .site-bar *::after { box-sizing: border-box; }
+.site-bar header, .site-bar nav { margin: 0; border: 0; max-width: none; }
+.site-bar a { text-decoration: none; border-bottom: 0; }
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: 12px; top: 12px; background: #fff; padding: 10px 14px; border-radius: 12px; z-index: 100; }
+
+.site-bar {
+  background: var(--blue-text);
+  border-bottom: 1px solid var(--blue-text);
+  box-shadow: 0 2px 12px rgba(30, 70, 45, 0.06);
+}
+.site-bar { margin-bottom: 26px; }
+.site-bar :focus-visible { outline-color: #fff; }
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px var(--pad-x);
+}
+.brand { display: flex; }
+.brand__logo { display: block; height: 40px; width: auto; max-width: none; }
+.nav { display: none; }
+.nav-toggle {
+  width: 44px; height: 44px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+  background: none; border: 1px solid rgba(255, 255, 255, 0.6); border-radius: var(--r-md); cursor: pointer;
+  transition: border-color 150ms ease;
+}
+.nav-toggle span { width: 18px; height: 1.5px; background: #fff; }
+.nav-toggle:hover, .nav-toggle[aria-expanded="true"] { border-color: #fff; }
+.mobile-nav { display: flex; flex-direction: column; padding: 4px var(--pad-x) 12px; gap: 2px; }
+.mobile-nav a {
+  min-height: 48px; display: flex; align-items: center;
+  padding: 0 12px; margin: 0 -12px;
+  color: #fff; font-size: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  transition: box-shadow 150ms ease;
+}
+.mobile-nav[hidden] { display: none; }
+.mobile-nav a:hover, .mobile-nav a:active { color: #fff; box-shadow: inset 0 0 0 1px #fff; }
+.mobile-nav .nav__current {
+  min-height: 48px; display: flex; align-items: center;
+  padding: 0 12px; margin: 0 -12px; font-size: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+/* current page: inverted white pill with blue text */
+.nav__current { background: #fff; color: var(--blue-text); cursor: default; }
+@media (min-width: 640px) {
+  .nav-toggle, .mobile-nav { display: none !important; }
+  .nav { display: flex; align-items: center; gap: 8px; font-size: 15px; }
+  .nav a {
+    padding: 9px 16px;
+    border: 1px solid transparent;
+    border-radius: var(--r-pill);
+    color: #fff;
+    transition: border-color 150ms ease;
+  }
+  /* hover: text stays white, a white outline appears */
+  .nav a:hover { border-color: #fff; color: #fff; }
+  .nav .nav__current {
+    padding: 9px 16px; border: 1px solid #fff; border-radius: var(--r-pill);
+  }
+  .brand__logo { height: 48px; }
+  .site-header { padding: 18px var(--pad-x); }
+  .site-bar { margin-bottom: 34px; --pad-x: 44px; }
+}
+@media (min-width: 1024px) {
+  .site-header { max-width: 1280px; margin-inline: auto; }
+  .site-bar { margin-bottom: 44px; --pad-x: 52px; }
+}
+
+.site-bar { margin-bottom: 0; }
+html body { background: #fff; }
+html body p.site-page-title {
+  font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400; font-style: normal;
+  font-size: 34px; line-height: 1.1; letter-spacing: normal; text-transform: none;
+  color: #082310; margin: 0 0 18px; padding: 0; border: 0; background: none;
+}
+@media (min-width: 640px) { html body p.site-page-title { font-size: 42px; } }
+@media (min-width: 640px) { .site-bar { --pad-x: 44px; } }
+@media (min-width: 1024px) { .site-bar { --pad-x: 52px; } }
+</style>
+<!-- /site-header --></head>
+<body>
+<!-- site-header -->
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<div class="site-bar">
+<header class="site-header">
+  <a class="brand" href="../../index.html">
+    <img class="brand__logo" src="../../wortschatz_logo_white.png" width="521" height="112" alt="Täglicher Deutscher Wortschatz C1">
+  </a>
+  <nav class="nav" aria-label="Hauptnavigation">
+    <a href="../../reading.html">Lesetext</a>
+    <a href="../../flashcards.html">Karteikarten</a>
+    <a href="../../about.html">Über das Projekt</a>
+    <a href="../../index.html">Home</a>
+  </nav>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menü öffnen">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav" hidden aria-label="Hauptnavigation, mobil">
+  <a href="../../reading.html">Lesetext</a>
+  <a href="../../flashcards.html">Karteikarten</a>
+  <a href="../../about.html">Über das Projekt</a>
+  <a href="../../index.html">Home</a>
+</nav>
+</div>
+<!-- /site-header -->
+<div class="wrap">
+
+  <!-- site-header -->
+<p class="site-page-title">Lesetext</p>
+<!-- /site-header -->
+<div class="kicker">Feuilleton · Reportage</div>
+  <h1>Knusprig, aber digital: Wie eine Dorfbäckerei um Vertrauen ringt</h1>
+  <p class="standfirst">Seit die Bestellungen über eine App laufen, streitet ein Ort über mehr als nur Brötchen.</p>
+  <p class="meta">333 Wörter<span class="site-date"> · 23.11.2026</span> · Niveau C1 · Lesezeit ca. 3 Minuten</p>
+
+  <article>
+    <p>Um halb fünf, wenn die erste <strong>Flüssigkeit</strong> in den Teig läuft, ist von dem Streit nichts zu spüren, der das Dorf seit Monaten beschäftigt. Marlene Ostermann, 54, führt die Bäckerei in dritter Generation; ihre Brötchen gelten weit über die Gemeindegrenze hinaus als <strong>außergewöhnlich</strong> <strong>knusprig</strong>. Seit dem Frühjahr jedoch nimmt sie Bestellungen fast nur noch über eine App entgegen – und seither ist das <strong>Misstrauen gegenüber</strong> der Technik mit Händen zu greifen.</p>
+
+    <p>„Die Leute haben <strong>Zweifel an</strong> allem, was sie nicht anfassen können“, sagt die Bäckerin. Ältere Kunden äußern ihre <strong>Wut auf</strong> das Programm und <strong>über</strong> die Zumutung, morgens ein Display zu bedienen; einer habe ihr quer durch den Verkaufsraum zugerufen: „<strong>Hör auf</strong> damit!“ Jüngere dagegen <strong>verlassen sich auf</strong> die App wie auf einen verlässlichen Kollegen. Dazwischen steht Ostermann, die ihre <strong>Arbeit erledigen</strong> möchte, bevor der erste Pendler hereinhastet, der soeben <strong>seinen Zug verpasst</strong> hat. Die Auseinandersetzung um die App ist längst eine Auseinandersetzung über das Dorf selbst.</p>
+
+    <p>Der <strong>Widerstand</strong> kam nicht überraschend. Ihr Steuerberater hatte ihr den <strong>Rat gegeben</strong>, in kleinen Schritten vorzugehen: <strong>kein Druck</strong>, niemand müsse sich sofort umstellen. Tatsächlich hat sich inzwischen selbst die Stammkundschaft <strong>an</strong> die Vorbestellung <strong>gewöhnt</strong>, zumal Ostermann jedem, der digital ordert, <strong>einen Rabatt</strong> von zehn Prozent <strong>gibt</strong>. Busreisenden aus der Schweiz, die ihre Franken erst <strong>umwechseln</strong> müssen, nimmt sie weiterhin Bargeld ab.</p>
+
+    <p>Dass etwas <strong>schieflaufen</strong> kann, bestreitet sie nicht. Im Juni streikte der Server; dreihundert Bestellungen verschwanden, die Schlange reichte bis auf den Gehweg. Ostermann lächelte <strong>tapfer</strong>, verteilte Kaffee und notierte die Wünsche auf Papier. Niemand im Ort hat ihr die Panne nachgetragen; sie wurde binnen Tagen zur Anekdote am Stammtisch. Ihre Tochter <strong>zeichnet</strong> die Tageskarte ohnehin noch mit Kreide auf eine Tafel – ein kleiner analoger Trotz, der die Kundschaft versöhnt.</p>
+
+    <p>Ostermann <strong>bleibt bei</strong> ihrer Linie. Nicht aus Technikbegeisterung, sagt sie, sondern weil sie sonst keine Nachfolge fände. Wer ein Handwerk retten wolle, müsse manchmal zumuten, dass es sich verändert. Das Vertrauen, das früher über die Theke gereicht wurde, muss heute neu verhandelt werden – täglich, Brötchen für Brötchen.</p>
+  </article>
+
+  <h2>English gloss</h2>
+  <dl>
+    <dt>die Flüssigkeit</dt>
+    <dd>the liquid</dd>
+
+    <dt>außergewöhnlich</dt>
+    <dd>extraordinary</dd>
+
+    <dt>knusprig</dt>
+    <dd>crunchy, crispy</dd>
+
+    <dt>das Misstrauen gegenüber (+Dat)</dt>
+    <dd>the mistrust / suspicion towards</dd>
+
+    <dt>der Zweifel an (+Dat)</dt>
+    <dd>the doubt about</dd>
+
+    <dt>die Wut auf (+Akk) / über (+Akk)</dt>
+    <dd>anger at / about</dd>
+
+    <dt>Hör auf!</dt>
+    <dd>Stop it!</dd>
+
+    <dt>sich verlassen auf (+Akk)</dt>
+    <dd>to rely on / to count on</dd>
+
+    <dt>Arbeit erledigen</dt>
+    <dd>to finish / complete work</dd>
+
+    <dt>eine Verbindung / einen Zug verpassen</dt>
+    <dd>to miss a connection / a train</dd>
+
+    <dt>der Widerstand</dt>
+    <dd>the resistance</dd>
+
+    <dt>einen Rat geben (+Dat)</dt>
+    <dd>to give (somebody) advice</dd>
+
+    <dt>kein Druck / keinen Druck</dt>
+    <dd>no pressure</dd>
+
+    <dt>sich gewöhnen an (+Akk)</dt>
+    <dd>to get used to</dd>
+
+    <dt>einen Rabatt geben (+Dat)</dt>
+    <dd>to give (somebody) a discount</dd>
+
+    <dt>umwechseln</dt>
+    <dd>to exchange (currency)</dd>
+
+    <dt>schieflaufen</dt>
+    <dd>to go wrong</dd>
+
+    <dt>tapfer</dt>
+    <dd>brave, bravely</dd>
+
+    <dt>zeichnen</dt>
+    <dd>to draw</dd>
+
+    <dt>bleiben bei (+Dat)</dt>
+    <dd>to remain with / stick to (a decision, a line)</dd>
+  </dl>
+
+  <footer>Sprachgarten · Lesetraining C1 · Zielwortschatz: 20 Einträge</footer>
+
+</div>
+
+<!-- site-header -->
+<script>
+document.querySelectorAll('.nav-toggle').forEach(function (toggle) {
+  var panel = document.getElementById(toggle.getAttribute('aria-controls'));
+  toggle.addEventListener('click', function () {
+    var open = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!open));
+    toggle.setAttribute('aria-label', open ? 'Menü öffnen' : 'Menü schließen');
+    if (panel) panel.hidden = open;
+  });
+});
+
+(function () {
+  var bar = document.querySelector('.site-bar');
+  if (!bar) return;
+  function firstTextTop() {
+    var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (n) {
+        if (bar.contains(n) || !n.nodeValue.trim()) return NodeFilter.FILTER_SKIP;
+        var p = n.parentElement;
+        if (!p || p.closest('script,style,.skip') || !p.offsetParent) return NodeFilter.FILTER_SKIP;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var n = w.nextNode();
+    if (!n) return null;
+    var r = document.createRange(); r.selectNodeContents(n);
+    return r.getBoundingClientRect().top;
+  }
+  function fit() {
+    var cs = getComputedStyle(document.body);
+    bar.style.marginTop = '-' + cs.paddingTop;
+    bar.style.marginLeft = '-' + cs.paddingLeft;
+    bar.style.marginRight = '-' + cs.paddingRight;
+    bar.style.marginBottom = '0px';
+    var w = window.innerWidth, target = w >= 1024 ? 44 : (w >= 640 ? 34 : 26);
+    var top = firstTextTop();
+    if (top === null) return;
+    var gap = top - bar.getBoundingClientRect().bottom;
+    bar.style.marginBottom = (target - gap) + 'px';
+  }
+  fit();
+  window.addEventListener('load', fit);
+  window.addEventListener('resize', fit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+})();
+</script>
+<!-- /site-header --></body>
+</html>
