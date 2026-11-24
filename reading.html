@@ -3,90 +3,100 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sprachgarten · Lesetext C1 — Knusprig, aber digital</title>
+<title>Lesetext: Zwischen Zaun und Zukunft</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+  :root{
+    --ink:#304635;
+    --head:#082310;
+    --accent:#0077c7;
+  }
   *{box-sizing:border-box;}
   body{
     margin:0;
     background:#ffffff;
-    color:#304635;
-    font-family:'Sora',system-ui,sans-serif;
+    color:var(--ink);
+    font-family:'Sora', system-ui, sans-serif;
     font-size:17px;
     line-height:1.7;
-    padding:28px 18px 64px;
+    -webkit-text-size-adjust:100%;
   }
-  .wrap{max-width:660px;margin:0 auto;}
+  .wrap{
+    max-width:40rem;
+    margin:0 auto;
+    padding:2rem 1.15rem 4rem;
+  }
   .kicker{
-    font-family:'IBM Plex Mono',ui-monospace,monospace;
-    font-size:12px;
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:.72rem;
     letter-spacing:.14em;
     text-transform:uppercase;
-    color:#0077c7;
-    margin-bottom:10px;
+    color:var(--accent);
+    margin:0 0 .6rem;
   }
   h1{
-    font-family:'Libre Baskerville',Georgia,serif;
-    color:#082310;
+    font-family:'Libre Baskerville', Georgia, serif;
+    color:var(--head);
+    font-weight:700;
     font-size:1.72rem;
     line-height:1.28;
-    margin:0 0 6px;
-  }
-  h2{
-    font-family:'Libre Baskerville',Georgia,serif;
-    color:#082310;
-    font-size:1.12rem;
-    margin:44px 0 14px;
+    margin:0 0 .7rem;
   }
   .standfirst{
-    font-family:'Libre Baskerville',Georgia,serif;
-    font-size:1rem;
+    font-family:'Libre Baskerville', Georgia, serif;
+    font-size:1.02rem;
     line-height:1.6;
-    color:#304635;
-    margin:0 0 14px;
+    color:var(--ink);
+    margin:0 0 1.1rem;
   }
   .meta{
-    font-family:'IBM Plex Mono',ui-monospace,monospace;
-    font-size:12.5px;
-    color:#5c6f60;
-    border-top:1px solid #dfe7e0;
-    border-bottom:1px solid #dfe7e0;
-    padding:8px 0;
-    margin:0 0 26px;
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:.78rem;
+    color:#5d7363;
+    margin:0 0 1.6rem;
+    padding-bottom:1.2rem;
+    border-bottom:1px solid #d9e3db;
   }
-  article p{margin:0 0 18px;}
+  article p{margin:0 0 1.15rem;}
   article p:first-of-type::first-letter{
-    font-family:'Libre Baskerville',Georgia,serif;
-    font-size:3rem;
-    line-height:.9;
+    font-family:'Libre Baskerville', Georgia, serif;
+    color:var(--head);
+    font-size:3.1rem;
+    line-height:.86;
     float:left;
-    padding:6px 10px 0 0;
-    color:#082310;
+    padding:.12em .1em 0 0;
   }
-  strong{font-weight:600;color:#082310;}
-  dl{
-    margin:0;
-    border-top:1px solid #dfe7e0;
+  strong{font-weight:600; color:var(--head);}
+  h2{
+    font-family:'Libre Baskerville', Georgia, serif;
+    color:var(--head);
+    font-size:1.18rem;
+    margin:2.6rem 0 1rem;
+    padding-top:1.4rem;
+    border-top:1px solid #d9e3db;
   }
+  dl{margin:0;}
   dt{
     font-weight:600;
-    color:#082310;
-    margin-top:14px;
+    color:var(--head);
+    margin-top:.95rem;
   }
   dd{
-    margin:2px 0 12px;
-    padding-bottom:12px;
-    border-bottom:1px solid #eef2ee;
-    color:#304635;
+    margin:.15rem 0 0;
+    padding-left:1rem;
+    border-left:2px solid #d9e3db;
+    color:var(--ink);
   }
-  a{color:#0077c7;text-decoration:none;}
+  a{color:var(--accent);text-decoration:none;}
   a:hover{color:#0061b0;text-decoration:underline;}
   footer{
-    font-family:'IBM Plex Mono',ui-monospace,monospace;
-    font-size:12px;
-    color:#5c6f60;
-    margin-top:40px;
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:.74rem;
+    color:#5d7363;
+    margin-top:2.8rem;
+    padding-top:1.2rem;
+    border-top:1px solid #d9e3db;
   }
 </style>
 
@@ -252,87 +262,87 @@ html body p.site-page-title {
   <!-- site-header -->
 <p class="site-page-title">Lesetext</p>
 <!-- /site-header -->
-<div class="kicker">Feuilleton · Reportage</div>
-  <h1>Knusprig, aber digital: Wie eine Dorfbäckerei um Vertrauen ringt</h1>
-  <p class="standfirst">Seit die Bestellungen über eine App laufen, streitet ein Ort über mehr als nur Brötchen.</p>
-  <p class="meta">333 Wörter<span class="site-date"> · 23.11.2026</span> · Niveau C1 · Lesezeit ca. 3 Minuten</p>
+<p class="kicker">Feuilleton &middot; Stadt und Gesellschaft</p>
+  <h1>Zwischen Zaun und Zukunft: Warum der Schrebergarten wieder Konjunktur hat</h1>
+  <p class="standfirst">Jahrzehntelang galt die Kleingartenanlage als Inbegriff der Spießigkeit. Nun stehen Zehntausende auf Wartelisten &ndash; und das sagt mehr über die Städte aus als über das Gärtnern.</p>
+  <p class="meta">Lesetext &middot; Niveau C1 &middot; 321 Wörter<span class="site-date"> · 24.11.2026</span></p>
 
   <article>
-    <p>Um halb fünf, wenn die erste <strong>Flüssigkeit</strong> in den Teig läuft, ist von dem Streit nichts zu spüren, der das Dorf seit Monaten beschäftigt. Marlene Ostermann, 54, führt die Bäckerei in dritter Generation; ihre Brötchen gelten weit über die Gemeindegrenze hinaus als <strong>außergewöhnlich</strong> <strong>knusprig</strong>. Seit dem Frühjahr jedoch nimmt sie Bestellungen fast nur noch über eine App entgegen – und seither ist das <strong>Misstrauen gegenüber</strong> der Technik mit Händen zu greifen.</p>
+    <p>Wer an einem Samstagmorgen durch die Kleingartenanlage am westlichen Stadtrand geht, nimmt die Veränderung zuerst akustisch wahr. Ein Gartentor <strong>quietscht</strong>, irgendwo fällt ein <strong>Schraubenzieher</strong> auf eine Betonplatte, und ein Mann Ende sechzig <strong>seufzt</strong> vernehmlich, als er sich danach bückt. Über den <strong>Schrebergarten</strong>, über Gartenzwerge und Vereinssatzungen hat die urbane Mittelschicht jahrzehntelang <strong>gelacht</strong>. Heute <strong>rechnet</strong> sie <strong>mit</strong> Wartelisten von vier bis acht Jahren.</p>
 
-    <p>„Die Leute haben <strong>Zweifel an</strong> allem, was sie nicht anfassen können“, sagt die Bäckerin. Ältere Kunden äußern ihre <strong>Wut auf</strong> das Programm und <strong>über</strong> die Zumutung, morgens ein Display zu bedienen; einer habe ihr quer durch den Verkaufsraum zugerufen: „<strong>Hör auf</strong> damit!“ Jüngere dagegen <strong>verlassen sich auf</strong> die App wie auf einen verlässlichen Kollegen. Dazwischen steht Ostermann, die ihre <strong>Arbeit erledigen</strong> möchte, bevor der erste Pendler hereinhastet, der soeben <strong>seinen Zug verpasst</strong> hat. Die Auseinandersetzung um die App ist längst eine Auseinandersetzung über das Dorf selbst.</p>
+    <p><strong>Durchschnittlich</strong> werden in den großen Städten pro Jahr nur wenige Parzellen frei. Wer einen <strong>Hinweis auf</strong> eine solche Lücke erhält, <strong>behält</strong> die <strong>Information</strong> klugerweise <strong>für sich</strong>; Freundinnen und Freunde <strong>beneiden</strong> ihn ohnehin schon <strong>um</strong> die zwanzig Quadratmeter Laube samt gepflegtem <strong>Außenbereich</strong>. Dass die <strong>Investition in</strong> Hochbeet, Wasseranschluss und Werkzeug schnell vierstellig wird, erwähnt im Kollegenkreis kaum jemand.</p>
 
-    <p>Der <strong>Widerstand</strong> kam nicht überraschend. Ihr Steuerberater hatte ihr den <strong>Rat gegeben</strong>, in kleinen Schritten vorzugehen: <strong>kein Druck</strong>, niemand müsse sich sofort umstellen. Tatsächlich hat sich inzwischen selbst die Stammkundschaft <strong>an</strong> die Vorbestellung <strong>gewöhnt</strong>, zumal Ostermann jedem, der digital ordert, <strong>einen Rabatt</strong> von zehn Prozent <strong>gibt</strong>. Busreisenden aus der Schweiz, die ihre Franken erst <strong>umwechseln</strong> müssen, nimmt sie weiterhin Bargeld ab.</p>
+    <p>Soziologen deuten den Boom als <strong>Kennzeichen</strong> einer Gesellschaft, die dauerhaft <strong>unter Druck steht</strong>. Wer vierzig Stunden in der Woche Erreichbarkeit schuldet, sucht einen Ort, an dem Dinge langsam und <strong>Schritt für Schritt</strong> wachsen. Hinzu kommt das Unbehagen an der <strong>Abhängigkeit von</strong> globalen Lieferketten: Die eigene Tomate ist weniger Ernährung als Beruhigung.</p>
 
-    <p>Dass etwas <strong>schieflaufen</strong> kann, bestreitet sie nicht. Im Juni streikte der Server; dreihundert Bestellungen verschwanden, die Schlange reichte bis auf den Gehweg. Ostermann lächelte <strong>tapfer</strong>, verteilte Kaffee und notierte die Wünsche auf Papier. Niemand im Ort hat ihr die Panne nachgetragen; sie wurde binnen Tagen zur Anekdote am Stammtisch. Ihre Tochter <strong>zeichnet</strong> die Tageskarte ohnehin noch mit Kreide auf eine Tafel – ein kleiner analoger Trotz, der die Kundschaft versöhnt.</p>
+    <p>Auch die Medizin meldet sich zu Wort. Wer an Bluthochdruck oder Diabetes <strong>erkrankt</strong>, bekommt von Ärzten regelmäßig den Rat, sich mehr zu bewegen; selten <strong>geben</strong> sie ihren Patienten eine Empfehlung, die so billig und so wirksam wäre wie ein Spaten. Und die Enkel, die am Sonntag ihre Großeltern in der Laube <strong>besuchen</strong>, lernen nebenbei, woher ein Radieschen kommt.</p>
 
-    <p>Ostermann <strong>bleibt bei</strong> ihrer Linie. Nicht aus Technikbegeisterung, sagt sie, sondern weil sie sonst keine Nachfolge fände. Wer ein Handwerk retten wolle, müsse manchmal zumuten, dass es sich verändert. Das Vertrauen, das früher über die Theke gereicht wurde, muss heute neu verhandelt werden – täglich, Brötchen für Brötchen.</p>
+    <p>Kritiker halten dagegen, die Anlagen seien Rückzugsräume einer alternden, besitzorientierten Minderheit, die sich mit Hecken gegen die Stadt abschotte. Das Argument hat Gewicht, dort wo Vereine Bewerber nach Herkunft sortieren. Doch man sollte auch <strong>Verständnis für</strong> das Bedürfnis <strong>zeigen</strong>, nach Feierabend etwas zu bearbeiten, das keine Quartalszahlen liefert und keine Rückmeldung verlangt. Kommunen, die neue Flächen ausweisen, investieren nicht in Nostalgie, sondern in Kühlung, Versickerung und Nachbarschaft. Nicht jede Sehnsucht nach einem eigenen Zaun ist reaktionär. Manchmal ist sie, wenn das Tor am Abend wieder ins Schloss fällt, schlicht ein Ausdruck von Erschöpfung.</p>
   </article>
 
   <h2>English gloss</h2>
   <dl>
-    <dt>die Flüssigkeit</dt>
-    <dd>the liquid</dd>
+    <dt>quietschen</dt>
+    <dd>to squeak</dd>
 
-    <dt>außergewöhnlich</dt>
-    <dd>extraordinary</dd>
+    <dt>der Schraubenzieher</dt>
+    <dd>the screwdriver</dd>
 
-    <dt>knusprig</dt>
-    <dd>crunchy, crispy</dd>
+    <dt>seufzen</dt>
+    <dd>to sigh</dd>
 
-    <dt>das Misstrauen gegenüber (+Dat)</dt>
-    <dd>the mistrust / suspicion towards</dd>
+    <dt>der Schrebergarten</dt>
+    <dd>the allotment / community garden</dd>
 
-    <dt>der Zweifel an (+Dat)</dt>
-    <dd>the doubt about</dd>
+    <dt>lachen über (+Akk)</dt>
+    <dd>to laugh about / to laugh at</dd>
 
-    <dt>die Wut auf (+Akk) / über (+Akk)</dt>
-    <dd>anger at / about</dd>
+    <dt>rechnen mit (+Dat)</dt>
+    <dd>to expect, to reckon with</dd>
 
-    <dt>Hör auf!</dt>
-    <dd>Stop it!</dd>
+    <dt>durchschnittlich</dt>
+    <dd>on average</dd>
 
-    <dt>sich verlassen auf (+Akk)</dt>
-    <dd>to rely on / to count on</dd>
+    <dt>der Hinweis auf (+Akk)</dt>
+    <dd>the reference / indication / hint to</dd>
 
-    <dt>Arbeit erledigen</dt>
-    <dd>to finish / complete work</dd>
+    <dt>eine Information für sich behalten</dt>
+    <dd>to keep information to oneself</dd>
 
-    <dt>eine Verbindung / einen Zug verpassen</dt>
-    <dd>to miss a connection / a train</dd>
+    <dt>beneiden um (+Akk)</dt>
+    <dd>to envy (someone for something)</dd>
 
-    <dt>der Widerstand</dt>
-    <dd>the resistance</dd>
+    <dt>der Außenbereich</dt>
+    <dd>the outside area</dd>
 
-    <dt>einen Rat geben (+Dat)</dt>
-    <dd>to give (somebody) advice</dd>
+    <dt>die Investition in (+Akk)</dt>
+    <dd>the investment in</dd>
 
-    <dt>kein Druck / keinen Druck</dt>
-    <dd>no pressure</dd>
+    <dt>das Kennzeichen</dt>
+    <dd>the label / marker, characteristic feature</dd>
 
-    <dt>sich gewöhnen an (+Akk)</dt>
-    <dd>to get used to</dd>
+    <dt>unter Druck stehen</dt>
+    <dd>to be under pressure</dd>
 
-    <dt>einen Rabatt geben (+Dat)</dt>
-    <dd>to give (somebody) a discount</dd>
+    <dt>Schritt für Schritt</dt>
+    <dd>step by step</dd>
 
-    <dt>umwechseln</dt>
-    <dd>to exchange (currency)</dd>
+    <dt>die Abhängigkeit von (+Dat)</dt>
+    <dd>the dependence on</dd>
 
-    <dt>schieflaufen</dt>
-    <dd>to go wrong</dd>
+    <dt>erkranken an (+Dat)</dt>
+    <dd>to fall ill with / to develop a disease</dd>
 
-    <dt>tapfer</dt>
-    <dd>brave, bravely</dd>
+    <dt>geben (+Dat/+Akk)</dt>
+    <dd>to give</dd>
 
-    <dt>zeichnen</dt>
-    <dd>to draw</dd>
+    <dt>besuchen (+Akk)</dt>
+    <dd>to visit</dd>
 
-    <dt>bleiben bei (+Dat)</dt>
-    <dd>to remain with / stick to (a decision, a line)</dd>
+    <dt>Verständnis zeigen für (+Akk)</dt>
+    <dd>to show understanding for</dd>
   </dl>
 
-  <footer>Sprachgarten · Lesetraining C1 · Zielwortschatz: 20 Einträge</footer>
+  <footer>Sprachgarten &middot; Lesetraining C1 &middot; 321 Wörter</footer>
 
 </div>
 
