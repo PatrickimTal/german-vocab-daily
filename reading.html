@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lesetext: Zwischen Zaun und Zukunft</title>
+<title>Sprachgarten — Lesetext: Ein Klacks Mayonnaise und ein Stundenplan voller Lücken</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -11,6 +11,7 @@
     --ink:#304635;
     --head:#082310;
     --accent:#0077c7;
+    --accent-hover:#0061b0;
   }
   *{box-sizing:border-box;}
   body{
@@ -19,84 +20,97 @@
     color:var(--ink);
     font-family:'Sora', system-ui, sans-serif;
     font-size:17px;
-    line-height:1.7;
+    line-height:1.65;
     -webkit-text-size-adjust:100%;
   }
   .wrap{
     max-width:40rem;
     margin:0 auto;
-    padding:2rem 1.15rem 4rem;
+    padding:2rem 1.2rem 4rem;
   }
   .kicker{
     font-family:'IBM Plex Mono', ui-monospace, monospace;
-    font-size:.72rem;
-    letter-spacing:.14em;
+    font-size:0.74rem;
+    letter-spacing:0.14em;
     text-transform:uppercase;
     color:var(--accent);
-    margin:0 0 .6rem;
+    margin:0 0 0.9rem;
   }
   h1{
     font-family:'Libre Baskerville', Georgia, serif;
     color:var(--head);
     font-weight:700;
     font-size:1.72rem;
-    line-height:1.28;
-    margin:0 0 .7rem;
+    line-height:1.26;
+    margin:0 0 0.7rem;
   }
   .standfirst{
     font-family:'Libre Baskerville', Georgia, serif;
     font-size:1.02rem;
-    line-height:1.6;
+    line-height:1.55;
     color:var(--ink);
     margin:0 0 1.1rem;
   }
   .meta{
     font-family:'IBM Plex Mono', ui-monospace, monospace;
-    font-size:.78rem;
-    color:#5d7363;
+    font-size:0.76rem;
+    color:#5e7263;
     margin:0 0 1.6rem;
     padding-bottom:1.2rem;
-    border-bottom:1px solid #d9e3db;
+    border-bottom:1px solid #dfe8e0;
   }
-  article p{margin:0 0 1.15rem;}
+  article p{
+    margin:0 0 1.15rem;
+  }
   article p:first-of-type::first-letter{
     font-family:'Libre Baskerville', Georgia, serif;
     color:var(--head);
     font-size:3.1rem;
-    line-height:.86;
+    line-height:0.85;
     float:left;
-    padding:.12em .1em 0 0;
+    padding:0.18rem 0.5rem 0 0;
   }
-  strong{font-weight:600; color:var(--head);}
+  strong{
+    font-weight:600;
+    color:var(--head);
+  }
   h2{
     font-family:'Libre Baskerville', Georgia, serif;
     color:var(--head);
-    font-size:1.18rem;
-    margin:2.6rem 0 1rem;
-    padding-top:1.4rem;
-    border-top:1px solid #d9e3db;
+    font-size:1.2rem;
+    margin:2.6rem 0 0.4rem;
+    padding-top:1.6rem;
+    border-top:1px solid #dfe8e0;
+  }
+  .gloss-note{
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:0.76rem;
+    color:#5e7263;
+    margin:0 0 1.3rem;
   }
   dl{margin:0;}
   dt{
     font-weight:600;
     color:var(--head);
-    margin-top:.95rem;
+    margin-top:0.95rem;
   }
   dd{
-    margin:.15rem 0 0;
-    padding-left:1rem;
-    border-left:2px solid #d9e3db;
+    margin:0.1rem 0 0;
+    padding-left:0.9rem;
+    border-left:2px solid #e2ece3;
     color:var(--ink);
   }
-  a{color:var(--accent);text-decoration:none;}
-  a:hover{color:#0061b0;text-decoration:underline;}
+  a{color:var(--accent); text-decoration:none;}
+  a:hover{color:var(--accent-hover); text-decoration:underline;}
   footer{
+    margin-top:3rem;
     font-family:'IBM Plex Mono', ui-monospace, monospace;
-    font-size:.74rem;
-    color:#5d7363;
-    margin-top:2.8rem;
-    padding-top:1.2rem;
-    border-top:1px solid #d9e3db;
+    font-size:0.72rem;
+    color:#5e7263;
+  }
+  @media (max-width:420px){
+    h1{font-size:1.45rem;}
+    body{font-size:16px;}
   }
 </style>
 
@@ -262,87 +276,92 @@ html body p.site-page-title {
   <!-- site-header -->
 <p class="site-page-title">Lesetext</p>
 <!-- /site-header -->
-<p class="kicker">Feuilleton &middot; Stadt und Gesellschaft</p>
-  <h1>Zwischen Zaun und Zukunft: Warum der Schrebergarten wieder Konjunktur hat</h1>
-  <p class="standfirst">Jahrzehntelang galt die Kleingartenanlage als Inbegriff der Spießigkeit. Nun stehen Zehntausende auf Wartelisten &ndash; und das sagt mehr über die Städte aus als über das Gärtnern.</p>
-  <p class="meta">Lesetext &middot; Niveau C1 &middot; 321 Wörter<span class="site-date"> · 24.11.2026</span></p>
+<p class="kicker">Sprachgarten · Lesetext C1 · Reportage</p>
+
+  <h1>Ein Klacks Mayonnaise und ein Stundenplan voller Lücken</h1>
+
+  <p class="standfirst">In einer süddeutschen Kleinstadt entscheidet nicht die Bildungspolitik darüber, ob Eltern arbeiten können, sondern der Fahrplan einer Tagesgruppe zwei Dörfer weiter.</p>
+
+  <p class="meta">Artikel: 319 Wörter<span class="site-date"> · 25.11.2026</span> · Lesezeit ca. 3 Minuten</p>
 
   <article>
-    <p>Wer an einem Samstagmorgen durch die Kleingartenanlage am westlichen Stadtrand geht, nimmt die Veränderung zuerst akustisch wahr. Ein Gartentor <strong>quietscht</strong>, irgendwo fällt ein <strong>Schraubenzieher</strong> auf eine Betonplatte, und ein Mann Ende sechzig <strong>seufzt</strong> vernehmlich, als er sich danach bückt. Über den <strong>Schrebergarten</strong>, über Gartenzwerge und Vereinssatzungen hat die urbane Mittelschicht jahrzehntelang <strong>gelacht</strong>. Heute <strong>rechnet</strong> sie <strong>mit</strong> Wartelisten von vier bis acht Jahren.</p>
+    <p>In der Kantine der Gesamtschule Lingenbach gibt es mittwochs Pommes mit einem <strong>Klacks</strong> Mayonnaise, und für einen Moment wirkt das Leben in dieser Kleinstadt beruhigend überschaubar. Drei Tische weiter sitzt Malaika Hadrawi, die hier seit zehn Jahren <strong>in</strong> Mathematik und Physik <strong>unterrichtet</strong>, und rechnet vor, warum es das nicht ist.</p>
 
-    <p><strong>Durchschnittlich</strong> werden in den großen Städten pro Jahr nur wenige Parzellen frei. Wer einen <strong>Hinweis auf</strong> eine solche Lücke erhält, <strong>behält</strong> die <strong>Information</strong> klugerweise <strong>für sich</strong>; Freundinnen und Freunde <strong>beneiden</strong> ihn ohnehin schon <strong>um</strong> die zwanzig Quadratmeter Laube samt gepflegtem <strong>Außenbereich</strong>. Dass die <strong>Investition in</strong> Hochbeet, Wasseranschluss und Werkzeug schnell vierstellig wird, erwähnt im Kollegenkreis kaum jemand.</p>
+    <p>Ihre Tochter ist vier Jahre alt. Die einzige Kita <strong>in der Gegend</strong> betreut Kinder nur bis 14 Uhr; seit der letzten Sparrunde sind die Öffnungszeiten stark <strong>eingeschränkt</strong>. Also <strong>bittet</strong> Hadrawi fast jede Woche eine Kollegin <strong>um</strong> Hilfe, die ihr, wie sie es nennt, verlässlich <strong>aus der Patsche hilft</strong>. Die Lehrerin kann <strong>für ihren Lebensunterhalt</strong> selbst <strong>aufkommen</strong> — was fehlt, ist nicht das Geld, sondern eine Verwaltung, die sich <strong>verantwortlich für</strong> diese Lücke fühlt.</p>
 
-    <p>Soziologen deuten den Boom als <strong>Kennzeichen</strong> einer Gesellschaft, die dauerhaft <strong>unter Druck steht</strong>. Wer vierzig Stunden in der Woche Erreichbarkeit schuldet, sucht einen Ort, an dem Dinge langsam und <strong>Schritt für Schritt</strong> wachsen. Hinzu kommt das Unbehagen an der <strong>Abhängigkeit von</strong> globalen Lieferketten: Die eigene Tomate ist weniger Ernährung als Beruhigung.</p>
+    <p>Dass sie sich <strong>über</strong> die endlosen Zuständigkeitsdebatten im Rathaus <strong>ärgert</strong>, <strong>verschweigt</strong> sie ihren Kollegen nicht. Der Bürgermeister wiederum verkündete im Mai, man werde nun <strong>Schluss machen mit</strong> den Provisorien: Eine neue Einrichtung sei beantragt, die <strong>Förderung</strong> des Landes so gut wie sicher. <strong>Trotzdem</strong> steht bis heute kein Bagger auf dem Grundstück. Auf Nachfrage heißt es aus der Bauverwaltung, man prüfe noch.</p>
 
-    <p>Auch die Medizin meldet sich zu Wort. Wer an Bluthochdruck oder Diabetes <strong>erkrankt</strong>, bekommt von Ärzten regelmäßig den Rat, sich mehr zu bewegen; selten <strong>geben</strong> sie ihren Patienten eine Empfehlung, die so billig und so wirksam wäre wie ein Spaten. Und die Enkel, die am Sonntag ihre Großeltern in der Laube <strong>besuchen</strong>, lernen nebenbei, woher ein Radieschen kommt.</p>
+    <p><strong>Zufällig</strong> kündigte zur selben Zeit ein Discounter am Ortsrand eine Betriebskita an — kaum aus <strong>Liebe zu</strong> den Familien der Region, sondern um Fachkräfte zu halten und damit langfristig <strong>den Umsatz zu steigern</strong>. Das Angebot ist <strong>angenehm für</strong> die eigene Belegschaft; wer dort nicht beschäftigt ist, geht leer aus. In den Kommentarspalten der Lokalzeitung wird das als Pragmatismus gefeiert; Kritiker sehen darin eine Privatisierung öffentlicher Verantwortung.</p>
 
-    <p>Kritiker halten dagegen, die Anlagen seien Rückzugsräume einer alternden, besitzorientierten Minderheit, die sich mit Hecken gegen die Stadt abschotte. Das Argument hat Gewicht, dort wo Vereine Bewerber nach Herkunft sortieren. Doch man sollte auch <strong>Verständnis für</strong> das Bedürfnis <strong>zeigen</strong>, nach Feierabend etwas zu bearbeiten, das keine Quartalszahlen liefert und keine Rückmeldung verlangt. Kommunen, die neue Flächen ausweisen, investieren nicht in Nostalgie, sondern in Kühlung, Versickerung und Nachbarschaft. Nicht jede Sehnsucht nach einem eigenen Zaun ist reaktionär. Manchmal ist sie, wenn das Tor am Abend wieder ins Schloss fällt, schlicht ein Ausdruck von Erschöpfung.</p>
+    <p>Besonders hart trifft es Zugewanderte. Eine Familie, die vor dem Krieg <strong>fliehen</strong> musste, schickt ihre beiden <strong>Buben</strong> seit September in eine Tagesgruppe zwei Dörfer weiter; die <strong>Anwesenheit bei</strong> den monatlichen Elternabenden ist verpflichtend, die Fahrt dauert eine Stunde. Dem Kreislauf aus Schichtarbeit, Notbetreuung und schlechtem Gewissen <strong>entkommen</strong> diese Eltern nicht. Hadrawi formuliert es nüchtern: Eine Gesellschaft, die Bildung predigt und Betreuung dem Zufall überlässt, dürfe sich über den Lehrermangel nicht wundern.</p>
   </article>
 
   <h2>English gloss</h2>
+  <p class="gloss-note">in order of first appearance in the article</p>
+
   <dl>
-    <dt>quietschen</dt>
-    <dd>to squeak</dd>
+    <dt>der Klacks</dt>
+    <dd>the dollop / dab</dd>
 
-    <dt>der Schraubenzieher</dt>
-    <dd>the screwdriver</dd>
+    <dt>unterrichten in (+Dat)</dt>
+    <dd>to give lessons in / to teach (a subject)</dd>
 
-    <dt>seufzen</dt>
-    <dd>to sigh</dd>
+    <dt>in der Gegend</dt>
+    <dd>in the area</dd>
 
-    <dt>der Schrebergarten</dt>
-    <dd>the allotment / community garden</dd>
+    <dt>eingeschränkt</dt>
+    <dd>restricted, limited</dd>
 
-    <dt>lachen über (+Akk)</dt>
-    <dd>to laugh about / to laugh at</dd>
+    <dt>bitten um (+Akk)</dt>
+    <dd>to ask for / to request</dd>
 
-    <dt>rechnen mit (+Dat)</dt>
-    <dd>to expect, to reckon with</dd>
+    <dt>jemandem aus der Patsche helfen</dt>
+    <dd>to help someone out of a jam</dd>
 
-    <dt>durchschnittlich</dt>
-    <dd>on average</dd>
+    <dt>aufkommen für (+Akk)</dt>
+    <dd>to pay for / to cover the costs of / to be liable for</dd>
 
-    <dt>der Hinweis auf (+Akk)</dt>
-    <dd>the reference / indication / hint to</dd>
+    <dt>verantwortlich für (+Akk)</dt>
+    <dd>responsible for / accountable for</dd>
 
-    <dt>eine Information für sich behalten</dt>
-    <dd>to keep information to oneself</dd>
+    <dt>sich ärgern über (+Akk)</dt>
+    <dd>to be/get annoyed about</dd>
 
-    <dt>beneiden um (+Akk)</dt>
-    <dd>to envy (someone for something)</dd>
+    <dt>verschweigen (+Dat/+Akk)</dt>
+    <dd>to conceal / to withhold (something from someone)</dd>
 
-    <dt>der Außenbereich</dt>
-    <dd>the outside area</dd>
+    <dt>Schluss machen mit (+Dat)</dt>
+    <dd>to end / finish with / to put a stop to</dd>
 
-    <dt>die Investition in (+Akk)</dt>
-    <dd>the investment in</dd>
+    <dt>die Förderung</dt>
+    <dd>the support / funding / promotion</dd>
 
-    <dt>das Kennzeichen</dt>
-    <dd>the label / marker, characteristic feature</dd>
+    <dt>trotzdem</dt>
+    <dd>still / nevertheless / despite this</dd>
 
-    <dt>unter Druck stehen</dt>
-    <dd>to be under pressure</dd>
+    <dt>zufällig</dt>
+    <dd>by chance / random(ly)</dd>
 
-    <dt>Schritt für Schritt</dt>
-    <dd>step by step</dd>
+    <dt>die Liebe zu (+Dat)</dt>
+    <dd>the love of / for</dd>
 
-    <dt>die Abhängigkeit von (+Dat)</dt>
-    <dd>the dependence on</dd>
+    <dt>den Umsatz steigern</dt>
+    <dd>to increase turnover / sales</dd>
 
-    <dt>erkranken an (+Dat)</dt>
-    <dd>to fall ill with / to develop a disease</dd>
+    <dt>angenehm für (+Akk)</dt>
+    <dd>pleasant for / agreeable to</dd>
 
-    <dt>geben (+Dat/+Akk)</dt>
-    <dd>to give</dd>
+    <dt>fliehen / entkommen</dt>
+    <dd>to flee / to escape</dd>
 
-    <dt>besuchen (+Akk)</dt>
-    <dd>to visit</dd>
+    <dt>der Bub / die Buben</dt>
+    <dd>the boy(s) (southern German / Austrian)</dd>
 
-    <dt>Verständnis zeigen für (+Akk)</dt>
-    <dd>to show understanding for</dd>
+    <dt>die Anwesenheit bei (+Dat)</dt>
+    <dd>the presence at (an event)</dd>
   </dl>
 
-  <footer>Sprachgarten &middot; Lesetraining C1 &middot; 321 Wörter</footer>
+  <footer>Sprachgarten · Lesetraining C1 · Ortsnamen und Personen sind frei erfunden.</footer>
 
 </div>
 
