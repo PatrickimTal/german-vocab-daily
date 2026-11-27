@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesetext – Zwischen Holzdübel und Hoffnung | Sprachgarten</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:#ffffff;
+    color:#304635;
+    font-family:'Sora',system-ui,sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    padding:28px 18px 60px;
+  }
+  .wrap{max-width:680px;margin:0 auto;}
+  .kicker{
+    font-family:'IBM Plex Mono',ui-monospace,monospace;
+    font-size:12px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:#0077c7;
+    margin:0 0 10px;
+  }
+  h1{
+    font-family:'Libre Baskerville',Georgia,serif;
+    color:#082310;
+    font-size:28px;
+    line-height:1.25;
+    margin:0 0 6px;
+  }
+  h2{
+    font-family:'Libre Baskerville',Georgia,serif;
+    color:#082310;
+    font-size:20px;
+    margin:40px 0 4px;
+  }
+  .standfirst{
+    font-size:17px;
+    color:#304635;
+    font-style:italic;
+    margin:0 0 18px;
+  }
+  .meta{
+    font-family:'IBM Plex Mono',ui-monospace,monospace;
+    font-size:12.5px;
+    color:#5c7263;
+    border-top:1px solid #dde5de;
+    border-bottom:1px solid #dde5de;
+    padding:8px 0;
+    margin:0 0 26px;
+  }
+  article p{margin:0 0 16px;}
+  article p:first-of-type::first-letter{
+    font-family:'Libre Baskerville',Georgia,serif;
+    font-size:46px;
+    line-height:.9;
+    float:left;
+    padding:4px 8px 0 0;
+    color:#082310;
+  }
+  strong{font-weight:600;color:#082310;}
+  .gloss{border-top:2px solid #082310;padding-top:6px;margin-top:44px;}
+  dl{margin:18px 0 0;}
+  dt{
+    font-weight:600;
+    color:#082310;
+    margin-top:14px;
+  }
+  dd{
+    margin:2px 0 0;
+    padding-left:0;
+    color:#304635;
+  }
+  dd::before{content:"→ ";color:#0077c7;}
+  a{color:#0077c7;text-decoration:none;}
+  a:hover{color:#0061b0;text-decoration:underline;}
+  footer{
+    margin-top:46px;
+    font-family:'IBM Plex Mono',ui-monospace,monospace;
+    font-size:12px;
+    color:#5c7263;
+  }
+</style>
+
+<!-- site-header -->
+<style>
+.site-bar {
+  --site-green: #e9fae9;
+  --page-bg: #fff;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-bg-hover: rgba(255, 255, 255, 0.97);
+  --panel-bg: rgba(255, 255, 255, 0.62);
+  --panel-bg-hover: rgba(255, 255, 255, 0.82);
+
+  --ink: #082310;
+  --ink-body: #304635;
+  --ink-muted: #4b614f;
+  --ink-faint: #617865;
+
+  --blue: #0077c7;
+  --blue-hover: #0061b0;
+  --blue-text: #006eb8;
+  --article: #c56c00;
+
+  --border: #8ab091;
+  --rule: #dce9de;
+  --underline: #a8c7ad;
+
+  --chip-verb-praep-bg: #cdecff;      --chip-verb-praep-fg: #004e95;
+  --chip-verb-kasus-bg: #c2f2f8;      --chip-verb-kasus-fg: #005565;
+  --chip-redemittel-bg: #f0e4ff;      --chip-redemittel-fg: #603b93;
+  --chip-nomen-praep-bg: #c4f2cc;     --chip-nomen-praep-fg: #005222;
+  --chip-adjektiv-praep-bg: #ffe1ac;  --chip-adjektiv-praep-fg: #7b4300;
+  --chip-redewendung-bg: #ffd9d7;     --chip-redewendung-fg: #9a2733;
+  --chip-wortschatz-bg: #dce9de;      --chip-wortschatz-fg: #384e3c;
+
+  --font-serif: 'Libre Baskerville', Georgia, serif;
+  --font-sans: 'Sora', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --r-sm: 4px;
+  --r-md: 12px;
+  --r-lg: 14px;
+  --r-pill: 999px;
+  --shadow-card: 0 12px 30px rgba(30, 70, 45, 0.1);
+
+  --pad-x: 22px;
+
+  font-family: var(--font-sans); font-size: 16px; line-height: 1.55;
+  -webkit-font-smoothing: antialiased; text-align: left;
+}
+.site-bar *, .site-bar *::before, .site-bar *::after { box-sizing: border-box; }
+.site-bar header, .site-bar nav { margin: 0; border: 0; max-width: none; }
+.site-bar a { text-decoration: none; border-bottom: 0; }
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: 12px; top: 12px; background: #fff; padding: 10px 14px; border-radius: 12px; z-index: 100; }
+
+.site-bar {
+  background: var(--blue-text);
+  border-bottom: 1px solid var(--blue-text);
+  box-shadow: 0 2px 12px rgba(30, 70, 45, 0.06);
+}
+.site-bar { margin-bottom: 26px; }
+.site-bar :focus-visible { outline-color: #fff; }
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px var(--pad-x);
+}
+.brand { display: flex; }
+.brand__logo { display: block; height: 40px; width: auto; max-width: none; }
+.nav { display: none; }
+.nav-toggle {
+  width: 44px; height: 44px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+  background: none; border: 1px solid rgba(255, 255, 255, 0.6); border-radius: var(--r-md); cursor: pointer;
+  transition: border-color 150ms ease;
+}
+.nav-toggle span { width: 18px; height: 1.5px; background: #fff; }
+.nav-toggle:hover, .nav-toggle[aria-expanded="true"] { border-color: #fff; }
+.mobile-nav { display: flex; flex-direction: column; padding: 4px var(--pad-x) 12px; gap: 2px; }
+.mobile-nav a {
+  min-height: 48px; display: flex; align-items: center;
+  padding: 0 12px; margin: 0 -12px;
+  color: #fff; font-size: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  transition: box-shadow 150ms ease;
+}
+.mobile-nav[hidden] { display: none; }
+.mobile-nav a:hover, .mobile-nav a:active { color: #fff; box-shadow: inset 0 0 0 1px #fff; }
+.mobile-nav .nav__current {
+  min-height: 48px; display: flex; align-items: center;
+  padding: 0 12px; margin: 0 -12px; font-size: 16px; border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+/* current page: inverted white pill with blue text */
+.nav__current { background: #fff; color: var(--blue-text); cursor: default; }
+@media (min-width: 640px) {
+  .nav-toggle, .mobile-nav { display: none !important; }
+  .nav { display: flex; align-items: center; gap: 8px; font-size: 15px; }
+  .nav a {
+    padding: 9px 16px;
+    border: 1px solid transparent;
+    border-radius: var(--r-pill);
+    color: #fff;
+    transition: border-color 150ms ease;
+  }
+  /* hover: text stays white, a white outline appears */
+  .nav a:hover { border-color: #fff; color: #fff; }
+  .nav .nav__current {
+    padding: 9px 16px; border: 1px solid #fff; border-radius: var(--r-pill);
+  }
+  .brand__logo { height: 48px; }
+  .site-header { padding: 18px var(--pad-x); }
+  .site-bar { margin-bottom: 34px; --pad-x: 44px; }
+}
+@media (min-width: 1024px) {
+  .site-header { max-width: 1280px; margin-inline: auto; }
+  .site-bar { margin-bottom: 44px; --pad-x: 52px; }
+}
+
+.site-bar { margin-bottom: 0; }
+html body { background: #fff; }
+html body p.site-page-title {
+  font-family: 'Libre Baskerville', Georgia, serif; font-weight: 400; font-style: normal;
+  font-size: 34px; line-height: 1.1; letter-spacing: normal; text-transform: none;
+  color: #082310; margin: 0 0 18px; padding: 0; border: 0; background: none;
+}
+@media (min-width: 640px) { html body p.site-page-title { font-size: 42px; } }
+@media (min-width: 640px) { .site-bar { --pad-x: 44px; } }
+@media (min-width: 1024px) { .site-bar { --pad-x: 52px; } }
+</style>
+<!-- /site-header --></head>
+<body>
+<!-- site-header -->
+<a class="skip" href="#main">Zum Inhalt springen</a>
+
+<div class="site-bar">
+<header class="site-header">
+  <a class="brand" href="../../index.html">
+    <img class="brand__logo" src="../../wortschatz_logo_white.png" width="521" height="112" alt="Täglicher Deutscher Wortschatz C1">
+  </a>
+  <nav class="nav" aria-label="Hauptnavigation">
+    <a href="../../reading.html">Lesetext</a>
+    <a href="../../flashcards.html">Karteikarten</a>
+    <a href="../../about.html">Über das Projekt</a>
+    <a href="../../index.html">Home</a>
+  </nav>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menü öffnen">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav" hidden aria-label="Hauptnavigation, mobil">
+  <a href="../../reading.html">Lesetext</a>
+  <a href="../../flashcards.html">Karteikarten</a>
+  <a href="../../about.html">Über das Projekt</a>
+  <a href="../../index.html">Home</a>
+</nav>
+</div>
+<!-- /site-header -->
+<div class="wrap">
+
+  <!-- site-header -->
+<p class="site-page-title">Lesetext</p>
+<!-- /site-header -->
+<p class="kicker">Reportage · Strafvollzug</p>
+  <h1>Zwischen Holzdübel und Hoffnung</h1>
+  <p class="standfirst">In einer Gefängniswerkstatt am Rhein lernen Häftlinge ein Handwerk – und die Mühen der Wiedergutmachung.</p>
+  <p class="meta">Lesetext C1 · 350 Wörter<span class="site-date"> · 27.11.2026</span> · 20 Zielausdrücke hervorgehoben</p>
+
+  <article>
+    <p>Es riecht nach Leim und Fichtenholz. In der Schreinerei der Justizvollzugsanstalt Rhein-Mitte steht Marek P., 34, über eine Werkbank gebeugt und schlägt einen <strong>Holzdübel</strong> in ein vorgebohrtes Loch. Noch zwei Jahre hat er hier <strong>abzusitzen</strong>; den Umgang mit Hobel und Fräse <strong>beherrscht</strong> er inzwischen besser als mancher Geselle draußen.</p>
+
+    <p>Das Programm, das seit 2019 läuft, verfolgt ein einfaches Ziel: Gefangene sollen lernen, <strong>Verantwortung für</strong> ihr eigenes Handeln <strong>zu übernehmen</strong> – und zwar nicht erst vor Gericht. Zum Konzept gehört ein Täter-Opfer-Ausgleich, bei dem sich die Teilnehmer, sofern die Geschädigten es wünschen, persönlich <strong>bei</strong> ihnen <strong>entschuldigen</strong>. Wer glaubt, das sei eine bloße Formalie, irrt. „Die Gespräche sind oft <strong>bewegend</strong>, manchmal brutal“, sagt Anstaltsleiterin Dorothee Krall, die für das Projekt <strong>zuständig</strong> ist. Vor einigen Monaten habe ein Vater einen Teilnehmer in der Sitzung <strong>zur Rede gestellt</strong> – eine Stunde, die für alle Beteiligten <strong>unangenehm</strong> war und dennoch mehr bewirkt habe als jede Ermahnung.</p>
+
+    <p>In der Öffentlichkeit stößt das Vorhaben nicht nur auf Zustimmung. In Leserbriefen <strong>schimpfen</strong> Anwohner <strong>über</strong> angebliche Hotelzustände hinter Gittern; das <strong>Entsetzen über</strong> die Taten sitzt tief, und wer <strong>nett zu</strong> Straftätern sei, mache sich verdächtig. Eine Petition gegen die Werkstatt sammelte im Frühjahr mehrere hundert Unterschriften. Krall kontert nüchtern mit Zahlen: Die Rückfallquote der Absolventen liegt deutlich unter dem Landesdurchschnitt.</p>
+
+    <p>Dass die Wiedereingliederung gelingt, ist selten <strong>leicht für</strong> die Entlassenen. Immerhin <strong>knüpfen</strong> sie während der Haft <strong>Kontakte mit</strong> Handwerksbetrieben der Region, die Praktikumsplätze anbieten. Der Zimmerermeister Ewald Brüggen, seit dreißig Jahren <strong>bei</strong> seinen Kunden <strong>angesehen</strong>, beschäftigt derzeit zwei ehemalige Häftlinge. „Fachlich sind sie gut, menschlich sind wir <strong>auf einer Wellenlänge</strong>“, sagt er. Wer bei ihm anfange, gehe allerdings auch eine <strong>Verpflichtung zu</strong> Pünktlichkeit und Offenheit ein.</p>
+
+    <p>Marek P. hat sich in den vergangenen Monaten intensiv <strong>mit</strong> Möbelrestaurierung <strong>beschäftigt</strong>. Er redet schnell, er merkt selbst, dass er sein Gegenüber beinahe <strong>mit</strong> technischen Details <strong>langweilt</strong> – und bricht lachend ab. Dann erzählt er vom <strong>Glück über</strong> den ersten Brief seiner Tochter. Draußen warte Arbeit, sagt er; hier drinnen habe er gelernt, dass auch ein Dübel nur hält, wenn er genau sitzt.</p>
+  </article>
+
+  <section class="gloss">
+    <h2>English gloss</h2>
+    <dl>
+      <dt>der Holzdübel</dt>
+      <dd>the wooden peg / dowel</dd>
+
+      <dt>absitzen</dt>
+      <dd>to sit out (e.g. a prison sentence)</dd>
+
+      <dt>beherrschen</dt>
+      <dd>to master</dd>
+
+      <dt>Verantwortung übernehmen für (+Akk)</dt>
+      <dd>to take on / assume responsibility for</dd>
+
+      <dt>sich entschuldigen bei (+Dat)</dt>
+      <dd>to apologise to (a person)</dd>
+
+      <dt>bewegend</dt>
+      <dd>moving / touching</dd>
+
+      <dt>zuständig für (+Akk)</dt>
+      <dd>responsible for / in charge of</dd>
+
+      <dt>zur Rede stellen (+Akk)</dt>
+      <dd>to call someone to account / to confront someone</dd>
+
+      <dt>unangenehm für (+Akk/Dat)</dt>
+      <dd>unpleasant for / uncomfortable for</dd>
+
+      <dt>schimpfen über (+Akk)</dt>
+      <dd>to rant about / to scold about</dd>
+
+      <dt>das Entsetzen über (+Akk)</dt>
+      <dd>the horror / dismay at</dd>
+
+      <dt>nett zu (+Dat)</dt>
+      <dd>nice to / kind to</dd>
+
+      <dt>leicht für (+Akk)</dt>
+      <dd>easy for</dd>
+
+      <dt>Kontakte knüpfen mit (+Dat)</dt>
+      <dd>to make / establish contacts with</dd>
+
+      <dt>angesehen bei (+Dat)</dt>
+      <dd>respected by / well regarded among</dd>
+
+      <dt>auf einer Wellenlänge sein</dt>
+      <dd>to be on the same wavelength</dd>
+
+      <dt>die Verpflichtung zu (+Dat) / für (+Akk)</dt>
+      <dd>the obligation / commitment to / for</dd>
+
+      <dt>beschäftigt mit (+Dat) / sich beschäftigen mit</dt>
+      <dd>busy with / occupied with; to occupy oneself with</dd>
+
+      <dt>langweilen (mit) (+Akk)</dt>
+      <dd>to bore (someone) (with)</dd>
+
+      <dt>das Glück über (+Akk)</dt>
+      <dd>the happiness / delight about</dd>
+    </dl>
+  </section>
+
+  <footer>Sprachgarten · Lesen &amp; Wortschatz · Niveau C1</footer>
+
+</div>
+
+<!-- site-header -->
+<script>
+document.querySelectorAll('.nav-toggle').forEach(function (toggle) {
+  var panel = document.getElementById(toggle.getAttribute('aria-controls'));
+  toggle.addEventListener('click', function () {
+    var open = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!open));
+    toggle.setAttribute('aria-label', open ? 'Menü öffnen' : 'Menü schließen');
+    if (panel) panel.hidden = open;
+  });
+});
+
+(function () {
+  var bar = document.querySelector('.site-bar');
+  if (!bar) return;
+  function firstTextTop() {
+    var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (n) {
+        if (bar.contains(n) || !n.nodeValue.trim()) return NodeFilter.FILTER_SKIP;
+        var p = n.parentElement;
+        if (!p || p.closest('script,style,.skip') || !p.offsetParent) return NodeFilter.FILTER_SKIP;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var n = w.nextNode();
+    if (!n) return null;
+    var r = document.createRange(); r.selectNodeContents(n);
+    return r.getBoundingClientRect().top;
+  }
+  function fit() {
+    var cs = getComputedStyle(document.body);
+    bar.style.marginTop = '-' + cs.paddingTop;
+    bar.style.marginLeft = '-' + cs.paddingLeft;
+    bar.style.marginRight = '-' + cs.paddingRight;
+    bar.style.marginBottom = '0px';
+    var w = window.innerWidth, target = w >= 1024 ? 44 : (w >= 640 ? 34 : 26);
+    var top = firstTextTop();
+    if (top === null) return;
+    var gap = top - bar.getBoundingClientRect().bottom;
+    bar.style.marginBottom = (target - gap) + 'px';
+  }
+  fit();
+  window.addEventListener('load', fit);
+  window.addEventListener('resize', fit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+})();
+</script>
+<!-- /site-header --></body>
+</html>

@@ -1,109 +1,89 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sprachgarten – Lesetext: Wo die Zukunft nach Zimt duftet</title>
+<title>Lesetext – Zwischen Holzdübel und Hoffnung | Sprachgarten</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --ink:#304635;
-    --head:#082310;
-    --accent:#0077c7;
-  }
   *{box-sizing:border-box;}
   body{
     margin:0;
     background:#ffffff;
-    color:var(--ink);
-    font-family:'Sora', system-ui, sans-serif;
+    color:#304635;
+    font-family:'Sora',system-ui,sans-serif;
     font-size:17px;
-    line-height:1.7;
-    -webkit-text-size-adjust:100%;
+    line-height:1.65;
+    padding:28px 18px 60px;
   }
-  .wrap{
-    max-width:40rem;
-    margin:0 auto;
-    padding:2rem 1.15rem 4rem;
-  }
+  .wrap{max-width:680px;margin:0 auto;}
   .kicker{
-    font-family:'IBM Plex Mono', ui-monospace, monospace;
-    font-size:0.72rem;
-    letter-spacing:0.14em;
+    font-family:'IBM Plex Mono',ui-monospace,monospace;
+    font-size:12px;
+    letter-spacing:.14em;
     text-transform:uppercase;
-    color:var(--accent);
-    margin:0 0 0.6rem;
+    color:#0077c7;
+    margin:0 0 10px;
   }
   h1{
-    font-family:'Libre Baskerville', Georgia, serif;
-    color:var(--head);
-    font-size:1.75rem;
+    font-family:'Libre Baskerville',Georgia,serif;
+    color:#082310;
+    font-size:28px;
     line-height:1.25;
-    font-weight:700;
-    margin:0 0 0.5rem;
-  }
-  .standfirst{
-    font-family:'Libre Baskerville', Georgia, serif;
-    font-size:1.02rem;
-    line-height:1.6;
-    color:var(--ink);
-    margin:0 0 1rem;
-  }
-  .meta{
-    font-family:'IBM Plex Mono', ui-monospace, monospace;
-    font-size:0.75rem;
-    color:#5c6f60;
-    margin:0 0 1.6rem;
-    padding-bottom:1.2rem;
-    border-bottom:1px solid #e0e6e1;
-  }
-  article p{
-    margin:0 0 1.15rem;
-  }
-  article p:first-of-type::first-letter{
-    font-family:'Libre Baskerville', Georgia, serif;
-    font-size:3rem;
-    line-height:0.9;
-    float:left;
-    padding:0.18rem 0.5rem 0 0;
-    color:var(--head);
-  }
-  strong{
-    font-weight:600;
-    color:var(--head);
+    margin:0 0 6px;
   }
   h2{
-    font-family:'Libre Baskerville', Georgia, serif;
-    color:var(--head);
-    font-size:1.2rem;
-    margin:2.6rem 0 1rem;
-    padding-top:1.4rem;
-    border-top:1px solid #e0e6e1;
+    font-family:'Libre Baskerville',Georgia,serif;
+    color:#082310;
+    font-size:20px;
+    margin:40px 0 4px;
   }
-  dl{margin:0;}
+  .standfirst{
+    font-size:17px;
+    color:#304635;
+    font-style:italic;
+    margin:0 0 18px;
+  }
+  .meta{
+    font-family:'IBM Plex Mono',ui-monospace,monospace;
+    font-size:12.5px;
+    color:#5c7263;
+    border-top:1px solid #dde5de;
+    border-bottom:1px solid #dde5de;
+    padding:8px 0;
+    margin:0 0 26px;
+  }
+  article p{margin:0 0 16px;}
+  article p:first-of-type::first-letter{
+    font-family:'Libre Baskerville',Georgia,serif;
+    font-size:46px;
+    line-height:.9;
+    float:left;
+    padding:4px 8px 0 0;
+    color:#082310;
+  }
+  strong{font-weight:600;color:#082310;}
+  .gloss{border-top:2px solid #082310;padding-top:6px;margin-top:44px;}
+  dl{margin:18px 0 0;}
   dt{
     font-weight:600;
-    color:var(--head);
-    margin-top:0.9rem;
+    color:#082310;
+    margin-top:14px;
   }
   dd{
-    margin:0.15rem 0 0;
-    padding-left:0.9rem;
-    border-left:2px solid #e0e6e1;
-    color:var(--ink);
+    margin:2px 0 0;
+    padding-left:0;
+    color:#304635;
   }
+  dd::before{content:"→ ";color:#0077c7;}
+  a{color:#0077c7;text-decoration:none;}
+  a:hover{color:#0061b0;text-decoration:underline;}
   footer{
-    margin-top:2.8rem;
-    font-family:'IBM Plex Mono', ui-monospace, monospace;
-    font-size:0.72rem;
-    color:#5c6f60;
-  }
-  a{color:var(--accent); text-decoration:none;}
-  a:hover{color:#0061b0; text-decoration:underline;}
-  @media (max-width:420px){
-    h1{font-size:1.5rem;}
-    body{font-size:16px;}
+    margin-top:46px;
+    font-family:'IBM Plex Mono',ui-monospace,monospace;
+    font-size:12px;
+    color:#5c7263;
   }
 </style>
 
@@ -269,90 +249,90 @@ html body p.site-page-title {
   <!-- site-header -->
 <p class="site-page-title">Lesetext</p>
 <!-- /site-header -->
-<p class="kicker">Sprachgarten · Lesetext C1</p>
-  <h1>Wo die Zukunft nach Zimt duftet</h1>
-  <p class="standfirst">Ein Leipziger Verein kämpft gegen ein Schulsystem, das Lebenswege zu früh festlegt – mit Bewerbungsmappen, geliehenen Hemden und sehr viel Geduld.</p>
-  <p class="meta">Reportage · ca. 320 Wörter<span class="site-date"> · 26.11.2026</span> · Lesezeit 3 Minuten</p>
+<p class="kicker">Reportage · Strafvollzug</p>
+  <h1>Zwischen Holzdübel und Hoffnung</h1>
+  <p class="standfirst">In einer Gefängniswerkstatt am Rhein lernen Häftlinge ein Handwerk – und die Mühen der Wiedergutmachung.</p>
+  <p class="meta">Lesetext C1 · 350 Wörter<span class="site-date"> · 27.11.2026</span> · 20 Zielausdrücke hervorgehoben</p>
 
   <article>
-    <p>LEIPZIG, im November. Freitagnachmittag im Hinterhaus an der Eisenbahnstraße: Der Teig auf dem Blech <strong>duftet</strong> nach Zimt, und wer die Küche betritt, <strong>riecht</strong> zuerst den Kuchen und erst dann die Anspannung. An zwei zusammengeschobenen Tischen sitzen Jugendliche über Formularen. Rana, siebzehn, will <strong>sich um</strong> einen Ausbildungsplatz in einer Zahnarztpraxis <strong>bewerben</strong>; ihr Mentor liest gegen, während die Jüngeren den Älteren <strong>beim</strong> Formulieren <strong>zusehen</strong>.</p>
+    <p>Es riecht nach Leim und Fichtenholz. In der Schreinerei der Justizvollzugsanstalt Rhein-Mitte steht Marek P., 34, über eine Werkbank gebeugt und schlägt einen <strong>Holzdübel</strong> in ein vorgebohrtes Loch. Noch zwei Jahre hat er hier <strong>abzusitzen</strong>; den Umgang mit Hobel und Fräse <strong>beherrscht</strong> er inzwischen besser als mancher Geselle draußen.</p>
 
-    <p>„Kompass Ost“ nennt sich die Initiative, die seit vier Jahren Schülerinnen und Schüler aus dem Viertel <strong>fördert</strong>. Ihr Gründer, ein pensionierter Berufsschullehrer, formuliert das Ziel nüchtern: Es gehe nicht darum, jedem jeden <strong>Wunsch zu erfüllen</strong>, sondern darum, Hürden abzubauen, die mit Begabung nichts zu tun haben. Die <strong>Unterteilung</strong> des sächsischen Schulsystems <strong>in</strong> verschiedene Schulformen falle früh, oft zu früh; wer mit zehn Jahren <strong>den Kürzeren zieht</strong>, holt das selten wieder auf. Das <strong>Gesetz</strong> verspricht Chancengleichheit – die Statistik widerspricht ihm hartnäckig.</p>
+    <p>Das Programm, das seit 2019 läuft, verfolgt ein einfaches Ziel: Gefangene sollen lernen, <strong>Verantwortung für</strong> ihr eigenes Handeln <strong>zu übernehmen</strong> – und zwar nicht erst vor Gericht. Zum Konzept gehört ein Täter-Opfer-Ausgleich, bei dem sich die Teilnehmer, sofern die Geschädigten es wünschen, persönlich <strong>bei</strong> ihnen <strong>entschuldigen</strong>. Wer glaubt, das sei eine bloße Formalie, irrt. „Die Gespräche sind oft <strong>bewegend</strong>, manchmal brutal“, sagt Anstaltsleiterin Dorothee Krall, die für das Projekt <strong>zuständig</strong> ist. Vor einigen Monaten habe ein Vater einen Teilnehmer in der Sitzung <strong>zur Rede gestellt</strong> – eine Stunde, die für alle Beteiligten <strong>unangenehm</strong> war und dennoch mehr bewirkt habe als jede Ermahnung.</p>
 
-    <p>Also kümmert sich der Verein um das Praktische. Drei Werkstätten <strong>stehen zur Auswahl</strong>: Bewerbung, Handwerk, Rhetorik. Vor allem aber geht es um die <strong>Vorbereitung auf</strong> das Vorstellungsgespräch. Wie <strong>macht</strong> man <strong>einen guten Eindruck auf</strong> eine Personalchefin, ohne sich zu verstellen? Wie <strong>vereinbart</strong> man am Telefon höflich <strong>einen Termin</strong>? Wer kein weißes Hemd besitzt, dem <strong>leiht</strong> die Kleiderkammer eines. Eine Nachbarin <strong>bringt</strong> der Gruppe jede Woche Äpfel aus ihrem Garten, und zwei Studentinnen <strong>erledigen</strong> jene Formalitäten, an denen Familien ohne Behördendeutsch regelmäßig scheitern.</p>
+    <p>In der Öffentlichkeit stößt das Vorhaben nicht nur auf Zustimmung. In Leserbriefen <strong>schimpfen</strong> Anwohner <strong>über</strong> angebliche Hotelzustände hinter Gittern; das <strong>Entsetzen über</strong> die Taten sitzt tief, und wer <strong>nett zu</strong> Straftätern sei, mache sich verdächtig. Eine Petition gegen die Werkstatt sammelte im Frühjahr mehrere hundert Unterschriften. Krall kontert nüchtern mit Zahlen: Die Rückfallquote der Absolventen liegt deutlich unter dem Landesdurchschnitt.</p>
 
-    <p><strong>Typisch für</strong> solche Projekte ist, dass ihre Wirkung sich schwer in Zahlen fassen lässt. Messbar ist die <strong>Begeisterung</strong> der Ehrenamtlichen <strong>für</strong> eine Arbeit, die kaum jemand bezahlt. Messbar ist auch, dass vierzig von fünfzig Teilnehmenden im vergangenen Jahr einen Platz fanden. Rana wartet noch: „Wir <strong>geben Ihnen</strong> nächste Woche <strong>Bescheid</strong>“, hat die Praxis gesagt. Sie ist trotzdem schon <strong>froh über</strong> den Nachmittag – nicht wegen des Kuchens, sondern weil ihr jemand zugehört hat.</p>
+    <p>Dass die Wiedereingliederung gelingt, ist selten <strong>leicht für</strong> die Entlassenen. Immerhin <strong>knüpfen</strong> sie während der Haft <strong>Kontakte mit</strong> Handwerksbetrieben der Region, die Praktikumsplätze anbieten. Der Zimmerermeister Ewald Brüggen, seit dreißig Jahren <strong>bei</strong> seinen Kunden <strong>angesehen</strong>, beschäftigt derzeit zwei ehemalige Häftlinge. „Fachlich sind sie gut, menschlich sind wir <strong>auf einer Wellenlänge</strong>“, sagt er. Wer bei ihm anfange, gehe allerdings auch eine <strong>Verpflichtung zu</strong> Pünktlichkeit und Offenheit ein.</p>
 
-    <p>Was <strong>wichtig für</strong> diese Biografien sei, sagt der Gründer zum Abschied, stehe in keinem Lehrplan: jemand, der zurückruft.</p>
+    <p>Marek P. hat sich in den vergangenen Monaten intensiv <strong>mit</strong> Möbelrestaurierung <strong>beschäftigt</strong>. Er redet schnell, er merkt selbst, dass er sein Gegenüber beinahe <strong>mit</strong> technischen Details <strong>langweilt</strong> – und bricht lachend ab. Dann erzählt er vom <strong>Glück über</strong> den ersten Brief seiner Tochter. Draußen warte Arbeit, sagt er; hier drinnen habe er gelernt, dass auch ein Dübel nur hält, wenn er genau sitzt.</p>
   </article>
 
-  <h2>English gloss</h2>
-  <dl>
-    <dt>duften</dt>
-    <dd>to smell (pleasantly), to give off a scent</dd>
+  <section class="gloss">
+    <h2>English gloss</h2>
+    <dl>
+      <dt>der Holzdübel</dt>
+      <dd>the wooden peg / dowel</dd>
 
-    <dt>riechen</dt>
-    <dd>to smell (neutral)</dd>
+      <dt>absitzen</dt>
+      <dd>to sit out (e.g. a prison sentence)</dd>
 
-    <dt>sich bewerben um (+Akk)</dt>
-    <dd>to apply for (a position, an award)</dd>
+      <dt>beherrschen</dt>
+      <dd>to master</dd>
 
-    <dt>zusehen (bei) (+Dat)</dt>
-    <dd>to watch, to observe (someone doing something)</dd>
+      <dt>Verantwortung übernehmen für (+Akk)</dt>
+      <dd>to take on / assume responsibility for</dd>
 
-    <dt>fördern</dt>
-    <dd>to support, to promote, to foster</dd>
+      <dt>sich entschuldigen bei (+Dat)</dt>
+      <dd>to apologise to (a person)</dd>
 
-    <dt>einen Wunsch erfüllen (+Akk)</dt>
-    <dd>to fulfil a wish</dd>
+      <dt>bewegend</dt>
+      <dd>moving / touching</dd>
 
-    <dt>die Unterteilung in (+Dat)</dt>
-    <dd>the division / subdivision into</dd>
+      <dt>zuständig für (+Akk)</dt>
+      <dd>responsible for / in charge of</dd>
 
-    <dt>den Kürzeren ziehen</dt>
-    <dd>to come off worse, to lose out</dd>
+      <dt>zur Rede stellen (+Akk)</dt>
+      <dd>to call someone to account / to confront someone</dd>
 
-    <dt>das Gesetz</dt>
-    <dd>the law</dd>
+      <dt>unangenehm für (+Akk/Dat)</dt>
+      <dd>unpleasant for / uncomfortable for</dd>
 
-    <dt>zur Auswahl stehen</dt>
-    <dd>to be available for selection, to be an option</dd>
+      <dt>schimpfen über (+Akk)</dt>
+      <dd>to rant about / to scold about</dd>
 
-    <dt>die Vorbereitung auf (+Akk)</dt>
-    <dd>the preparation for</dd>
+      <dt>das Entsetzen über (+Akk)</dt>
+      <dd>the horror / dismay at</dd>
 
-    <dt>einen guten/schlechten Eindruck machen auf (+Akk)</dt>
-    <dd>to make a good/bad impression on</dd>
+      <dt>nett zu (+Dat)</dt>
+      <dd>nice to / kind to</dd>
 
-    <dt>einen Termin vereinbaren</dt>
-    <dd>to make an appointment</dd>
+      <dt>leicht für (+Akk)</dt>
+      <dd>easy for</dd>
 
-    <dt>leihen (+Dat/+Akk)</dt>
-    <dd>to lend, to loan (someone something)</dd>
+      <dt>Kontakte knüpfen mit (+Dat)</dt>
+      <dd>to make / establish contacts with</dd>
 
-    <dt>bringen (+Dat/+Akk)</dt>
-    <dd>to bring (someone something)</dd>
+      <dt>angesehen bei (+Dat)</dt>
+      <dd>respected by / well regarded among</dd>
 
-    <dt>erledigen</dt>
-    <dd>to take care of, to get done</dd>
+      <dt>auf einer Wellenlänge sein</dt>
+      <dd>to be on the same wavelength</dd>
 
-    <dt>typisch für (+Akk)</dt>
-    <dd>typical of, characteristic of</dd>
+      <dt>die Verpflichtung zu (+Dat) / für (+Akk)</dt>
+      <dd>the obligation / commitment to / for</dd>
 
-    <dt>die Begeisterung von (+Dat) / für (+Akk)</dt>
-    <dd>the enthusiasm for</dd>
+      <dt>beschäftigt mit (+Dat) / sich beschäftigen mit</dt>
+      <dd>busy with / occupied with; to occupy oneself with</dd>
 
-    <dt>Bescheid geben (+Dat)</dt>
-    <dd>to let someone know, to inform someone</dd>
+      <dt>langweilen (mit) (+Akk)</dt>
+      <dd>to bore (someone) (with)</dd>
 
-    <dt>froh sein über (+Akk)</dt>
-    <dd>to be glad / pleased about</dd>
-
-    <dt>wichtig für (+Akk)</dt>
-    <dd>important for, significant for</dd>
-  </dl>
+      <dt>das Glück über (+Akk)</dt>
+      <dd>the happiness / delight about</dd>
+    </dl>
+  </section>
 
   <footer>Sprachgarten · Lesen &amp; Wortschatz · Niveau C1</footer>
+
 </div>
 
 <!-- site-header -->
