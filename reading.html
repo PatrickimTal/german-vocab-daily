@@ -3,87 +3,100 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lesetext – Zwischen Holzdübel und Hoffnung | Sprachgarten</title>
+<title>Lesetext — Zwischen Ölkanne und Heimweh</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+  :root{
+    --ink:#304635;
+    --head:#082310;
+    --accent:#0077c7;
+    --accent-hover:#0061b0;
+  }
   *{box-sizing:border-box;}
   body{
     margin:0;
     background:#ffffff;
-    color:#304635;
-    font-family:'Sora',system-ui,sans-serif;
+    color:var(--ink);
+    font-family:'Sora', system-ui, sans-serif;
     font-size:17px;
-    line-height:1.65;
-    padding:28px 18px 60px;
+    line-height:1.7;
+    -webkit-text-size-adjust:100%;
   }
-  .wrap{max-width:680px;margin:0 auto;}
+  .wrap{
+    max-width:40rem;
+    margin:0 auto;
+    padding:2rem 1.25rem 4rem;
+  }
   .kicker{
-    font-family:'IBM Plex Mono',ui-monospace,monospace;
-    font-size:12px;
-    letter-spacing:.14em;
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:0.75rem;
+    letter-spacing:0.08em;
     text-transform:uppercase;
-    color:#0077c7;
-    margin:0 0 10px;
+    color:var(--accent);
+    margin:0 0 0.6rem;
   }
   h1{
-    font-family:'Libre Baskerville',Georgia,serif;
-    color:#082310;
-    font-size:28px;
-    line-height:1.25;
-    margin:0 0 6px;
-  }
-  h2{
-    font-family:'Libre Baskerville',Georgia,serif;
-    color:#082310;
-    font-size:20px;
-    margin:40px 0 4px;
+    font-family:'Libre Baskerville', Georgia, serif;
+    color:var(--head);
+    font-weight:700;
+    font-size:1.75rem;
+    line-height:1.3;
+    margin:0 0 0.5rem;
   }
   .standfirst{
-    font-size:17px;
-    color:#304635;
-    font-style:italic;
-    margin:0 0 18px;
+    font-family:'Libre Baskerville', Georgia, serif;
+    font-size:1.02rem;
+    line-height:1.6;
+    color:var(--ink);
+    margin:0 0 1rem;
   }
   .meta{
-    font-family:'IBM Plex Mono',ui-monospace,monospace;
-    font-size:12.5px;
-    color:#5c7263;
-    border-top:1px solid #dde5de;
-    border-bottom:1px solid #dde5de;
-    padding:8px 0;
-    margin:0 0 26px;
+    font-family:'IBM Plex Mono', ui-monospace, monospace;
+    font-size:0.75rem;
+    color:#6b7d6f;
+    margin:0 0 1.75rem;
+    padding-bottom:1.25rem;
+    border-bottom:1px solid #e2e8e3;
   }
-  article p{margin:0 0 16px;}
+  article p{margin:0 0 1.15rem;}
   article p:first-of-type::first-letter{
-    font-family:'Libre Baskerville',Georgia,serif;
-    font-size:46px;
-    line-height:.9;
+    font-family:'Libre Baskerville', Georgia, serif;
+    font-size:3rem;
+    line-height:0.9;
     float:left;
-    padding:4px 8px 0 0;
-    color:#082310;
+    padding:0.25rem 0.5rem 0 0;
+    color:var(--head);
   }
-  strong{font-weight:600;color:#082310;}
-  .gloss{border-top:2px solid #082310;padding-top:6px;margin-top:44px;}
-  dl{margin:18px 0 0;}
+  strong{
+    font-weight:600;
+    color:var(--head);
+  }
+  h2{
+    font-family:'Libre Baskerville', Georgia, serif;
+    color:var(--head);
+    font-size:1.2rem;
+    margin:2.75rem 0 1rem;
+    padding-top:1.5rem;
+    border-top:1px solid #e2e8e3;
+  }
+  dl{margin:0;}
   dt{
     font-weight:600;
-    color:#082310;
-    margin-top:14px;
+    color:var(--head);
+    margin-top:0.9rem;
   }
   dd{
-    margin:2px 0 0;
-    padding-left:0;
-    color:#304635;
+    margin:0.15rem 0 0;
+    padding-left:0.9rem;
+    border-left:2px solid #dce6de;
+    color:var(--ink);
   }
-  dd::before{content:"→ ";color:#0077c7;}
-  a{color:#0077c7;text-decoration:none;}
-  a:hover{color:#0061b0;text-decoration:underline;}
-  footer{
-    margin-top:46px;
-    font-family:'IBM Plex Mono',ui-monospace,monospace;
-    font-size:12px;
-    color:#5c7263;
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{color:var(--accent-hover);text-decoration:underline;}
+  @media (max-width:420px){
+    body{font-size:16px;}
+    h1{font-size:1.5rem;}
   }
 </style>
 
@@ -249,89 +262,85 @@ html body p.site-page-title {
   <!-- site-header -->
 <p class="site-page-title">Lesetext</p>
 <!-- /site-header -->
-<p class="kicker">Reportage · Strafvollzug</p>
-  <h1>Zwischen Holzdübel und Hoffnung</h1>
-  <p class="standfirst">In einer Gefängniswerkstatt am Rhein lernen Häftlinge ein Handwerk – und die Mühen der Wiedergutmachung.</p>
-  <p class="meta">Lesetext C1 · 350 Wörter<span class="site-date"> · 27.11.2026</span> · 20 Zielausdrücke hervorgehoben</p>
+<p class="kicker">Reportage</p>
+  <h1>Zwischen Ölkanne und Heimweh</h1>
+  <p class="standfirst">In einer Lagerhalle am Stadtrand wird nicht nur an Fahrrädern geschraubt. Ein Ortsbesuch bei einer Initiative, die Integration ohne Programm und ohne Tagesordnung betreibt.</p>
+  <p class="meta">Wortzahl: 348 Wörter<span class="site-date"> · 28.11.2026</span> &middot; Niveau C1</p>
 
   <article>
-    <p>Es riecht nach Leim und Fichtenholz. In der Schreinerei der Justizvollzugsanstalt Rhein-Mitte steht Marek P., 34, über eine Werkbank gebeugt und schlägt einen <strong>Holzdübel</strong> in ein vorgebohrtes Loch. Noch zwei Jahre hat er hier <strong>abzusitzen</strong>; den Umgang mit Hobel und Fräse <strong>beherrscht</strong> er inzwischen besser als mancher Geselle draußen.</p>
+    <p>In einer ehemaligen Lagerhalle am Stadtrand riecht es nach Öl, Gummi und zu lange gekochtem Kaffee. Jeden Donnerstagnachmittag öffnet hier eine <strong>gemeinnützige</strong> Fahrradwerkstatt ihre Tore, gegründet von zwei Rentnern, inzwischen bekannt weit über den <strong>Bereich</strong> der umliegenden Straßenzüge hinaus. Wer ein ausgedientes Rad loswerden will, bringt es her; wer keines besitzt, verlässt die Halle am Abend oft mit einem.</p>
 
-    <p>Das Programm, das seit 2019 läuft, verfolgt ein einfaches Ziel: Gefangene sollen lernen, <strong>Verantwortung für</strong> ihr eigenes Handeln <strong>zu übernehmen</strong> – und zwar nicht erst vor Gericht. Zum Konzept gehört ein Täter-Opfer-Ausgleich, bei dem sich die Teilnehmer, sofern die Geschädigten es wünschen, persönlich <strong>bei</strong> ihnen <strong>entschuldigen</strong>. Wer glaubt, das sei eine bloße Formalie, irrt. „Die Gespräche sind oft <strong>bewegend</strong>, manchmal brutal“, sagt Anstaltsleiterin Dorothee Krall, die für das Projekt <strong>zuständig</strong> ist. Vor einigen Monaten habe ein Vater einen Teilnehmer in der Sitzung <strong>zur Rede gestellt</strong> – eine Stunde, die für alle Beteiligten <strong>unangenehm</strong> war und dennoch mehr bewirkt habe als jede Ermahnung.</p>
+    <p>An der Werkbank sucht Toma Popescu eine passende <strong>Mutter</strong> für ein Tretlager. Vor sieben Jahren musste er wegen der hohen Arbeitslosigkeit <strong>Abschied von</strong> seiner Heimat <strong>nehmen</strong>; in seinem <strong>Gebiet</strong>, sagt er, habe es damals schlicht keine Arbeit gegeben. Die <strong>Angewiesenheit auf</strong> Sozialleistungen habe ihn in den ersten Monaten stärker belastet als die <strong>Entfernung von</strong> den Eltern. „Hier fragt niemand, wann ich fertig werde. <strong>Kein Druck</strong>.“</p>
 
-    <p>In der Öffentlichkeit stößt das Vorhaben nicht nur auf Zustimmung. In Leserbriefen <strong>schimpfen</strong> Anwohner <strong>über</strong> angebliche Hotelzustände hinter Gittern; das <strong>Entsetzen über</strong> die Taten sitzt tief, und wer <strong>nett zu</strong> Straftätern sei, mache sich verdächtig. Eine Petition gegen die Werkstatt sammelte im Frühjahr mehrere hundert Unterschriften. Krall kontert nüchtern mit Zahlen: Die Rückfallquote der Absolventen liegt deutlich unter dem Landesdurchschnitt.</p>
+    <p>Als Sozialprojekt im engeren Sinn will sich die Initiative nicht verstanden wissen. Es gibt keine Formulare, keine <strong>Versammlung</strong> mit Tagesordnung, nur eine Tafel mit Namen und Uhrzeiten. Man erkundigt sich nach dem <strong>Befinden</strong> des anderen, man <strong>kichert</strong> über misslungene Reparaturen, und dann schraubt man weiter. Wer zum ersten Mal kommt, braucht ungefähr zwanzig Minuten, um zu begreifen, dass niemand etwas von ihm will. Gerade diese Beiläufigkeit <strong>hinterlässt bei</strong> den Besuchern einen bleibenden <strong>Eindruck</strong>.</p>
 
-    <p>Dass die Wiedereingliederung gelingt, ist selten <strong>leicht für</strong> die Entlassenen. Immerhin <strong>knüpfen</strong> sie während der Haft <strong>Kontakte mit</strong> Handwerksbetrieben der Region, die Praktikumsplätze anbieten. Der Zimmerermeister Ewald Brüggen, seit dreißig Jahren <strong>bei</strong> seinen Kunden <strong>angesehen</strong>, beschäftigt derzeit zwei ehemalige Häftlinge. „Fachlich sind sie gut, menschlich sind wir <strong>auf einer Wellenlänge</strong>“, sagt er. Wer bei ihm anfange, gehe allerdings auch eine <strong>Verpflichtung zu</strong> Pünktlichkeit und Offenheit ein.</p>
+    <p>Dimitra Papadopoulou, Medizinstudentin im dritten Semester, hat eigentlich kaum <strong>Zeit für</strong> Hobbys. Trotzdem steht sie donnerstags am Schraubstock. Sie <strong>vermisst</strong> ihre Familie, sie <strong>sehnt sich nach</strong> dem Licht und dem Lärm ihrer Heimatstadt – und sie weiß, dass sie <strong>ihren Traum</strong> nur <strong>verwirklichen</strong> wird, wenn sie Woche für Woche durchhält. Die Werkstatt, sagt sie, sei die billigste Form von Therapie, die sie kenne.</p>
 
-    <p>Marek P. hat sich in den vergangenen Monaten intensiv <strong>mit</strong> Möbelrestaurierung <strong>beschäftigt</strong>. Er redet schnell, er merkt selbst, dass er sein Gegenüber beinahe <strong>mit</strong> technischen Details <strong>langweilt</strong> – und bricht lachend ab. Dann erzählt er vom <strong>Glück über</strong> den ersten Brief seiner Tochter. Draußen warte Arbeit, sagt er; hier drinnen habe er gelernt, dass auch ein Dübel nur hält, wenn er genau sitzt.</p>
+    <p>Kurz vor sechs stürzt ein Mann herein, <strong>außer Puste</strong>, und <strong>entschuldigt sich für</strong> die Verspätung; sein Zug sei ausgefallen. Niemand nimmt es ihm übel. Dass man hier nicht zur Pünktlichkeit erzogen, sondern gebraucht wird, erklärt vielleicht, warum die Halle donnerstags selten leer bleibt. Die Werkstatt <strong>erhält</strong> keine festen Zuschüsse, sie lebt von Spenden und von Menschen, die <strong>bei</strong> ihren Nachbarn <strong>beliebt</strong> sind, weil sie Werkzeug verleihen und Zeit verschenken. Einer der Gründer formuliert es so: Die kürzeste <strong>Strecke</strong> zur Integration führe nicht über Behörden, sondern über ein funktionierendes Hinterrad.</p>
   </article>
 
-  <section class="gloss">
-    <h2>English gloss</h2>
-    <dl>
-      <dt>der Holzdübel</dt>
-      <dd>the wooden peg / dowel</dd>
+  <h2>English gloss</h2>
+  <dl>
+    <dt>gemeinnützig</dt>
+    <dd>non-profit / charitable</dd>
 
-      <dt>absitzen</dt>
-      <dd>to sit out (e.g. a prison sentence)</dd>
+    <dt>der Bereich / das Gebiet</dt>
+    <dd>the area (field, district, region)</dd>
 
-      <dt>beherrschen</dt>
-      <dd>to master</dd>
+    <dt>die Mutter</dt>
+    <dd>the nut (hardware)</dd>
 
-      <dt>Verantwortung übernehmen für (+Akk)</dt>
-      <dd>to take on / assume responsibility for</dd>
+    <dt>Abschied nehmen von (+Dat)</dt>
+    <dd>to say goodbye to / to take one's leave of</dd>
 
-      <dt>sich entschuldigen bei (+Dat)</dt>
-      <dd>to apologise to (a person)</dd>
+    <dt>die Angewiesenheit auf (+Akk)</dt>
+    <dd>the dependence / reliance on</dd>
 
-      <dt>bewegend</dt>
-      <dd>moving / touching</dd>
+    <dt>die Entfernung von (+Dat)</dt>
+    <dd>the distance / removal from</dd>
 
-      <dt>zuständig für (+Akk)</dt>
-      <dd>responsible for / in charge of</dd>
+    <dt>kein Druck / keinen Druck</dt>
+    <dd>no pressure</dd>
 
-      <dt>zur Rede stellen (+Akk)</dt>
-      <dd>to call someone to account / to confront someone</dd>
+    <dt>die Versammlung</dt>
+    <dd>the assembly / meeting</dd>
 
-      <dt>unangenehm für (+Akk/Dat)</dt>
-      <dd>unpleasant for / uncomfortable for</dd>
+    <dt>das Befinden</dt>
+    <dd>the state of health / well-being</dd>
 
-      <dt>schimpfen über (+Akk)</dt>
-      <dd>to rant about / to scold about</dd>
+    <dt>kichern</dt>
+    <dd>to giggle</dd>
 
-      <dt>das Entsetzen über (+Akk)</dt>
-      <dd>the horror / dismay at</dd>
+    <dt>einen guten/schlechten Eindruck hinterlassen bei (+Dat)</dt>
+    <dd>to leave a good/bad impression on</dd>
 
-      <dt>nett zu (+Dat)</dt>
-      <dd>nice to / kind to</dd>
+    <dt>Zeit haben für (+Akk)</dt>
+    <dd>to have time for</dd>
 
-      <dt>leicht für (+Akk)</dt>
-      <dd>easy for</dd>
+    <dt>vermissen</dt>
+    <dd>to miss (someone)</dd>
 
-      <dt>Kontakte knüpfen mit (+Dat)</dt>
-      <dd>to make / establish contacts with</dd>
+    <dt>sich sehnen nach (+Dat)</dt>
+    <dd>to yearn for</dd>
 
-      <dt>angesehen bei (+Dat)</dt>
-      <dd>respected by / well regarded among</dd>
+    <dt>einen Traum verwirklichen</dt>
+    <dd>to realise / fulfil a dream</dd>
 
-      <dt>auf einer Wellenlänge sein</dt>
-      <dd>to be on the same wavelength</dd>
+    <dt>außer Puste (sein)</dt>
+    <dd>to be out of breath</dd>
 
-      <dt>die Verpflichtung zu (+Dat) / für (+Akk)</dt>
-      <dd>the obligation / commitment to / for</dd>
+    <dt>sich entschuldigen für (+Akk)</dt>
+    <dd>to apologise for</dd>
 
-      <dt>beschäftigt mit (+Dat) / sich beschäftigen mit</dt>
-      <dd>busy with / occupied with; to occupy oneself with</dd>
+    <dt>erhalten</dt>
+    <dd>to get / receive (formal)</dd>
 
-      <dt>langweilen (mit) (+Akk)</dt>
-      <dd>to bore (someone) (with)</dd>
+    <dt>beliebt bei (+Dat)</dt>
+    <dd>popular with</dd>
 
-      <dt>das Glück über (+Akk)</dt>
-      <dd>the happiness / delight about</dd>
-    </dl>
-  </section>
-
-  <footer>Sprachgarten · Lesen &amp; Wortschatz · Niveau C1</footer>
+    <dt>die Strecke</dt>
+    <dd>the route / stretch</dd>
+  </dl>
 
 </div>
 
